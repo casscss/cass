@@ -1,0 +1,316 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CASS California Stylesheets | Docs</title>
+  <meta name="description" content="CASS, a composable-class-driven and color-based style library for simpler CSS/HTML">
+  <meta name="author" content="Rex Riepe">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../../ca.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="">
+
+  <!-- <nav style="z-index: 100;" class="top left right page inner-width border-bottom bar light cyan blue text-padding no-underlines fixed no-margin shadow">
+      <a class="title bold" href="../../" class="inline-block text-padding">
+          California Stylesheets
+      </a>
+      <div class="float-right">
+          <a href="../../docs/" class="text-padding text-margin-right bold">Docs</a>
+          <a href="https://github.com/cavepaint/cavepaintcss" target="_blank" class="new-tab text-padding">Github</a>
+      </div>
+  </nav> -->
+  
+  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left responsive inner-width padding no-padding-bottom">
+      <div class="grid relative text-padding-top">
+          
+  
+          <a class="seven wide title bold big no-margin-bottom vertical-center" href="../../" class="">
+                  <svg class="block no-margin-bottom absolute bottom left max-height" style="max-height:1.8em; width: 3.8em;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="288px" height="140px" viewBox="0 0 288 140">
+                  <g id="Seagull">
+                      <path id="seagull_color" fill="#FFFFFF" d="M117.958,148.841c-3.37-0.306-10.57-2.911-12.409-8.119c-6.449-18.272-29.259-61.277-14.4-72.919   c11.249-11.169,21.753-9.804,21.906-16.698c-4.769-14.789-16.811-9.147-23.898-21.14C77.208,9.743,69.166,6.591,62.809,6.591   H39.067c-18.558,0-33.601,15.044-33.601,33.603v266.929c0,18.557,15.043,33.602,33.601,33.602h209.864   c18.559,0,33.603-15.045,33.603-33.602v-156.75L117.958,148.841z"/>
+                      <path id="seagull_beak" fill="#D93F27" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M47.183,51.641l55.483,7.95h46.542   c0,0-2.604-12.775-18.842-18.903c-18.125-1.12-21.064,0.766-25.746,0.627c-0.32-0.306-15.156-1.164-15.156-1.164L47.183,51.641z"/>
+                      <path id="seagull_eyes" fill="#D93F27" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M27.064,33.028   c0,0,4.901-5.004,12.766-4.698c7.864,0.307,12.766,4.698,12.766,4.698s-5.515,5.719-12.255,5.719   C30.944,38.441,27.064,33.028,27.064,33.028z"/>
+                      <circle cx="40.852" cy="33.532" r="3.37"/>
+                      <path fill="none" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M47.183,51.641l60.204,1.302l25.966,0.613   c0,0,10.647,0.121,15.855,6.035"/>
+                      <path fill="none" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M104.068,47.53c0,0,8.783-3.881,17.821,0.562   C119.54,50.623,104.324,50.339,104.068,47.53z"/>
+                  </g>
+                  </svg>
+              <!-- <img src="../images/scenic_drive.svg" class="no-margin-bottom absolute bottom left max-height" alt="The scenic drive seagull" style="max-height:1.8em"> -->
+              <span class="hide mobile tablet tint text-shadow text-margin-bottom" style="padding-left: 2.4em;">
+                  California Stylesheets
+              </span>
+              <span class="hide desktop tint text-shadow text-margin-bottom" style="padding-left: 2.4em;">
+                  CASS
+              </span>
+          </a>
+          <div class="five wide text-right text-margin-bottom vertical-center">
+              <span>
+                  <a href="../../learn/" class="text-padding text-margin-right bold">Read the docs</a>
+                  <!-- <a href="https://github.com/cavepaint/cavepaintcss" target="_blank" class="new-tab text-padding">Github</a> -->
+              </span>
+              
+          </div>
+      </div>
+  </nav>
+  <div class="text-trim full width placeholder padding">&nbsp;</div>
+  
+  <div class="hella dim striped blue viewport height golden reverse vertical-center responsive inner-width padding no-padding-top">
+    <div class="two column golden reverse desktop">
+      <nav class="margin-bottom text inner-width">
+        <ul class="two column mobile tablet no-list-style">
+          <div>
+            <li><a class=" text-padding" href="../">install</a></li>
+            <li><a class=" text-padding" href="../typography">typography</a></li>
+            <li><a class=" text-padding" href="../layout">layout</a></li>
+          </div>
+          <div>
+            <li><a class=" text-padding" href="../colors">color</a></li>
+            <li><a class="bold text-padding" href="../composables">composables</a></li>
+            <li><a class=" text-padding" href="../nullifiers">nullifiers</a></li>
+          </div>
+        </ul>
+      </nav>      <div class="vertical-center text inner-width">
+        <h1 class="margin-top gutter-bottom">Composable classes</h1>
+        <p>Composable classes are regular CSS classes that are designed to work together with other composable CSS classes.</p>
+      </div>
+    </div>
+
+  </div>
+  <main id="main" class="min-viewport height text inner-width padding white">
+    
+        
+<h2 class="section-headline">Composables</h2>
+
+<ul>
+    <li><strong>margin-auto</strong>: Sets margin to <em>margin: 0 auto</em></li>
+    <li><strong>padding</strong>: Add padding to an element</li>
+    <li><strong>margin</strong>: Add margin to an element</li>
+    <li><strong>gutter</strong>: Add gutter (2x margin) to an element</li>
+    <li><strong>inner-gutter</strong>: Add gutter-sized padding to an element</li>
+    <li><strong>text-padding</strong>: Add text-padding to an element</li>
+    <li><strong>text-margin</strong>: Add text-margin to an element</li>
+    <li><strong>text-trim</strong>: Set line-height to 1</li>
+    <li><strong>text-crunch</strong>: Sets a condensed line-height</li>
+    <li><strong>text-center</strong>: Sets text-align to <em>center</em></li>
+    <li><strong>text-left</strong>: Sets text-align to <em>left</em></li>
+    <li><strong>text-right</strong>: Sets text-align to <em>right</em></li>
+    <li><strong>text-rounded</strong>: Like rounded, but smaller for text</li>
+    <li><strong>block</strong>: Sets an element to <em>display: block</em></li>
+    <li><strong>inline</strong>: Sets an element to <em>display: inline</em></li>
+    <li><strong>gap-padding</strong>: Sets gap to <em>padding</em></li>
+    <li><strong>gap-border-width</strong>: Sets gap to <em>border-width</em></li>
+    <li><strong>gap-text-padding</strong>: Sets gap to <em>text-padding</em></li>
+    <li><strong>gap-text-margin</strong>: Sets gap to <em>text-margin</em></li>
+    <li><strong>flatten</strong>: removes shadows of self and children</li>
+    <li><strong>rounded</strong>: Sets the border-radius to the default</li>
+    <li><strong>shade</strong>: Makes the text black (or dark, with text-color)</li>
+    <li><strong>tint</strong>: Makes the text white (or light, with text-color)</li>
+    <li><strong>hidden</strong>: hidden on all breakpoints (like hide but not composable)</li>
+    <li><strong>viewport height</strong>: Sets an element to viewport height</li>
+    <li><strong>clearfix</strong>: clears floats</li>
+</ul>
+
+<h2>Composable phrases</h2>
+
+<p>When you use CASS, certain composable phrases will come up again and again. Here are some useful ones:</p>
+
+<ul>
+    <li><strong>page width padding margin-auto</strong>: sets to page width with padding, and centers</li>
+    <li><strong>two column golden tablet</strong>: a golden-ratio two column container that breaks on tablet</li>
+    <li><strong>thick border border-text-color</strong>: a thick border the same color as the text</li>
+    <li><strong>hide mobile tablet</strong>: hides on mobile and tablet</li>
+    <li><strong>text-padding margin-bottom [color]</strong>: gives a color, padding and bottom-margin to an element</li>
+    <li><strong>card inner-width text-crunch</strong>: smaller line height and width</li>
+    <li><strong>responsive inner-width padding</strong>: automatically determines inner content size and padding</li>
+
+</ul>
+
+<h2 class="section-headline">Hiding and fixing elements</h2>
+
+
+<h3>TL;DR</h3>
+
+<p>The <strong>hide</strong> composable class hides elements. The <strong>fixed</strong> composable class fixes them to the page.</p>
+
+<p>They both just work everywhere until you use one of the breakpoint composable classes with it: <strong>mobile</strong>, <strong>tablet</strong> or <strong>desktop</strong>.</p>
+
+<ul>
+    <li><p><strong>mobile</strong>: the behavior happens only on the smallest viewport.</p></li>
+
+    <li><p><strong>tablet</strong>: the behavior happens on mid-size viewports and up.</p></li>
+
+    <li><p><strong>desktop</strong>: the behavior happens on the biggest sized viewports (and up).</p></li>
+</ul>
+
+<p>Both <strong>mobile</strong> and <strong>tablet</strong> also compose with each other to trigger the behavior on mide-sized viewports and down.</p>
+
+
+<h3>The nitty-gritty</h3>
+
+<p>For a visual, here's how <strong>hide</strong> and <strong>fixed</strong> behavior appears on the three different resolutions:</p>
+<div class="margin-bottom">
+    <div class="grid text-align-center trim">
+        <div class="three wide">
+            <p>On mobile:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="four wide">
+            <p>On tablet:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="five wide">
+            <p>On desktop:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<p>Here's <strong>hide mobile</strong>:</p>
+
+<div class="margin-bottom">
+    <div class="grid text-align-center trim">
+        <div class="three wide">
+            <p>On mobile:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="four wide">
+            <p>On tablet:</p>
+            <div class="border thick  white">
+                <div class="cool black border trim">
+                    &check;
+                </div>
+            </div>
+        </div>
+        <div class="five wide">
+            <p>On desktop:</p>
+            <div class="border thick  white">
+                <div class="cool black border trim">
+                    &check;
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+<p>The <strong>mobile</strong> and <strong>tablet</strong> composables compose with each other:</p>
+
+<div class="margin-bottom">
+    <div class="grid text-align-center trim">
+        <div class="three wide">
+            <p>On mobile:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="four wide">
+            <p>On tablet:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="five wide">
+            <p>On desktop:</p>
+            <div class="border thick white">
+                <div class="cool black trim">
+                    &check;
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+<p>Here's <strong>hide tablet</strong>:</p>
+
+<div class="margin-bottom">
+    <div class="grid text-align-center trim">
+        <div class="three wide">
+            <p>On mobile:</p>
+            <div class="border thick white">
+                <div class="cool black border trim">
+                    &check;
+                </div>
+            </div>
+        </div>
+        <div class="four wide">
+            <p>On tablet:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>
+        <div class="five wide">
+            <p>On desktop:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<p>Finally, here's <strong>hide desktop</strong>:</p>
+
+<div class="margin-bottom">
+    <div class="grid text-align-center trim">
+        <div class="three wide">
+            <p>On mobile:</p>
+            <div class="border thick white">
+                <div class="cool black border trim">
+                    &check;
+                </div>
+            </div>
+        </div>
+        <div class="four wide">
+            <p>On tablet:</p>
+            <div class="border thick white">
+                <div class="cool black border trim">
+                    &check;
+                </div>
+            </div>
+        </div>
+        <div class="five wide">
+            <p>On desktop:</p>
+            <div class="border thick dashed white">
+                <div class="transparent trim">
+                    &cross;
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<p>For a composable like hide that doesn't compose with responsive classes, try <strong>.hidden</strong>.</p>
