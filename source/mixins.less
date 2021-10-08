@@ -1,0 +1,135 @@
+.on-mobile(@rules) {
+  @media screen and (min-width: 1px) { @rules();}
+}
+
+.on-tablet(@rules) {
+  @media screen and (min-width: @tablet) { @rules();}
+}
+
+.on-desktop(@rules) {
+  @media screen and (min-width: @desktop) { @rules();}
+}
+
+.under-tablet(@rules) {
+  @media screen and (max-width: calc(@tablet - 1px)) { @rules();}
+}
+
+.under-desktop(@rules) {
+  @media screen and (max-width: calc(@desktop - 1px)) { @rules();}
+}
+
+.set-average(@colors) {
+  // averages a list of colors
+  // sets result to @average
+
+  .find-average(@color, @index) when (@index <= length(@colors)) {
+    @this-color: extract(@colors, @index);
+    @last-color: @color;
+    @weight: 100% * (1/@index);
+    @new-average: mix(@this-color, @last-color, @weight);
+
+    .find-average(@new-average, @index + 1);
+  }
+
+  .find-average(@color, @index) when (default()) {
+    @average: @color;
+  }
+
+  @average: .find-average(extract(@colors, 1), 1)[@average];
+}
+
+.set-color(@color-name, @base, @luma-modifier: .5, @ambient-modifier: 1, @outputs: false) {
+	// @color-name: the name of the color, which will be the class name
+	// @base: the base representative color
+	// @luma-modifier: [0 - 1] how much the color is luma-matched to @base-color
+	// @ambient-modifier: [.9 - 1.1 works best] how much the ambient light affects the color
+
+	// generate the color base
+	@color-base: .set-lumafix(@base; @strength: @luma-modifier;)[];
+
+	// output the class and rules if outputs are enabled
+	.@{color-name} when (@outputs = true) {
+		.color-helpers(@color);
+  }
+
+  @ambient-adjusted: (@ambient-mix * @ambient-modifier);
+
+	// apply ambient lighting
+	@color: mix(@color-base, overlay(@ambient, @color-base), @ambient-adjusted);
+}
+
+// sets variable @contrast-ratio to contrast ratio between two colors
+// it uses the WCAG standards for determining contrast ratio
+
+.set-contrast-ratio(@x, @y) when (luma(@x) > luma(@y)) {
+  @contrast-l1: (unit(luma(@x)) / 100); // luma is expressed as a % which needs to be un-%ed
+  @contrast-l2: (unit(luma(@y)) / 100);
+  @contrast-ratio: round(((@contrast-l1 + .05) / (@contrast-l2 + .05)), 2);
+}
+
+.set-contrast-ratio(@x, @y) when (luma(@x) < luma(@y)) {
+  @contrast-l1: (unit(luma(@y)) / 100);
+  @contrast-l2: (unit(luma(@x)) / 100);
+  @contrast-ratio: round(((@contrast-l1 + .05) / (@contrast-l2 + .05)), 2);
+}
+
+.set-contrast-ratio(@x, @y) when (luma(@x) = luma(@y)) {
+  @contrast-ratio: 1;
+}
+
+.set-lumafix(@color; @compare: @base-color; @strength: 100%;) {
+  // sets @lumafix to a version of @color with luma similar to @compare
+
+  @h: hue(@color);
+  @s: (((saturation(@color) * 1.5) + (saturation(@compare) * .5)) / 2);
+  @l: ((luma(@compare) + lightness(@compare)) / 2);
+  @lumafix: mix(hsl(@h, @s, @l), @color, @strength);
+}
+
+.set-tone(@color) {
+  // sets variable @tone to white or black
+  // depending on which is better for text contrast
+
+  .set-contrast-ceiling() {
+    .set-contrast-ratio(@color, @white);
+    @contrast-ceiling: @contrast-ratio;
+  }
+
+  .finalize-tone() when (@contrast-ceiling < 3) {
+    @tone: @black;
+  }
+
+  .finalize-tone() when (default()) {
+    @tone: @white;
+  }
+
+  @contrast-ceiling: .set-contrast-ceiling()[];
+  .finalize-tone();
+}
+
+.set-tone(@color, @compare) {
+  // sets variable @tone to white or black
+  // depending on which gets @color closer to @compare
+
+  .set-contrast-ceiling-color() {
+    .set-contrast-ratio(@color, @white);
+    @contrast-ceiling-color: @contrast-ratio;
+  }
+
+  .set-contrast-ceiling-compare() {
+    .set-contrast-ratio(@color, @white);
+    @contrast-ceiling-compare: @contrast-ratio;
+  }
+
+  .finalize-tone() when (@contrast-ceiling-color > @contrast-ceiling-compare) {
+    @tone: @black;
+  }
+
+  .finalize-tone() when (default()) {
+    @tone: @white;
+  }
+
+  .set-contrast-ceiling-color();
+  .set-contrast-ceiling-compare();
+  .finalize-tone();
+}

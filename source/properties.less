@@ -1,0 +1,143 @@
+@ambient-mix: 90%;
+@font-size: 16px;
+@font-family: var(--sans-serif);
+@text-base: 48;
+@padding: 1rem;
+@line-height: 1.6;
+@darken-by: @lighten-by;
+@gutter-multiplier: 2;
+@gutter: @gutter-multiplier * @padding;
+@tablet: @text-width + @gutter;
+@desktop: @page-width + @gutter;
+@text-width: round((@text-base * .618rem), 1);
+@card-width: round((@text-width * .618), 1);
+@page-width: round((@text-width * 1.618), 1);
+@feature-width: round((@text-width * 2.618), 1);
+@font-size-mobile: calc(var(--font-size-base) * .875);
+@font-size-tablet: calc(var(--font-size-base) * .94);
+@font-size-desktop: var(--font-size-base);
+
+/* A California Stylesheet (MIT License) */ 
+/* https://github.com/casscss/cass */
+
+/* Typography */
+:root {
+    --line-height: @line-height;
+    --text-measure: @text-base;
+    --font-size-base: @font-size;
+    --font-size-mod: 1;
+    --font-family: @font-family;
+    --headline-font-family: @font-family;
+    --headline-base: 1em;
+    --headline-base-mod: 1;
+    --text-padding: calc(.4 * var(--padding-base));
+    --text-margin: var(--text-padding);
+    --text-indent: var(--text-padding);
+    --text-border-radius: calc(.6 * var(--text-padding));
+    --monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", Courier, monospace;
+    --serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "Droid Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Layout */
+:root {
+    --padding: var(--padding-base);
+    --margin: var(--padding-base);
+    --gutter: @gutter;
+    --gap: var(--padding-base);
+    --columns: 12;
+    --width: var(--text-width);
+    --text-width: calc(var(--text-measure) * .6rem);
+    --card-width: calc(var(--text-width) * .6);
+    --page-width: calc(var(--text-width) * 1.6);
+    --feature-width: calc(var(--page-width) * 1.6);
+    --full-width: 100%;
+    --grid-template: repeat(var(--columns), minmax(0, 1fr));
+}
+
+/* Colors */
+:root {
+    --contrast: @lighten-by;
+    --brand-color: @base-color;
+    --complement: @complement;
+    --accent: @accent;
+    --white: @white;
+    --white-gray: @white-gray;
+    --gray: @gray;
+    --gray-black: @gray-black;
+    --black: @black;
+    --red: @red;
+    --red-orange: @red-orange;
+    --orange: @orange;
+    --orange-yellow: @orange-yellow;
+    --yellow: @yellow;
+    --yellow-green: @yellow-green;
+    --green: @green;
+    --green-teal: @green-teal;
+    --teal: @teal;
+    --teal-cyan: @teal-cyan;
+    --cyan: @cyan;
+    --cyan-blue: @cyan-blue;
+    --blue: @blue;
+    --blue-purple: @blue-purple;
+    --purple: @purple;
+    --purple-magenta: @purple-magenta;
+    --magenta: @magenta;
+    --magenta-red: @magenta-red;
+    --h: round(hue(@white), 1);
+    --s: round(saturation(@white), 1);
+    --l: round(lightness(@white), 1);
+    --o: .2; // overlay opacity
+    --warm: @warm-rgba;
+    --cool: @cool-rgba;
+    --dull: @dull-rgba;
+}
+
+/* Decoration */
+:root {
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: .5em;
+    --border-h: var(--h);
+    --border-s: var(--s);
+    --border-l: 40%;
+    --border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
+    --border: var(--border-width) var(--border-style) var(--border-color);
+    --border-thin: calc(var(--border-width) / 2);
+    --border-thick: calc(var(--border-width) * 2);
+    --border-radius: var(--text-padding);
+    --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
+    --shadow-position: 1px;
+    --shadow-blur: 3px;
+    --shadow-color: fade(@black, 30%);
+}
+
+/* Responsive settings for mobile */
+:root {
+    .on-mobile({
+        --padding-base: calc(.6 * @padding);
+        --font-size: @font-size-mobile;
+        --headline-base: 1em;
+        --responsive-width: var(--text-width);
+    });
+}
+
+/* Responsive settings for tablet */
+:root {
+    .on-tablet({
+        --padding-base: calc(.8 * @padding);
+        --font-size: @font-size-tablet;
+        --headline-base: 1.1em;
+        --responsive-width: var(--text-width);
+    });
+}
+
+/* Responsive settings for desktop */
+:root {
+    .on-desktop({
+        --padding-base: @padding;
+        --font-size: @font-size-desktop;
+        --headline-base: 1.2em;
+        --responsive-width: var(--page-width);
+    });
+}
