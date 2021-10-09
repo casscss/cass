@@ -318,7 +318,10 @@ pre > code {
   --columns: 11;
 }
 .twelve.columns,
-.twelve.column {
+.grid,
+.columns,
+.twelve.column,
+.column {
   --columns: 12;
 }
 .columns.golden,
