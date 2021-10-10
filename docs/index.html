@@ -95,7 +95,7 @@
   <main id="main" class="min-viewport height text inner-width padding white">
     
         
-<section class="padding-bottom gutter-bottom">
+<section class="gutter-bottom">
 
   <h2 class="section-headline">The CSS file</h2>
 
@@ -104,6 +104,23 @@
     <p>Or just grab one with default colors <a href="../ca.css">here</a>.</p>
 
   </div>
+</section>
+
+<section class="gutter-bottom">
+
+  <h2 class="section-headline">Visual Studio Code</h2>
+  <div>
+    <p>Both palette options are also available through the Visual Studio Code extension. Install it in two minutes.</p>
+    
+    <p><a href="https://marketplace.visualstudio.com/items?itemName=casscss.CASS-viewer" target="_blank"><img src="../images/cass-viewer.png" alt="A screenshot of the CASS viewer extension in VS Code"></a></p>
+    
+    <p>While in Visual Studio Code, launch VS Code Quick Open (<strong>Ctrl+P</strong>), paste the following command, and press Enter:</p>
+    <p><code>ext install casscss.CASS-viewer</code></p>
+    <p>After it's done installing, you'll be able to quickly access the CASS palette and CSS generator inside of Visual Studio Code by bringing up the command palette with <strong>Ctrl + Shift + P</strong> and typing "CASS."</p>
+  </div>
+</section>
+
+<section class="gutter-bottom">
 
   <h2>Tweaking your CASS</h2>
   
@@ -114,43 +131,11 @@
   --line-height: 2;    
 }</pre>
 
-  <h2 class="section-headline">Visual Studio Code</h2>
-  <div>
-    <p>Both palette options are also available through the Visual Studio Code extension. Install it in two minutes.</p>
-    
-    <!-- <p><a href="https://marketplace.visualstudio.com/items?itemName=CASS.cass-viewer" target="_blank"><img src="../images/cass-viewer.png" alt="A screenshot of the Cavepaint viewer extension in VS Code"></a></p> -->
-    
-    <p>While in Visual Studio Code, launch VS Code Quick Open (<strong>Ctrl+P</strong>), paste the following command, and press Enter:</p>
-    <p><code>ext install casscss.cass-viewer</code></p>
-    <p>After it's done installing, you'll be able to quickly access the CASS palette and CSS generator inside of Visual Studio Code by bringing up the command palette with <strong>Ctrl + Shift + P</strong> and typing "CASS."</p>
-  </div>
-</section>
-
-<section class="padding-bottom gutter-bottom hide">
-
-  <h2 class="section-headline">The Less version</h2>
-
-  <ol class="text-align-left">
-      <li>Get <a target="_blank" class="new-tab" href="https://github.com/casscss/cass">the files</a>. Or:</li>
-      <li><pre class="white-space">git clone https://github.com/casscss/cass.git</pre></li>
-      <li>Use the files <em>as your starting codebase</em>.</li>
-      <li>Install Less: <code>npm install less -g</code></li>
-      <li>Run Less: <code>lessc cass.less ca.css</code></li>
-  </ol>
-
-  <p>It's that easy! If anything here confuses you, or if you just want more, check out the <a class="new-tab" href="http://lesscss.org/usage/" target="_blank">Less usage guide</a>. There are a whole lot of ways to compile Less.</p>
-
-  <h5>Where to write your styles</h5>
-
-  <p>If you're using the CSS version, write or include your styles <em>after</em> ca.css</p>
-
-  <p>For the Less version, use the CASS Less project download as a simple starting point for your style codebase. More detailed project templates for Less, Sass and Stylus are planned for the future. CASS only uses preprocessing for a few variables and to drive the color system.</p>
-
-  <p>Since it's mostly just using CSS custom properties, so the CSS output should play well with any preprocessor.</p>
+  <p>Write or include your own CSS in a file (or on the page) but after CASS. You can also edit your CASS file directly, but that can make it harder to swap out later. It's usually better to go with a "write-on-top" approach, even if you're using a preprocessor.</p>
 
 </section>
 
-<section id="composables">
+<section id="composables" class="gutter-bottom">
     <h2>Naming conventions</h2>
     <div class="gutter-bottom">
       <p>CASS keeps things simple:</p>
@@ -175,7 +160,8 @@
     <p>It's a really good base CSS file for any page or project, customized to fit a brand color.</p>
 
     <h5>"Is it better than other CSS frameworks?"</h5>
-    <p>It's easier to use. Sometimes it can do more and sometimes it can't. It doesn't require you to install npm, to preprocess anything, to post-process anything, to gzip, to tree-shake, to learn new words, or to burden your templates/views with new conventions outside of HTML. It's not CSS-in-JS or pre-CSS or post-JS or anything like that. It's ca.css and you reference it in your HTML. Very lazy people just paste it into a style tag. We're cool with that approach.</p>
+    <p>It's easier to use. Sometimes it can do more and sometimes it can't. It doesn't require you to install npm, to preprocess anything, to post-process anything, to gzip, to tree-shake, to learn new words, or to burden your templates/views with new conventions outside of HTML.</p>
+    <p>It's not CSS-in-JS or pre-CSS or post-JS or anything like that. It's ca.css and you reference it in your HTML. Very lazy people just paste it into a style tag. We're cool with that approach.</p>
 
     <h5>"Should I switch from another CSS framework?"</h5>
     <p>CASS is aimed mostly at people who are frustrated with all the administrative overhead and process stuff that goes into writing CSS these days. If that sounds like you, try it out.</p>
