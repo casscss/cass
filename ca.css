@@ -24,7 +24,6 @@
   --margin: var(--padding-base);
   --gutter: 2rem;
   --gap: var(--padding-base);
-  --columns: 12;
   --width: var(--text-width);
   --text-width: calc(var(--text-measure) * 0.6rem);
   --card-width: calc(var(--text-width) * 0.6);
@@ -270,101 +269,153 @@ pre > code {
   padding: 0;
 }
 /* Composables */
-.grid,
+:root {
+  --multi-column: repeat(var(--columns), minmax(0, 1fr));
+  --one-column: repeat(1, minmax(0, 1fr));
+}
 .columns,
+.grid,
 .column {
+  --columns: 12;
   display: grid;
   gap: var(--gap);
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-columns: var(--gtc, var(--multi-column));
+}
+.one.columns,
+.one.grid,
+.one.column {
+  --columns: 1;
 }
 .two.columns,
+.two.grid,
 .two.column {
   --columns: 2;
 }
 .three.columns,
+.three.grid,
 .three.column {
   --columns: 3;
 }
 .four.columns,
+.four.grid,
 .four.column {
   --columns: 4;
 }
 .five.columns,
+.five.grid,
 .five.column {
   --columns: 5;
 }
 .six.columns,
+.six.grid,
 .six.column {
   --columns: 6;
 }
 .seven.columns,
+.seven.grid,
 .seven.column {
   --columns: 7;
 }
 .eight.columns,
+.eight.grid,
 .eight.column {
   --columns: 8;
 }
 .nine.columns,
+.nine.grid,
 .nine.column {
   --columns: 9;
 }
 .ten.columns,
+.ten.grid,
 .ten.column {
   --columns: 10;
 }
 .eleven.columns,
+.eleven.grid,
 .eleven.column {
   --columns: 11;
 }
 .twelve.columns,
-.grid,
-.columns,
-.twelve.column,
-.column {
+.twelve.grid,
+.twelve.column {
   --columns: 12;
 }
-.columns.golden,
-.column.golden {
-  grid-template-columns: 1.618fr 1fr;
+.golden {
+  --gtc: 1.618fr 1fr;
 }
 .golden.reverse {
-  grid-template-columns: 1fr 1.618fr;
+  --gtc: 1fr 1.618fr;
 }
-@media screen and (min-width: 31.7rem) {
-  .grid.mobile,
-  .columns.mobile,
-  .column.mobile,
-  .column.mobile {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns.mobile,
+.columns.mobile.tablet,
+.columns.tablet,
+.columns.desktop,
+.grid.mobile,
+.grid.mobile.tablet,
+.grid.tablet,
+.grid.desktop,
+.column.mobile,
+.column.mobile.tablet,
+.column.tablet,
+.column.desktop {
+  --gtc: var(--one-column);
 }
-@media screen and (min-width: 50.1rem) {
-  .grid.mobile.tablet,
-  .columns.mobile.tablet,
-  .column.mobile.tablet,
-  .column.mobile.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.grid:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.column:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse) {
+  --gtc: repeat(var(--columns), minmax(0, 1fr));
 }
 @media screen and (max-width: calc(31.7rem - 1px)) {
-  .grid.tablet,
+  .columns.mobile,
+  .grid.mobile,
+  .column.mobile {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile {
+    --gtc: var(--one-column);
+  }
+  .golden.reverse.mobile {
+    --gtc: var(--one-column);
+  }
+}
+@media screen and (min-width: 31.7rem) {
   .columns.tablet,
-  .column.tablet,
+  .grid.tablet,
   .column.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.tablet {
+    --gtc: 1fr 1.618fr;
   }
 }
 @media screen and (max-width: calc(50.1rem - 1px)) {
-  .grid.desktop,
+  .columns.mobile.tablet,
+  .grid.mobile.tablet,
+  .column.mobile.tablet {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.mobile.tablet {
+    --gtc: 1fr 1.618fr;
+  }
+}
+@media screen and (min-width: 50.1rem) {
   .columns.desktop,
-  .column.desktop,
+  .grid.desktop,
   .column.desktop {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.desktop {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.desktop {
+    --gtc: 1fr 1.618fr;
   }
 }
 .one.wide {
@@ -995,6 +1046,12 @@ button:active {
 }
 .inner-width.page {
   --width: var(--page-width);
+}
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
 }
 .hide {
   display: none;

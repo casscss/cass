@@ -35,7 +35,6 @@
   --margin: var(--padding-base);
   --gutter: 2rem;
   --gap: var(--padding-base);
-  --columns: 12;
   --width: var(--text-width);
   --text-width: calc(var(--text-measure) * 0.6rem);
   --card-width: calc(var(--text-width) * 0.6);
@@ -281,101 +280,153 @@ pre > code {
   padding: 0;
 }
 /* Composables */
-.grid,
+:root {
+  --multi-column: repeat(var(--columns), minmax(0, 1fr));
+  --one-column: repeat(1, minmax(0, 1fr));
+}
 .columns,
+.grid,
 .column {
+  --columns: 12;
   display: grid;
   gap: var(--gap);
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-columns: var(--gtc, var(--multi-column));
+}
+.one.columns,
+.one.grid,
+.one.column {
+  --columns: 1;
 }
 .two.columns,
+.two.grid,
 .two.column {
   --columns: 2;
 }
 .three.columns,
+.three.grid,
 .three.column {
   --columns: 3;
 }
 .four.columns,
+.four.grid,
 .four.column {
   --columns: 4;
 }
 .five.columns,
+.five.grid,
 .five.column {
   --columns: 5;
 }
 .six.columns,
+.six.grid,
 .six.column {
   --columns: 6;
 }
 .seven.columns,
+.seven.grid,
 .seven.column {
   --columns: 7;
 }
 .eight.columns,
+.eight.grid,
 .eight.column {
   --columns: 8;
 }
 .nine.columns,
+.nine.grid,
 .nine.column {
   --columns: 9;
 }
 .ten.columns,
+.ten.grid,
 .ten.column {
   --columns: 10;
 }
 .eleven.columns,
+.eleven.grid,
 .eleven.column {
   --columns: 11;
 }
 .twelve.columns,
-.grid,
-.columns,
-.twelve.column,
-.column {
+.twelve.grid,
+.twelve.column {
   --columns: 12;
 }
-.columns.golden,
-.column.golden {
-  grid-template-columns: 1.618fr 1fr;
+.golden {
+  --gtc: 1.618fr 1fr;
 }
 .golden.reverse {
-  grid-template-columns: 1fr 1.618fr;
+  --gtc: 1fr 1.618fr;
 }
-@media screen and (min-width: 31.7rem) {
-  .grid.mobile,
-  .columns.mobile,
-  .column.mobile,
-  .column.mobile {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns.mobile,
+.columns.mobile.tablet,
+.columns.tablet,
+.columns.desktop,
+.grid.mobile,
+.grid.mobile.tablet,
+.grid.tablet,
+.grid.desktop,
+.column.mobile,
+.column.mobile.tablet,
+.column.tablet,
+.column.desktop {
+  --gtc: var(--one-column);
 }
-@media screen and (min-width: 50.1rem) {
-  .grid.mobile.tablet,
-  .columns.mobile.tablet,
-  .column.mobile.tablet,
-  .column.mobile.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.grid:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.column:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse) {
+  --gtc: repeat(var(--columns), minmax(0, 1fr));
 }
 @media screen and (max-width: calc(31.7rem - 1px)) {
-  .grid.tablet,
+  .columns.mobile,
+  .grid.mobile,
+  .column.mobile {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile {
+    --gtc: var(--one-column);
+  }
+  .golden.reverse.mobile {
+    --gtc: var(--one-column);
+  }
+}
+@media screen and (min-width: 31.7rem) {
   .columns.tablet,
-  .column.tablet,
+  .grid.tablet,
   .column.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.tablet {
+    --gtc: 1fr 1.618fr;
   }
 }
 @media screen and (max-width: calc(50.1rem - 1px)) {
-  .grid.desktop,
+  .columns.mobile.tablet,
+  .grid.mobile.tablet,
+  .column.mobile.tablet {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.mobile.tablet {
+    --gtc: 1fr 1.618fr;
+  }
+}
+@media screen and (min-width: 50.1rem) {
   .columns.desktop,
-  .column.desktop,
+  .grid.desktop,
   .column.desktop {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.desktop {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.desktop {
+    --gtc: 1fr 1.618fr;
   }
 }
 .one.wide {
@@ -1006,6 +1057,12 @@ button:active {
 }
 .inner-width.page {
   --width: var(--page-width);
+}
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
 }
 .hide {
   display: none;
@@ -1856,11 +1913,11 @@ button:active {
 
 <body>
   <nav class="text-trim cyan blue no-underlines fixed top right left responsive inner-width padding no-padding-bottom">
-      <div class="grid relative text-padding-top">
+      <div class="columns relative text-padding-top">
           
   
-          <a class="seven wide title bold big no-margin-bottom vertical-center" href="" class="">
-                  <svg class="block no-margin-bottom absolute bottom left max-height" style="max-height:1.8em; width: 3.8em;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="288px" height="140px" viewBox="0 0 288 140">
+          <a class="seven wide title bold huge no-margin-bottom vertical-center" href="" class="">
+                  <svg class="block no-margin-bottom absolute bottom left max-height" style="max-height:1.6em; width: 3.5em;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="288px" height="140px" viewBox="0 0 288 140">
                   <g id="Seagull">
                       <path id="seagull_color" fill="#FFFFFF" d="M117.958,148.841c-3.37-0.306-10.57-2.911-12.409-8.119c-6.449-18.272-29.259-61.277-14.4-72.919   c11.249-11.169,21.753-9.804,21.906-16.698c-4.769-14.789-16.811-9.147-23.898-21.14C77.208,9.743,69.166,6.591,62.809,6.591   H39.067c-18.558,0-33.601,15.044-33.601,33.603v266.929c0,18.557,15.043,33.602,33.601,33.602h209.864   c18.559,0,33.603-15.045,33.603-33.602v-156.75L117.958,148.841z"/>
                       <path id="seagull_beak" fill="#D93F27" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M47.183,51.641l55.483,7.95h46.542   c0,0-2.604-12.775-18.842-18.903c-18.125-1.12-21.064,0.766-25.746,0.627c-0.32-0.306-15.156-1.164-15.156-1.164L47.183,51.641z"/>
@@ -1871,10 +1928,10 @@ button:active {
                   </g>
                   </svg>
               <!-- <img src="../images/scenic_drive.svg" class="no-margin-bottom absolute bottom left max-height" alt="The scenic drive seagull" style="max-height:1.8em"> -->
-              <span class="hide mobile tablet tint text-shadow text-margin-bottom" style="padding-left: 2.4em;">
+              <span class="hide mobile tablet tint text-margin-bottom" style="padding-left: 2.4em;">
                   California Stylesheets
               </span>
-              <span class="hide desktop tint text-shadow text-margin-bottom" style="padding-left: 2.4em;">
+              <span class="hide desktop tint text-margin-bottom" style="padding-left: 2em;">
                   CASS
               </span>
           </a>
@@ -1973,7 +2030,6 @@ button:active {
   --margin: var(--padding-base);
   --gutter: 2rem;
   --gap: var(--padding-base);
-  --columns: 12;
   --width: var(--text-width);
   --text-width: calc(var(--text-measure) * 0.6rem);
   --card-width: calc(var(--text-width) * 0.6);
@@ -2219,101 +2275,153 @@ pre > code {
   padding: 0;
 }
 /* Composables */
-.grid,
+:root {
+  --multi-column: repeat(var(--columns), minmax(0, 1fr));
+  --one-column: repeat(1, minmax(0, 1fr));
+}
 .columns,
+.grid,
 .column {
+  --columns: 12;
   display: grid;
   gap: var(--gap);
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-template-columns: var(--gtc, var(--multi-column));
+}
+.one.columns,
+.one.grid,
+.one.column {
+  --columns: 1;
 }
 .two.columns,
+.two.grid,
 .two.column {
   --columns: 2;
 }
 .three.columns,
+.three.grid,
 .three.column {
   --columns: 3;
 }
 .four.columns,
+.four.grid,
 .four.column {
   --columns: 4;
 }
 .five.columns,
+.five.grid,
 .five.column {
   --columns: 5;
 }
 .six.columns,
+.six.grid,
 .six.column {
   --columns: 6;
 }
 .seven.columns,
+.seven.grid,
 .seven.column {
   --columns: 7;
 }
 .eight.columns,
+.eight.grid,
 .eight.column {
   --columns: 8;
 }
 .nine.columns,
+.nine.grid,
 .nine.column {
   --columns: 9;
 }
 .ten.columns,
+.ten.grid,
 .ten.column {
   --columns: 10;
 }
 .eleven.columns,
+.eleven.grid,
 .eleven.column {
   --columns: 11;
 }
 .twelve.columns,
-.grid,
-.columns,
-.twelve.column,
-.column {
+.twelve.grid,
+.twelve.column {
   --columns: 12;
 }
-.columns.golden,
-.column.golden {
-  grid-template-columns: 1.618fr 1fr;
+.golden {
+  --gtc: 1.618fr 1fr;
 }
 .golden.reverse {
-  grid-template-columns: 1fr 1.618fr;
+  --gtc: 1fr 1.618fr;
 }
-@media screen and (min-width: 31.7rem) {
-  .grid.mobile,
-  .columns.mobile,
-  .column.mobile,
-  .column.mobile {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns.mobile,
+.columns.mobile.tablet,
+.columns.tablet,
+.columns.desktop,
+.grid.mobile,
+.grid.mobile.tablet,
+.grid.tablet,
+.grid.desktop,
+.column.mobile,
+.column.mobile.tablet,
+.column.tablet,
+.column.desktop {
+  --gtc: var(--one-column);
 }
-@media screen and (min-width: 50.1rem) {
-  .grid.mobile.tablet,
-  .columns.mobile.tablet,
-  .column.mobile.tablet,
-  .column.mobile.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  }
+.columns:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.grid:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse),
+.column:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse) {
+  --gtc: repeat(var(--columns), minmax(0, 1fr));
 }
 @media screen and (max-width: calc(31.7rem - 1px)) {
-  .grid.tablet,
+  .columns.mobile,
+  .grid.mobile,
+  .column.mobile {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile {
+    --gtc: var(--one-column);
+  }
+  .golden.reverse.mobile {
+    --gtc: var(--one-column);
+  }
+}
+@media screen and (min-width: 31.7rem) {
   .columns.tablet,
-  .column.tablet,
+  .grid.tablet,
   .column.tablet {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.tablet {
+    --gtc: 1fr 1.618fr;
   }
 }
 @media screen and (max-width: calc(50.1rem - 1px)) {
-  .grid.desktop,
+  .columns.mobile.tablet,
+  .grid.mobile.tablet,
+  .column.mobile.tablet {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.mobile.tablet {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.mobile.tablet {
+    --gtc: 1fr 1.618fr;
+  }
+}
+@media screen and (min-width: 50.1rem) {
   .columns.desktop,
-  .column.desktop,
+  .grid.desktop,
   .column.desktop {
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+  .golden.desktop {
+    --gtc: 1.618fr 1fr;
+  }
+  .golden.reverse.desktop {
+    --gtc: 1fr 1.618fr;
   }
 }
 .one.wide {
@@ -2944,6 +3052,12 @@ button:active {
 }
 .inner-width.page {
   --width: var(--page-width);
+}
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
 }
 .hide {
   display: none;
@@ -3832,7 +3946,7 @@ button:active {
     --margin: var(--padding-base);
     --gutter: @gutter;
     --gap: var(--padding-base);
-    --columns: 12;
+    // --columns: 12;
     --width: var(--text-width);
     --text-width: calc(var(--text-measure) * .6rem);
     --card-width: calc(var(--text-width) * .6);
@@ -4069,16 +4183,22 @@ pre > code {
     padding: 0;
 }/* Composables */
 
-.grid {
-  display: grid;
-  gap: var(--gap);
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+:root {
+  
+  --multi-column: repeat(var(--columns), minmax(0, 1fr));
+  --one-column: repeat(1, minmax(0, 1fr));
 }
 
-.columns { &:extend(.grid);}
+.columns {
+  --columns: 12;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--gtc, var(--multi-column));
+}
 
-.column { &:extend(.columns all);}
+.grid, .column { &:extend(.columns all);}
 
+.one.columns { --columns: 1;}
 .two.columns { --columns: 2;}
 .three.columns { --columns: 3;}
 .four.columns { --columns: 4;}
@@ -4089,46 +4209,54 @@ pre > code {
 .nine.columns { --columns: 9;}
 .ten.columns { --columns: 10;}
 .eleven.columns { --columns: 11;}
-.twelve.columns, .grid { --columns: 12;}
+.twelve.columns { --columns: 12;}
 
+.golden { --gtc: 1.618fr 1fr;}
+.golden.reverse { --gtc: 1fr 1.618fr;}
 
-.columns.golden {
-  grid-template-columns: 1.618fr 1fr;
+.columns.mobile, .columns.mobile.tablet, .columns.tablet, .columns.desktop { --gtc: var(--one-column);}
+
+.columns {
+  &:not(.mobile, .mobile.tablet, .tablet, .desktop, .golden, .golden.reverse) {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
 }
 
-.golden.reverse {
-  grid-template-columns: 1fr 1.618fr;
-}
+.under-tablet({
+  .columns.mobile {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
 
+  .golden.mobile { --gtc: var(--one-column);}
+  .golden.reverse.mobile { --gtc: var(--one-column);}
+});
 
-.grid.mobile, .columns.mobile, .column.mobile {
-  .on-tablet({
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  });
-}
+.on-tablet({
+  .columns.tablet {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
 
-.grid.mobile.tablet, .columns.mobile.tablet, .column.mobile.tablet {
-  .on-desktop({
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  .golden.tablet { --gtc: 1.618fr 1fr;}
+  .golden.reverse.tablet { --gtc: 1fr 1.618fr;}
+});
 
-  });
-}
+.under-desktop({
+  .columns.mobile.tablet {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
 
-.grid.tablet, .columns.tablet, .column.tablet {
-  .under-tablet({
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  });
-}
+  .golden.mobile.tablet { --gtc: 1.618fr 1fr;}
+  .golden.reverse.mobile.tablet { --gtc: 1fr 1.618fr;}
+});
 
-.grid.desktop, .columns.desktop, .column.desktop {
-  .under-desktop({
-    --columns: 1;
-    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  });
-}
+.on-desktop({
+  .columns.desktop {
+    --gtc: repeat(var(--columns), minmax(0, 1fr));
+  }
+
+  .golden.desktop { --gtc: 1.618fr 1fr;}
+  .golden.reverse.desktop { --gtc: 1fr 1.618fr;}
+});
 
 .one.wide { grid-column: auto / span 1;}
 .two.wide { grid-column: auto / span 2;}
@@ -4635,6 +4763,14 @@ pre > code {
 
 .inner-width.page {
   --width: var(--page-width);
+}
+
+.golden-width {
+  width: 62%;
+}
+
+.golden-width.reverse {
+  width: 38%;
 }
 
 .hide {
@@ -5337,7 +5473,7 @@ pre > code {
     </section>
 
     <section class="page inner-width padding very dark cool brand-color">
-        <div class="grid desktop">
+        <div class="columns desktop">
           <div class="four wide card inner-width">
             <h4>No workflow</h4>
             <p>No gzipping. No tree-shaking. No&nbsp;stress. Simply use the CSS&nbsp;file.</p>
@@ -5363,456 +5499,444 @@ pre > code {
 
     
     <div class="margin padding page width margin-auto">
-      
-              <section id="cheatsheet" class="feature-width margin-auto">
-                  <h3 class="text-center">California Stylesheets in a nutshell</h3>
-      
-                  <p class="text-center text inner-width"><strong>TL;DR:</strong> Everything is a CSS class that describes HTML elements. To get a red div with standard text inner-width and padding:</p>
-        
-                  <pre class="margin-auto text width small gutter-bottom">&lt;div class="<strong>text inner-width padding red</strong>"&gt;&lt;/div&gt;</pre>
-      
-                    <div class="twelve wide text-align-center margin-top">
-                      <p>Use color alternates for variant colors.</p>
-                      <div class="two column desktop margin-bottom">
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom light blue">light blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom dark blue">dark blue</div>
-                          </div>
-                        </div>
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom bright blue">bright blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom dim blue">dim blue</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-      
-                    <div class="twelve wide text-align-center gutter-bottom">
-                      <p>Use adverbs <strong>very</strong> and <strong>hella</strong> to modify variant colors further.</p>
-                      <div class="two column desktop margin-bottom">
-      
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom very light blue">very light blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom very dark blue">very dark blue</div>
-                          </div>
-                        </div>
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom very bright blue">very bright blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom very dim blue">very dim blue</div>
-                          </div>
-                        </div>
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom hella light blue">hella light blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom hella dark blue">hella dark blue</div>
-                          </div>
-                        </div>
-                        <div class="two column">
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom hella bright blue">hella bright blue</div>
-                          </div>
-                          <div class="vertical-center">
-                            <div class="text-padding border rounded text-margin-bottom hella dim blue">hella dim blue</div>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="twelve wide text-align-center margin-bottom">
-                        <p>Use color helpers to modify color temperature.</p>
-                        <div class="three column desktop page inner-width">
-                            <div class="vertical-center">
-                              <div class="text-padding border rounded text-margin-bottom warm red">warm red</div>
-                            </div>
-                            <div class="vertical-center">
-                              <div class="text-padding border rounded text-margin-bottom cool red">cool red</div>
-                            </div>
-                            <div class="vertical-center">
-                              <div class="text-padding border rounded text-margin-bottom dull red">dull red</div>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-      
-                    <p class="text inner-width">There are 15 standard colors, and 120 variant colors with full contrast support.</p>
-                    <div class="two column tablet text-left">
-      
-                      <div class="two column desktop">
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right red">&nbsp;&nbsp;&nbsp;&nbsp;</span> red
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right orange">&nbsp;&nbsp;&nbsp;&nbsp;</span> orange
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right yellow">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow
-                          </p>
-                        </div>
-        
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right green">&nbsp;&nbsp;&nbsp;&nbsp;</span> green
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right teal">&nbsp;&nbsp;&nbsp;&nbsp;</span> teal
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right cyan">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan
-                          </p>
-                        </div>
-                      </div>
-                      <div class="two column desktop">
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right purple">&nbsp;&nbsp;&nbsp;&nbsp;</span> purple
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right magenta">&nbsp;&nbsp;&nbsp;&nbsp;</span> magenta
-                          </p>
-                        </div>
-        
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right white">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right gray">&nbsp;&nbsp;&nbsp;&nbsp;</span> gray
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right black">&nbsp;&nbsp;&nbsp;&nbsp;</span> black
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-      
-                    <p class="text inner-width">Colors compose with the color next to them in the palette. So composable combinations like <strong>light yellow green</strong> are possible.</p>
-                    <div class="text-left">
-      
-                      <div class="three column tablet">
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right red orange">&nbsp;&nbsp;&nbsp;&nbsp;</span> red orange
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right orange yellow">&nbsp;&nbsp;&nbsp;&nbsp;</span> orange yellow
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right yellow green">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow green
-                          </p>
-                        </div>
-        
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right green teal">&nbsp;&nbsp;&nbsp;&nbsp;</span> green teal
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right teal cyan">&nbsp;&nbsp;&nbsp;&nbsp;</span> teal cyan
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right cyan blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan blue
-                          </p>
-                        </div>
-                        <div class="card inner-width margin-bottom">
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right blue purple">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue purple
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right purple magenta">&nbsp;&nbsp;&nbsp;&nbsp;</span> purple magenta
-                          </p>
-                          <p class="">
-                            <span class="text-padding border rounded text-margin-bottom text-margin-right magenta red">&nbsp;&nbsp;&nbsp;&nbsp;</span> magenta red
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+      <section class="page inner-width">
       
       
-                    <p class="text inner-width">Three of the palette colors are completely different depending on brand color:</p>
+        <div class="two columns golden desktop margin-bottom">
+          <div class="border dotted hella light white thick padding vertical-center">
+            <p>Use the grid with the <strong>columns</strong> class:</p>
       
-                    <div class="twelve wide">
-                      <div class="text-align-left margin-bottom three column tablet">
-                        <p class="card inner-width">
-                          <span class="text-padding border rounded text-margin-bottom text-margin-right brand-color">&nbsp;&nbsp;&nbsp;&nbsp;</span> brand-color
-                        </p>
-                        <p class="card inner-width">
-                          <span class="text-padding border rounded text-margin-bottom text-margin-right complement">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement
-                        </p>
-                        <p class="card inner-width">
-                          <span class="text-padding border rounded text-margin-bottom text-margin-right accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> accent
-                        </p>
-                      </div>
-                    </div>
+            <div class="columns">
       
-                    <div class="twelve wide text-align-center margin-top gutter-bottom">
-                      <p class="text inner-width">Use <strong>tint</strong> (for white text) and <strong>shade</strong> (for black text) to override text color, as adverbs and helpers don't enforce text contrast standards.</p>
-                      <p class="text inner-width">Helpers, variants and adverbs can all work together on a single color, making for more than <strong>1200 color combinations</strong>.</p>
-                      <div class="grid twelve-column tablet">
-                        <div class="two wide"></div>
-                        <div class="four wide vertical-center">
-                          <div class="text-padding border rounded text-margin-bottom very bright warm green">very bright warm green</div>
-                        </div>
-                        <div class="four wide vertical-center">
-                          <div class="text-padding border rounded text-margin-bottom hella dark cool red">hella dark cool red</div>
-                        </div>
-                      </div>
-                    </div>
+            </div>
+            <div class="columns margin-bottom">
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
+              <div class="thick border dashed">&nbsp;</div>
       
+      
+            </div>
+      
+            <p class="text-margin-bottom">Add the <strong>two</strong> or <strong>three</strong> class for fewer columns.</p>
+            
+            <div class="one columns margin-bottom">
+              <div>
+                <p class="small">two columns</p>
+                <div class="two columns">
+                  <div class="thick border dashed">&nbsp;</div>
+                  <div class="thick border dashed">&nbsp;</div>
+                </div>
+              </div>
+              <div>
+                <p class="small">three columns</p>
+                <div class="three columns">
+                  <div class="thick border dashed">&nbsp;</div>
+                  <div class="thick border dashed">&nbsp;</div>
+                  <div class="thick border dashed">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+      
+            <div>
+              <p class="text-margin-bottom">Add <strong>golden</strong> to <strong>two columns</strong> for golden columns.</p>
+              <div>
+                <p>golden two columns</p>
+                <div class="golden two columns">
+                  <div class="thick border dashed">&nbsp;</div>
+                  <div class="thick border dashed">&nbsp;</div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+          <div class="border dotted hella light white thick padding vertical-center">
+            <p>Space out elements with <strong>padding</strong>, <strong>margin</strong> and <strong>gutter</strong>.</p>
+            <div class="margin-bottom">
+              <p class="text-margin-bottom">padding</p>
+              <div class="border thick padding responsive very light dull brand-color">
+                <div class="border border-text-color dotted placeholder trim">
+                </div>
+              </div>
+            </div>
+            <div class="margin-bottom">
+              <p class="text-margin-bottom">margin</p>
+              <div class="border border-text-color dotted">
+                <div class="border very light dull brand-color thick margin responsive placeholder">
+                </div>
+              </div>
+            </div>
+            <div class="">
+              <p class="text-margin-bottom">gutter</p>
+              <div class="border border-text-color dotted">
+                <div class="border very light dull brand-color thick gutter responsive placeholder">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="two columns reverse golden desktop margin-bottom">
+          <div class="border dotted hella light white thick padding vertical-center">
+            <p>Add <strong>card</strong>, <strong>text</strong>, <strong>page</strong> or <strong>responsive</strong> with <strong>width</strong> to specify the width.</p>
+            <div class="two columns golden text-margin-bottom">
+              <div class="">
+                <p class="text-margin-bottom">text width</p>
+                <div class="border thick border-text-color placeholder full-width force">
+                </div>
+              </div>
+              <div class="">
+                <p class="text-margin-bottom">card width</p>
+                <div class="border thick border-text-color placeholder full-width force">
+                </div>
+              </div>
+            </div>
+            <div class="margin-bottom full-width force">
+              <div>
+                <p class="text-margin-bottom">page width</p>
+                <div class="border thick border-text-color placeholder full-width force">
+                </div>
+              </div>
+            </div>
+            <p class="text-margin-bottom">Use <strong>inner-width</strong> instead of <strong>width</strong> to set inside width.</p>
+      
+            <div class="">
+              <p class="text-margin-bottom">card inner-width</p>
+              <div class="border thick border-text-color full-width force text-padding">
+                <div class="small placeholder border dotted border-text-color golden-width reverse margin-auto">
                     
-                    
-                    <p class="text inner-width text-left">By default, color classes change the background color of an element. When <strong>text-color</strong> is added, they instead change the text color.</p>
-                    <div class="grid twelve-column tablet gutter-bottom">
-                      <div class="three wide"></div>
-                      <div class="three wide text-align-center margin-bottom ">
-                        <div class=" text-margin-bottom text-color big bold red">text-color red</div>
-                      </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border dotted hella light white thick padding vertical-center">
+            <p class="text inner-width">The <strong>wide</strong> composable lets you specify column span within an any-column grid.</p>
+            <div class="grid margin-bottom">
+              <div class="border border-text-color text-padding five wide"><span class="hide mobile">five wide</span></div>
+              <div class="border border-text-color text-padding seven wide"><span class="hide mobile">seven wide</span></div>
+            </div>
+            <div class="grid margin-bottom">
+              <div class="border border-text-color text-padding six wide"><span class="hide mobile">six wide</span></div>
+              <div class="border border-text-color text-padding six wide"><span class="hide mobile">six wide</span></div>
+            </div>
+            <div class="grid margin-bottom">
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+              <div class="border border-text-color text-padding two wide"><span class="hide mobile">two wide</span></div>
+            </div>
+            <div class="margin-bottom">
+              <p class="text-margin-bottom">Center elements with <strong>margin-auto</strong> and <strong>vertical-center</strong>.</p>
+              <p class="text-margin-bottom text-center">margin-auto</p>
+              <div class="margin-auto brand-color text-padding placeholder golden-width">
+                
+              </div>
+            </div>
+            <div class="no-margin-bottom">
+              <p class="text-margin-bottom text-center">vertical-center</p>
+              <div class="two column golden">
+              <div class="text-align-left">
+                <p>Center vertically with the .vertical-center composable on an element that has children.</p>
+              </div>
       
-                      <div class="three wide text-align-center margin-bottom ">
-                        <div class=" text-margin-bottom text-color big bold green">text-color green</div>
-                      </div>
-                      
-                    </div>
+              <div class="vertical-center">
+                <div class="margin-auto brand-color text-padding">
+                  div
+                </div>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
       
-                    <div class="twelve wide text-align-center gutter-bottom">
-                      <p>Use a <strong>two column</strong> container for two columns.</p>
-                      <div class="text inner-width no-margin-bottom gap-gutter">
-                        <div>
-                          <h6>two column</h6>
-                          <div class="two column gap-text-padding no-margin-bottom">
-                            <div class="brand-color placeholder">
-                            </div>
         
-                            <div class="brand-color placeholder">
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <h6>two column golden</h6>
-                          <div class="two column golden gap-text-padding no-margin-bottom">
-                            <div class="brand-color placeholder">
-                            </div>
-        
-                            <div class="brand-color placeholder">
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          <h6>two column golden reverse</h6>
-                          <div class="two column golden reverse gap-text-padding no-margin-bottom">
-                            <div class="brand-color placeholder">
-                            </div>
-        
-                            <div class="brand-color placeholder">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>  
-                    
       
-                    <div class="twelve wide text-align-center gutter-bottom">
-                      <p class="text inner-width">The <strong>text width</strong> and <strong>card width</strong> composables are golden to each other. Together, they're as wide as <strong>page width</strong>.</p>
-                      <div class="two column golden text width margin-auto text-margin-bottom">
-                        <div>
-                          <p class="text-margin-bottom">text width</p>
-                          <div class="border thick current-color placeholder">
-                          </div>
-                        </div>
-                        <div>
-                          <p class="text-margin-bottom">card width</p>
-                          <div class="border thick current-color placeholder">
-                          </div>
-                        </div>
-                      </div>
+        <div class="border thick dotted hella light white padding margin-bottom">
+            <p class="text inner-width">There are 15 standard colors, and 120 variant colors with full contrast support.</p>
+            <div class="two column tablet text-left">
       
-                      <div class="text width margin-auto margin-bottom">
-                        <div>
-                          <p class="text-margin-bottom">page width</p>
-                          <div class="border thick current-color placeholder">
-                          </div>
-                        </div>
-                      </div>
-                      <p class="text inner-width">The <strong>text width</strong> class represents how wide your text is supposed to be.</p>
-                      <p class="text inner-width">Use <strong>text inner-width</strong> to enforce text measure inside an element. Use <strong>page inner-width</strong> for layout container elements. </p>
-                      <div class="border thick current-color text-padding-top text-padding-bottom text width margin-auto margin-bottom">
-                        <div class="card width force margin-auto dashed border thick current-color placeholder"></div>
-                      </div>
-                      <p class="text inner-width">Don't forget to use <strong>margin-auto</strong> to center elements where necessary.</p>
-                    </div>
+              <div class="two column desktop">
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right red">&nbsp;&nbsp;&nbsp;&nbsp;</span> red
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right orange">&nbsp;&nbsp;&nbsp;&nbsp;</span> orange
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right yellow">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow
+                  </p>
+                </div>
+      
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right green">&nbsp;&nbsp;&nbsp;&nbsp;</span> green
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right teal">&nbsp;&nbsp;&nbsp;&nbsp;</span> teal
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right cyan">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan
+                  </p>
+                </div>
+              </div>
+              <div class="two column desktop">
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right purple">&nbsp;&nbsp;&nbsp;&nbsp;</span> purple
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right magenta">&nbsp;&nbsp;&nbsp;&nbsp;</span> magenta
+                  </p>
+                </div>
+      
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right white">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right gray">&nbsp;&nbsp;&nbsp;&nbsp;</span> gray
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right black">&nbsp;&nbsp;&nbsp;&nbsp;</span> black
+                  </p>
+                </div>
+              </div>
+            </div>
+      
+            <p class="text inner-width">Colors compose with the color next to them in the palette. So composable combinations like <strong>light yellow green</strong> are possible.</p>
+            <div class="text-left">
+      
+              <div class="three column desktop">
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right red orange">&nbsp;&nbsp;&nbsp;&nbsp;</span> red orange
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right orange yellow">&nbsp;&nbsp;&nbsp;&nbsp;</span> orange yellow
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right yellow green">&nbsp;&nbsp;&nbsp;&nbsp;</span> yellow green
+                  </p>
+                </div>
+      
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right green teal">&nbsp;&nbsp;&nbsp;&nbsp;</span> green teal
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right teal cyan">&nbsp;&nbsp;&nbsp;&nbsp;</span> teal cyan
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right cyan blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan blue
+                  </p>
+                </div>
+                <div class="card inner-width margin-bottom">
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right blue purple">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue purple
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right purple magenta">&nbsp;&nbsp;&nbsp;&nbsp;</span> purple magenta
+                  </p>
+                  <p class="">
+                    <span class="text-padding border rounded text-margin-bottom text-margin-right magenta red">&nbsp;&nbsp;&nbsp;&nbsp;</span> magenta red
+                  </p>
+                </div>
+              </div>
+            </div>
+        </div>
       
       
-                    <p class="text-center">Composables can give elements different looks:</p>
-                    <div class="two column text-padding text-align-center gutter-bottom">
-                      <div class="text-padding text-align-center margin-bottom">
-                        <ul class="no-list-style no-margin-bottom">
-                          <li class="padding margin-bottom rounded box-shadow light white">box-shadow</li>
-                          <li class="padding margin-bottom rounded inset dull light white">inset</li>
-                          <li class="padding margin-bottom rounded shallow box-shadow light white">shallow box-shadow</li>
-                          <li class="padding margin-bottom rounded deep box-shadow light white">deep box-shadow</li>
-                        </ul>
-                      </div>
-          
-                      <div class="text-padding text-align-center margin-bottom">
-                        <ul class="no-list-style no-margin-bottom">
-                          <li class="padding margin-bottom rounded border current-color border ">current-color border</li>
-                          <li class="padding margin-bottom rounded border thick border ">thick border</li>
-                          <li class="padding margin-bottom rounded border dashed border ">dashed border</li>
-                          <li class="padding margin-bottom rounded border dotted border ">dotted border</li>
-                        </ul>
-                      </div>
-                    </div>
-                    
-                    <p class="text-center">Composables can change how text looks:</p>
+        <div class="border dotted thick hella light white padding margin-bottom">
+          <p class="text inner-width">Three palette colors are different depending on brand color:</p>
       
-                    <div class="two wide hide mobile"></div>
+          <div>
+            <div class="text-align-left three column tablet">
+              <p class="card inner-width">
+                <span class="text-padding border rounded text-margin-bottom text-margin-right brand-color">&nbsp;&nbsp;&nbsp;&nbsp;</span> brand-color
+              </p>
+              <p class="card inner-width">
+                <span class="text-padding border rounded text-margin-bottom text-margin-right complement">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement
+              </p>
+              <p class="card inner-width">
+                <span class="text-padding border rounded text-margin-bottom text-margin-right accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> accent
+              </p>
+            </div>
+          </div>
+        </div>
       
-                    <div class="twelve wide text-align-center">
-                      <div class="grid tablet no-margin-bottom">
-                        <div class="four wide">
-                          <h6>sans-serif</h6>
-                          <ul class="no-list-style">
-                            <li class="small text-align-left sans-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                          </ul>
-                        </div>
-        
-                        <div class="four wide">
-                          <h6>serif</h6>
-                          <ul class="no-list-style">
-                            <li class="small text-align-left serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                          </ul>
-                        </div>
-        
-                        <div class="four wide">
-                          <h6>monospace</h6>
-                          <ul class="no-list-style">
-                            <li class="small text-align-left monospace">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                          </ul>
-                        </div>
-                      </div>
-                      
-                    </div>
-        
-                    <div class="twelve wide text-align-center font-size margin-top gutter-bottom" no-margin-bottom>
-                      <div class="grid tablet no-margin-bottom">
-                        <div class="four wide">
-                          <h6 class="small">small</h6>
-                          <p class="small">Hello, world.</p>
-                        </div>
-                        <div class="four wide">
-                          <h6 class="small">big</h6>
-                          <p class="big">Hello, world.</p>
-                        </div>
-                        <div class="four wide">
-                          <h6 class="small">huge</h6>
-                          <p class="huge">Hello, world.</p>
-                        </div>
-                      </div>
-                    </div>
-        
-                    <div class="twelve wide text-align-center gutter-bottom">
-                      <p>Space things out with <strong>padding</strong>, <strong>margin</strong> and <strong>gutter</strong>, which is like a double margin.</p>
-                      <div class="grid tablet">
-                        <div class="four wide margin-bottom">
-                          <h6>padding</h6>
-                          <div class="border thick padding responsive very light dull brand-color">
-                            <div class="border current-color dashed placeholder trim">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="four wide margin-bottom">
-                          <h6>margin</h6>
-                          <div class="border current-color dashed">
-                            <div class="border very light dull brand-color thick margin responsive placeholder">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="four wide margin-bottom">
-                          <h6>gutter</h6>
-                          <div class="border current-color dashed">
-                            <div class="border very light dull brand-color thick gutter responsive placeholder">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-        
-                    <div class="twelve wide text-align-center hide mobile margin-bottom">
-                      <h5>Grid width classes</h5>
-                      <p class="text inner-width">The <strong>wide</strong> composable let you specify column span within an any-column grid.</p>
-                      <div class="grid margin-bottom">
-                        <div class="border current-color text-padding five wide"><span class="hide mobile">five wide</span></div>
-                        <div class="border current-color text-padding seven wide"><span class="hide mobile">seven wide</span></div>
-                      </div>
-                      <div class="grid margin-bottom">
-                        <div class="border current-color text-padding six wide"><span class="hide mobile">six wide</span></div>
-                        <div class="border current-color text-padding six wide"><span class="hide mobile">six wide</span></div>
-                      </div>
-                      <div class="grid margin-bottom">
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                        <div class="border current-color text-padding two wide"><span class="hide mobile">two wide</span></div>
-                      </div>
-                    </div>
-        
-                    <div class="twelve wide text-align-center gutter-top no-margin-bottom">
-                      <h5>Centering</h5>
-                      <div class="three column tablet no-margin-bottom">
-                        <div>
-                          <h6>text-center</h6>
-                          <div class="text-align-center">
-                            <p>This is centered text.</p>
-                          </div>
-                        </div>
-                        <div>
-                          <h6>margin-auto</h6>
-                          <div class="">
-                            <div class="margin-auto inline-block brand-color text-padding">
-                              div
-                            </div>
-                          </div>
-                        </div>
-                        <div class="no-margin-bottom">
-                          <h6>vertical-center</h6>
-                          <div class="two column golden">
-                          <div class="text-align-left">
-                            <p>Center vertically with the .vertical-center composable on an element that has children.</p>
-                          </div>
-        
-                          <div class="vertical-center">
-                            <div class="margin-auto brand-color text-padding">
-                              div
-                            </div>
-                          </div>
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </div>
+        <div class="two columns golden desktop margin-bottom">
+          <div class="border dotted hella light white thick padding vertical-center">
+                <p>Use color alternates for variant colors.</p>
+                <div class="two column tablet margin-bottom">
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded light blue">light blue</div>
                   </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded dark blue">dark blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded bright blue">bright blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded dim blue">dim blue</div>
+                  </div>
+                </div>
       
-                </section>
+      
+      
+                <p>Use adverbs <strong>very</strong> and <strong>hella</strong> to modify variant colors further.</p>
+      
+                <div class="two column tablet margin-bottom">
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded very light blue">very light blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded very dark blue">very dark blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded very bright blue">very bright blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded very dim blue">very dim blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded hella light blue">hella light blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded hella dark blue">hella dark blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded hella bright blue">hella bright blue</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded hella dim blue">hella dim blue</div>
+                  </div>
+                </div>
+          </div>
+          <div class="vertical-center">
+      
+            <div class="border dotted hella light white thick padding margin-bottom">
+              <p>Use color helpers to modify color temperature.</p>
+              <div class="two column tablet">
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded red"> red</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded warm red">warm red</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded cool red">cool red</div>
+                  </div>
+                  <div class="vertical-center">
+                    <div class="text-padding border rounded dull red">dull red</div>
+                  </div>
+              </div>
+            </div>
+            <div class="border dotted hella light white thick padding">
+              <p class="text inner-width">Helpers, variants and adverbs can all work together.</p>
+              <div class="two columns tablet">
+                <div class="vertical-center">
+                  <div class="text-padding border rounded very bright warm green">very bright warm green</div>
+                </div>
+                <div class="vertical-center">
+                  <div class="text-padding border rounded hella dark cool red">hella dark cool red</div>
+                </div>
+              </div>
+            </div>
+                
       
       
                 
+          </div>
+        </div>
+      
+        <div class="border dotted hella light white thick padding margin-bottom">
+          <p class="text-center">Composables can change how text looks:</p>
+      
+          <div class="two wide hide mobile"></div>
+      
+          <div class="twelve wide text-align-center">
+            <div class="grid tablet no-margin-bottom">
+              <div class="four wide">
+                <h6>sans-serif</h6>
+                <ul class="no-list-style">
+                  <li class="small text-align-left sans-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+              </div>
+      
+              <div class="four wide">
+                <h6>serif</h6>
+                <ul class="no-list-style">
+                  <li class="small text-align-left serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+              </div>
+      
+              <div class="four wide">
+                <h6>monospace</h6>
+                <ul class="no-list-style">
+                  <li class="small text-align-left monospace">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+      
+          <div class="twelve wide text-align-center font-size margin-top" no-margin-bottom>
+            <div class="grid tablet no-margin-bottom">
+              <div class="four wide">
+                <h6 class="small">small</h6>
+                <p class="no-margin-bottom small">Hello, world.</p>
+              </div>
+              <div class="four wide">
+                <h6 class="small">big</h6>
+                <p class="big">Hello, world.</p>
+              </div>
+              <div class="four wide">
+                <h6 class="small">huge</h6>
+                <p class="no-margin-bottom huge">Hello, world.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border dotted hella light white thick padding margin-bottom">
+      
+          <p class="text-center">Composables can give elements different looks:</p>
+          <div class="two column tablet text-align-center">
+            <div class="text-align-center ">
+              <ul class="no-list-style no-margin-bottom">
+                <li class="padding margin-bottom rounded box-shadow light white">box-shadow</li>
+                <li class="padding margin-bottom rounded inset dull light white">inset</li>
+                <li class="padding margin-bottom rounded shallow box-shadow light white">shallow box-shadow</li>
+                <li class="padding rounded deep box-shadow light white">deep box-shadow</li>
+              </ul>
+            </div>
+      
+            <div class="text-align-center">
+              <ul class="no-list-style no-margin-bottom">
+                <li class="padding margin-bottom rounded border border-text-color border ">border-text-color border</li>
+                <li class="padding margin-bottom rounded border thick border ">thick border</li>
+                <li class="padding margin-bottom rounded border dotted border ">dotted border</li>
+                <li class="padding rounded border dotted border ">dotted border</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>          
 
     </div>
 
@@ -5900,7 +6024,7 @@ pre > code {
 
     <div class="page inner-width padding margin-bottom">
       <h2 class="responsive inner-width">Form examples</h2>
-      <div class="grid desktop">
+      <div class="columns desktop">
         <div class="six wide">
               <p class="text inner-width">Using shadow composables:</p>
               <form onsubmit="event.preventDefault();" class="very light white padding rounded shadow margin-auto card width margin-bottom">
