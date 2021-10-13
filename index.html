@@ -50,14 +50,14 @@
   --complement: #600617;
   --accent: #00516a;
   --white: #fafdfc;
-  --white-gray: #d8e4e3;
+  --white-gray: #e9f1f0;
   --gray: #b6ccc9;
-  --gray-black: #61706e;
-  --black: #0b1512;
+  --gray-black: #606c6a;
+  --black: #0a0c0c;
   --red: #ba2f27;
-  --red-orange: #cd6b13;
-  --orange: #e1a800;
-  --orange-yellow: #ddd300;
+  --red-orange: #cf6b13;
+  --orange: #e3a700;
+  --orange-yellow: #ded300;
   --yellow: #daff00;
   --yellow-green: #7dd516;
   --green: #20ab2c;
@@ -96,7 +96,7 @@
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
   --shadow-position: 1px;
   --shadow-blur: 3px;
-  --shadow-color: rgba(11, 21, 18, 0.3);
+  --shadow-color: rgba(10, 12, 12, 0.3);
 }
 /* Responsive settings for mobile */
 @media screen and (min-width: 1px) {
@@ -500,9 +500,6 @@ button:active {
 .gutter {
   margin: var(--gutter);
 }
-.inner-gutter {
-  padding: var(--gutter);
-}
 .text-padding {
   padding: var(--text-padding);
 }
@@ -544,18 +541,6 @@ button:active {
 }
 .gutter-left {
   margin-left: var(--gutter);
-}
-.inner-gutter-top {
-  padding-top: var(--gutter);
-}
-.inner-gutter-right {
-  padding-right: var(--gutter);
-}
-.inner-gutter-bottom {
-  padding-bottom: var(--gutter);
-}
-.inner-gutter-left {
-  padding-left: var(--gutter);
 }
 .text-padding-top {
   padding-top: var(--text-padding);
@@ -622,7 +607,7 @@ button:active {
 }
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: rgba(11, 21, 18, 0.16);
+  --shadow-color: rgba(10, 12, 12, 0.16);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -777,25 +762,13 @@ button:active {
 .shade,
 .text-black,
 .white,
+.white.gray,
 .gray,
-.very.light.black,
+.very.light.gray.black,
+.hella.light.gray.black,
+.hella.bright.gray.black,
 .hella.light.black,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.orange,
-.yellow,
-.green,
-.teal,
-.cyan,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.purple,
-.hella.light.purple,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
+.light.brand-color,
 .very.light.brand-color,
 .hella.light.brand-color,
 .very.bright.brand-color,
@@ -804,28 +777,37 @@ button:active {
 .very.light.accent,
 .hella.light.accent,
 .hella.bright.accent,
-.white.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.light.red.orange,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
 .very.light.red.orange,
 .hella.light.red.orange,
-.bright.red.orange,
 .very.bright.red.orange,
 .hella.bright.red.orange,
+.orange,
 .orange.yellow,
+.yellow,
 .yellow.green,
+.green,
 .green.teal,
+.teal,
 .teal.cyan,
+.cyan,
 .cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
 .very.light.blue.purple,
 .hella.light.blue.purple,
 .hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
 .very.light.purple.magenta,
 .hella.light.purple.magenta,
 .hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.hella.bright.magenta,
 .very.light.magenta.red,
 .hella.light.magenta.red,
 .hella.bright.magenta.red {
@@ -840,62 +822,62 @@ button:active {
 .text-white,
 .hella.dark.gray,
 .hella.dim.gray,
+.gray.black,
 .black,
+.brand-color,
+.complement,
+.accent,
 .red,
+.red.orange,
 .very.dark.orange,
 .hella.dark.orange,
 .very.dim.orange,
 .hella.dim.orange,
+.very.dark.orange.yellow,
+.hella.dark.orange.yellow,
+.hella.dim.orange.yellow,
 .hella.dark.yellow,
 .hella.dim.yellow,
+.very.dark.yellow.green,
+.hella.dark.yellow.green,
+.very.dim.yellow.green,
+.hella.dim.yellow.green,
 .dark.green,
 .very.dark.green,
 .hella.dark.green,
 .dim.green,
 .very.dim.green,
 .hella.dim.green,
-.dark.teal,
-.very.dark.teal,
-.hella.dark.teal,
-.dim.teal,
-.very.dim.teal,
-.hella.dim.teal,
-.very.dark.cyan,
-.hella.dark.cyan,
-.hella.dim.cyan,
-.blue,
-.purple,
-.magenta,
-.brand-color,
-.complement,
-.accent,
-.gray.black,
-.red.orange,
-.very.dark.orange.yellow,
-.hella.dark.orange.yellow,
-.hella.dim.orange.yellow,
-.very.dark.yellow.green,
-.hella.dark.yellow.green,
-.very.dim.yellow.green,
-.hella.dim.yellow.green,
 .dark.green.teal,
 .very.dark.green.teal,
 .hella.dark.green.teal,
 .dim.green.teal,
 .very.dim.green.teal,
 .hella.dim.green.teal,
+.dark.teal,
+.very.dark.teal,
+.hella.dark.teal,
+.dim.teal,
+.very.dim.teal,
+.hella.dim.teal,
 .very.dark.teal.cyan,
 .hella.dark.teal.cyan,
 .very.dim.teal.cyan,
 .hella.dim.teal.cyan,
+.very.dark.cyan,
+.hella.dark.cyan,
+.hella.dim.cyan,
 .dark.cyan.blue,
 .very.dark.cyan.blue,
 .hella.dark.cyan.blue,
 .dim.cyan.blue,
 .very.dim.cyan.blue,
 .hella.dim.cyan.blue,
+.blue,
 .blue.purple,
+.purple,
 .purple.magenta,
+.magenta,
 .magenta.red {
   --t: var(--white);
   color: var(--white);
@@ -943,7 +925,7 @@ button:active {
 }
 .text-shadow {
   --shadow-blur: 0;
-  --shadow-color: rgba(11, 21, 18, 0.6);
+  --shadow-color: rgba(10, 12, 12, 0.6);
   text-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .text-trim {
@@ -1015,6 +997,12 @@ button:active {
 .width.force {
   width: var(--width);
 }
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
+}
 .responsive {
   --width: var(--responsive-width);
 }
@@ -1034,35 +1022,18 @@ button:active {
 .full {
   --width: 100%;
 }
-.inner-width {
+.inner.width {
+  max-width: 100%;
   padding-left: calc(50% - (var(--width) * 0.5));
   padding-right: calc(50% - (var(--width) * 0.5));
 }
-.inner-width.padding-left,
-.inner-width.padding {
+.inner.width.padding-left,
+.inner.width.padding {
   padding-left: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
 }
-.inner-width.padding-right,
-.inner-width.padding {
+.inner.width.padding-right,
+.inner.width.padding {
   padding-right: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
-}
-.inner-width.responsive {
-  --width: var(--responsive-width);
-}
-.inner-width.card {
-  --width: var(--card-width);
-}
-.inner-width.text {
-  --width: var(--text-width);
-}
-.inner-width.page {
-  --width: var(--page-width);
-}
-.golden-width {
-  width: 62%;
-}
-.golden-width.reverse {
-  width: 38%;
 }
 .hide {
   display: none;
@@ -1287,7 +1258,6 @@ button:active {
 }
 .dull {
   --o: 0.3;
-  --s: 33% !important;
   background-image: linear-gradient(rgba(123.3, 123.3, 123.3, var(--o)), rgba(123.3, 123.3, 123.3, var(--o)));
 }
 .light {
@@ -1304,71 +1274,171 @@ button:active {
   --jump: 0.15;
 }
 .dim {
-  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 3 * var(--v, 0)));
-  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 2 * var(--v, 0)));
+  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * 1.25 * var(--v, 0))) !important;
+  --jump: 0.1;
 }
 .white {
   --h: 165;
   --s: 46%;
   --l: 99%;
-  --o: 0.01;
+  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
   --b: 100%;
 }
 .dark.white {
-  --b: 95%;
+  --b: 97%;
 }
 .bright.white {
   --b-s: 56%;
-  --b-l: 100%;
+  --b-l: 99%;
 }
 .dim.white {
   --b-s: 36%;
   --b-l: 98%;
+}
+.white.gray {
+  --h: 170;
+  --s: 21%;
+  --l: 93%;
+  --o: 0.07;
+  --jump: 0.02;
+}
+.light.white.gray {
+  --b: 96%;
+}
+.dark.white.gray {
+  --b: 90%;
+}
+.bright.white.gray {
+  --b-s: 31%;
+  --b-l: 94%;
+}
+.dim.white.gray {
+  --b-s: 11%;
+  --b-l: 93%;
 }
 .gray {
   --h: 172;
   --s: 17%;
   --l: 76%;
   --o: 0.1;
+  --jump: 0.03;
 }
 .light.gray {
-  --b: 84%;
+  --b: 81%;
 }
 .dark.gray {
-  --b: 68%;
+  --b: 71%;
 }
 .bright.gray {
   --b-s: 27%;
-  --b-l: 78%;
+  --b-l: 77%;
 }
 .dim.gray {
   --b-s: 7%;
   --b-l: 75%;
 }
+.gray.black {
+  --h: 172;
+  --s: 6%;
+  --l: 40%;
+  --o: 0.15;
+  --jump: 0.1;
+}
+.light.gray.black {
+  --b: 48%;
+}
+.dark.gray.black {
+  --b: 32%;
+}
+.bright.gray.black {
+  --b-s: 16%;
+  --b-l: 42%;
+}
+.dim.gray.black {
+  --b-s: 0%;
+  --b-l: 39%;
+}
 .black {
   --h: 165;
-  --s: 30%;
-  --l: 6%;
-  --o: 0.4;
-  --jump: 0.4;
+  --s: 8%;
+  --l: 4%;
+  --o: 0.2;
+  --jump: 0.2;
 }
 .light.black {
-  --b: 22%;
+  --b: 16%;
 }
 .dark.black {
   --b: 0%;
 }
 .bright.black {
-  --b-s: 40%;
-  --b-l: 10%;
+  --b-s: 18%;
+  --b-l: 7%;
 }
 .dim.black {
-  --b-s: 20%;
-  --b-l: 4%;
+  --b-s: 0%;
+  --b-l: 3%;
+}
+.brand-color {
+  --h: 167;
+  --s: 100%;
+  --l: 21%;
+}
+.light.brand-color {
+  --b: 33%;
+}
+.dark.brand-color {
+  --b: 9%;
+}
+.bright.brand-color {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.brand-color {
+  --b-s: 90%;
+  --b-l: 19%;
+}
+.complement {
+  --h: 349;
+  --s: 87%;
+  --l: 20%;
+}
+.light.complement {
+  --b: 32%;
+}
+.dark.complement {
+  --b: 8%;
+}
+.bright.complement {
+  --b-s: 97%;
+  --b-l: 23%;
+}
+.dim.complement {
+  --b-s: 77%;
+  --b-l: 19%;
+}
+.accent {
+  --h: 194;
+  --s: 100%;
+  --l: 21%;
+}
+.light.accent {
+  --b: 33%;
+}
+.dark.accent {
+  --b: 9%;
+}
+.bright.accent {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.accent {
+  --b-s: 90%;
+  --b-l: 19%;
 }
 .red {
   --h: 3;
@@ -1389,23 +1459,63 @@ button:active {
   --b-s: 56%;
   --b-l: 43%;
 }
-.orange {
-  --h: 45;
-  --s: 100%;
+.red.orange {
+  --h: 28;
+  --s: 83%;
   --l: 44%;
+  --o: 0.2;
+}
+.light.red.orange {
+  --b: 47%;
+}
+.dark.red.orange {
+  --b: 42%;
+}
+.bright.red.orange {
+  --b-s: 93%;
+  --b-l: 45%;
+}
+.dim.red.orange {
+  --b-s: 73%;
+  --b-l: 44%;
+}
+.orange {
+  --h: 44;
+  --s: 100%;
+  --l: 45%;
   --o: 0.1;
 }
 .light.orange {
   --b: 45%;
 }
 .dark.orange {
-  --b: 43%;
+  --b: 44%;
 }
 .bright.orange {
   --b-s: 100%;
-  --b-l: 44%;
+  --b-l: 45%;
 }
 .dim.orange {
+  --b-s: 90%;
+  --b-l: 44%;
+}
+.orange.yellow {
+  --h: 57;
+  --s: 100%;
+  --l: 44%;
+  --o: 0.075;
+}
+.light.orange.yellow {
+  --b: 44%;
+}
+.dark.orange.yellow {
+  --b: 43%;
+}
+.bright.orange.yellow {
+  --b-s: 100%;
+  --b-l: 44%;
+}
+.dim.orange.yellow {
   --b-s: 90%;
   --b-l: 44%;
 }
@@ -1429,260 +1539,6 @@ button:active {
   --b-s: 90%;
   --b-l: 50%;
 }
-.green {
-  --h: 125;
-  --s: 68%;
-  --l: 40%;
-}
-.light.green {
-  --b: 48%;
-}
-.dark.green {
-  --b: 32%;
-}
-.bright.green {
-  --b-s: 78%;
-  --b-l: 42%;
-}
-.dim.green {
-  --b-s: 58%;
-  --b-l: 39%;
-}
-.teal {
-  --h: 176;
-  --s: 67%;
-  --l: 41%;
-}
-.light.teal {
-  --b: 49%;
-}
-.dark.teal {
-  --b: 33%;
-}
-.bright.teal {
-  --b-s: 77%;
-  --b-l: 43%;
-}
-.dim.teal {
-  --b-s: 57%;
-  --b-l: 40%;
-}
-.cyan {
-  --h: 179;
-  --s: 92%;
-  --l: 49%;
-  --o: 0.08;
-}
-.light.cyan {
-  --b: 61%;
-}
-.dark.cyan {
-  --b: 37%;
-}
-.bright.cyan {
-  --b-s: 100%;
-  --b-l: 52%;
-}
-.dim.cyan {
-  --b-s: 82%;
-  --b-l: 48%;
-}
-.blue {
-  --h: 221;
-  --s: 85%;
-  --l: 45%;
-}
-.light.blue {
-  --b: 57%;
-}
-.dark.blue {
-  --b: 33%;
-}
-.bright.blue {
-  --b-s: 95%;
-  --b-l: 48%;
-}
-.dim.blue {
-  --b-s: 75%;
-  --b-l: 44%;
-}
-.purple {
-  --h: 281;
-  --s: 52%;
-  --l: 40%;
-}
-.light.purple {
-  --b: 48%;
-}
-.dark.purple {
-  --b: 32%;
-}
-.bright.purple {
-  --b-s: 62%;
-  --b-l: 42%;
-}
-.dim.purple {
-  --b-s: 42%;
-  --b-l: 39%;
-}
-.magenta {
-  --h: 288;
-  --s: 78%;
-  --l: 50%;
-}
-.light.magenta {
-  --b: 58%;
-}
-.dark.magenta {
-  --b: 42%;
-}
-.bright.magenta {
-  --b-s: 88%;
-  --b-l: 52%;
-}
-.dim.magenta {
-  --b-s: 68%;
-  --b-l: 49%;
-}
-.brand-color {
-  --h: 167;
-  --s: 100%;
-  --l: 21%;
-}
-.light.brand-color {
-  --b: 29%;
-}
-.dark.brand-color {
-  --b: 13%;
-}
-.bright.brand-color {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.brand-color {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.complement {
-  --h: 349;
-  --s: 87%;
-  --l: 20%;
-}
-.light.complement {
-  --b: 28%;
-}
-.dark.complement {
-  --b: 12%;
-}
-.bright.complement {
-  --b-s: 97%;
-  --b-l: 22%;
-}
-.dim.complement {
-  --b-s: 77%;
-  --b-l: 19%;
-}
-.accent {
-  --h: 194;
-  --s: 100%;
-  --l: 21%;
-}
-.light.accent {
-  --b: 29%;
-}
-.dark.accent {
-  --b: 13%;
-}
-.bright.accent {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.accent {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.white.gray {
-  --h: 171;
-  --s: 19%;
-  --l: 87%;
-  --o: 0.07;
-  --jump: 0.05;
-}
-.light.white.gray {
-  --b: 91%;
-}
-.dark.white.gray {
-  --b: 83%;
-}
-.bright.white.gray {
-  --b-s: 29%;
-  --b-l: 88%;
-}
-.dim.white.gray {
-  --b-s: 9%;
-  --b-l: 87%;
-}
-.gray.black {
-  --h: 170;
-  --s: 7%;
-  --l: 41%;
-  --o: 0.15;
-  --jump: 0.15;
-}
-.light.gray.black {
-  --b: 53%;
-}
-.dark.gray.black {
-  --b: 29%;
-}
-.bright.gray.black {
-  --b-s: 17%;
-  --b-l: 44%;
-}
-.dim.gray.black {
-  --b-s: 0%;
-  --b-l: 40%;
-}
-.red.orange {
-  --h: 28;
-  --s: 83%;
-  --l: 44%;
-  --o: 0.2;
-}
-.light.red.orange {
-  --b: 60%;
-}
-.dark.red.orange {
-  --b: 28%;
-}
-.bright.red.orange {
-  --b-s: 93%;
-  --b-l: 48%;
-}
-.dim.red.orange {
-  --b-s: 73%;
-  --b-l: 42%;
-}
-.orange.yellow {
-  --h: 57;
-  --s: 100%;
-  --l: 43%;
-  --o: 0.075;
-}
-.light.orange.yellow {
-  --b: 44%;
-}
-.dark.orange.yellow {
-  --b: 43%;
-}
-.bright.orange.yellow {
-  --b-s: 100%;
-  --b-l: 44%;
-}
-.dim.orange.yellow {
-  --b-s: 90%;
-  --b-l: 43%;
-}
 .yellow.green {
   --h: 88;
   --s: 81%;
@@ -1703,6 +1559,25 @@ button:active {
   --b-s: 71%;
   --b-l: 46%;
 }
+.green {
+  --h: 125;
+  --s: 68%;
+  --l: 40%;
+}
+.light.green {
+  --b: 48%;
+}
+.dark.green {
+  --b: 32%;
+}
+.bright.green {
+  --b-s: 78%;
+  --b-l: 42%;
+}
+.dim.green {
+  --b-s: 58%;
+  --b-l: 39%;
+}
 .green.teal {
   --h: 151;
   --s: 67%;
@@ -1719,6 +1594,25 @@ button:active {
   --b-l: 43%;
 }
 .dim.green.teal {
+  --b-s: 57%;
+  --b-l: 40%;
+}
+.teal {
+  --h: 176;
+  --s: 67%;
+  --l: 41%;
+}
+.light.teal {
+  --b: 49%;
+}
+.dark.teal {
+  --b: 33%;
+}
+.bright.teal {
+  --b-s: 77%;
+  --b-l: 43%;
+}
+.dim.teal {
   --b-s: 57%;
   --b-l: 40%;
 }
@@ -1742,6 +1636,26 @@ button:active {
   --b-s: 70%;
   --b-l: 44%;
 }
+.cyan {
+  --h: 179;
+  --s: 92%;
+  --l: 49%;
+  --o: 0.08;
+}
+.light.cyan {
+  --b: 61%;
+}
+.dark.cyan {
+  --b: 37%;
+}
+.bright.cyan {
+  --b-s: 100%;
+  --b-l: 52%;
+}
+.dim.cyan {
+  --b-s: 82%;
+  --b-l: 48%;
+}
 .cyan.blue {
   --h: 198;
   --s: 88%;
@@ -1762,6 +1676,25 @@ button:active {
   --b-s: 78%;
   --b-l: 45%;
 }
+.blue {
+  --h: 221;
+  --s: 85%;
+  --l: 45%;
+}
+.light.blue {
+  --b: 57%;
+}
+.dark.blue {
+  --b: 33%;
+}
+.bright.blue {
+  --b-s: 95%;
+  --b-l: 48%;
+}
+.dim.blue {
+  --b-s: 75%;
+  --b-l: 44%;
+}
 .blue.purple {
   --h: 243;
   --s: 49%;
@@ -1781,6 +1714,25 @@ button:active {
   --b-s: 39%;
   --b-l: 47%;
 }
+.purple {
+  --h: 281;
+  --s: 52%;
+  --l: 40%;
+}
+.light.purple {
+  --b: 48%;
+}
+.dark.purple {
+  --b: 32%;
+}
+.bright.purple {
+  --b-s: 62%;
+  --b-l: 42%;
+}
+.dim.purple {
+  --b-s: 42%;
+  --b-l: 39%;
+}
 .purple.magenta {
   --h: 285;
   --s: 66%;
@@ -1799,6 +1751,25 @@ button:active {
 .dim.purple.magenta {
   --b-s: 56%;
   --b-l: 43%;
+}
+.magenta {
+  --h: 288;
+  --s: 78%;
+  --l: 50%;
+}
+.light.magenta {
+  --b: 58%;
+}
+.dark.magenta {
+  --b: 42%;
+}
+.bright.magenta {
+  --b-s: 88%;
+  --b-l: 52%;
+}
+.dim.magenta {
+  --b-s: 68%;
+  --b-l: 49%;
 }
 .magenta.red {
   --h: 322;
@@ -1837,11 +1808,7 @@ button:active {
 }
 .white {
   --b: 97%;
-  --jump: 0.025;
   --l: 99%;
-}
-.gray {
-  --o: 0.1;
 }
 .light.white {
   --l: 99.3%;
@@ -1867,7 +1834,9 @@ button:active {
 }
 .very.light,
 .hella.light,
-.hella.dim.white {
+.hella.dim.white,
+.hella.dark.white.gray,
+.hella.dim.gray {
   color: var(--black, black);
   --o: 0.05;
 }
@@ -1890,10 +1859,6 @@ button:active {
 .dark.accent {
   --jump: 0.1;
 }
-.dim.black,
-.dim.gray {
-  --s: 33%;
-}
 </style>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -1912,7 +1877,7 @@ button:active {
 </head>
 
 <body>
-  <nav class="text-trim cyan blue no-underlines fixed top right left responsive inner-width padding no-padding-bottom">
+  <nav class="text-trim cyan blue no-underlines fixed top right left inner responsive width padding no-padding-bottom">
       <div class="columns relative text-padding-top">
           
   
@@ -1947,14 +1912,14 @@ button:active {
   <div class="text-trim full width placeholder padding">&nbsp;</div>
     <div class="light accent margin-bottom no-padding-top no-padding-bottom">
 
-      <div class="very dark warm blue two column golden reverse gap-gutter desktop padding margin-auto page inner-width">
+      <div class="very dark warm blue two column golden reverse gap-gutter desktop padding margin-auto inner page width">
 
-        <div class="vertical-center card inner-width padding">
+        <div class="vertical-center inner card width padding">
           <p class="hide desktop"></p>          
           <svg xmlns="http://www.w3.org/2000/svg" class="card width inline" x="0px" y="0px" viewBox="0 0 385 401" overflow="visible"><g clip-rule="evenodd"><path fill-rule="evenodd" fill="#FFF" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.864" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/></g><path fill-rule="evenodd" clip-rule="evenodd" fill="#006B54" d="M192.5 13.104c104.55 34.42 180 132.87 180 248.916v63.642c0 24.173-17.166 44.365-39.982 48.998-45.164 9.016-92.303 13.841-140.018 13.841s-94.33-4.72-139.492-13.735C30.191 370.132 12.5 349.835 12.5 325.662V262.02c0-116.046 75.45-214.497 180-248.916z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M80.844 145.72a11.176 11.176 0 0 1-.887 3.466 13.627 13.627 0 0 1-1.826 3.05 13.576 13.576 0 0 1-2.599 2.493 14.622 14.622 0 0 1-3.204 1.792c-1.881.76-3.714 1.085-5.498.978s-3.466-.598-5.044-1.469c-1.578-.87-3.017-2.113-4.316-3.726-1.298-1.614-2.397-3.533-3.295-5.756-.91-2.252-1.455-4.402-1.636-6.45s-.004-3.928.533-5.636a11.663 11.663 0 0 1 2.626-4.517c1.214-1.303 2.761-2.335 4.642-3.094 2.309-.934 4.676-1.251 7.1-.954 2.424.297 4.6 1.232 6.53 2.807l-3.548 4.268c-.64-.437-1.153-.744-1.54-.92a5.827 5.827 0 0 0-1.333-.406c-.754-.226-1.606-.304-2.556-.235s-1.81.259-2.58.57c-1.31.53-2.29 1.265-2.937 2.206a7.393 7.393 0 0 0-1.231 3.108c-.174 1.13-.146 2.306.08 3.523a18.2 18.2 0 0 0 1.014 3.494c1.267 3.136 2.861 5.318 4.784 6.547 1.922 1.23 3.966 1.406 6.132.531a8.101 8.101 0 0 0 1.697-.909 6.9 6.9 0 0 0 1.297-1.22 8.376 8.376 0 0 0 1.068-1.725c.324-.678.66-1.485 1.011-2.423l5.516.606zM111.655 142.417l-5.04-6.077-12.876 3.936-.736 7.844-5.82 1.779 3.401-33.345 5.38-1.645 21.379 25.769-5.688 1.739zm-16.13-19.322-1.097 11.233 8.29-2.535-7.193-8.698zM122.64 140.019l-5.894-30.326 5.43-1.056 4.99 25.664 17.245-3.352.905 4.662zM152.296 103.834l3.765 30.662-5.491.675-3.765-30.663zM167.857 107.961l.438 6.256 9.613-.673.392 5.612-9.613.673.94 13.43-5.612.393-2.156-30.818 23.045-1.611.386 5.52zM217.816 117.521c-.085 2.428-.462 4.621-1.13 6.582-.667 1.96-1.58 3.628-2.735 5.002s-2.537 2.426-4.146 3.155c-1.61.728-3.399 1.057-5.365.989-2.273-.08-4.215-.617-5.826-1.61s-2.926-2.271-3.949-3.83c-1.022-1.558-1.753-3.306-2.193-5.244a22.591 22.591 0 0 1-.558-5.81c.085-2.457.462-4.659 1.13-6.604.667-1.945 1.594-3.589 2.778-4.932 1.186-1.343 2.598-2.354 4.237-3.035s3.47-.986 5.499-.915c1.904.066 3.627.51 5.167 1.333a12.115 12.115 0 0 1 3.942 3.368c1.088 1.422 1.905 3.119 2.452 5.091.546 1.972.778 4.126.697 6.46zm-5.535-.054c.114-3.257-.427-5.828-1.622-7.716s-2.96-2.872-5.295-2.953-4.194.776-5.58 2.574c-1.386 1.796-2.136 4.323-2.249 7.58-.115 3.318.455 5.922 1.711 7.81 1.258 1.89 3.053 2.876 5.388 2.957 1.474.052 2.691-.229 3.651-.842a6.91 6.91 0 0 0 2.299-2.41c.572-.995.988-2.112 1.247-3.348.259-1.237.41-2.454.45-3.652zM243.01 136.45l-3.242-12.702-8.174-1.148-1.688 12.008-5.48-.77 4.3-30.592 14.064 1.976c1.126.158 2.072.384 2.838.678s1.51.74 2.233 1.339a8.996 8.996 0 0 1 3.002 3.82c.65 1.55.855 3.194.612 4.929-.245 1.735-.9 3.25-1.967 4.543-1.067 1.293-2.45 2.255-4.154 2.885l3.775 13.894-6.118-.86zm2.984-21.232c.168-1.187-.096-2.187-.789-2.998-.693-.811-1.725-1.313-3.094-1.506l-8.675-1.219-1.073 7.625 8.676 1.22c1.37.192 2.5.001 3.387-.572.887-.574 1.41-1.424 1.568-2.55zM274.827 143.273l-9.13-24.183-5.142 20.625-5.28-1.316 7.475-29.976 5.28 1.317 8.804 23.199 4.93-19.775 5.19 1.294-7.474 29.976zM301.947 119.047l-9.547 29.38-5.262-1.709 9.547-29.38zM321.208 159.23l-.093-7.896-12.483-5.043-5.508 5.632-5.644-2.28 23.63-23.773 5.215 2.108.398 33.48-5.515-2.229zm-.375-25.167-7.923 8.039 8.037 3.247-.114-11.286z"/><path style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none" d="M107.688 189.62c-2.601 0-4.947.316-7.038.948-2.066.608-3.876 1.543-5.431 2.807-1.531 1.24-2.747 2.82-3.647 4.74-.899 1.896-1.347 4.13-1.347 6.707 0 2.334.388 4.279 1.166 5.834.777 1.556 1.822 2.845 3.134 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.432 1.459c1.434.291 2.795.594 4.084.91 1.312.291 2.49.682 3.535 1.168 1.045.486 1.873 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.283.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.629-1.251-7.035-2.297v7.547c1.701.948 3.827 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.912 2.552-.608 4.716-1.532 6.49-2.772 1.8-1.264 3.185-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.275-6.27-.851-1.652-2.005-2.99-3.463-4.011-1.459-1.02-3.136-1.81-5.032-2.37a65.337 65.337 0 0 0-5.906-1.53 60.238 60.238 0 0 1-3.719-.875c-1.166-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.789-3.743 2.369-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.217.232 6.526.693 2.333.438 4.763 1.154 7.29 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.838-.765zm22.275.911v7.475h15.75v41.306h8.933v-41.306h15.713v-7.475h-40.396zm42.219 0 18.484 29.131v19.65h8.934v-19.65l18.484-29.13h-9.918l-12.978 21h-.11l-12.978-21h-9.918zm52.5 0v48.781h31.756v-7.474h-22.823V190.53h-8.933zm40.105 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.47v-12.613h22.678v-7.475h-31.609zM82.531 259.62c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.431 2.806-1.532 1.24-2.748 2.82-3.647 4.74-.9 1.896-1.348 4.13-1.348 6.707 0 2.334.389 4.279 1.166 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.431 1.459c1.434.291 2.796.594 4.084.91 1.313.291 2.49.682 3.536 1.168 1.045.486 1.872 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.284.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.63-1.251-7.035-2.296v7.546c1.701.948 3.826 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.913 2.552-.607 4.716-1.531 6.49-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.004-2.99-3.463-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.336 65.336 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.766-1.822-.766-3.062 0-2.139.79-3.743 2.37-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.216.232 6.525.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.839-.765zm222.834 0c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.432 2.806-1.53 1.24-2.747 2.82-3.646 4.74-.9 1.896-1.35 4.13-1.35 6.707 0 2.334.39 4.279 1.168 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.831 1.786 4.557 2.37a57.062 57.062 0 0 0 5.433 1.459c1.434.291 2.794.594 4.082.91 1.313.291 2.492.682 3.538 1.168 1.045.486 1.87 1.116 2.478 1.894.608.754.912 1.75.912 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.286.96-3.647 1.204a26.152 26.152 0 0 1-4.156.328 35.61 35.61 0 0 1-7.072-.694c-2.285-.486-4.631-1.251-7.037-2.296v7.546c1.701.948 3.828 1.677 6.38 2.188 2.577.535 5.19.803 7.838.803 3.039 0 5.835-.305 8.387-.913 2.552-.607 4.714-1.531 6.488-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.459-4.194 1.459-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.006-2.99-3.465-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.337 65.337 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.198-.73-3.098-1.24-.899-.535-1.617-1.202-2.152-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.79-3.743 2.37-4.813 1.605-1.069 3.876-1.605 6.817-1.605 2.042 0 4.218.232 6.527.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.977 40.977 0 0 0-7.839-.765zm-195.818.912v48.781h8.932v-21.218h22.605v21.219h8.932V260.53h-8.932v20.088h-22.605v-20.088h-8.932zm52.209 0v48.781h32.922v-7.474h-23.99v-13.744h19.468v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm42.437 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm37.698 0v7.475h15.75v41.307h8.931v-41.307h15.715v-7.475h-40.396z"/></svg>
         </div>
 
-        <div class="text inner-width margin-bottom">
+        <div class="inner text width margin-bottom">
           <h1>Like CSS, but <span class="text-color very light yellow tint text-shadow">easier</span>.</h1>
           <p class="big">Easy to write <em>and</em> easy to read, California Stylesheets are all you could ever need from a CSS framework... <strong>without the framework</strong>.</p>
           <p>This page is using <strong>CASS</strong>, the no-workflow, no-CSS, custom-property-powered modern CSS&nbsp;file that works like a framework. Use it to write styles in HTML.</p>
@@ -1967,44 +1932,43 @@ button:active {
       </div>
     </div>
 
-    <section class="padding">
-      <div class="two column golden gap-gutter desktop page width margin-auto">
+    <div class="padding two column golden gap-gutter desktop page width margin-auto">
 
-        <div class="text inner-width vertical-center">
-          <p>Try out <strong>your brand color</strong> with this page:</p>
-          <form class="vertical-center">
-              <div class="two column tablet gap-padding text-left">
-                  <p class=" no-margin">
-                  <span class="float-right"><span class="character-width brand-color padding-right rounded">&nbsp;</span></span>
-                  <span class="block full width">color (<strong><span id="baseColorLabel" for="baseColor">#006b54</span></strong>)</span>
-                  
-                  <input class="no-padding pointer force full width" id="baseColor" type="color" value="#006b54" oninput="document.getElementById('baseColorLabel').innerHTML = document.getElementById('baseColor').value">
-                  </p>
-              
-                  <p class=" no-margin">
-                  <span class="float-right"><span class="character-width light gray border padding-right rounded">&nbsp;</span> -> <span class="character-width gray border padding-right rounded">&nbsp;</span></span>
-                  <span class="block full width">contrast (<strong><span id="baseLightenByLabel" for="baseLightenBy">16</span>%</strong>)</span>
-                  <input type="range" id="baseLightenBy" min="4" max="24" value="16" step="2" class="force full width cursor" oninput="document.getElementById('baseLightenByLabel').innerHTML = document.getElementById('baseLightenBy').value">
-                  </p>
-              
-                  <div>&nbsp;</div>
-              
-                  <p class="">
-                  <button onClick="event.preventDefault(); renderLess();" class="text-center big very bright warm red padding inner-gutter-left inner-gutter-right card width block margin-auto">
-                      <span class="bump up small all-caps bold text-margin-bottom">Compile &amp; preview</span><br>
-                      <span class="bump up huge bold">ca.css &raquo;</span>
-                      
-                  </button>
-                  </p>
-              </div>
-          </form>        </div>
+      <div class="inner text width vertical-center">
+        <p>Try out <strong>your brand color</strong> with this page:</p>
+        <form class="vertical-center">
+            <div class="two column tablet gap-padding text-left">
+                <p class=" no-margin">
+                <span class="float-right"><span class="character-width brand-color padding-right rounded">&nbsp;</span></span>
+                <span class="block full width">color (<strong><span id="baseColorLabel" for="baseColor">#006b54</span></strong>)</span>
+                
+                <input class="no-padding pointer force full width" id="baseColor" type="color" value="#006b54" oninput="document.getElementById('baseColorLabel').innerHTML = document.getElementById('baseColor').value">
+                </p>
             
+                <p class=" no-margin">
+                <span class="float-right"><span class="character-width light gray border padding-right rounded">&nbsp;</span> -> <span class="character-width gray border padding-right rounded">&nbsp;</span></span>
+                <span class="block full width">contrast (<strong><span id="baseLightenByLabel" for="baseLightenBy">16</span>%</strong>)</span>
+                <input type="range" id="baseLightenBy" min="4" max="24" value="16" step="2" class="force full width cursor" oninput="document.getElementById('baseLightenByLabel').innerHTML = document.getElementById('baseLightenBy').value">
+                </p>
+            
+                <div>&nbsp;</div>
+            
+                <p class="">
+                <button onClick="event.preventDefault(); renderLess();" class="text-center big very bright warm red padding inner-gutter-left inner-gutter-right card width block margin-auto">
+                    <span class="bump up small all-caps bold text-margin-bottom">Compile &amp; preview</span><br>
+                    <span class="bump up huge bold">ca.css &raquo;</span>
+                    
+                </button>
+                </p>
+            </div>
+        </form>      </div>
+          
 
 
-        <div class="text inner-width margin-bottom vertical-center">
-          <div>
-            <p class="bold text-margin-bottom">Get your California Stylesheet:</p>
-            <textarea readonly name="" class="code full width no-padding-bottom force tiny monospace text-padding text-margin-bottom" id="css_textarea" cols="30" rows="8">/* A California Stylesheet (MIT License) */
+      <div class="inner text width margin-bottom vertical-center">
+        <div>
+          <p class="bold text-margin-bottom">Get your California Stylesheet:</p>
+          <textarea readonly name="" class="code full width no-padding-bottom force tiny monospace text-padding text-margin-bottom" id="css_textarea" cols="30" rows="8">/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 /* Typography */
 :root {
@@ -2045,14 +2009,14 @@ button:active {
   --complement: #600617;
   --accent: #00516a;
   --white: #fafdfc;
-  --white-gray: #d8e4e3;
+  --white-gray: #e9f1f0;
   --gray: #b6ccc9;
-  --gray-black: #61706e;
-  --black: #0b1512;
+  --gray-black: #606c6a;
+  --black: #0a0c0c;
   --red: #ba2f27;
-  --red-orange: #cd6b13;
-  --orange: #e1a800;
-  --orange-yellow: #ddd300;
+  --red-orange: #cf6b13;
+  --orange: #e3a700;
+  --orange-yellow: #ded300;
   --yellow: #daff00;
   --yellow-green: #7dd516;
   --green: #20ab2c;
@@ -2091,7 +2055,7 @@ button:active {
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
   --shadow-position: 1px;
   --shadow-blur: 3px;
-  --shadow-color: rgba(11, 21, 18, 0.3);
+  --shadow-color: rgba(10, 12, 12, 0.3);
 }
 /* Responsive settings for mobile */
 @media screen and (min-width: 1px) {
@@ -2495,9 +2459,6 @@ button:active {
 .gutter {
   margin: var(--gutter);
 }
-.inner-gutter {
-  padding: var(--gutter);
-}
 .text-padding {
   padding: var(--text-padding);
 }
@@ -2539,18 +2500,6 @@ button:active {
 }
 .gutter-left {
   margin-left: var(--gutter);
-}
-.inner-gutter-top {
-  padding-top: var(--gutter);
-}
-.inner-gutter-right {
-  padding-right: var(--gutter);
-}
-.inner-gutter-bottom {
-  padding-bottom: var(--gutter);
-}
-.inner-gutter-left {
-  padding-left: var(--gutter);
 }
 .text-padding-top {
   padding-top: var(--text-padding);
@@ -2617,7 +2566,7 @@ button:active {
 }
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: rgba(11, 21, 18, 0.16);
+  --shadow-color: rgba(10, 12, 12, 0.16);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -2772,25 +2721,13 @@ button:active {
 .shade,
 .text-black,
 .white,
+.white.gray,
 .gray,
-.very.light.black,
+.very.light.gray.black,
+.hella.light.gray.black,
+.hella.bright.gray.black,
 .hella.light.black,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.orange,
-.yellow,
-.green,
-.teal,
-.cyan,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.purple,
-.hella.light.purple,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
+.light.brand-color,
 .very.light.brand-color,
 .hella.light.brand-color,
 .very.bright.brand-color,
@@ -2799,28 +2736,37 @@ button:active {
 .very.light.accent,
 .hella.light.accent,
 .hella.bright.accent,
-.white.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.light.red.orange,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
 .very.light.red.orange,
 .hella.light.red.orange,
-.bright.red.orange,
 .very.bright.red.orange,
 .hella.bright.red.orange,
+.orange,
 .orange.yellow,
+.yellow,
 .yellow.green,
+.green,
 .green.teal,
+.teal,
 .teal.cyan,
+.cyan,
 .cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
 .very.light.blue.purple,
 .hella.light.blue.purple,
 .hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
 .very.light.purple.magenta,
 .hella.light.purple.magenta,
 .hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.hella.bright.magenta,
 .very.light.magenta.red,
 .hella.light.magenta.red,
 .hella.bright.magenta.red {
@@ -2835,62 +2781,62 @@ button:active {
 .text-white,
 .hella.dark.gray,
 .hella.dim.gray,
+.gray.black,
 .black,
+.brand-color,
+.complement,
+.accent,
 .red,
+.red.orange,
 .very.dark.orange,
 .hella.dark.orange,
 .very.dim.orange,
 .hella.dim.orange,
+.very.dark.orange.yellow,
+.hella.dark.orange.yellow,
+.hella.dim.orange.yellow,
 .hella.dark.yellow,
 .hella.dim.yellow,
+.very.dark.yellow.green,
+.hella.dark.yellow.green,
+.very.dim.yellow.green,
+.hella.dim.yellow.green,
 .dark.green,
 .very.dark.green,
 .hella.dark.green,
 .dim.green,
 .very.dim.green,
 .hella.dim.green,
-.dark.teal,
-.very.dark.teal,
-.hella.dark.teal,
-.dim.teal,
-.very.dim.teal,
-.hella.dim.teal,
-.very.dark.cyan,
-.hella.dark.cyan,
-.hella.dim.cyan,
-.blue,
-.purple,
-.magenta,
-.brand-color,
-.complement,
-.accent,
-.gray.black,
-.red.orange,
-.very.dark.orange.yellow,
-.hella.dark.orange.yellow,
-.hella.dim.orange.yellow,
-.very.dark.yellow.green,
-.hella.dark.yellow.green,
-.very.dim.yellow.green,
-.hella.dim.yellow.green,
 .dark.green.teal,
 .very.dark.green.teal,
 .hella.dark.green.teal,
 .dim.green.teal,
 .very.dim.green.teal,
 .hella.dim.green.teal,
+.dark.teal,
+.very.dark.teal,
+.hella.dark.teal,
+.dim.teal,
+.very.dim.teal,
+.hella.dim.teal,
 .very.dark.teal.cyan,
 .hella.dark.teal.cyan,
 .very.dim.teal.cyan,
 .hella.dim.teal.cyan,
+.very.dark.cyan,
+.hella.dark.cyan,
+.hella.dim.cyan,
 .dark.cyan.blue,
 .very.dark.cyan.blue,
 .hella.dark.cyan.blue,
 .dim.cyan.blue,
 .very.dim.cyan.blue,
 .hella.dim.cyan.blue,
+.blue,
 .blue.purple,
+.purple,
 .purple.magenta,
+.magenta,
 .magenta.red {
   --t: var(--white);
   color: var(--white);
@@ -2938,7 +2884,7 @@ button:active {
 }
 .text-shadow {
   --shadow-blur: 0;
-  --shadow-color: rgba(11, 21, 18, 0.6);
+  --shadow-color: rgba(10, 12, 12, 0.6);
   text-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .text-trim {
@@ -3010,6 +2956,12 @@ button:active {
 .width.force {
   width: var(--width);
 }
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
+}
 .responsive {
   --width: var(--responsive-width);
 }
@@ -3029,35 +2981,18 @@ button:active {
 .full {
   --width: 100%;
 }
-.inner-width {
+.inner.width {
+  max-width: 100%;
   padding-left: calc(50% - (var(--width) * 0.5));
   padding-right: calc(50% - (var(--width) * 0.5));
 }
-.inner-width.padding-left,
-.inner-width.padding {
+.inner.width.padding-left,
+.inner.width.padding {
   padding-left: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
 }
-.inner-width.padding-right,
-.inner-width.padding {
+.inner.width.padding-right,
+.inner.width.padding {
   padding-right: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
-}
-.inner-width.responsive {
-  --width: var(--responsive-width);
-}
-.inner-width.card {
-  --width: var(--card-width);
-}
-.inner-width.text {
-  --width: var(--text-width);
-}
-.inner-width.page {
-  --width: var(--page-width);
-}
-.golden-width {
-  width: 62%;
-}
-.golden-width.reverse {
-  width: 38%;
 }
 .hide {
   display: none;
@@ -3282,7 +3217,6 @@ button:active {
 }
 .dull {
   --o: 0.3;
-  --s: 33% !important;
   background-image: linear-gradient(rgba(123.3, 123.3, 123.3, var(--o)), rgba(123.3, 123.3, 123.3, var(--o)));
 }
 .light {
@@ -3299,71 +3233,171 @@ button:active {
   --jump: 0.15;
 }
 .dim {
-  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 3 * var(--v, 0)));
-  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 2 * var(--v, 0)));
+  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * 1.25 * var(--v, 0))) !important;
+  --jump: 0.1;
 }
 .white {
   --h: 165;
   --s: 46%;
   --l: 99%;
-  --o: 0.01;
+  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
   --b: 100%;
 }
 .dark.white {
-  --b: 95%;
+  --b: 97%;
 }
 .bright.white {
   --b-s: 56%;
-  --b-l: 100%;
+  --b-l: 99%;
 }
 .dim.white {
   --b-s: 36%;
   --b-l: 98%;
+}
+.white.gray {
+  --h: 170;
+  --s: 21%;
+  --l: 93%;
+  --o: 0.07;
+  --jump: 0.02;
+}
+.light.white.gray {
+  --b: 96%;
+}
+.dark.white.gray {
+  --b: 90%;
+}
+.bright.white.gray {
+  --b-s: 31%;
+  --b-l: 94%;
+}
+.dim.white.gray {
+  --b-s: 11%;
+  --b-l: 93%;
 }
 .gray {
   --h: 172;
   --s: 17%;
   --l: 76%;
   --o: 0.1;
+  --jump: 0.03;
 }
 .light.gray {
-  --b: 84%;
+  --b: 81%;
 }
 .dark.gray {
-  --b: 68%;
+  --b: 71%;
 }
 .bright.gray {
   --b-s: 27%;
-  --b-l: 78%;
+  --b-l: 77%;
 }
 .dim.gray {
   --b-s: 7%;
   --b-l: 75%;
 }
+.gray.black {
+  --h: 172;
+  --s: 6%;
+  --l: 40%;
+  --o: 0.15;
+  --jump: 0.1;
+}
+.light.gray.black {
+  --b: 48%;
+}
+.dark.gray.black {
+  --b: 32%;
+}
+.bright.gray.black {
+  --b-s: 16%;
+  --b-l: 42%;
+}
+.dim.gray.black {
+  --b-s: 0%;
+  --b-l: 39%;
+}
 .black {
   --h: 165;
-  --s: 30%;
-  --l: 6%;
-  --o: 0.4;
-  --jump: 0.4;
+  --s: 8%;
+  --l: 4%;
+  --o: 0.2;
+  --jump: 0.2;
 }
 .light.black {
-  --b: 22%;
+  --b: 16%;
 }
 .dark.black {
   --b: 0%;
 }
 .bright.black {
-  --b-s: 40%;
-  --b-l: 10%;
+  --b-s: 18%;
+  --b-l: 7%;
 }
 .dim.black {
-  --b-s: 20%;
-  --b-l: 4%;
+  --b-s: 0%;
+  --b-l: 3%;
+}
+.brand-color {
+  --h: 167;
+  --s: 100%;
+  --l: 21%;
+}
+.light.brand-color {
+  --b: 33%;
+}
+.dark.brand-color {
+  --b: 9%;
+}
+.bright.brand-color {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.brand-color {
+  --b-s: 90%;
+  --b-l: 19%;
+}
+.complement {
+  --h: 349;
+  --s: 87%;
+  --l: 20%;
+}
+.light.complement {
+  --b: 32%;
+}
+.dark.complement {
+  --b: 8%;
+}
+.bright.complement {
+  --b-s: 97%;
+  --b-l: 23%;
+}
+.dim.complement {
+  --b-s: 77%;
+  --b-l: 19%;
+}
+.accent {
+  --h: 194;
+  --s: 100%;
+  --l: 21%;
+}
+.light.accent {
+  --b: 33%;
+}
+.dark.accent {
+  --b: 9%;
+}
+.bright.accent {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.accent {
+  --b-s: 90%;
+  --b-l: 19%;
 }
 .red {
   --h: 3;
@@ -3384,23 +3418,63 @@ button:active {
   --b-s: 56%;
   --b-l: 43%;
 }
-.orange {
-  --h: 45;
-  --s: 100%;
+.red.orange {
+  --h: 28;
+  --s: 83%;
   --l: 44%;
+  --o: 0.2;
+}
+.light.red.orange {
+  --b: 47%;
+}
+.dark.red.orange {
+  --b: 42%;
+}
+.bright.red.orange {
+  --b-s: 93%;
+  --b-l: 45%;
+}
+.dim.red.orange {
+  --b-s: 73%;
+  --b-l: 44%;
+}
+.orange {
+  --h: 44;
+  --s: 100%;
+  --l: 45%;
   --o: 0.1;
 }
 .light.orange {
   --b: 45%;
 }
 .dark.orange {
-  --b: 43%;
+  --b: 44%;
 }
 .bright.orange {
   --b-s: 100%;
-  --b-l: 44%;
+  --b-l: 45%;
 }
 .dim.orange {
+  --b-s: 90%;
+  --b-l: 44%;
+}
+.orange.yellow {
+  --h: 57;
+  --s: 100%;
+  --l: 44%;
+  --o: 0.075;
+}
+.light.orange.yellow {
+  --b: 44%;
+}
+.dark.orange.yellow {
+  --b: 43%;
+}
+.bright.orange.yellow {
+  --b-s: 100%;
+  --b-l: 44%;
+}
+.dim.orange.yellow {
   --b-s: 90%;
   --b-l: 44%;
 }
@@ -3424,260 +3498,6 @@ button:active {
   --b-s: 90%;
   --b-l: 50%;
 }
-.green {
-  --h: 125;
-  --s: 68%;
-  --l: 40%;
-}
-.light.green {
-  --b: 48%;
-}
-.dark.green {
-  --b: 32%;
-}
-.bright.green {
-  --b-s: 78%;
-  --b-l: 42%;
-}
-.dim.green {
-  --b-s: 58%;
-  --b-l: 39%;
-}
-.teal {
-  --h: 176;
-  --s: 67%;
-  --l: 41%;
-}
-.light.teal {
-  --b: 49%;
-}
-.dark.teal {
-  --b: 33%;
-}
-.bright.teal {
-  --b-s: 77%;
-  --b-l: 43%;
-}
-.dim.teal {
-  --b-s: 57%;
-  --b-l: 40%;
-}
-.cyan {
-  --h: 179;
-  --s: 92%;
-  --l: 49%;
-  --o: 0.08;
-}
-.light.cyan {
-  --b: 61%;
-}
-.dark.cyan {
-  --b: 37%;
-}
-.bright.cyan {
-  --b-s: 100%;
-  --b-l: 52%;
-}
-.dim.cyan {
-  --b-s: 82%;
-  --b-l: 48%;
-}
-.blue {
-  --h: 221;
-  --s: 85%;
-  --l: 45%;
-}
-.light.blue {
-  --b: 57%;
-}
-.dark.blue {
-  --b: 33%;
-}
-.bright.blue {
-  --b-s: 95%;
-  --b-l: 48%;
-}
-.dim.blue {
-  --b-s: 75%;
-  --b-l: 44%;
-}
-.purple {
-  --h: 281;
-  --s: 52%;
-  --l: 40%;
-}
-.light.purple {
-  --b: 48%;
-}
-.dark.purple {
-  --b: 32%;
-}
-.bright.purple {
-  --b-s: 62%;
-  --b-l: 42%;
-}
-.dim.purple {
-  --b-s: 42%;
-  --b-l: 39%;
-}
-.magenta {
-  --h: 288;
-  --s: 78%;
-  --l: 50%;
-}
-.light.magenta {
-  --b: 58%;
-}
-.dark.magenta {
-  --b: 42%;
-}
-.bright.magenta {
-  --b-s: 88%;
-  --b-l: 52%;
-}
-.dim.magenta {
-  --b-s: 68%;
-  --b-l: 49%;
-}
-.brand-color {
-  --h: 167;
-  --s: 100%;
-  --l: 21%;
-}
-.light.brand-color {
-  --b: 29%;
-}
-.dark.brand-color {
-  --b: 13%;
-}
-.bright.brand-color {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.brand-color {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.complement {
-  --h: 349;
-  --s: 87%;
-  --l: 20%;
-}
-.light.complement {
-  --b: 28%;
-}
-.dark.complement {
-  --b: 12%;
-}
-.bright.complement {
-  --b-s: 97%;
-  --b-l: 22%;
-}
-.dim.complement {
-  --b-s: 77%;
-  --b-l: 19%;
-}
-.accent {
-  --h: 194;
-  --s: 100%;
-  --l: 21%;
-}
-.light.accent {
-  --b: 29%;
-}
-.dark.accent {
-  --b: 13%;
-}
-.bright.accent {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.accent {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.white.gray {
-  --h: 171;
-  --s: 19%;
-  --l: 87%;
-  --o: 0.07;
-  --jump: 0.05;
-}
-.light.white.gray {
-  --b: 91%;
-}
-.dark.white.gray {
-  --b: 83%;
-}
-.bright.white.gray {
-  --b-s: 29%;
-  --b-l: 88%;
-}
-.dim.white.gray {
-  --b-s: 9%;
-  --b-l: 87%;
-}
-.gray.black {
-  --h: 170;
-  --s: 7%;
-  --l: 41%;
-  --o: 0.15;
-  --jump: 0.15;
-}
-.light.gray.black {
-  --b: 53%;
-}
-.dark.gray.black {
-  --b: 29%;
-}
-.bright.gray.black {
-  --b-s: 17%;
-  --b-l: 44%;
-}
-.dim.gray.black {
-  --b-s: 0%;
-  --b-l: 40%;
-}
-.red.orange {
-  --h: 28;
-  --s: 83%;
-  --l: 44%;
-  --o: 0.2;
-}
-.light.red.orange {
-  --b: 60%;
-}
-.dark.red.orange {
-  --b: 28%;
-}
-.bright.red.orange {
-  --b-s: 93%;
-  --b-l: 48%;
-}
-.dim.red.orange {
-  --b-s: 73%;
-  --b-l: 42%;
-}
-.orange.yellow {
-  --h: 57;
-  --s: 100%;
-  --l: 43%;
-  --o: 0.075;
-}
-.light.orange.yellow {
-  --b: 44%;
-}
-.dark.orange.yellow {
-  --b: 43%;
-}
-.bright.orange.yellow {
-  --b-s: 100%;
-  --b-l: 44%;
-}
-.dim.orange.yellow {
-  --b-s: 90%;
-  --b-l: 43%;
-}
 .yellow.green {
   --h: 88;
   --s: 81%;
@@ -3698,6 +3518,25 @@ button:active {
   --b-s: 71%;
   --b-l: 46%;
 }
+.green {
+  --h: 125;
+  --s: 68%;
+  --l: 40%;
+}
+.light.green {
+  --b: 48%;
+}
+.dark.green {
+  --b: 32%;
+}
+.bright.green {
+  --b-s: 78%;
+  --b-l: 42%;
+}
+.dim.green {
+  --b-s: 58%;
+  --b-l: 39%;
+}
 .green.teal {
   --h: 151;
   --s: 67%;
@@ -3714,6 +3553,25 @@ button:active {
   --b-l: 43%;
 }
 .dim.green.teal {
+  --b-s: 57%;
+  --b-l: 40%;
+}
+.teal {
+  --h: 176;
+  --s: 67%;
+  --l: 41%;
+}
+.light.teal {
+  --b: 49%;
+}
+.dark.teal {
+  --b: 33%;
+}
+.bright.teal {
+  --b-s: 77%;
+  --b-l: 43%;
+}
+.dim.teal {
   --b-s: 57%;
   --b-l: 40%;
 }
@@ -3737,6 +3595,26 @@ button:active {
   --b-s: 70%;
   --b-l: 44%;
 }
+.cyan {
+  --h: 179;
+  --s: 92%;
+  --l: 49%;
+  --o: 0.08;
+}
+.light.cyan {
+  --b: 61%;
+}
+.dark.cyan {
+  --b: 37%;
+}
+.bright.cyan {
+  --b-s: 100%;
+  --b-l: 52%;
+}
+.dim.cyan {
+  --b-s: 82%;
+  --b-l: 48%;
+}
 .cyan.blue {
   --h: 198;
   --s: 88%;
@@ -3757,6 +3635,25 @@ button:active {
   --b-s: 78%;
   --b-l: 45%;
 }
+.blue {
+  --h: 221;
+  --s: 85%;
+  --l: 45%;
+}
+.light.blue {
+  --b: 57%;
+}
+.dark.blue {
+  --b: 33%;
+}
+.bright.blue {
+  --b-s: 95%;
+  --b-l: 48%;
+}
+.dim.blue {
+  --b-s: 75%;
+  --b-l: 44%;
+}
 .blue.purple {
   --h: 243;
   --s: 49%;
@@ -3776,6 +3673,25 @@ button:active {
   --b-s: 39%;
   --b-l: 47%;
 }
+.purple {
+  --h: 281;
+  --s: 52%;
+  --l: 40%;
+}
+.light.purple {
+  --b: 48%;
+}
+.dark.purple {
+  --b: 32%;
+}
+.bright.purple {
+  --b-s: 62%;
+  --b-l: 42%;
+}
+.dim.purple {
+  --b-s: 42%;
+  --b-l: 39%;
+}
 .purple.magenta {
   --h: 285;
   --s: 66%;
@@ -3794,6 +3710,25 @@ button:active {
 .dim.purple.magenta {
   --b-s: 56%;
   --b-l: 43%;
+}
+.magenta {
+  --h: 288;
+  --s: 78%;
+  --l: 50%;
+}
+.light.magenta {
+  --b: 58%;
+}
+.dark.magenta {
+  --b: 42%;
+}
+.bright.magenta {
+  --b-s: 88%;
+  --b-l: 52%;
+}
+.dim.magenta {
+  --b-s: 68%;
+  --b-l: 49%;
 }
 .magenta.red {
   --h: 322;
@@ -3832,11 +3767,7 @@ button:active {
 }
 .white {
   --b: 97%;
-  --jump: 0.025;
   --l: 99%;
-}
-.gray {
-  --o: 0.1;
 }
 .light.white {
   --l: 99.3%;
@@ -3862,7 +3793,9 @@ button:active {
 }
 .very.light,
 .hella.light,
-.hella.dim.white {
+.hella.dim.white,
+.hella.dark.white.gray,
+.hella.dim.gray {
   color: var(--black, black);
   --o: 0.05;
 }
@@ -3885,21 +3818,17 @@ button:active {
 .dark.accent {
   --jump: 0.1;
 }
-.dim.black,
-.dim.gray {
-  --s: 33%;
-}
 </textarea>
-            <div class="two column tablet golden gap-text-padding">
-              <button class="text-padding dark red" onclick="copyCSS()">Copy to clipboard</button>
-              <button class="text-padding bright brand-color" onclick="saveTextAsFile(document.getElementById('css_textarea').value,'ca.css')">Download</button>
-            </div>
+          <div class="two column tablet golden gap-text-padding">
+            <button class="text-padding dark red" onclick="copyCSS()">Copy to clipboard</button>
+            <button class="text-padding bright brand-color" onclick="saveTextAsFile(document.getElementById('css_textarea').value,'ca.css')">Download</button>
           </div>
-          
         </div>
-        <div class="text inner-width margin-bottom hidden">
-          <h5>or compile this HEADLESS Less</h5>
-          <textarea readonly name="" class="full width no-padding-bottom force black monospace text-padding no-margin" id="headless_less_textarea" cols="30" rows="10">@ambient-mix: 90%;
+        
+      </div>
+      <div class="inner text width margin-bottom hidden">
+        <h5>or compile this HEADLESS Less</h5>
+        <textarea readonly name="" class="full width no-padding-bottom force black monospace text-padding no-margin" id="headless_less_textarea" cols="30" rows="10">@ambient-mix: 90%;
 @font-size: 16px;
 @font-family: var(--sans-serif);
 @text-base: 48;
@@ -4301,7 +4230,6 @@ pre > code {
 .padding { padding: var(--padding);}
 .margin { margin: var(--margin);}
 .gutter { margin: var(--gutter);}
-.inner-gutter { padding: var(--gutter);}
 .text-padding { padding: var(--text-padding);}
 .text-margin { margin: var(--text-padding);}
 
@@ -4319,11 +4247,6 @@ pre > code {
 .gutter-right { margin-right: var(--gutter);}
 .gutter-bottom { margin-bottom: var(--gutter);}
 .gutter-left { margin-left: var(--gutter);}
-
-.inner-gutter-top { padding-top: var(--gutter);}
-.inner-gutter-right { padding-right: var(--gutter);}
-.inner-gutter-bottom { padding-bottom: var(--gutter);}
-.inner-gutter-left { padding-left: var(--gutter);}
 
 .text-padding-top { padding-top: var(--text-padding);}
 .text-padding-right { padding-right: var(--text-padding);}
@@ -4712,6 +4635,14 @@ pre > code {
   width: var(--width);;
 }
 
+.golden-width {
+  width: 62%;
+}
+
+.golden-width.reverse {
+  width: 38%;
+}
+
 .responsive {
   --width: var(--responsive-width);
 }
@@ -4736,7 +4667,8 @@ pre > code {
   --width: 100%;
 }
 
-.inner-width {
+.inner.width {
+  max-width: 100%;
   padding-left: calc(50% - (var(--width) * .5));
   padding-right: calc(50% - (var(--width) * .5));
 
@@ -4747,30 +4679,6 @@ pre > code {
   &.padding-right, &.padding {
       padding-right: max(var(--padding-base), calc(50% - (var(--width) * .5) + var(--padding-base)));
   }
-}
-
-.inner-width.responsive {
-  --width: var(--responsive-width);
-}
-
-.inner-width.card {
-  --width: var(--card-width);
-}
-
-.inner-width.text {
-  --width: var(--text-width);
-}
-
-.inner-width.page {
-  --width: var(--page-width);
-}
-
-.golden-width {
-  width: 62%;
-}
-
-.golden-width.reverse {
-  width: 38%;
 }
 
 .hide {
@@ -4981,11 +4889,11 @@ pre > code {
 @ambient: softlight(screen(@base-color, @base-color), @base-color);
 
 @white: mix(white, @ambient, 98%);
-@black: desaturate(mix(black, @ambient, 80%), 70%);
+@black: desaturate(mix(black, @ambient, 86%), 92%);
 @gray: .set-color(~"gray", rgb(204, 204, 204), (5/6))[];
 
 @red: .set-color(~"red", rgb(218, 39, 39), (1/3), .95)[];
-@orange: .set-color(~"orange", orange, (1/12), .98)[];
+@orange: .set-color(~"orange", orange, (1/12), .99)[];
 @yellow: .set-color(~"yellow", yellow, (1/12), .95)[];
 @green: .set-color(~"green", rgb(45, 165, 45), (1/2), .8)[];
 @teal: .set-color(~"teal", rgb(49, 170, 170), (1/2), .8)[];
@@ -4994,7 +4902,7 @@ pre > code {
 @purple: .set-color(~"purple", rgb(160, 36, 160), (2/3), .85)[];
 @magenta: .set-color(~"magenta", rgb(231, 17, 231), (7/8), .9)[];
 
-@white-gray: average(@white, @gray);
+@white-gray: mix(@white, @gray, 75%);
 @gray-black: average(@gray, @black);
 
 @red-orange: average(@red, @orange);
@@ -5172,7 +5080,6 @@ pre > code {
 
 .dull {
     --o: .3;
-    --s: 33% !important;
     background-image: linear-gradient(@dull-rgba, @dull-rgba);
 }
 
@@ -5193,9 +5100,9 @@ pre > code {
 }
 
 .dim {
-    --s: ~"calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 3 * var(--v, 0)))";
-    --l: ~"calc(var(--b-l) - ((var(--b-l)) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .15;
+    --s: ~"calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 2 * var(--v, 0)))";
+    --l: ~"calc(var(--b-l) - ((var(--b-l)) * var(--jump) * 1.25 * var(--v, 0)))" !important;
+    --jump: .1;
 }
 
 // .striped {
@@ -5215,35 +5122,33 @@ pre > code {
 //   background-size: calc(var(--font-size-base) * 3) calc(var(--font-size-base) * 1.5);
 // }
 
-.white { .color-helpers(@white, .25); --o: .01; --jump: .01;}
-.gray { .color-helpers(@gray, .5); --o: .1;}
-.black { .color-helpers(@black); --o: .4; --jump: .4;}
+.white { .color-helpers(@white, .1); --o: .025; --jump: .01;}
+.white.gray { .color-helpers(@white-gray, .2); --o: .07; --jump: .02;}
+.gray { .color-helpers(@gray, .3); --o: .1; --jump: .03;}
+.gray.black { .color-helpers(@gray-black, .5); --o: .15; --jump: .1;}
+.black { .color-helpers(@black, .75); --o: .2; --jump: .2;}
+
+.brand-color { .color-helpers(@base-color, .75);}
+.complement { .color-helpers(@complement, .75);}
+.accent { .color-helpers(@accent, .75);}
 
 .red { .color-helpers(@red, .5);}
+.red.orange { .color-helpers(@red-orange, .15); --o: .2;}
 .orange { .color-helpers(@orange, .05); --o: .1;}
-.yellow { .color-helpers(@yellow, .05); --o: .05;}
-.green { .color-helpers(@green, .5);}
-.teal { .color-helpers(@teal, .5);}
-.cyan { .color-helpers(@cyan, .75); --o: .08;}
-.blue { .color-helpers(@blue, .75);}
-.purple { .color-helpers(@purple, .5);}
-.magenta { .color-helpers(@magenta, .5);}
-
-.brand-color { .color-helpers(@base-color, .5);}
-.complement { .color-helpers(@complement, .5);}
-.accent { .color-helpers(@accent, .5);}
-
-.white.gray { .color-helpers(@white-gray, .25); --o: .07; --jump: .05;}
-.gray.black { .color-helpers(@gray-black, .75); --o: .15; --jump: .15;}
-
-.red.orange { .color-helpers(@red-orange); --o: .2;}
 .orange.yellow { .color-helpers(@orange-yellow, .05); --o: .075;}
+.yellow { .color-helpers(@yellow, .05); --o: .05;}
 .yellow.green { .color-helpers(@yellow-green, .15); --o: .125;}
+.green { .color-helpers(@green, .5);}
 .green.teal { .color-helpers(@green-teal, .5);}
+.teal { .color-helpers(@teal, .5);}
 .teal.cyan { .color-helpers(@teal-cyan, .5); --o: .14;}
+.cyan { .color-helpers(@cyan, .75); --o: .08;}
 .cyan.blue { .color-helpers(@cyan-blue); --o: .14;}
+.blue { .color-helpers(@blue, .75);}
 .blue.purple { .color-helpers(@blue-purple);}
+.purple { .color-helpers(@purple, .5);}
 .purple.magenta { .color-helpers(@purple-magenta);}
+.magenta { .color-helpers(@magenta, .5);}
 .magenta.red { .color-helpers(@magenta-red);}
 
 .default {
@@ -5268,12 +5173,7 @@ pre > code {
 
 .white {
     --b: 97%;
-    --jump: .025;
     --l: 99%;
-}
-
-.gray {
-    --o: .1;    // --jump: .05;
 }
 
 .light.white {
@@ -5305,7 +5205,7 @@ pre > code {
     --l: 96%;
 }
 
-.very.light, .hella.light, .hella.dim.white {
+.very.light, .hella.light, .hella.dim.white, .hella.dark.white.gray, .hella.dim.gray {
     color: var(--black, black);
     --o: .05;
 }
@@ -5325,10 +5225,6 @@ pre > code {
 
 .dark.brand-color, .dark.complement, .dark.accent {
     --jump: .1;
-}
-
-.dim.black, .dim.gray {
-    --s: 33%;
 }.on-mobile(@rules) {
   @media screen and (min-width: 1px) { @rules();}
 }
@@ -5464,15 +5360,14 @@ pre > code {
   .set-contrast-ceiling-compare();
   .finalize-tone();
 }</textarea>
-        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="border-top border-bottom thick responsive inner-width border-bottom thick padding brand-color inner-gutter bold text-center">
+    <section class="border-top border-bottom thick inner responsive width border-bottom thick padding brand-color padding bold text-center">
       <p class="big text-margin-bottom">California Stylesheets is a CSS paradigm for devs and teams who want to <a href="#cheatsheet">spend&nbsp;way&nbsp;less&nbsp;time&nbsp;on&nbsp;CSS</a></p>
     </section>
 
-    <section class="page inner-width padding very dark cool brand-color">
+    <section class="inner page width padding very dark cool brand-color">
         <div class="columns desktop">
           <div class="four wide card inner-width">
             <h4>No workflow</h4>
@@ -5499,7 +5394,7 @@ pre > code {
 
     
     <div class="margin padding page width margin-auto">
-      <section class="page inner-width">
+      <section id="cheatsheet" class="page inner-width">
       
       
         <div class="two columns golden desktop margin-bottom">
@@ -5606,11 +5501,11 @@ pre > code {
                 </div>
               </div>
             </div>
-            <p class="text-margin-bottom">Use <strong>inner-width</strong> instead of <strong>width</strong> to set inside width.</p>
+            <p class="text-margin-bottom">Use <strong>inner</strong> with <strong>width</strong> to set inside width.</p>
       
             <div class="">
-              <p class="text-margin-bottom">card inner-width</p>
-              <div class="border thick border-text-color full-width force text-padding">
+              <p class="text-margin-bottom">inner card width</p>
+              <div class="border thick border-text-color full width force text-padding">
                 <div class="small placeholder border dotted border-text-color golden-width reverse margin-auto">
                     
                 </div>
@@ -5667,7 +5562,7 @@ pre > code {
             <div class="two column tablet text-left">
       
               <div class="two column desktop">
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right red">&nbsp;&nbsp;&nbsp;&nbsp;</span> red
                   </p>
@@ -5679,7 +5574,7 @@ pre > code {
                   </p>
                 </div>
       
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right green">&nbsp;&nbsp;&nbsp;&nbsp;</span> green
                   </p>
@@ -5692,7 +5587,7 @@ pre > code {
                 </div>
               </div>
               <div class="two column desktop">
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue
                   </p>
@@ -5704,7 +5599,7 @@ pre > code {
                   </p>
                 </div>
       
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right white">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
                   </p>
@@ -5722,7 +5617,7 @@ pre > code {
             <div class="text-left">
       
               <div class="three column desktop">
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right red orange">&nbsp;&nbsp;&nbsp;&nbsp;</span> red orange
                   </p>
@@ -5734,7 +5629,7 @@ pre > code {
                   </p>
                 </div>
       
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right green teal">&nbsp;&nbsp;&nbsp;&nbsp;</span> green teal
                   </p>
@@ -5745,7 +5640,7 @@ pre > code {
                     <span class="text-padding border rounded text-margin-bottom text-margin-right cyan blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan blue
                   </p>
                 </div>
-                <div class="card inner-width margin-bottom">
+                <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right blue purple">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue purple
                   </p>
@@ -5765,14 +5660,14 @@ pre > code {
           <p class="text inner-width">Three palette colors are different depending on brand color:</p>
       
           <div>
-            <div class="text-align-left three column tablet">
-              <p class="card inner-width">
+            <div class="text-align-left three column desktop">
+              <p class="inner card width">
                 <span class="text-padding border rounded text-margin-bottom text-margin-right brand-color">&nbsp;&nbsp;&nbsp;&nbsp;</span> brand-color
               </p>
-              <p class="card inner-width">
+              <p class="inner card width">
                 <span class="text-padding border rounded text-margin-bottom text-margin-right complement">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement
               </p>
-              <p class="card inner-width">
+              <p class="inner card width">
                 <span class="text-padding border rounded text-margin-bottom text-margin-right accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> accent
               </p>
             </div>
@@ -5940,7 +5835,7 @@ pre > code {
 
     </div>
 
-    <section class="black padding page inner-width">
+    <section class="black padding inner page width">
       <h3 class="text-center no-margin">Which projects are good for CASS?</h3>
     </section>
 
@@ -5948,7 +5843,7 @@ pre > code {
     <div class="cover viewport height relative" style="background-image: url('images/rezaul-karim-102abqkKhbY-unsplash.jpg');">
       <div class="responsive width margin-auto padding">
         
-        <div class="margin-bottom inner-gutter-top">
+        <div class="margin-bottom padding-top">
           <div class="">
             <div class="two column golden desktop margin gutter-bottom">
                 <div class="text inner-width">
@@ -6022,8 +5917,8 @@ pre > code {
 
     </div>
 
-    <div class="page inner-width padding margin-bottom">
-      <h2 class="responsive inner-width">Form examples</h2>
+    <div class="inner page width padding margin-bottom">
+      <h2 class="inner responsive width">Form examples</h2>
       <div class="columns desktop">
         <div class="six wide">
               <p class="text inner-width">Using shadow composables:</p>
@@ -6148,9 +6043,9 @@ pre > code {
 
     
 
-    <div class="page inner-width padding margin-bottom">
-      <h2 class="responsive inner-width">Chat examples</h2>
-      <div class="page inner-width">
+    <div class="inner responsive width padding margin-bottom">
+      <h2 class="">Chat examples</h2>
+      <div class="">
         <div id="chat_example1" class="black border monospace gutter">
             <div class="grid tablet gap-border-width no-margin-bottom">
                 <div class="nine wide">
@@ -6269,7 +6164,7 @@ pre > code {
       
     </div>
     
-    <div class="page inner-width border-bottom padding hide">
+    <div class="inner page width border-bottom padding hide">
       <div class="text width margin-auto">
         <h5>Some sites using California Stylesheets</h5>
         <ul class="margin-bottom">
@@ -6281,15 +6176,15 @@ pre > code {
       </div>
     </div>
 
-    <div class="small no-overflow very light white padding inner-gutter-top page inner-width">
+    <div class="small no-overflow very light white padding inner page width">
       <p class="text inner-width">CASS has hundreds of colors in its composable color system. Each color below uses some combination of these words:</p>
       
       <div class="five-column ">
-        <p class="text-center vertical-center card inner-width bold">warm cool dull</p>
-        <p class="text-center vertical-center card inner-width bold">very hella</p>
-        <p class="text-center vertical-center card inner-width bold">light dark bright dim</p>
-        <p class="text-center vertical-center card inner-width bold">red orange yellow grean teal cyan blue purple magenta</p>
-        <p class="text-center vertical-center card inner-width bold">white gray black</p>
+        <p class="text-center vertical-center inner card width bold">warm cool dull</p>
+        <p class="text-center vertical-center inner card width bold">very hella</p>
+        <p class="text-center vertical-center inner card width bold">light dark bright dim</p>
+        <p class="text-center vertical-center inner card width bold">red orange yellow grean teal cyan blue purple magenta</p>
+        <p class="text-center vertical-center inner card width bold">white gray black</p>
       </div>
 
       <p class="text inner-width">Every California Stylesheet has a palette tailored to its base color. Try different base colors for different palettes.</p>
@@ -11083,43 +10978,47 @@ pre > code {
           
       </section>    </div>
 
-    <footer class="viewport height golden reverse black page inner-width padding">
-        <div class="two column golden reverse desktop">
-            <div class="vertical-center inner-gutter">
-              <svg xmlns="http://www.w3.org/2000/svg" class="card width inline" x="0px" y="0px" viewBox="0 0 385 401" overflow="visible"><g clip-rule="evenodd"><path fill-rule="evenodd" fill="#FFF" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.864" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/></g><path fill-rule="evenodd" clip-rule="evenodd" fill="#006B54" d="M192.5 13.104c104.55 34.42 180 132.87 180 248.916v63.642c0 24.173-17.166 44.365-39.982 48.998-45.164 9.016-92.303 13.841-140.018 13.841s-94.33-4.72-139.492-13.735C30.191 370.132 12.5 349.835 12.5 325.662V262.02c0-116.046 75.45-214.497 180-248.916z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M80.844 145.72a11.176 11.176 0 0 1-.887 3.466 13.627 13.627 0 0 1-1.826 3.05 13.576 13.576 0 0 1-2.599 2.493 14.622 14.622 0 0 1-3.204 1.792c-1.881.76-3.714 1.085-5.498.978s-3.466-.598-5.044-1.469c-1.578-.87-3.017-2.113-4.316-3.726-1.298-1.614-2.397-3.533-3.295-5.756-.91-2.252-1.455-4.402-1.636-6.45s-.004-3.928.533-5.636a11.663 11.663 0 0 1 2.626-4.517c1.214-1.303 2.761-2.335 4.642-3.094 2.309-.934 4.676-1.251 7.1-.954 2.424.297 4.6 1.232 6.53 2.807l-3.548 4.268c-.64-.437-1.153-.744-1.54-.92a5.827 5.827 0 0 0-1.333-.406c-.754-.226-1.606-.304-2.556-.235s-1.81.259-2.58.57c-1.31.53-2.29 1.265-2.937 2.206a7.393 7.393 0 0 0-1.231 3.108c-.174 1.13-.146 2.306.08 3.523a18.2 18.2 0 0 0 1.014 3.494c1.267 3.136 2.861 5.318 4.784 6.547 1.922 1.23 3.966 1.406 6.132.531a8.101 8.101 0 0 0 1.697-.909 6.9 6.9 0 0 0 1.297-1.22 8.376 8.376 0 0 0 1.068-1.725c.324-.678.66-1.485 1.011-2.423l5.516.606zM111.655 142.417l-5.04-6.077-12.876 3.936-.736 7.844-5.82 1.779 3.401-33.345 5.38-1.645 21.379 25.769-5.688 1.739zm-16.13-19.322-1.097 11.233 8.29-2.535-7.193-8.698zM122.64 140.019l-5.894-30.326 5.43-1.056 4.99 25.664 17.245-3.352.905 4.662zM152.296 103.834l3.765 30.662-5.491.675-3.765-30.663zM167.857 107.961l.438 6.256 9.613-.673.392 5.612-9.613.673.94 13.43-5.612.393-2.156-30.818 23.045-1.611.386 5.52zM217.816 117.521c-.085 2.428-.462 4.621-1.13 6.582-.667 1.96-1.58 3.628-2.735 5.002s-2.537 2.426-4.146 3.155c-1.61.728-3.399 1.057-5.365.989-2.273-.08-4.215-.617-5.826-1.61s-2.926-2.271-3.949-3.83c-1.022-1.558-1.753-3.306-2.193-5.244a22.591 22.591 0 0 1-.558-5.81c.085-2.457.462-4.659 1.13-6.604.667-1.945 1.594-3.589 2.778-4.932 1.186-1.343 2.598-2.354 4.237-3.035s3.47-.986 5.499-.915c1.904.066 3.627.51 5.167 1.333a12.115 12.115 0 0 1 3.942 3.368c1.088 1.422 1.905 3.119 2.452 5.091.546 1.972.778 4.126.697 6.46zm-5.535-.054c.114-3.257-.427-5.828-1.622-7.716s-2.96-2.872-5.295-2.953-4.194.776-5.58 2.574c-1.386 1.796-2.136 4.323-2.249 7.58-.115 3.318.455 5.922 1.711 7.81 1.258 1.89 3.053 2.876 5.388 2.957 1.474.052 2.691-.229 3.651-.842a6.91 6.91 0 0 0 2.299-2.41c.572-.995.988-2.112 1.247-3.348.259-1.237.41-2.454.45-3.652zM243.01 136.45l-3.242-12.702-8.174-1.148-1.688 12.008-5.48-.77 4.3-30.592 14.064 1.976c1.126.158 2.072.384 2.838.678s1.51.74 2.233 1.339a8.996 8.996 0 0 1 3.002 3.82c.65 1.55.855 3.194.612 4.929-.245 1.735-.9 3.25-1.967 4.543-1.067 1.293-2.45 2.255-4.154 2.885l3.775 13.894-6.118-.86zm2.984-21.232c.168-1.187-.096-2.187-.789-2.998-.693-.811-1.725-1.313-3.094-1.506l-8.675-1.219-1.073 7.625 8.676 1.22c1.37.192 2.5.001 3.387-.572.887-.574 1.41-1.424 1.568-2.55zM274.827 143.273l-9.13-24.183-5.142 20.625-5.28-1.316 7.475-29.976 5.28 1.317 8.804 23.199 4.93-19.775 5.19 1.294-7.474 29.976zM301.947 119.047l-9.547 29.38-5.262-1.709 9.547-29.38zM321.208 159.23l-.093-7.896-12.483-5.043-5.508 5.632-5.644-2.28 23.63-23.773 5.215 2.108.398 33.48-5.515-2.229zm-.375-25.167-7.923 8.039 8.037 3.247-.114-11.286z"/><path style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none" d="M107.688 189.62c-2.601 0-4.947.316-7.038.948-2.066.608-3.876 1.543-5.431 2.807-1.531 1.24-2.747 2.82-3.647 4.74-.899 1.896-1.347 4.13-1.347 6.707 0 2.334.388 4.279 1.166 5.834.777 1.556 1.822 2.845 3.134 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.432 1.459c1.434.291 2.795.594 4.084.91 1.312.291 2.49.682 3.535 1.168 1.045.486 1.873 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.283.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.629-1.251-7.035-2.297v7.547c1.701.948 3.827 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.912 2.552-.608 4.716-1.532 6.49-2.772 1.8-1.264 3.185-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.275-6.27-.851-1.652-2.005-2.99-3.463-4.011-1.459-1.02-3.136-1.81-5.032-2.37a65.337 65.337 0 0 0-5.906-1.53 60.238 60.238 0 0 1-3.719-.875c-1.166-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.789-3.743 2.369-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.217.232 6.526.693 2.333.438 4.763 1.154 7.29 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.838-.765zm22.275.911v7.475h15.75v41.306h8.933v-41.306h15.713v-7.475h-40.396zm42.219 0 18.484 29.131v19.65h8.934v-19.65l18.484-29.13h-9.918l-12.978 21h-.11l-12.978-21h-9.918zm52.5 0v48.781h31.756v-7.474h-22.823V190.53h-8.933zm40.105 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.47v-12.613h22.678v-7.475h-31.609zM82.531 259.62c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.431 2.806-1.532 1.24-2.748 2.82-3.647 4.74-.9 1.896-1.348 4.13-1.348 6.707 0 2.334.389 4.279 1.166 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.431 1.459c1.434.291 2.796.594 4.084.91 1.313.291 2.49.682 3.536 1.168 1.045.486 1.872 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.284.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.63-1.251-7.035-2.296v7.546c1.701.948 3.826 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.913 2.552-.607 4.716-1.531 6.49-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.004-2.99-3.463-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.336 65.336 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.766-1.822-.766-3.062 0-2.139.79-3.743 2.37-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.216.232 6.525.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.839-.765zm222.834 0c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.432 2.806-1.53 1.24-2.747 2.82-3.646 4.74-.9 1.896-1.35 4.13-1.35 6.707 0 2.334.39 4.279 1.168 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.831 1.786 4.557 2.37a57.062 57.062 0 0 0 5.433 1.459c1.434.291 2.794.594 4.082.91 1.313.291 2.492.682 3.538 1.168 1.045.486 1.87 1.116 2.478 1.894.608.754.912 1.75.912 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.286.96-3.647 1.204a26.152 26.152 0 0 1-4.156.328 35.61 35.61 0 0 1-7.072-.694c-2.285-.486-4.631-1.251-7.037-2.296v7.546c1.701.948 3.828 1.677 6.38 2.188 2.577.535 5.19.803 7.838.803 3.039 0 5.835-.305 8.387-.913 2.552-.607 4.714-1.531 6.488-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.459-4.194 1.459-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.006-2.99-3.465-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.337 65.337 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.198-.73-3.098-1.24-.899-.535-1.617-1.202-2.152-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.79-3.743 2.37-4.813 1.605-1.069 3.876-1.605 6.817-1.605 2.042 0 4.218.232 6.527.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.977 40.977 0 0 0-7.839-.765zm-195.818.912v48.781h8.932v-21.218h22.605v21.219h8.932V260.53h-8.932v20.088h-22.605v-20.088h-8.932zm52.209 0v48.781h32.922v-7.474h-23.99v-13.744h19.468v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm42.437 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm37.698 0v7.475h15.75v41.307h8.931v-41.307h15.715v-7.475h-40.396z"/></svg>
+    <footer class="viewport height golden reverse black inner page width padding">
+        <div class="two column gap-double-gutter golden reverse desktop">
+            <div class="vertical-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="card width gutter margin-auto" x="0px" y="0px" viewBox="0 0 385 401" overflow="visible"><g clip-rule="evenodd"><path fill-rule="evenodd" fill="#FFF" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.864" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/></g><path fill-rule="evenodd" clip-rule="evenodd" fill="#006B54" d="M192.5 13.104c104.55 34.42 180 132.87 180 248.916v63.642c0 24.173-17.166 44.365-39.982 48.998-45.164 9.016-92.303 13.841-140.018 13.841s-94.33-4.72-139.492-13.735C30.191 370.132 12.5 349.835 12.5 325.662V262.02c0-116.046 75.45-214.497 180-248.916z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M80.844 145.72a11.176 11.176 0 0 1-.887 3.466 13.627 13.627 0 0 1-1.826 3.05 13.576 13.576 0 0 1-2.599 2.493 14.622 14.622 0 0 1-3.204 1.792c-1.881.76-3.714 1.085-5.498.978s-3.466-.598-5.044-1.469c-1.578-.87-3.017-2.113-4.316-3.726-1.298-1.614-2.397-3.533-3.295-5.756-.91-2.252-1.455-4.402-1.636-6.45s-.004-3.928.533-5.636a11.663 11.663 0 0 1 2.626-4.517c1.214-1.303 2.761-2.335 4.642-3.094 2.309-.934 4.676-1.251 7.1-.954 2.424.297 4.6 1.232 6.53 2.807l-3.548 4.268c-.64-.437-1.153-.744-1.54-.92a5.827 5.827 0 0 0-1.333-.406c-.754-.226-1.606-.304-2.556-.235s-1.81.259-2.58.57c-1.31.53-2.29 1.265-2.937 2.206a7.393 7.393 0 0 0-1.231 3.108c-.174 1.13-.146 2.306.08 3.523a18.2 18.2 0 0 0 1.014 3.494c1.267 3.136 2.861 5.318 4.784 6.547 1.922 1.23 3.966 1.406 6.132.531a8.101 8.101 0 0 0 1.697-.909 6.9 6.9 0 0 0 1.297-1.22 8.376 8.376 0 0 0 1.068-1.725c.324-.678.66-1.485 1.011-2.423l5.516.606zM111.655 142.417l-5.04-6.077-12.876 3.936-.736 7.844-5.82 1.779 3.401-33.345 5.38-1.645 21.379 25.769-5.688 1.739zm-16.13-19.322-1.097 11.233 8.29-2.535-7.193-8.698zM122.64 140.019l-5.894-30.326 5.43-1.056 4.99 25.664 17.245-3.352.905 4.662zM152.296 103.834l3.765 30.662-5.491.675-3.765-30.663zM167.857 107.961l.438 6.256 9.613-.673.392 5.612-9.613.673.94 13.43-5.612.393-2.156-30.818 23.045-1.611.386 5.52zM217.816 117.521c-.085 2.428-.462 4.621-1.13 6.582-.667 1.96-1.58 3.628-2.735 5.002s-2.537 2.426-4.146 3.155c-1.61.728-3.399 1.057-5.365.989-2.273-.08-4.215-.617-5.826-1.61s-2.926-2.271-3.949-3.83c-1.022-1.558-1.753-3.306-2.193-5.244a22.591 22.591 0 0 1-.558-5.81c.085-2.457.462-4.659 1.13-6.604.667-1.945 1.594-3.589 2.778-4.932 1.186-1.343 2.598-2.354 4.237-3.035s3.47-.986 5.499-.915c1.904.066 3.627.51 5.167 1.333a12.115 12.115 0 0 1 3.942 3.368c1.088 1.422 1.905 3.119 2.452 5.091.546 1.972.778 4.126.697 6.46zm-5.535-.054c.114-3.257-.427-5.828-1.622-7.716s-2.96-2.872-5.295-2.953-4.194.776-5.58 2.574c-1.386 1.796-2.136 4.323-2.249 7.58-.115 3.318.455 5.922 1.711 7.81 1.258 1.89 3.053 2.876 5.388 2.957 1.474.052 2.691-.229 3.651-.842a6.91 6.91 0 0 0 2.299-2.41c.572-.995.988-2.112 1.247-3.348.259-1.237.41-2.454.45-3.652zM243.01 136.45l-3.242-12.702-8.174-1.148-1.688 12.008-5.48-.77 4.3-30.592 14.064 1.976c1.126.158 2.072.384 2.838.678s1.51.74 2.233 1.339a8.996 8.996 0 0 1 3.002 3.82c.65 1.55.855 3.194.612 4.929-.245 1.735-.9 3.25-1.967 4.543-1.067 1.293-2.45 2.255-4.154 2.885l3.775 13.894-6.118-.86zm2.984-21.232c.168-1.187-.096-2.187-.789-2.998-.693-.811-1.725-1.313-3.094-1.506l-8.675-1.219-1.073 7.625 8.676 1.22c1.37.192 2.5.001 3.387-.572.887-.574 1.41-1.424 1.568-2.55zM274.827 143.273l-9.13-24.183-5.142 20.625-5.28-1.316 7.475-29.976 5.28 1.317 8.804 23.199 4.93-19.775 5.19 1.294-7.474 29.976zM301.947 119.047l-9.547 29.38-5.262-1.709 9.547-29.38zM321.208 159.23l-.093-7.896-12.483-5.043-5.508 5.632-5.644-2.28 23.63-23.773 5.215 2.108.398 33.48-5.515-2.229zm-.375-25.167-7.923 8.039 8.037 3.247-.114-11.286z"/><path style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none" d="M107.688 189.62c-2.601 0-4.947.316-7.038.948-2.066.608-3.876 1.543-5.431 2.807-1.531 1.24-2.747 2.82-3.647 4.74-.899 1.896-1.347 4.13-1.347 6.707 0 2.334.388 4.279 1.166 5.834.777 1.556 1.822 2.845 3.134 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.432 1.459c1.434.291 2.795.594 4.084.91 1.312.291 2.49.682 3.535 1.168 1.045.486 1.873 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.283.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.629-1.251-7.035-2.297v7.547c1.701.948 3.827 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.912 2.552-.608 4.716-1.532 6.49-2.772 1.8-1.264 3.185-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.275-6.27-.851-1.652-2.005-2.99-3.463-4.011-1.459-1.02-3.136-1.81-5.032-2.37a65.337 65.337 0 0 0-5.906-1.53 60.238 60.238 0 0 1-3.719-.875c-1.166-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.789-3.743 2.369-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.217.232 6.526.693 2.333.438 4.763 1.154 7.29 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.838-.765zm22.275.911v7.475h15.75v41.306h8.933v-41.306h15.713v-7.475h-40.396zm42.219 0 18.484 29.131v19.65h8.934v-19.65l18.484-29.13h-9.918l-12.978 21h-.11l-12.978-21h-9.918zm52.5 0v48.781h31.756v-7.474h-22.823V190.53h-8.933zm40.105 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.47v-12.613h22.678v-7.475h-31.609zM82.531 259.62c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.431 2.806-1.532 1.24-2.748 2.82-3.647 4.74-.9 1.896-1.348 4.13-1.348 6.707 0 2.334.389 4.279 1.166 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.431 1.459c1.434.291 2.796.594 4.084.91 1.313.291 2.49.682 3.536 1.168 1.045.486 1.872 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.284.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.63-1.251-7.035-2.296v7.546c1.701.948 3.826 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.913 2.552-.607 4.716-1.531 6.49-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.004-2.99-3.463-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.336 65.336 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.766-1.822-.766-3.062 0-2.139.79-3.743 2.37-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.216.232 6.525.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.839-.765zm222.834 0c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.432 2.806-1.53 1.24-2.747 2.82-3.646 4.74-.9 1.896-1.35 4.13-1.35 6.707 0 2.334.39 4.279 1.168 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.831 1.786 4.557 2.37a57.062 57.062 0 0 0 5.433 1.459c1.434.291 2.794.594 4.082.91 1.313.291 2.492.682 3.538 1.168 1.045.486 1.87 1.116 2.478 1.894.608.754.912 1.75.912 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.286.96-3.647 1.204a26.152 26.152 0 0 1-4.156.328 35.61 35.61 0 0 1-7.072-.694c-2.285-.486-4.631-1.251-7.037-2.296v7.546c1.701.948 3.828 1.677 6.38 2.188 2.577.535 5.19.803 7.838.803 3.039 0 5.835-.305 8.387-.913 2.552-.607 4.714-1.531 6.488-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.459-4.194 1.459-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.006-2.99-3.465-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.337 65.337 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.198-.73-3.098-1.24-.899-.535-1.617-1.202-2.152-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.79-3.743 2.37-4.813 1.605-1.069 3.876-1.605 6.817-1.605 2.042 0 4.218.232 6.527.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.977 40.977 0 0 0-7.839-.765zm-195.818.912v48.781h8.932v-21.218h22.605v21.219h8.932V260.53h-8.932v20.088h-22.605v-20.088h-8.932zm52.209 0v48.781h32.922v-7.474h-23.99v-13.744h19.468v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm42.437 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm37.698 0v7.475h15.75v41.307h8.931v-41.307h15.715v-7.475h-40.396z"/></svg>
             </div>
     
-            <div class="two column tablet">
-              <div>
-                <h6 class="tiny">Documentation</h6>
-                <ul class="two column mobile tablet no-list-style">
-                    <div>
-                      <li><a class=" text-padding" href="docs/">Install</a></li>
-                      <li><a class=" text-padding" href="docs/typography">Typography</a></li>
-                      <li><a class=" text-padding" href="docs/layout">Layout</a></li>
-                    </div>
-                    <div>
-                      <li><a class=" text-padding" href="docs/colors">Color</a></li>
-                      <li><a class=" text-padding" href="docs/composables">Composables</a></li>
-                      <li><a class=" text-padding" href="docs/nullifiers">Nullifiers</a></li>
-                    </div>
-                  </ul>
+            <div>
+              <div class="two column tablet small">
+                <div>
+                  <h6 class="tiny">Documentation</h6>
+                  <ul class="two column mobile tablet no-list-style">
+                      <div>
+                        <li><a class=" text-padding" href="docs/">Install</a></li>
+                        <li><a class=" text-padding" href="docs/typography">Typography</a></li>
+                        <li><a class=" text-padding" href="docs/layout">Layout</a></li>
+                      </div>
+                      <div>
+                        <li><a class=" text-padding" href="docs/colors">Color</a></li>
+                        <li><a class=" text-padding" href="docs/composables">Composables</a></li>
+                        <li><a class=" text-padding" href="docs/nullifiers">Nullifiers</a></li>
+                      </div>
+                    </ul>
+                </div>
+                <div>
+                  <h6 class="tiny">Other links</h6>
+                  <ul class="two column mobile tablet no-list-style">
+                      <div>
+                        <li><a class="text-padding" href="https://casscss.github.io/casscss">Github</a></li>
+                        <li><a class="text-padding" href="https://www.twitter.com/yousuckatcss">Twitter</a></li>
+      
+                      </div>
+                      <div>
+                        
+                      </div>
+                    </ul>
+                </div>  
+                  
               </div>
-              <div>
-                <h6 class="tiny">Other links</h6>
-                <ul class="two column mobile tablet no-list-style">
-                    <div>
-                      <li><a class="text-padding" href="https://casscss.github.io/casscss">Github</a></li>
-                      <li><a class="text-padding" href="https://www.twitter.com/yousuckatcss">Twitter</a></li>
-    
-                    </div>
-                    <div>
-                      
-                    </div>
-                  </ul>
-              </div>  
-                
             </div>
+    
+            
         </div>
         <p class="no-margin-bottom dim black padding margin-top"><a href="">California Stylesheets</a> <span class="float-right clearfix">&copy; 2021 Rex Riepe</span></p>
     </footer>

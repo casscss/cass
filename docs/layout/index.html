@@ -36,7 +36,7 @@
       </div>
   </nav> -->
   
-  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left responsive inner-width padding no-padding-bottom">
+  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left inner responsive width padding no-padding-bottom">
       <div class="grid relative text-padding-top">
           
   
@@ -61,16 +61,14 @@
           </a>
           <div class="five wide text-right text-margin-bottom vertical-center">
               <span>
-                  <a href="../../docs/" class="text-padding text-margin-right bold">Read the docs</a>
-                  <!-- <a href="https://github.com/cavepaint/cavepaintcss" target="_blank" class="new-tab text-padding">Github</a> -->
-              </span>
-              
+                  <a href="https://github.com/casscss/cass" target="_blank" class="text-padding text-margin-rightx">See it on Github</a>
+              </span>            
           </div>
       </div>
   </nav>
   <div class="text-trim full width placeholder padding">&nbsp;</div>
   
-  <div class="very dark warm blue viewport height golden reverse vertical-center responsive inner-width padding no-padding-top">
+  <div class="very dark warm blue viewport height golden reverse vertical-center inner responsive width padding no-padding-top">
     <div class="two column golden reverse desktop">
       <nav class="margin-top margin-bottom text inner-width">
         <ul class="two column mobile tablet no-list-style">
@@ -85,14 +83,14 @@
             <li><a class=" text-padding" href="../nullifiers">nullifiers</a></li>
           </div>
         </ul>
-      </nav>      <div class="vertical-center text inner-width margin-bottom">
+      </nav>      <div class="vertical-center inner text width margin-bottom">
         <h1 class="margin-top gutter-bottom">Layout</h1>
         <p>Use standardized page width, text width and CASS&#39;s grid system to quickly put together any page layout.</p>
       </div>
     </div>
 
   </div>
-  <main id="main" class="min-viewport height text inner-width padding white">
+  <main id="main" class="min-viewport height inner text width padding white">
     
         
 <section class="padding-bottom gutter-bottom">
@@ -142,7 +140,7 @@
 
     <h4>Setting content width</h4>
 
-    <p>Use <strong>page width</strong> and <strong>page inner-width</strong> to make the width of the div or the width of the div's contents fit the standard CASS content width. If your content is just text, try <strong>text width</strong> and <strong>text inner-width</strong>. With these composable classes and <strong>margin-auto</strong> almost any basic layout can be put together.</p>
+    <p>Use <strong>page width</strong> and <strong>inner page width</strong> to make the width of the div or the width of the div's contents fit the standard CASS content width. If your content is just text, try <strong>text width</strong> and <strong>inner text width</strong>. With these composable classes and <strong>margin-auto</strong> almost any basic layout can be put together.</p>
 
 </section>
 
@@ -600,25 +598,25 @@
 <p>These classes are often used for the basic layout framing of a page. They work well with <strong>margin-auto</strong>, which will center them in their parent container.</p>
 
 
-<h2>Inner widths</h2>
+<h2>Inner</h2>
 
-<p>Inner-width classes use padding to emulate an inner-width effect.</p>
+<p>Add <strong>inner</strong> to width for an inner width effect..</p>
 
 <ul>
-    <li><strong>.text inner-width</strong>: Enforces text measure inside an element</li>
-    <li><strong>.card inner-width</strong>: Enforces the smaller text measure/width of an aside</li>
-    <li><strong>.page inner-width</strong>: On very large elements, sets the inner width to the full page width</li>
-    <li><strong>.responsive inner-width</strong>: Automatically sets an appropriate inner width</li>
+    <li><strong>text inner width</strong>: Enforces text measure inside an element</li>
+    <li><strong>card inner width</strong>: Enforces the smaller text measure/width of an aside</li>
+    <li><strong>page inner width</strong>: On very large elements, sets the inner width to the full page width</li>
+    <li><strong>responsive inner width</strong>: Automatically sets an appropriate inner width</li>
 </ul>
 
-<p>This example page is already set to <strong>text inner-width</strong>, limiting our room, so we'll use the smallest of the three, <strong>card width</strong>, for examples:</p>
+<p>This example page is already set to <strong>inner text width</strong>, limiting our room, so we'll use the smallest of the three, <strong>card width</strong>, for examples:</p>
 
 <p class="teal responsive padding">This is just a regular <strong>teal</strong> paragraph with <strong>responsive</strong> and <strong>padding</strong> composables added to it.</p>
 
 <pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding</strong>"&gt;This is just a regular &lt;strong&gt;teal&lt;/strong&gt; paragraph with &lt;strong&gt;responsive&lt;/strong&gt; and &lt;strong&gt;padding&lt;/strong&gt; composables added to it.&lt;/p&gt;
 </pre>
 
-<p class="teal responsive padding card inner-width">The same composables, but with <strong>card inner-width</strong> added.</p>
+<p class="teal responsive padding card inner width">The same composables, but with <strong>card inner-width</strong> added.</p>
 
 <pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding card inner-width</strong>"&gt;The same composables, but with &lt;strong&gt;card inner-width&lt;/strong&gt; added.&lt;/p&gt;</pre>
 
@@ -626,6 +624,6 @@
 
 <pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding card width margin-auto</strong>"&gt;This one instead has &lt;strong&gt;card width&lt;/strong&gt; and &lt;strong&gt;margin-auto&lt;/strong&gt;.&lt;/p&gt;</pre>
 
-<p>Inner-width composables work with the grid composables. This column of text, for example, has the <strong>text inner-width</strong> class on a <strong>nine wide</strong> element. In cases where the grid width goes above the text measure, the text inner-width class will enforce it.</p>
+<p>Inner width composables work with the grid composables. This column of text, for example, has the <strong>inner text width</strong> composable on a <strong>nine wide</strong> element. In cases where the grid width goes above the text measure, the text inner-width class will enforce it.</p>
 
-<p>Inner-width classes help cut down on markup complexity by letting you use fewer containers.</p>
+<p>Inner width classes help cut down on markup complexity by letting you use fewer containers.</p>

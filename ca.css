@@ -39,14 +39,14 @@
   --complement: #600617;
   --accent: #00516a;
   --white: #fafdfc;
-  --white-gray: #d8e4e3;
+  --white-gray: #e9f1f0;
   --gray: #b6ccc9;
-  --gray-black: #61706e;
-  --black: #0b1512;
+  --gray-black: #606c6a;
+  --black: #0a0c0c;
   --red: #ba2f27;
-  --red-orange: #cd6b13;
-  --orange: #e1a800;
-  --orange-yellow: #ddd300;
+  --red-orange: #cf6b13;
+  --orange: #e3a700;
+  --orange-yellow: #ded300;
   --yellow: #daff00;
   --yellow-green: #7dd516;
   --green: #20ab2c;
@@ -85,7 +85,7 @@
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
   --shadow-position: 1px;
   --shadow-blur: 3px;
-  --shadow-color: rgba(11, 21, 18, 0.3);
+  --shadow-color: rgba(10, 12, 12, 0.3);
 }
 /* Responsive settings for mobile */
 @media screen and (min-width: 1px) {
@@ -489,9 +489,6 @@ button:active {
 .gutter {
   margin: var(--gutter);
 }
-.inner-gutter {
-  padding: var(--gutter);
-}
 .text-padding {
   padding: var(--text-padding);
 }
@@ -533,18 +530,6 @@ button:active {
 }
 .gutter-left {
   margin-left: var(--gutter);
-}
-.inner-gutter-top {
-  padding-top: var(--gutter);
-}
-.inner-gutter-right {
-  padding-right: var(--gutter);
-}
-.inner-gutter-bottom {
-  padding-bottom: var(--gutter);
-}
-.inner-gutter-left {
-  padding-left: var(--gutter);
 }
 .text-padding-top {
   padding-top: var(--text-padding);
@@ -611,7 +596,7 @@ button:active {
 }
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: rgba(11, 21, 18, 0.16);
+  --shadow-color: rgba(10, 12, 12, 0.16);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -766,25 +751,13 @@ button:active {
 .shade,
 .text-black,
 .white,
+.white.gray,
 .gray,
-.very.light.black,
+.very.light.gray.black,
+.hella.light.gray.black,
+.hella.bright.gray.black,
 .hella.light.black,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.orange,
-.yellow,
-.green,
-.teal,
-.cyan,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.purple,
-.hella.light.purple,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
+.light.brand-color,
 .very.light.brand-color,
 .hella.light.brand-color,
 .very.bright.brand-color,
@@ -793,28 +766,37 @@ button:active {
 .very.light.accent,
 .hella.light.accent,
 .hella.bright.accent,
-.white.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.light.red.orange,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
 .very.light.red.orange,
 .hella.light.red.orange,
-.bright.red.orange,
 .very.bright.red.orange,
 .hella.bright.red.orange,
+.orange,
 .orange.yellow,
+.yellow,
 .yellow.green,
+.green,
 .green.teal,
+.teal,
 .teal.cyan,
+.cyan,
 .cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
 .very.light.blue.purple,
 .hella.light.blue.purple,
 .hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
 .very.light.purple.magenta,
 .hella.light.purple.magenta,
 .hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.hella.bright.magenta,
 .very.light.magenta.red,
 .hella.light.magenta.red,
 .hella.bright.magenta.red {
@@ -829,62 +811,62 @@ button:active {
 .text-white,
 .hella.dark.gray,
 .hella.dim.gray,
+.gray.black,
 .black,
+.brand-color,
+.complement,
+.accent,
 .red,
+.red.orange,
 .very.dark.orange,
 .hella.dark.orange,
 .very.dim.orange,
 .hella.dim.orange,
+.very.dark.orange.yellow,
+.hella.dark.orange.yellow,
+.hella.dim.orange.yellow,
 .hella.dark.yellow,
 .hella.dim.yellow,
+.very.dark.yellow.green,
+.hella.dark.yellow.green,
+.very.dim.yellow.green,
+.hella.dim.yellow.green,
 .dark.green,
 .very.dark.green,
 .hella.dark.green,
 .dim.green,
 .very.dim.green,
 .hella.dim.green,
-.dark.teal,
-.very.dark.teal,
-.hella.dark.teal,
-.dim.teal,
-.very.dim.teal,
-.hella.dim.teal,
-.very.dark.cyan,
-.hella.dark.cyan,
-.hella.dim.cyan,
-.blue,
-.purple,
-.magenta,
-.brand-color,
-.complement,
-.accent,
-.gray.black,
-.red.orange,
-.very.dark.orange.yellow,
-.hella.dark.orange.yellow,
-.hella.dim.orange.yellow,
-.very.dark.yellow.green,
-.hella.dark.yellow.green,
-.very.dim.yellow.green,
-.hella.dim.yellow.green,
 .dark.green.teal,
 .very.dark.green.teal,
 .hella.dark.green.teal,
 .dim.green.teal,
 .very.dim.green.teal,
 .hella.dim.green.teal,
+.dark.teal,
+.very.dark.teal,
+.hella.dark.teal,
+.dim.teal,
+.very.dim.teal,
+.hella.dim.teal,
 .very.dark.teal.cyan,
 .hella.dark.teal.cyan,
 .very.dim.teal.cyan,
 .hella.dim.teal.cyan,
+.very.dark.cyan,
+.hella.dark.cyan,
+.hella.dim.cyan,
 .dark.cyan.blue,
 .very.dark.cyan.blue,
 .hella.dark.cyan.blue,
 .dim.cyan.blue,
 .very.dim.cyan.blue,
 .hella.dim.cyan.blue,
+.blue,
 .blue.purple,
+.purple,
 .purple.magenta,
+.magenta,
 .magenta.red {
   --t: var(--white);
   color: var(--white);
@@ -932,7 +914,7 @@ button:active {
 }
 .text-shadow {
   --shadow-blur: 0;
-  --shadow-color: rgba(11, 21, 18, 0.6);
+  --shadow-color: rgba(10, 12, 12, 0.6);
   text-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .text-trim {
@@ -1004,6 +986,12 @@ button:active {
 .width.force {
   width: var(--width);
 }
+.golden-width {
+  width: 62%;
+}
+.golden-width.reverse {
+  width: 38%;
+}
 .responsive {
   --width: var(--responsive-width);
 }
@@ -1023,35 +1011,18 @@ button:active {
 .full {
   --width: 100%;
 }
-.inner-width {
+.inner.width {
+  max-width: 100%;
   padding-left: calc(50% - (var(--width) * 0.5));
   padding-right: calc(50% - (var(--width) * 0.5));
 }
-.inner-width.padding-left,
-.inner-width.padding {
+.inner.width.padding-left,
+.inner.width.padding {
   padding-left: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
 }
-.inner-width.padding-right,
-.inner-width.padding {
+.inner.width.padding-right,
+.inner.width.padding {
   padding-right: max(var(--padding-base), calc(50% - (var(--width) * 0.5) + var(--padding-base)));
-}
-.inner-width.responsive {
-  --width: var(--responsive-width);
-}
-.inner-width.card {
-  --width: var(--card-width);
-}
-.inner-width.text {
-  --width: var(--text-width);
-}
-.inner-width.page {
-  --width: var(--page-width);
-}
-.golden-width {
-  width: 62%;
-}
-.golden-width.reverse {
-  width: 38%;
 }
 .hide {
   display: none;
@@ -1276,7 +1247,6 @@ button:active {
 }
 .dull {
   --o: 0.3;
-  --s: 33% !important;
   background-image: linear-gradient(rgba(123.3, 123.3, 123.3, var(--o)), rgba(123.3, 123.3, 123.3, var(--o)));
 }
 .light {
@@ -1293,71 +1263,171 @@ button:active {
   --jump: 0.15;
 }
 .dim {
-  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 3 * var(--v, 0)));
-  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --s: calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 2 * var(--v, 0)));
+  --l: calc(var(--b-l) - ((var(--b-l)) * var(--jump) * 1.25 * var(--v, 0))) !important;
+  --jump: 0.1;
 }
 .white {
   --h: 165;
   --s: 46%;
   --l: 99%;
-  --o: 0.01;
+  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
   --b: 100%;
 }
 .dark.white {
-  --b: 95%;
+  --b: 97%;
 }
 .bright.white {
   --b-s: 56%;
-  --b-l: 100%;
+  --b-l: 99%;
 }
 .dim.white {
   --b-s: 36%;
   --b-l: 98%;
+}
+.white.gray {
+  --h: 170;
+  --s: 21%;
+  --l: 93%;
+  --o: 0.07;
+  --jump: 0.02;
+}
+.light.white.gray {
+  --b: 96%;
+}
+.dark.white.gray {
+  --b: 90%;
+}
+.bright.white.gray {
+  --b-s: 31%;
+  --b-l: 94%;
+}
+.dim.white.gray {
+  --b-s: 11%;
+  --b-l: 93%;
 }
 .gray {
   --h: 172;
   --s: 17%;
   --l: 76%;
   --o: 0.1;
+  --jump: 0.03;
 }
 .light.gray {
-  --b: 84%;
+  --b: 81%;
 }
 .dark.gray {
-  --b: 68%;
+  --b: 71%;
 }
 .bright.gray {
   --b-s: 27%;
-  --b-l: 78%;
+  --b-l: 77%;
 }
 .dim.gray {
   --b-s: 7%;
   --b-l: 75%;
 }
+.gray.black {
+  --h: 172;
+  --s: 6%;
+  --l: 40%;
+  --o: 0.15;
+  --jump: 0.1;
+}
+.light.gray.black {
+  --b: 48%;
+}
+.dark.gray.black {
+  --b: 32%;
+}
+.bright.gray.black {
+  --b-s: 16%;
+  --b-l: 42%;
+}
+.dim.gray.black {
+  --b-s: 0%;
+  --b-l: 39%;
+}
 .black {
   --h: 165;
-  --s: 30%;
-  --l: 6%;
-  --o: 0.4;
-  --jump: 0.4;
+  --s: 8%;
+  --l: 4%;
+  --o: 0.2;
+  --jump: 0.2;
 }
 .light.black {
-  --b: 22%;
+  --b: 16%;
 }
 .dark.black {
   --b: 0%;
 }
 .bright.black {
-  --b-s: 40%;
-  --b-l: 10%;
+  --b-s: 18%;
+  --b-l: 7%;
 }
 .dim.black {
-  --b-s: 20%;
-  --b-l: 4%;
+  --b-s: 0%;
+  --b-l: 3%;
+}
+.brand-color {
+  --h: 167;
+  --s: 100%;
+  --l: 21%;
+}
+.light.brand-color {
+  --b: 33%;
+}
+.dark.brand-color {
+  --b: 9%;
+}
+.bright.brand-color {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.brand-color {
+  --b-s: 90%;
+  --b-l: 19%;
+}
+.complement {
+  --h: 349;
+  --s: 87%;
+  --l: 20%;
+}
+.light.complement {
+  --b: 32%;
+}
+.dark.complement {
+  --b: 8%;
+}
+.bright.complement {
+  --b-s: 97%;
+  --b-l: 23%;
+}
+.dim.complement {
+  --b-s: 77%;
+  --b-l: 19%;
+}
+.accent {
+  --h: 194;
+  --s: 100%;
+  --l: 21%;
+}
+.light.accent {
+  --b: 33%;
+}
+.dark.accent {
+  --b: 9%;
+}
+.bright.accent {
+  --b-s: 100%;
+  --b-l: 24%;
+}
+.dim.accent {
+  --b-s: 90%;
+  --b-l: 19%;
 }
 .red {
   --h: 3;
@@ -1378,23 +1448,63 @@ button:active {
   --b-s: 56%;
   --b-l: 43%;
 }
-.orange {
-  --h: 45;
-  --s: 100%;
+.red.orange {
+  --h: 28;
+  --s: 83%;
   --l: 44%;
+  --o: 0.2;
+}
+.light.red.orange {
+  --b: 47%;
+}
+.dark.red.orange {
+  --b: 42%;
+}
+.bright.red.orange {
+  --b-s: 93%;
+  --b-l: 45%;
+}
+.dim.red.orange {
+  --b-s: 73%;
+  --b-l: 44%;
+}
+.orange {
+  --h: 44;
+  --s: 100%;
+  --l: 45%;
   --o: 0.1;
 }
 .light.orange {
   --b: 45%;
 }
 .dark.orange {
-  --b: 43%;
+  --b: 44%;
 }
 .bright.orange {
   --b-s: 100%;
-  --b-l: 44%;
+  --b-l: 45%;
 }
 .dim.orange {
+  --b-s: 90%;
+  --b-l: 44%;
+}
+.orange.yellow {
+  --h: 57;
+  --s: 100%;
+  --l: 44%;
+  --o: 0.075;
+}
+.light.orange.yellow {
+  --b: 44%;
+}
+.dark.orange.yellow {
+  --b: 43%;
+}
+.bright.orange.yellow {
+  --b-s: 100%;
+  --b-l: 44%;
+}
+.dim.orange.yellow {
   --b-s: 90%;
   --b-l: 44%;
 }
@@ -1418,260 +1528,6 @@ button:active {
   --b-s: 90%;
   --b-l: 50%;
 }
-.green {
-  --h: 125;
-  --s: 68%;
-  --l: 40%;
-}
-.light.green {
-  --b: 48%;
-}
-.dark.green {
-  --b: 32%;
-}
-.bright.green {
-  --b-s: 78%;
-  --b-l: 42%;
-}
-.dim.green {
-  --b-s: 58%;
-  --b-l: 39%;
-}
-.teal {
-  --h: 176;
-  --s: 67%;
-  --l: 41%;
-}
-.light.teal {
-  --b: 49%;
-}
-.dark.teal {
-  --b: 33%;
-}
-.bright.teal {
-  --b-s: 77%;
-  --b-l: 43%;
-}
-.dim.teal {
-  --b-s: 57%;
-  --b-l: 40%;
-}
-.cyan {
-  --h: 179;
-  --s: 92%;
-  --l: 49%;
-  --o: 0.08;
-}
-.light.cyan {
-  --b: 61%;
-}
-.dark.cyan {
-  --b: 37%;
-}
-.bright.cyan {
-  --b-s: 100%;
-  --b-l: 52%;
-}
-.dim.cyan {
-  --b-s: 82%;
-  --b-l: 48%;
-}
-.blue {
-  --h: 221;
-  --s: 85%;
-  --l: 45%;
-}
-.light.blue {
-  --b: 57%;
-}
-.dark.blue {
-  --b: 33%;
-}
-.bright.blue {
-  --b-s: 95%;
-  --b-l: 48%;
-}
-.dim.blue {
-  --b-s: 75%;
-  --b-l: 44%;
-}
-.purple {
-  --h: 281;
-  --s: 52%;
-  --l: 40%;
-}
-.light.purple {
-  --b: 48%;
-}
-.dark.purple {
-  --b: 32%;
-}
-.bright.purple {
-  --b-s: 62%;
-  --b-l: 42%;
-}
-.dim.purple {
-  --b-s: 42%;
-  --b-l: 39%;
-}
-.magenta {
-  --h: 288;
-  --s: 78%;
-  --l: 50%;
-}
-.light.magenta {
-  --b: 58%;
-}
-.dark.magenta {
-  --b: 42%;
-}
-.bright.magenta {
-  --b-s: 88%;
-  --b-l: 52%;
-}
-.dim.magenta {
-  --b-s: 68%;
-  --b-l: 49%;
-}
-.brand-color {
-  --h: 167;
-  --s: 100%;
-  --l: 21%;
-}
-.light.brand-color {
-  --b: 29%;
-}
-.dark.brand-color {
-  --b: 13%;
-}
-.bright.brand-color {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.brand-color {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.complement {
-  --h: 349;
-  --s: 87%;
-  --l: 20%;
-}
-.light.complement {
-  --b: 28%;
-}
-.dark.complement {
-  --b: 12%;
-}
-.bright.complement {
-  --b-s: 97%;
-  --b-l: 22%;
-}
-.dim.complement {
-  --b-s: 77%;
-  --b-l: 19%;
-}
-.accent {
-  --h: 194;
-  --s: 100%;
-  --l: 21%;
-}
-.light.accent {
-  --b: 29%;
-}
-.dark.accent {
-  --b: 13%;
-}
-.bright.accent {
-  --b-s: 100%;
-  --b-l: 23%;
-}
-.dim.accent {
-  --b-s: 90%;
-  --b-l: 20%;
-}
-.white.gray {
-  --h: 171;
-  --s: 19%;
-  --l: 87%;
-  --o: 0.07;
-  --jump: 0.05;
-}
-.light.white.gray {
-  --b: 91%;
-}
-.dark.white.gray {
-  --b: 83%;
-}
-.bright.white.gray {
-  --b-s: 29%;
-  --b-l: 88%;
-}
-.dim.white.gray {
-  --b-s: 9%;
-  --b-l: 87%;
-}
-.gray.black {
-  --h: 170;
-  --s: 7%;
-  --l: 41%;
-  --o: 0.15;
-  --jump: 0.15;
-}
-.light.gray.black {
-  --b: 53%;
-}
-.dark.gray.black {
-  --b: 29%;
-}
-.bright.gray.black {
-  --b-s: 17%;
-  --b-l: 44%;
-}
-.dim.gray.black {
-  --b-s: 0%;
-  --b-l: 40%;
-}
-.red.orange {
-  --h: 28;
-  --s: 83%;
-  --l: 44%;
-  --o: 0.2;
-}
-.light.red.orange {
-  --b: 60%;
-}
-.dark.red.orange {
-  --b: 28%;
-}
-.bright.red.orange {
-  --b-s: 93%;
-  --b-l: 48%;
-}
-.dim.red.orange {
-  --b-s: 73%;
-  --b-l: 42%;
-}
-.orange.yellow {
-  --h: 57;
-  --s: 100%;
-  --l: 43%;
-  --o: 0.075;
-}
-.light.orange.yellow {
-  --b: 44%;
-}
-.dark.orange.yellow {
-  --b: 43%;
-}
-.bright.orange.yellow {
-  --b-s: 100%;
-  --b-l: 44%;
-}
-.dim.orange.yellow {
-  --b-s: 90%;
-  --b-l: 43%;
-}
 .yellow.green {
   --h: 88;
   --s: 81%;
@@ -1692,6 +1548,25 @@ button:active {
   --b-s: 71%;
   --b-l: 46%;
 }
+.green {
+  --h: 125;
+  --s: 68%;
+  --l: 40%;
+}
+.light.green {
+  --b: 48%;
+}
+.dark.green {
+  --b: 32%;
+}
+.bright.green {
+  --b-s: 78%;
+  --b-l: 42%;
+}
+.dim.green {
+  --b-s: 58%;
+  --b-l: 39%;
+}
 .green.teal {
   --h: 151;
   --s: 67%;
@@ -1708,6 +1583,25 @@ button:active {
   --b-l: 43%;
 }
 .dim.green.teal {
+  --b-s: 57%;
+  --b-l: 40%;
+}
+.teal {
+  --h: 176;
+  --s: 67%;
+  --l: 41%;
+}
+.light.teal {
+  --b: 49%;
+}
+.dark.teal {
+  --b: 33%;
+}
+.bright.teal {
+  --b-s: 77%;
+  --b-l: 43%;
+}
+.dim.teal {
   --b-s: 57%;
   --b-l: 40%;
 }
@@ -1731,6 +1625,26 @@ button:active {
   --b-s: 70%;
   --b-l: 44%;
 }
+.cyan {
+  --h: 179;
+  --s: 92%;
+  --l: 49%;
+  --o: 0.08;
+}
+.light.cyan {
+  --b: 61%;
+}
+.dark.cyan {
+  --b: 37%;
+}
+.bright.cyan {
+  --b-s: 100%;
+  --b-l: 52%;
+}
+.dim.cyan {
+  --b-s: 82%;
+  --b-l: 48%;
+}
 .cyan.blue {
   --h: 198;
   --s: 88%;
@@ -1751,6 +1665,25 @@ button:active {
   --b-s: 78%;
   --b-l: 45%;
 }
+.blue {
+  --h: 221;
+  --s: 85%;
+  --l: 45%;
+}
+.light.blue {
+  --b: 57%;
+}
+.dark.blue {
+  --b: 33%;
+}
+.bright.blue {
+  --b-s: 95%;
+  --b-l: 48%;
+}
+.dim.blue {
+  --b-s: 75%;
+  --b-l: 44%;
+}
 .blue.purple {
   --h: 243;
   --s: 49%;
@@ -1770,6 +1703,25 @@ button:active {
   --b-s: 39%;
   --b-l: 47%;
 }
+.purple {
+  --h: 281;
+  --s: 52%;
+  --l: 40%;
+}
+.light.purple {
+  --b: 48%;
+}
+.dark.purple {
+  --b: 32%;
+}
+.bright.purple {
+  --b-s: 62%;
+  --b-l: 42%;
+}
+.dim.purple {
+  --b-s: 42%;
+  --b-l: 39%;
+}
 .purple.magenta {
   --h: 285;
   --s: 66%;
@@ -1788,6 +1740,25 @@ button:active {
 .dim.purple.magenta {
   --b-s: 56%;
   --b-l: 43%;
+}
+.magenta {
+  --h: 288;
+  --s: 78%;
+  --l: 50%;
+}
+.light.magenta {
+  --b: 58%;
+}
+.dark.magenta {
+  --b: 42%;
+}
+.bright.magenta {
+  --b-s: 88%;
+  --b-l: 52%;
+}
+.dim.magenta {
+  --b-s: 68%;
+  --b-l: 49%;
 }
 .magenta.red {
   --h: 322;
@@ -1826,11 +1797,7 @@ button:active {
 }
 .white {
   --b: 97%;
-  --jump: 0.025;
   --l: 99%;
-}
-.gray {
-  --o: 0.1;
 }
 .light.white {
   --l: 99.3%;
@@ -1856,7 +1823,9 @@ button:active {
 }
 .very.light,
 .hella.light,
-.hella.dim.white {
+.hella.dim.white,
+.hella.dark.white.gray,
+.hella.dim.gray {
   color: var(--black, black);
   --o: 0.05;
 }
@@ -1878,8 +1847,4 @@ button:active {
 .dark.complement,
 .dark.accent {
   --jump: 0.1;
-}
-.dim.black,
-.dim.gray {
-  --s: 33%;
 }

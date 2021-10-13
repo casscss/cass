@@ -36,7 +36,7 @@
       </div>
   </nav> -->
   
-  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left responsive inner-width padding no-padding-bottom">
+  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left inner responsive width padding no-padding-bottom">
       <div class="grid relative text-padding-top">
           
   
@@ -61,40 +61,910 @@
           </a>
           <div class="five wide text-right text-margin-bottom vertical-center">
               <span>
-                  <a href="../../docs/" class="text-padding text-margin-right bold">Read the docs</a>
-                  <!-- <a href="https://github.com/cavepaint/cavepaintcss" target="_blank" class="new-tab text-padding">Github</a> -->
-              </span>
-              
+                  <a href="https://github.com/casscss/cass" target="_blank" class="text-padding text-margin-rightx">See it on Github</a>
+              </span>            
           </div>
       </div>
   </nav>
   <div class="text-trim full width placeholder padding">&nbsp;</div>
   
-  <div class="very dark warm blue viewport height golden reverse vertical-center responsive inner-width padding no-padding-top">
+  <div class="very dark warm blue viewport height golden reverse vertical-center inner responsive width padding no-padding-top">
     <div class="two column golden reverse desktop">
       <nav class="margin-top margin-bottom text inner-width">
-        <ul class="two column mobile tablet no-list-style">
+        <ul class="no-list-style">
           <div>
             <li><a class=" text-padding" href="../">install</a></li>
-            <li><a class=" text-padding" href="../typography">typography</a></li>
-            <li><a class=" text-padding" href="../layout">layout</a></li>
-          </div>
-          <div>
-            <li><a class=" text-padding" href="../colors">color</a></li>
             <li><a class="bold text-padding" href="../composables">composables</a></li>
-            <li><a class=" text-padding" href="../nullifiers">nullifiers</a></li>
           </div>
         </ul>
-      </nav>      <div class="vertical-center text inner-width margin-bottom">
+      </nav>      <div class="vertical-center inner text width margin-bottom">
         <h1 class="margin-top gutter-bottom">Composable classes</h1>
         <p>Composable classes are regular CSS classes that are designed to work together with other composable CSS classes.</p>
       </div>
     </div>
 
   </div>
-  <main id="main" class="min-viewport height text inner-width padding white">
+  <main id="main" class="min-viewport height inner text width padding white">
     
         
+<section class="gutter-bottom padding-bottom">
+  <h2>A language in a language</h2>
+  <p>Composables are a bit like a language that plays out entirely within <strong>class=""</strong> in an HTML element.</p>
+  <p>CSS classes (typically noted in bold) are composed together in phrases to give shape and meaning to elements.</p>
+  <p>Here's a <strong>red</strong> test div:</p>
+  <div class="red">A test div</div>
+  <p>A <strong>red padding</strong> div:</p>
+  <div class="red padding">A test div</div>
+  <p>A <strong>red padding margin-bottom</strong> div:</p>
+  <div class="red padding margin-bottom">A test div</div>
+  <p>A <strong>big red padding margin-bottom</strong> div:</p>
+  <div class="big red padding margin-bottom">A test div</div>
+  <p>A <strong>big card width red padding margin-bottom</strong> div:</p>
+  <div class="big card width red padding margin-bottom">A test div</div>
+  <p>A <strong>big card width red padding margin-auto margin-bottom</strong> div:</p>
+  <div class="big card width red padding margin-auto margin-bottom">A test div</div>
+  <p>And finally a <strong>big card width dark red padding margin-auto margin-bottom rounded shadow</strong> div:</p>
+  <div class="big card width dark red padding margin-auto margin-bottom rounded shadow">A test div</div>
+  <p>The term "composable" can be short for "composable CSS class" or "composable CSS phrase," so just one class or a handful.</p>
+
+</section>
+
+<section class="gutter-bottom padding-bottom">
+  <h2 class="section-headline">Enforcing text measure</h2>
+
+  <p>The composable <strong>text width</strong> enforces a standard text measure. Text measure is how many characters fit on each line. This paragraph is set to this standard text measure.</p>
+
+  <p>A smaller version of the same concept is <strong>card width</strong>, which works for pull-out quotes, notations or other smaller blocks of text.</p>
+
+  <p>Each content width concept also has a corresponding <strong>inner width</strong> version which enforces the width inside the element using padding.</p>
+
+  <p>Either <strong>width</strong> or <strong>inner width</strong> should be used on an element, but not both.</p>
+
+  <p class="card inner width">This paragraph is <strong>card inner width</strong>.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="card inner width"&gt;This paragraph is card inner width.&lt;/p&gt;</pre>
+
+  <p>The inner width composables compose with <strong>padding</strong>.</p>
+
+  <p>Both forms work: <strong>page inner width</strong> and <strong>inner page width</strong> have the same effect, because the order doesn't matter in composing CASS.</p>
+
+</section>
+
+<section class="gutter-bottom padding-bottom">
+  <h2 class="section-headline">Responsive text</h2>
+
+  <p>Text size is responsive, meaning it's smaller on small screens and larger on large screens. This behavior is automatic, but you can tweak it through CASS's responsive CSS custom properties, at the top of every California Stylesheet.</p>
+
+</section>
+
+<section class="gutter-bottom padding-bottom">
+
+  <h2 class="section-headline">Adjusting font size</h2>
+
+  <h5>small</h5>
+  <p>Make type smaller (.9x):</p>
+
+  <p class="small">This is a small paragraph.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="small"&gt;This is a small paragraph.&lt;/p&gt;</pre>
+
+  <h5>medium</h5>
+  <p>Make type the default size, usually as an override:</p>
+
+  <p class="medium">This is a medium paragraph.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="medium"&gt;This is a medium paragraph.&lt;/p&gt;</pre>
+
+  <h5>big</h5>
+  <p>Make type bigger (1.25x):</p>
+
+  <p class="big">This is a big paragraph.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="big"&gt;This is a big paragraph.&lt;/p&gt;</pre>
+
+  <h5>huge</h5>
+  <p>Make type huge (1.5x):</p>
+
+  <p class="huge">This is a huge paragraph.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="huge"&gt;This is a huge paragraph.&lt;/p&gt;</pre>
+
+  <h5>headline text</h5>
+  <p>The composables work on headline text too:</p>
+
+  <h1 class="huge">Whoa.</h1>
+
+  <pre class="white-space gutter-bottom">&lt;h1 class="huge"&gt;Whoa.&lt;/h1&gt;</pre>
+
+</section>
+
+<section class="gutter-bottom padding-bottom">
+  <h2 class="section-headline">Helper classes</h2>
+
+  <h5>text-center</h5>
+  <p>Center text:</p>
+
+  <p class="text-center">Centered.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-center"&gt;Centered.&lt;/p&gt;</pre>
+
+  <h5>text-padding</h5>
+  <p>Give text padding, which is great for colored backgrounds:</p>
+
+  <p class="text-padding red">This text doesn't go right to the edge.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-padding red"&gt;This text doesn't go right to the edge.&lt;/p&gt;</pre>
+
+  <h5>text-margin</h5>
+  <p>The same as text-padding, but applied to margin:</p>
+
+  <p class="text-margin red">This paragraph has a slight margin.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-margin red"&gt;This paragraph has a slight margin.&lt;/p&gt;</pre>
+
+  <h5>text-shadow</h5>
+  <p>Gives the standard shadow to text.</p>
+
+  <p class="text-shadow">This paragraph has a shadow.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-shadow"&gt;This paragraph has a shadow.&lt;/p&gt;</pre>
+
+  <h5>Text effects</h5>
+  <p>Make text <span class="bold">bold</span>, <span class="italic">italic</span>, or <span class="underline">underline</span> with the corresponding composable classes.</p>
+
+  <pre class="white-space gutter-bottom">&lt;span class="bold"&gt;bold&lt;/span&gt;, &lt;span class="italic"&gt;italic&lt;/span&gt;, or &lt;span class="underline"&gt;underline&lt;/span&gt;</pre>
+
+</section>
+
+<section class="gutter-bottom padding-bottom">
+  
+  <h2 class="section-headline">Font families</h2>
+
+  <p>CASS's font stacks are designed to use system fonts, or in other words designed to already be on the user's computer.</p>
+
+  <h5>sans-serif</h5>
+
+  <p class="sans-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="sans-serif"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.&lt;/p&gt;</pre>
+
+  <h5>serif</h5>
+
+  <p class="serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="serif"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.&lt;/p&gt;</pre>
+
+  <h5>monospace</h5>
+
+  <p class="monospace">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="monospace"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.&lt;/p&gt;</pre>
+
+  <p>Like any CSS, California Stylesheets will work fine with web fonts. The font stacks can be edited in their corresponding CSS custom properties in the typography section at the top of any California Stylesheet.</p>
+</section>
+
+<section>
+  <h2 class="section-headline">Changing text color</h2>
+  <h5>text-color</h5>
+  <p>Use the <strong>.text-color</strong> composable with any color class to specify that you want to color the text, not the background.</p>
+
+  <h1 class="text-color red">A red headline</h1>
+
+  <pre class="white-space gutter-bottom">&lt;h1 class="text-color red"&gt;A red headline&lt;/h1&gt;</pre>  
+
+  <p class="text-color dark gray">Dark gray paragraph text makes for de-emphasized but still readable text.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-color dark gray"&gt;Dark gray paragraph text makes for de-emphasized but still readable text.&lt;/p&gt;</pre>
+
+
+  <p class="text-color red bold">Bold red paragraph text may elicit memories of grade school grammar teachers.</p>
+
+  <pre class="white-space gutter-bottom">&lt;p class="text-color red bold"&gt;Bold red paragraph text may elicit memories of grade school grammar teachers.&lt;/p&gt;</pre>
+
+  <h3 class="text-color very dark gray huge text-crunch">A very dark gray headline with a <span class="text-color blue">blue</span> span</h3>
+
+  <pre class="white-space gutter-bottom">&lt;h3 class="text-color very dark gray huge text-crunch"&gt;A very dark gray headline with a &lt;span class="text-color blue"&gt;blue&lt;/span&gt; span&lt;/h3&gt;</pre>
+  
+</section>
+<section class="padding-bottom gutter-bottom">
+
+
+    <h2 class="section-headline">Basic layout</h2>
+
+    <p>Most layout goals can be achieved with the <strong>two columns</strong> and <strong>three columns</strong> composables, and some basic width composables.</p>
+
+    <h4>Two columns:</h4>
+    <div class="two columns margin-bottom">
+        <div class="brand-color placeholder">
+
+        </div>
+        <div class="brand-color placeholder">
+
+        </div>
+    </div>
+
+    <pre class="white-space">&lt;section class="two columns"&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/section&gt;</pre>
+
+    <h4>Three columns:</h4>
+    <div class="three columns margin-bottom">
+        <div class="brand-color placeholder">
+
+        </div>
+        <div class="brand-color placeholder">
+
+        </div>
+        <div class="brand-color placeholder">
+
+        </div>
+    </div>
+
+    <pre class="white-space">&lt;section class="three columns"&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/section&gt;</pre>
+
+    <p>Make it use the tablet breakpoint: <strong>three columns tablet</strong>.</p>
+    <p>Or the desktop breakpoint: <strong>three columns desktop</strong>. Everything below the breakpoint will display as a stacked single column.</p>
+
+
+    <h4>Setting content width</h4>
+
+    <p>Use <strong>page width</strong> and <strong>inner page width</strong> to make the width of the div or the width of the div's contents fit the standard CASS content width. If your content is just text, try <strong>text width</strong> and <strong>inner text width</strong>. With these composable classes and <strong>margin-auto</strong> almost any basic layout can be put together.</p>
+
+</section>
+
+
+<section class="padding-bottom gutter-bottom">
+    <h2 class="section-headline">Grid layout</h2>
+    <p>The <em>.grid</em> and <em>.grid-width-[number]</em> classes make for a simple, easy-to-use grid system based on CSS's grid system. The numbers are spelled out. There aren't any numerals in CASS's composable class names.</p>
+
+    <p>The grid is based on a twelve-column grid:</p>
+
+    <div class="grid gap-text-padding margin-bottom">
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+    </div>
+
+    <p>To get a desired width, "grid-width-x" classes are used:</p>
+  
+    <div class="grid gap-text-padding margin-bottom">
+        <div class="seven wide light green text-padding">seven wide
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+    </div>
+    <div class="grid gap-text-padding margin-bottom">
+        <div class="five wide dark green text-padding">five wide
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+        <div class="grid-width-one brand-color text-padding placeholder">
+        </div>
+    </div>
+
+    <p>A simple column layout is achieved by finding a good pair of grid-width- classes.</p>
+
+    <div class="grid gap-text-padding margin-bottom">
+        <div class="seven wide light green text-padding">seven wide
+        </div>
+        <div class="five wide dark green text-padding">five wide
+        </div>
+    </div>
+
+    <p>You can leave off the 'grid-width-' part of the class.</p>
+
+    <p>These examples use the <strong>.gap-text-padding</strong> composable which sets the gap to the project's brand-color text-padding border-width. By brand-color text-padding, the padding value is used:</p>
+
+    
+
+  <h3>A three-column layout using the grid</h3>
+  <p>The <strong>grid</strong> composable is powerful enough on its own to act like the simpler column shortcuts. Here's an example of three equal-width <strong>four wide</strong> columns:</p>
+
+  <div class="grid margin-bottom">
+        <div class="four wide brand-color text-padding">
+            four wide
+        </div>
+        <div class="four wide brand-color text-padding">
+            four wide
+        </div>
+        <div class="four wide brand-color text-padding">
+            four wide
+        </div>
+    </div>
+  
+
+<pre class="white-space gutter-bottom">&lt;div class="grid gap-padding"&gt;
+    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
+    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
+    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<h3>Alternate column schemes</h3>
+
+<p>The <strong>grid</strong> composable composes with <strong>four columns</strong>, <strong>five columns</strong>, <strong>six columns</strong>, <strong>seven columns</strong>, <strong>eight columns</strong>, <strong>nine columns</strong>, <strong>ten columns</strong>, <strong>eleven columns</strong>, and <strong>twelve columns</strong> (the default) to support the corresponding column schemes.</p>
+
+<div class="five columns margin-bottom">
+    <div class="two wide brand-color text-padding">
+        two wide
+    </div>
+    <div class="three wide brand-color text-padding">
+        three wide
+    </div>
+</div>
+
+<pre class="white-space gutter-bottom">&lt;div class="five columns"&gt;
+    &lt;div class="two wide"&gt;two wide&lt;/div&gt;
+    &lt;div class="three wide"&gt;three wide&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<div class="four columns margin-bottom">
+    <button class="dark red">Option 1</button>
+    <button class="dark green">Option 2</button>
+    <button class="dark blue">Option 3</button>
+    <button class="yellow">Option 4</button>
+</div>
+
+<pre class="white-space">&lt;div class="four columns"&gt;
+    &lt;button class="dark red"&gt;
+        Option 1
+    &lt;/button&gt;
+    &lt;button class="dark green"&gt;
+        Option 2
+    &lt;/button&gt;
+    &lt;button class="dark blue"&gt;
+        Option 3
+    &lt;/button&gt;
+    &lt;button class="yellow"&gt;
+        Option 4
+    &lt;/button&gt;
+&lt;/div&gt;
+</pre>
+
+<p>The <strong>two columns</strong> and <strong>three columns</strong> composables work on their own, without the <strong>grid</strong> composable.</p>
+
+  <h3>A narrow sidebar</h3>
+  <p>Here's a standard sidebar layout:</p>
+  <div class="grid gap-padding margin-bottom">
+      <div class="nine wide brand-color text-padding">
+          nine wide
+      </div>
+      <div class="three wide brand-color text-padding">
+          three wide
+      </div>
+  </div>
+
+<pre class="white-space gutter-bottom">&lt;div class="grid gap-padding"&gt;
+    &lt;div class="nine wide brand-color text-padding"&gt;
+    .nine wide
+    &lt;/div&gt;
+    &lt;div class="three wide brand-color text-padding"&gt;
+    .three wide
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+
+        <h3>Helpers</h3>
+
+        <p>Helper classes are available to fine-tune the grid. Each one sets the gap to a different project value. By default, it's set to the project's padding.</p>
+
+        <ul>
+            <li><strong>.gap-text-padding</strong></li>
+            <li><strong>.gap-text-padding</strong></li>
+            <li><strong>.gap-margin</strong></li>
+            <li><strong>.no-gap</strong></li>
+        </ul>
+
+      <h3>More examples</h3>
+  <div class="grid gap-text-padding margin-bottom">
+    <div class="three wide brand-color text-padding">
+        three wide
+    </div>
+    <div class="four wide brand-color text-padding">
+        four wide
+    </div>
+    <div class="five wide brand-color text-padding">
+        five wide
+    </div>
+  </div>
+  <div class="grid gap-text-padding margin-bottom">
+      <div class="three wide brand-color text-padding">
+          three wide
+      </div>
+      <div class="three wide brand-color text-padding">
+          three wide
+      </div>
+      <div class="three wide brand-color text-padding">
+          three wide
+      </div>
+      <div class="three wide brand-color text-padding">
+          three wide
+      </div>
+  </div>
+  <div class="grid gap-margin margin-bottom">
+      <div class="eight wide brand-color text-padding">
+          eight wide
+      </div>
+      <div class="four wide brand-color text-padding">
+          four wide
+      </div>
+  </div>
+
+  <div class="grid gap-padding margin-bottom">
+    <div class="six wide brand-color text-padding">
+        six wide
+    </div>
+    <div class="six wide brand-color text-padding">
+        six wide
+    </div>
+  </div>
+</section>
+
+<h2 class="section-headline">Breakpoint helpers</h2>
+
+<p>There are three breakpoint helpers for responsiveness:</p>
+
+<ul class="card width margin-auto">
+    <li><strong>mobile</strong></li>
+    <li><strong>tablet</strong></li>
+    <li><strong>desktop</strong></li>
+</ul>
+
+<p>Adding these helpers to any layout composable will dictate the screen width breakpoint for the layout composable's behavior.</p>
+
+<p>Here's how <strong>two columns</strong> appears on the three different resolutions:</p>
+<div class="grid text-align-center gutter-bottom">
+    <div class="three wide">
+        <p>On mobile:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder">
+
+            </div>
+            <div class="brand-color placeholder">
+
+            </div>
+        </div>
+    </div>
+    <div class="four wide">
+        <p>On tablet:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="five wide">
+        <p>On desktop:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+<p>Here's <strong>two column mobile</strong>:</p>
+<div class="grid text-align-center gutter-bottom">
+    <div class="three wide">
+        <p>On mobile:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="four wide">
+        <p>On tablet:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="five wide">
+        <p>On desktop:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>  
+</div>
+
+<p>The <strong>mobile</strong> and <strong>tablet</strong> composables compose with each other in <strong>two column mobile tablet</strong>:</p>
+
+<div class="grid text-align-center gutter-bottom">
+    <div class="three wide">
+        <p>On mobile:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="four wide">
+        <p>On tablet:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="five wide">
+        <p>On desktop:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>  
+</div>
+
+<p>Here's <strong>two column tablet</strong>:</p>
+
+<div class="grid text-align-center gutter-bottom">
+    <div class="three wide">
+        <p>On mobile:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="four wide">
+        <p>On tablet:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="five wide">
+        <p>On desktop:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+<p>Finally, here's <strong>two column desktop</strong>:</p>
+
+<div class="grid text-align-center gutter-bottom">
+    <div class="three wide">
+        <p>On mobile:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="four wide">
+        <p>On tablet:</p>
+        <div class="gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>
+    <div class="five wide">
+        <p>On desktop:</p>
+        <div class="two column gap-text-padding">
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+            <div class="brand-color placeholder text-margin-bottom">
+
+            </div>
+        </div>
+    </div>  
+</div>
+
+<h3>Mobile-first</h3>
+
+<p>Breakpoints generally work with a mobile-first dynamic. The exception, appropriately, is "mobile" which is like saying "mobile-only" in terms of where and how it behaves.</p>
+
+<p>A <strong>two columns</strong> composable will by brand-color always appear as two columns, unless used with <strong>tablet</strong> or <strong>desktop</strong>.</p>
+
+<h3>Text-relative</h3>
+
+<p>Breakpoints aren't defined in prescriptive pixel widths. Instead, they're based on text measure, expressed in rem, and will change depending on text settings.</p>
+
+
+<h2>Widths</h2>
+
+<p>Width classes set the width of an element.</p>
+
+<ul>
+    <li><strong>.text width</strong>: The base content width, based on the @text-measure variable.</li>
+    <li><strong>.card width</strong>: A smaller supplemental width, golden to text width</li>
+    <li><strong>.page width</strong>: The page width, like text width and card width added together</li>
+    <li><strong>.responsive width</strong>: 100%, text width and page width on mobile, tablet and desktop</li>
+</ul>
+
+<p>These classes are often used for the basic layout framing of a page. They work well with <strong>margin-auto</strong>, which will center them in their parent container.</p>
+
+
+<h2>Inner</h2>
+
+<p>Add <strong>inner</strong> to width for an inner width effect..</p>
+
+<ul>
+    <li><strong>text inner width</strong>: Enforces text measure inside an element</li>
+    <li><strong>card inner width</strong>: Enforces the smaller text measure/width of an aside</li>
+    <li><strong>page inner width</strong>: On very large elements, sets the inner width to the full page width</li>
+    <li><strong>responsive inner width</strong>: Automatically sets an appropriate inner width</li>
+</ul>
+
+<p>This example page is already set to <strong>inner text width</strong>, limiting our room, so we'll use the smallest of the three, <strong>card width</strong>, for examples:</p>
+
+<p class="teal responsive padding">This is just a regular <strong>teal</strong> paragraph with <strong>responsive</strong> and <strong>padding</strong> composables added to it.</p>
+
+<pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding</strong>"&gt;This is just a regular &lt;strong&gt;teal&lt;/strong&gt; paragraph with &lt;strong&gt;responsive&lt;/strong&gt; and &lt;strong&gt;padding&lt;/strong&gt; composables added to it.&lt;/p&gt;
+</pre>
+
+<p class="teal responsive padding card inner width">The same composables, but with <strong>card inner-width</strong> added.</p>
+
+<pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding card inner-width</strong>"&gt;The same composables, but with &lt;strong&gt;card inner-width&lt;/strong&gt; added.&lt;/p&gt;</pre>
+
+<p class="teal responsive padding card width margin-auto">This one instead has <strong>card width</strong> and <strong>margin-auto</strong>.</p>
+
+<pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding card width margin-auto</strong>"&gt;This one instead has &lt;strong&gt;card width&lt;/strong&gt; and &lt;strong&gt;margin-auto&lt;/strong&gt;.&lt;/p&gt;</pre>
+
+<p>Inner width composables work with the grid composables. This column of text, for example, has the <strong>inner text width</strong> composable on a <strong>nine wide</strong> element. In cases where the grid width goes above the text measure, the text inner-width class will enforce it.</p>
+
+<p>Inner width classes help cut down on markup complexity by letting you use fewer containers.</p>    <section id="docs-colors" class="text inner-width">
+      
+      <h2 class="section-headline">Using colors</h2>
+
+      <p>Color classes by default change the background color of an element.</p>
+  
+      <p>Every composable color class is based on the <strong>@brand-color</strong>, the color you give CASS. Here are the palette colors:</p>
+
+      <div class="margin-bottom">
+        <div class="grid tablet">
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom red">red</div>
+            <div class="text-padding border border-radius text-margin-bottom orange">orange</div>
+            <div class="text-padding border border-radius text-margin-bottom yellow">yellow</div>
+          </div>
+
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom green">green</div>
+            <div class="text-padding border border-radius text-margin-bottom teal">teal</div>
+            <div class="text-padding border border-radius text-margin-bottom cyan">cyan</div>
+          </div>
+
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom blue">blue</div>
+            <div class="text-padding border border-radius text-margin-bottom purple">purple</div>
+            <div class="text-padding border border-radius text-margin-bottom magenta">magenta</div>
+          </div>
+        </div>
+      </div>
+      
+
+      <p>Your <strong>brand-color</strong> is a color in the palette too and can be modified by other composable classes like the others.</p>            
+
+      <div class="margin-bottom">
+        <div class="grid tablet">
+          <div class="placeholder four wide hide mobile"></div>
+          <div id="project_colors" class="four wide text-align-center">
+            <div class="text-padding border border-radius text-margin-bottom brand-color">brand-color</div>
+          </div>
+        </div>
+      </div>
+
+      <p>The colors <strong>complement</strong> and <strong>accent</strong> change depending on the base color.</p>
+
+      <div class="grid tablet margin-bottom">
+        <div class="placeholder four wide hide mobile"></div>
+        <div class="four wide text-align-center">
+          <div class="text-padding border border-radius text-margin-bottom complement">complement</div>
+          <div class="text-padding border border-radius text-margin-bottom accent">accent</div>
+        </div>
+
+      </div>
+
+      <p>All nine of the basic palette colors can compose with the color next to them in the color wheel, making for more nuanced color combinations.</p>
+
+      <div class="margin-bottom">
+        <div class="grid tablet">
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom red orange">red orange</div>
+            <div class="text-padding border border-radius text-margin-bottom orange yellow">orange yellow</div>
+            <div class="text-padding border border-radius text-margin-bottom yellow green">yellow green</div>
+          </div>
+
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom green teal">green teal</div>
+            <div class="text-padding border border-radius text-margin-bottom teal cyan">teal cyan</div>
+            <div class="text-padding border border-radius text-margin-bottom cyan blue">cyan blue</div>
+          </div>
+
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom blue purple">blue purple</div>
+            <div class="text-padding border border-radius text-margin-bottom purple magenta">purple magenta</div>
+            <div class="text-padding border border-radius text-margin-bottom magenta red">magenta red</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Powering the text colors, <strong>black</strong> and <strong>white</strong> are also included. In between, <strong>gray</strong> is there with too composable combinations as well, making for over 150 grayscale colors.</p>
+
+      <div class="margin-bottom">
+        <div class="grid tablet">
+          <div class="placeholder four wide hide mobile"></div>
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom white">white</div>
+            <div class="text-padding border border-radius text-margin-bottom white gray">white gray</div>
+            <div class="text-padding border border-radius text-margin-bottom gray">gray</div>
+            <div class="text-padding border border-radius text-margin-bottom gray black">gray black</div>
+            <div class="text-padding border border-radius text-margin-bottom black">black</div>
+          </div>
+        </div>
+      </div>
+
+      <h5>Examples</h5>
+      <p>Give elements color by adding a color class:</p>
+
+      <div class="two column desktop">
+        <div>
+          <p><button>A button!</button></p>
+
+          <pre class="white-space">&lt;button&gt;
+A button!
+&lt;/button&gt;</pre>
+        </div>
+        <div>
+          <p><button class="red">A button!</button></p>
+          <pre class="white-space">&lt;button class="red"&gt;
+A button!
+&lt;/button&gt;</pre>
+        </div>
+      </div>
+
+      <h2>Light, bright, dark and dim</h2>
+      <p>Color classes compose with the <strong>.light</strong>, <strong>.bright</strong>, <strong>.dark</strong> and <strong>.dark</strong> classes. These are the four main color variants.</p>
+
+        <div>
+          <p><button class="light green">A button!</button></p>
+          <pre class="white-space">&lt;button class="light green"&gt;
+A button!
+&lt;/button&gt;</pre>
+        </div>
+        <div>
+          <p><button class="bright green">A button!</button></p>
+          <pre class="white-space">&lt;button class="bright green"&gt;
+A button!
+&lt;/button&gt;</pre>
+        </div>
+        <div>
+          <p><button class="dark green">A button!</button></p>
+          <pre class="white-space">&lt;button class="dark green"&gt;
+A button!
+&lt;/button&gt;</pre>
+        </div>
+
+      <h2 class="gutter-top">Color helpers</h2>
+
+      <p>Helper classes <strong>warm</strong>, <strong>cool</strong> and <strong>dull</strong> compose with colors to change their feeling:</p>
+
+      <div class="margin-bottom">
+        <div class="grid tablet">
+          <div class="placeholder four wide hide mobile"></div>
+          <div class="four wide text-align-center trim">
+            <div class="text-padding border border-radius text-margin-bottom cyan">cyan</div>
+            <div class="text-padding border border-radius text-margin-bottom warm cyan">warm cyan</div>
+            <div class="text-padding border border-radius text-margin-bottom cool cyan">cool cyan</div>
+            <div class="text-padding border border-radius text-margin-bottom dull cyan">dull cyan</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text inner-width">Because these use <strong>background-image</strong>, only one color helper from this section can be used at a time. Combining variants and helpers makes for lots of different possible subcolors from each color.</p>
+
+    <p class="text inner-width">Try different color composable combinations to give your pages and components the right look and feel.</p>
+    
+
+    <h2 class="gutter-top">Contrast overrides</h2>
+    <p>Most text contrast works by default in CASS. Adverbs and helpers however can occassionally push a color outside of contrast standards. In this case, use <strong>tint</strong> or <strong>shade</strong> for white text and black text respectively.</p>
+    <p class="teal shade">This is a teal paragraph with the <strong>shade</strong> class.</p>
+    <p class="teal tint">This is a teal paragraph with the <strong>tint</strong> class.</p>
+    <p>For alternate classes in more of a web developer vein, <strong>text-black</strong> and <strong>text-white</strong> also work.</p>
+
+    </section>
+
+    
+  </div>
+  
+</div>
 <h2 class="section-headline">Composables</h2>
 
 <ul>
@@ -160,163 +1030,43 @@
 
 <p>Both <strong>mobile</strong> and <strong>tablet</strong> also compose with each other to trigger the behavior on mide-sized viewports and down.</p>
 
-
-<h3>The nitty-gritty</h3>
-
-<p>For a visual, here's how <strong>hide</strong> and <strong>fixed</strong> behavior appears on the three different resolutions:</p>
-<div class="margin-bottom">
-    <div class="grid text-align-center trim">
-        <div class="three wide">
-            <p>On mobile:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="four wide">
-            <p>On tablet:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="five wide">
-            <p>On desktop:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
-
-<p>Here's <strong>hide mobile</strong>:</p>
-
-<div class="margin-bottom">
-    <div class="grid text-align-center trim">
-        <div class="three wide">
-            <p>On mobile:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="four wide">
-            <p>On tablet:</p>
-            <div class="border thick  white">
-                <div class="cool black border trim">
-                    &check;
-                </div>
-            </div>
-        </div>
-        <div class="five wide">
-            <p>On desktop:</p>
-            <div class="border thick  white">
-                <div class="cool black border trim">
-                    &check;
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
-
-
-<p>The <strong>mobile</strong> and <strong>tablet</strong> composables compose with each other:</p>
-
-<div class="margin-bottom">
-    <div class="grid text-align-center trim">
-        <div class="three wide">
-            <p>On mobile:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="four wide">
-            <p>On tablet:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="five wide">
-            <p>On desktop:</p>
-            <div class="border thick white">
-                <div class="cool black trim">
-                    &check;
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
-
-
-<p>Here's <strong>hide tablet</strong>:</p>
-
-<div class="margin-bottom">
-    <div class="grid text-align-center trim">
-        <div class="three wide">
-            <p>On mobile:</p>
-            <div class="border thick white">
-                <div class="cool black border trim">
-                    &check;
-                </div>
-            </div>
-        </div>
-        <div class="four wide">
-            <p>On tablet:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>
-        <div class="five wide">
-            <p>On desktop:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
-
-<p>Finally, here's <strong>hide desktop</strong>:</p>
-
-<div class="margin-bottom">
-    <div class="grid text-align-center trim">
-        <div class="three wide">
-            <p>On mobile:</p>
-            <div class="border thick white">
-                <div class="cool black border trim">
-                    &check;
-                </div>
-            </div>
-        </div>
-        <div class="four wide">
-            <p>On tablet:</p>
-            <div class="border thick white">
-                <div class="cool black border trim">
-                    &check;
-                </div>
-            </div>
-        </div>
-        <div class="five wide">
-            <p>On desktop:</p>
-            <div class="border thick dashed white">
-                <div class="transparent trim">
-                    &cross;
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
-
 <p>For a composable like hide that doesn't compose with responsive classes, try <strong>.hidden</strong>.</p>
+<h2 class="section-headline">Nullifiers</h2>
+
+<p>Nullifiers start with "no-" and cancel out other rules.</p>
+
+<ul>
+    <li>no-padding-top</li>
+    <li>no-padding-right</li>
+    <li>no-padding-bottom</li>
+    <li>no-padding-left</li>
+    <li>no-margin-top</li>
+    <li>no-margin-right</li>
+    <li>no-margin-bottom</li>
+    <li>no-margin-left</li>
+    <li>no-padding</li>
+    <li>no-margin</li>
+    <li>no-gutter</li>
+    <li>no-margins <em>(children have no margins)</em></li>
+    <li>no-min-width</li>
+    <li>no-max-width</li>
+    <li>no-min-height</li>
+    <li>no-max-height</li>
+    <li>no-box-shadow</li>
+    <li>no-text-shadow</li>
+    <li>no-shadow</li>
+    <li>no-shadows <em>(children have no shadows)</em></li>
+    <li>no-border-radius</li>
+    <li>no-border</li>
+    <li>no-borders <em>(children have no borders)</em></li></li>
+    <li>no-background</li>
+    <li>no-text-indent</li>
+    <li>no-text-align</li>
+    <li>no-underline</li>
+    <li>no-underlines <em>(children have no underlines)</em></li>
+    <li>no-user-select</li>
+    <li>no-pointer-events</li>
+    <li>no-list-style</li>
+    <li>no-gap</li>
+    <li>no-column-gap</li>
+</ul>
