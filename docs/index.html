@@ -75,6 +75,7 @@
           <div>
             <li><a class="bold text-padding" href="">install</a></li>
             <li><a class=" text-padding" href="composables">composables</a></li>
+            <li><a class=" text-padding" href="settings">settings</a></li>
           </div>
         </ul>
       </nav>      <div class="vertical-center inner text width margin-bottom">
@@ -93,9 +94,21 @@
 
   <div>
     <p>Visit the <a href="../">main page</a> to customize and download a California Stylesheet.</p>
-    <p>Or just grab one with default colors <a href="../ca.css">here</a>.</p>
+    <p>Or just grab one with our colors <a href="../ca.css">here</a>.</p>
 
   </div>
+</section>
+
+<section class="gutter-bottom">
+  <h3>Reference ca.css</h3>
+  <p>Reference the file inside the head tag:</p>
+  <pre class="gutter-bottom">&lt;head&gt;
+  &lt;link rel="stylesheet" href="ca.css"&gt;
+&lt;/head&gt;</pre>
+
+  <h3>The &lt;style&gt; tag</h3>
+  <p>Or you can include it in the HTML:</p>
+  <pre>&lt;style&gt;[[ the whole output ]]&lt;style&gt;</pre>
 </section>
 
 <section class="gutter-bottom">
@@ -174,7 +187,7 @@
 
     <h5>"And it's not a preprocessor?"</h5>
     <p>It's not. CASS is a language of sorts unto itself, but it plays out entirely within the <strong>class=""</strong> part of an HTML tag. There's no compiling or processing step.</p>
-    <p>On the contrary, </p>
+    <p>On the contrary, CASS is all about avoiding preprocessing or treating your CSS in any way.</p>
 
     <h5>"I don't know CSS. Can I use CASS?"</h5>
     <p>Of course! That's basically the whole point.</p>
