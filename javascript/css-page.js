@@ -3,11 +3,21 @@ output = {};
 
 document.addEventListener("DOMContentLoaded", function() {
     // renderLess();
+
+    var base_color = "#0ea2e1";
+    var lighten = "16";
+
+    document.getElementById("baseColorLabel").innerHTML = base_color;
+    document.getElementById("baseColor").value = base_color;
+
+    document.getElementById("baseLightenByLabel").innerHTML = lighten;
+    document.getElementById("baseLightenBy").value = lighten;
 });
 
 function renderLess() {
     // var lessInput = document.getElementById("less_textarea").value;
     // var headlessLessInput = document.getElementById("headless_less_textarea").value;
+    
     if (document.getElementById("headless_less_textarea")) {
         var headlessLessInput = document.getElementById("headless_less_textarea").value;
     } else {
@@ -49,25 +59,18 @@ function renderLess() {
         relativeUrls: true
     };
 
-    // less.render(lessInputBasic, less_options)
-    //     .then(function(output) {
-    //         // output.css = string of css
-    //         var theBasicCSS = output.css;
-    //         document.getElementById("basic_css_textarea").innerHTML = theBasicCSS;
-    //     },
-    //     function(error) {
-    //         console.log('something went wrong: ' + error);
-    //     });
-
     less.render(lessInputBasic, less_options)
         .then(function(output) {
             // output.css = string of css
             var theCSS = output.css;
             document.getElementById("css").innerHTML = theCSS;
             document.getElementById("css_textarea").innerHTML = theCSS;
+
+            var buildButton = document.getElementById("build_button");
+            buildButton.classList.add("fade");
+            buildButton.classList.add("dull");
             // document.getElementById("html_textarea").innerHTML = '<style>\n' + theCSS + '<\/style>';
             // document.getElementById("less_textarea").innerHTML = lessInputTheme;
-
             
             // output.map = string of sourcemap
             // output.imports = array of string filenames of the imports referenced
@@ -75,20 +78,6 @@ function renderLess() {
         function(error) {
             console.log('something went wrong: ' + error);
         });
-
-    
-    // if (document.getElementById("headless_less_basic_textarea")) {
-    //     // it does it again for the basic palette
-    //     less.render(lessInputBasic, less_options)
-    //     .then(function(output) {
-    //         // output.css = string of css
-    //         var theBasicCSS = output.css;
-    //         document.getElementById("basic_css_textarea").innerHTML = theBasicCSS;
-    //     },
-    //     function(error) {
-    //         console.log('something went wrong: ' + error);
-    //     });
-    // }
 }
 
 function copyCSS() {
@@ -272,6 +261,25 @@ function showMessage(string) {
 function hideMessage() {
     var messageDiv = document.getElementById("nav_message_container");
     messageDiv.classList.add("hide");
+}
+
+function readyButton() {
+    var button = document.getElementById("build_button");
+    button.classList.remove("dull");
+    button.classList.remove("fade");
+    
+}
+
+function readyLabel() {
+    var label = document.getElementById("baseColorLabel");
+    var preview = document.getElementById("baseColorPreview");
+    label.innerHTML = document.getElementById("baseColor").value;
+    preview.style.backgroundColor = document.getElementById("baseColor").value;
+}
+
+function readyForm() {
+    readyButton();
+    readyLabel();
 }
 
 function showMessageNoHide(string) {

@@ -26,21 +26,15 @@
 
 <body class="">
 
-  <!-- <nav style="z-index: 100;" class="top left right page inner-width border-bottom bar light cyan blue text-padding no-underlines fixed no-margin shadow">
-      <a class="title bold" href="../../" class="inline-block text-padding">
-          California Stylesheets
-      </a>
-      <div class="float-right">
-          <a href="../../docs/" class="text-padding text-margin-right bold">Docs</a>
-          <a href="https://github.com/cavepaint/cavepaintcss" target="_blank" class="new-tab text-padding">Github</a>
-      </div>
-  </nav> -->
+  <nav class="text-trim cyan blue fixed top right left inner page width padding no-padding-bottom">
+      <div class="text-padding-top">
+          <div class="float-right text-margin-top">
+              <span>
+                  <a href="https://github.com/casscss/cass" class="text-padding no-underline">See it on Github</a>
+              </span>            
+          </div>
   
-  <nav style="z-index: 100;" class="text-trim cyan blue no-underlines fixed top right left inner responsive width padding no-padding-bottom">
-      <div class="grid relative text-padding-top">
-          
-  
-          <a class="seven wide title bold huge no-margin-bottom vertical-center" href="../../" class="">
+          <a class="relative title bold big no-margin-bottom vertical-center no-underline" href="../../" class="">
                   <svg class="block no-margin-bottom absolute bottom left max-height" style="max-height:1.6em; width: 3.5em;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="288px" height="140px" viewBox="0 0 288 140">
                   <g id="Seagull">
                       <path id="seagull_color" fill="#FFFFFF" d="M117.958,148.841c-3.37-0.306-10.57-2.911-12.409-8.119c-6.449-18.272-29.259-61.277-14.4-72.919   c11.249-11.169,21.753-9.804,21.906-16.698c-4.769-14.789-16.811-9.147-23.898-21.14C77.208,9.743,69.166,6.591,62.809,6.591   H39.067c-18.558,0-33.601,15.044-33.601,33.603v266.929c0,18.557,15.043,33.602,33.601,33.602h209.864   c18.559,0,33.603-15.045,33.603-33.602v-156.75L117.958,148.841z"/>
@@ -51,26 +45,21 @@
                       <path fill="none" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M104.068,47.53c0,0,8.783-3.881,17.821,0.562   C119.54,50.623,104.324,50.339,104.068,47.53z"/>
                   </g>
                   </svg>
-              <!-- <img src="../images/scenic_drive.svg" class="no-margin-bottom absolute bottom left max-height" alt="The scenic drive seagull" style="max-height:1.8em"> -->
-              <span class="hide mobile tablet tint text-margin-bottom" style="padding-left: 2.4em;">
+              <span class="hide mobile tint text-margin-bottom" style="padding-left: 2.4em;">
                   California Stylesheets
               </span>
-              <span class="hide desktop tint text-margin-bottom" style="padding-left: 2em;">
+              <span class="hide tablet tint text-margin-bottom" style="padding-left: 2em;">
                   CASS
               </span>
           </a>
-          <div class="five wide text-right text-margin-bottom vertical-center">
-              <span>
-                  <a href="https://github.com/casscss/cass" target="_blank" class="text-padding text-margin-rightx">See it on Github</a>
-              </span>            
-          </div>
+          
       </div>
   </nav>
   <div class="text-trim full width placeholder padding">&nbsp;</div>
   
   <div class="very dark warm blue viewport height golden reverse vertical-center inner responsive width padding no-padding-top">
     <div class="two column golden reverse desktop">
-      <nav class="margin-top margin-bottom text inner-width">
+      <nav class="gutter-top margin-bottom inner type width">
         <ul class="no-list-style">
           <div>
             <li><a class=" text-padding" href="../">install</a></li>
@@ -78,14 +67,14 @@
             <li><a class=" text-padding" href="../settings">settings</a></li>
           </div>
         </ul>
-      </nav>      <div class="vertical-center inner text width margin-bottom">
+      </nav>      <div class="vertical-center inner type width margin-bottom">
         <h1 class="margin-top gutter-bottom">Composable classes</h1>
         <p>Composable classes are regular CSS classes that are designed to work together with other composable CSS classes.</p>
       </div>
     </div>
 
   </div>
-  <main id="main" class="min-viewport height inner text width padding white">
+  <main id="main" class="min-viewport height inner type width padding white">
     
         
 <section class="gutter-bottom padding-bottom">
@@ -113,7 +102,7 @@
 <section class="gutter-bottom padding-bottom">
   <h2 class="section-headline">Enforcing text measure</h2>
 
-  <p>The composable <strong>text width</strong> enforces a standard text measure. Text measure is how many characters fit on each line. This paragraph is set to this standard text measure.</p>
+  <p>The composable <strong>type width</strong> enforces a standard text measure. Text measure is how many characters fit on each line. This paragraph is set to this standard text measure.</p>
 
   <p>A smaller version of the same concept is <strong>card width</strong>, which works for pull-out quotes, notations or other smaller blocks of text.</p>
 
@@ -314,7 +303,7 @@
 
     <h4>Setting content width</h4>
 
-    <p>Use <strong>page width</strong> and <strong>inner page width</strong> to make the width of the div or the width of the div's contents fit the standard CASS content width. If your content is just text, try <strong>text width</strong> and <strong>inner text width</strong>. With these composable classes and <strong>margin-auto</strong> almost any basic layout can be put together.</p>
+    <p>Use <strong>page width</strong> and <strong>inner page width</strong> to make the width of the div or the width of the div's contents fit the standard CASS content width. If your content is just text, try <strong>type width</strong> and <strong>inner type width</strong>. With these composable classes and <strong>margin-auto</strong> almost any basic layout can be put together.</p>
 
 </section>
 
@@ -763,10 +752,10 @@
 <p>Width classes set the width of an element.</p>
 
 <ul>
-    <li><strong>.text width</strong>: The base content width, based on the @text-measure variable.</li>
-    <li><strong>.card width</strong>: A smaller supplemental width, golden to text width</li>
-    <li><strong>.page width</strong>: The page width, like text width and card width added together</li>
-    <li><strong>.responsive width</strong>: 100%, text width and page width on mobile, tablet and desktop</li>
+    <li><strong>.type width</strong>: The base content width, based on the @text-measure variable.</li>
+    <li><strong>.card width</strong>: A smaller supplemental width, golden to type width</li>
+    <li><strong>.page width</strong>: The page width, like type width and card width added together</li>
+    <li><strong>.responsive width</strong>: 100%, type width and page width on mobile, tablet and desktop</li>
 </ul>
 
 <p>These classes are often used for the basic layout framing of a page. They work well with <strong>margin-auto</strong>, which will center them in their parent container.</p>
@@ -783,7 +772,7 @@
     <li><strong>responsive inner width</strong>: Automatically sets an appropriate inner width</li>
 </ul>
 
-<p>This example page is already set to <strong>inner text width</strong>, limiting our room, so we'll use the smallest of the three, <strong>card width</strong>, for examples:</p>
+<p>This example page is already set to <strong>inner type width</strong>, limiting our room, so we'll use the smallest of the three, <strong>card width</strong>, for examples:</p>
 
 <p class="teal responsive padding">This is just a regular <strong>teal</strong> paragraph with <strong>responsive</strong> and <strong>padding</strong> composables added to it.</p>
 
@@ -798,7 +787,7 @@
 
 <pre class="white-space gutter-bottom">&lt;p class="<strong>teal responsive padding card width margin-auto</strong>"&gt;This one instead has &lt;strong&gt;card width&lt;/strong&gt; and &lt;strong&gt;margin-auto&lt;/strong&gt;.&lt;/p&gt;</pre>
 
-<p>Inner width composables work with the grid composables. This column of text, for example, has the <strong>inner text width</strong> composable on a <strong>nine wide</strong> element. In cases where the grid width goes above the text measure, the text inner-width class will enforce it.</p>
+<p>Inner width composables work with the grid composables. This column of text, for example, has the <strong>inner type width</strong> composable on a <strong>nine wide</strong> element. In cases where the grid width goes above the text measure, the text inner-width class will enforce it.</p>
 
 <p>Inner width classes help cut down on markup complexity by letting you use fewer containers.</p>    <section id="docs-colors" class="text inner-width">
       
