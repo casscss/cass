@@ -622,6 +622,12 @@ button:active {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+.raised {
+  z-index: 100;
+}
+.lowered {
+  z-index: -100;
+}
 .shadow {
   box-shadow: var(--box-shadow);
 }
@@ -643,6 +649,21 @@ button:active {
 }
 .line.height.force {
   height: calc(var(--font-size) * var(--line-height));
+}
+.placeholder::after {
+  content: " ";
+  display: block;
+  width: 0;
+  padding-top: var(--ratio);
+}
+.square {
+  --ratio: 100%;
+}
+.screen {
+  --ratio: 75%;
+}
+.widescreen {
+  --ratio: 56.25%;
 }
 .full.height {
   min-height: 100%;
@@ -1237,6 +1258,9 @@ button:active {
 .no-overflow,
 .no-overflow * {
   overflow: hidden;
+}
+.no-overflow-x {
+  overflow-x: hidden;
 }
 .no-line-height {
   line-height: 1;

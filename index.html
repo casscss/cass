@@ -633,6 +633,12 @@ button:active {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+.raised {
+  z-index: 100;
+}
+.lowered {
+  z-index: -100;
+}
 .shadow {
   box-shadow: var(--box-shadow);
 }
@@ -654,6 +660,21 @@ button:active {
 }
 .line.height.force {
   height: calc(var(--font-size) * var(--line-height));
+}
+.placeholder::after {
+  content: " ";
+  display: block;
+  width: 0;
+  padding-top: var(--ratio);
+}
+.square {
+  --ratio: 100%;
+}
+.screen {
+  --ratio: 75%;
+}
+.widescreen {
+  --ratio: 56.25%;
 }
 .full.height {
   min-height: 100%;
@@ -1248,6 +1269,9 @@ button:active {
 .no-overflow,
 .no-overflow * {
   overflow: hidden;
+}
+.no-overflow-x {
+  overflow-x: hidden;
 }
 .no-line-height {
   line-height: 1;
@@ -1940,9 +1964,9 @@ button:active {
   </style>
 </head>
 
-<body>
-  <nav class="text-trim cyan blue fixed top right left inner page width padding no-padding-bottom">
-      <div class="text-padding-top">
+<body class="no-overflow-x">
+  <nav class="text-trim cyan blue fixed top right left inner page width padding no-padding-top no-padding-bottom">
+      <div class="padding-top">
           <div class="float-right text-margin-top">
               <span>
                   <a href="docs/" class="text-padding no-underline">Read the docs</a>
@@ -1970,7 +1994,7 @@ button:active {
           
       </div>
   </nav>
-  <div class="text-trim full width placeholder padding">&nbsp;</div>
+  <div class="text-trim full width placeholder padding no-padding-bottom">&nbsp;</div>
     <div class="light accent margin-bottom no-padding-top no-padding-bottom">
 
       <div class="very dark warm blue two column golden reverse gap-gutter desktop padding margin-auto inner page width">
@@ -2657,6 +2681,12 @@ button:active {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+.raised {
+  z-index: 100;
+}
+.lowered {
+  z-index: -100;
+}
 .shadow {
   box-shadow: var(--box-shadow);
 }
@@ -2678,6 +2708,21 @@ button:active {
 }
 .line.height.force {
   height: calc(var(--font-size) * var(--line-height));
+}
+.placeholder::after {
+  content: " ";
+  display: block;
+  width: 0;
+  padding-top: var(--ratio);
+}
+.square {
+  --ratio: 100%;
+}
+.screen {
+  --ratio: 75%;
+}
+.widescreen {
+  --ratio: 56.25%;
 }
 .full.height {
   min-height: 100%;
@@ -3272,6 +3317,9 @@ button:active {
 .no-overflow,
 .no-overflow * {
   overflow: hidden;
+}
+.no-overflow-x {
+  overflow-x: hidden;
 }
 .no-line-height {
   line-height: 1;
@@ -4424,6 +4472,14 @@ pre > code {
   margin-right: auto !important;
 }
 
+.raised {
+  z-index: 100;
+}
+
+.lowered {
+  z-index: -100;
+}
+
 .shadow {
   box-shadow: var(--box-shadow);
 }
@@ -4449,6 +4505,25 @@ pre > code {
 
 .line.height.force {
   height: calc(var(--font-size) * var(--line-height));
+}
+
+.placeholder::after { 
+  content: " ";
+  display: block;
+  width: 0;
+  padding-top: var(--ratio);
+}
+
+.square {
+  --ratio: 100%;
+}
+
+.screen {
+  --ratio: 75%;
+}
+
+.widescreen {
+  --ratio: 56.25%;
 }
 
 .full.height {
@@ -4889,6 +4964,10 @@ pre > code {
     overflow: hidden;
 }
 
+.no-overflow-x {
+    overflow-x: hidden;
+}
+
 .no-line-height {
     line-height: 1;
 }
@@ -4981,7 +5060,7 @@ pre > code {
 @complement: .set-color(complement, @complement-base, 1, 1)[];
 
 @accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
-@accent-complement: .set-color(complement, @accent-complement-base, 1, 1)[];
+@accent-complement: .set-color(~"accent.complement", @accent-complement-base, 1, 1)[];
 
 
 .color-helpers(@color, @multiplier: 1) {
@@ -5927,8 +6006,8 @@ pre > code {
                 </div>
                 <div class="text inner-width">
                     <div class="gutter">
-                        <div class="transparent black tint border current-color placeholder text-margin-bottom"></div>
-                        <div class="transparent black tint border current-color placeholder text-margin-bottom widescreen"></div>
+                        <div class="transparent black tint border border-text-color placeholder text-margin-bottom"></div>
+                        <div class="transparent black tint border border-text-color placeholder text-margin-bottom widescreen"></div>
                     </div>
                 </div>
             </div>
@@ -5936,12 +6015,12 @@ pre > code {
             <div class="two column golden reverse desktop margin gutter-bottom gap-gutter">
                 
                 <div class="text inner-width gutter-bottom vertical-center">
-                    <div class="grid gap-text-margin">
+                    <div class="grid gap-small">
                         <div class="eight wide">
-                            <div class="transparent black tint border current-color placeholder text-margin-bottom"></div>
-                            <div class="transparent black tint border current-color placeholder screen"></div>
+                            <div class="transparent black tint border border-text-color placeholder text-margin-bottom"></div>
+                            <div class="transparent black tint border border-text-color placeholder screen"></div>
                         </div>
-                        <div class="four wide transparent black tint border current-color">
+                        <div class="four wide transparent black tint border border-text-color">
                         </div>
                     </div>
                     
@@ -5963,16 +6042,16 @@ pre > code {
                     
                 </div>
                 <div class="text inner-width gutter-bottom vertical-center">
-                    <div class="grid gap-text-margin">
+                    <div class="grid gap-small">
                         <div class="eight wide">
-                            <div class="transparent black tint border current-color placeholder text-margin-bottom"></div>
-                            <div class="transparent black tint border current-color placeholder widescreen text-margin-bottom"></div>
-                            <div class="transparent black tint border current-color placeholder"></div>
+                            <div class="transparent black tint border border-text-color placeholder text-margin-bottom"></div>
+                            <div class="transparent black tint border border-text-color placeholder widescreen text-margin-bottom"></div>
+                            <div class="transparent black tint border border-text-color placeholder"></div>
             
                         </div>
                         <div class="four wide">
-                            <div class="transparent black tint border current-color placeholder screen text-margin-top text-margin-bottom"></div>
-                            <div class="transparent black tint border current-color placeholder screen"></div>
+                            <div class="transparent black tint border border-text-color placeholder screen text-margin-top text-margin-bottom"></div>
+                            <div class="transparent black tint border border-text-color placeholder screen"></div>
                         </div>
                     </div>
                 </div>
