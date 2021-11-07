@@ -6,7 +6,7 @@
   <title>California Stylesheets</title>
   <meta name="description" content="California Stylesheets, composable class and color library for Less/CSS">
   <meta name="author" content="Rex Riepe">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <script src="javascript/css-page.js" type="text/javascript"></script>
   <script src="javascript/less.min.js" type="text/javascript"></script>
   <style id="css" type="text/css">/* A California Stylesheet (MIT License) */
@@ -1266,8 +1266,7 @@ button:active {
 .no-bold {
   font-weight: normal;
 }
-.no-overflow,
-.no-overflow * {
+.no-overflow {
   overflow: hidden;
 }
 .no-overflow-x {
@@ -1964,7 +1963,8 @@ button:active {
   </style>
 </head>
 
-<body class="no-overflow-x">
+<body>
+  <main class="no-overflow-x">
   <nav class="text-trim cyan blue fixed top right left inner page width padding no-padding-top no-padding-bottom">
       <div class="padding-top">
           <div class="float-right text-margin-top">
@@ -3314,8 +3314,7 @@ button:active {
 .no-bold {
   font-weight: normal;
 }
-.no-overflow,
-.no-overflow * {
+.no-overflow {
   overflow: hidden;
 }
 .no-overflow-x {
@@ -4960,7 +4959,7 @@ pre > code {
     font-weight: normal;
 }
 
-.no-overflow, .no-overflow * {
+.no-overflow {
     overflow: hidden;
 }
 
@@ -5060,7 +5059,7 @@ pre > code {
 @complement: .set-color(complement, @complement-base, 1, 1)[];
 
 @accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
-@accent-complement: .set-color(~"accent.complement", @accent-complement-base, 1, 1)[];
+@accent-complement: .set-color(~"complement.accent", @accent-complement-base, 1, 1)[];
 
 
 .color-helpers(@color, @multiplier: 1) {

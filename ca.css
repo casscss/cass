@@ -1255,8 +1255,7 @@ button:active {
 .no-bold {
   font-weight: normal;
 }
-.no-overflow,
-.no-overflow * {
+.no-overflow {
   overflow: hidden;
 }
 .no-overflow-x {
