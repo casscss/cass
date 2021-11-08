@@ -66,9 +66,6 @@
   --s: 98.3%;
   --l: 99%;
   --a: 1;
-  --o: 0.2;
-  --warm: rgba(220, 0, 0, var(--o));
-  --cool: rgba(0, 0, 216.2, var(--o));
 }
 /* Decoration */
 :root {
@@ -1317,14 +1314,6 @@ button:active {
 }
 .hella {
   --v: 2;
-}
-.warm {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(220, 0, 0, var(--o)), rgba(220, 0, 0, var(--o)));
-}
-.cool {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(0, 0, 216.2, var(--o)), rgba(0, 0, 216.2, var(--o)));
 }
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;

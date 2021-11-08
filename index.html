@@ -77,9 +77,6 @@
   --s: 98.3%;
   --l: 99%;
   --a: 1;
-  --o: 0.2;
-  --warm: rgba(220, 0, 0, var(--o));
-  --cool: rgba(0, 0, 216.2, var(--o));
 }
 /* Decoration */
 :root {
@@ -1328,14 +1325,6 @@ button:active {
 }
 .hella {
   --v: 2;
-}
-.warm {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(220, 0, 0, var(--o)), rgba(220, 0, 0, var(--o)));
-}
-.cool {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(0, 0, 216.2, var(--o)), rgba(0, 0, 216.2, var(--o)));
 }
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;
@@ -2125,9 +2114,6 @@ button:active {
   --s: 98.3%;
   --l: 99%;
   --a: 1;
-  --o: 0.2;
-  --warm: rgba(220, 0, 0, var(--o));
-  --cool: rgba(0, 0, 216.2, var(--o));
 }
 /* Decoration */
 :root {
@@ -3377,14 +3363,6 @@ button:active {
 .hella {
   --v: 2;
 }
-.warm {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(220, 0, 0, var(--o)), rgba(220, 0, 0, var(--o)));
-}
-.cool {
-  --o: 0.2;
-  background-image: linear-gradient(rgba(0, 0, 216.2, var(--o)), rgba(0, 0, 216.2, var(--o)));
-}
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;
   --jump: 0.3;
@@ -4086,9 +4064,6 @@ button:active {
     --s: round(saturation(@white), 1);
     --l: round(lightness(@white), 1);
     --a: 1;
-    --o: .2; // overlay opacity
-    --warm: @warm-rgba;
-    --cool: @cool-rgba;
 }
 
 /* Decoration */
@@ -5061,7 +5036,6 @@ pre > code {
 @accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
 @accent-complement: .set-color(~"complement.accent", @accent-complement-base, 1, 1)[];
 
-
 .color-helpers(@color, @multiplier: 1) {
 
     // create the color and its twelve basic variants
@@ -5198,43 +5172,43 @@ pre > code {
     --v: 2;
 }
 
-.set-warm-base() when (red(@base-color) > 128) {
-    @warm-base: .set-lumafix(@orange, @yellow)[];
-}
+// .set-warm-base() when (red(@base-color) > 128) {
+//     @warm-base: .set-lumafix(@orange, @yellow)[];
+// }
 
-.set-warm-base() when (red(@base-color) <= 128) {
-    @warm-base: .set-lumafix(@red, @yellow)[];
-}
+// .set-warm-base() when (red(@base-color) <= 128) {
+//     @warm-base: .set-lumafix(@red, @yellow)[];
+// }
 
-@warm-base: .set-warm-base()[];
-@warm-lumafix: .set-lumafix(@warm-base, @base-color, 25%)[];
-@warm: .set-color(~"warm", @warm-lumafix, 0)[];
-@warm-rgba: rgba(round(red(@warm), 1), 0, 0, @warm-bg-fill-opacity);
-@warm-bg-fill-opacity: var(--o);
+// @warm-base: .set-warm-base()[];
+// @warm-lumafix: .set-lumafix(@warm-base, @base-color, 25%)[];
+// @warm: .set-color(~"warm", @warm-lumafix, 0)[];
+// @warm-rgba: rgba(round(red(@warm), 1), 0, 0, @warm-bg-fill-opacity);
+// @warm-bg-fill-opacity: var(--o);
 
-.warm {
-    --o: .2;
-    background-image: linear-gradient(@warm-rgba, @warm-rgba);
-}
+// .warm {
+//     --o: .2;
+//     background-image: linear-gradient(@warm-rgba, @warm-rgba);
+// }
 
-.set-cool-base() when (blue(@base-color) > 128) {
-    @cool-base: @cyan;
-}
+// .set-cool-base() when (blue(@base-color) > 128) {
+//     @cool-base: @cyan;
+// }
 
-.set-cool-base() when (blue(@base-color) <= 128) {
-    @cool-base: .set-lumafix(@blue, @cyan)[];
-}
+// .set-cool-base() when (blue(@base-color) <= 128) {
+//     @cool-base: .set-lumafix(@blue, @cyan)[];
+// }
 
-@cool-base: .set-cool-base()[];
-@cool-lumafix: .set-lumafix(@cool-base, @base-color, 50%)[];
-@cool: .set-color(~"cool", @cool-lumafix, 0)[];
-@cool-rgba: rgba(0, 0, round(blue(@cool), 1), var(--o));
-@cool-bg-fill-opacity: var(--o);
+// @cool-base: .set-cool-base()[];
+// @cool-lumafix: .set-lumafix(@cool-base, @base-color, 50%)[];
+// @cool: .set-color(~"cool", @cool-lumafix, 0)[];
+// @cool-rgba: rgba(0, 0, round(blue(@cool), 1), var(--o));
+// @cool-bg-fill-opacity: var(--o);
 
-.cool {
-    --o: .2;
-    background-image: linear-gradient(@cool-rgba, @cool-rgba);
-}
+// .cool {
+//     --o: .2;
+//     background-image: linear-gradient(@cool-rgba, @cool-rgba);
+// }
 
 .light {
     --l: ~"calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0)))" !important;
@@ -5332,26 +5306,6 @@ pre > code {
   @media screen and (max-width: calc(@desktop - 1px)) { @rules();}
 }
 
-.set-average(@colors) {
-  // averages a list of colors
-  // sets result to @average
-
-  .find-average(@color, @index) when (@index <= length(@colors)) {
-    @this-color: extract(@colors, @index);
-    @last-color: @color;
-    @weight: 100% * (1/@index);
-    @new-average: mix(@this-color, @last-color, @weight);
-
-    .find-average(@new-average, @index + 1);
-  }
-
-  .find-average(@color, @index) when (default()) {
-    @average: @color;
-  }
-
-  @average: .find-average(extract(@colors, 1), 1)[@average];
-}
-
 .set-color(@color-name, @base, @luma-modifier: .5, @ambient-modifier: 1, @outputs: false) {
 	// @color-name: the name of the color, which will be the class name
 	// @base: the base representative color
@@ -5372,8 +5326,8 @@ pre > code {
 	@color: mix(@color-base, overlay(@ambient, @color-base), @ambient-adjusted);
 }
 
-// sets variable @contrast-ratio to contrast ratio between two colors
-// it uses the WCAG standards for determining contrast ratio
+// sets contrast ratio between two colors
+// uses WCAG standards for determining contrast ratio
 
 .set-contrast-ratio(@x, @y) when (luma(@x) > luma(@y)) {
   @contrast-l1: (unit(luma(@x)) / 100); // luma is expressed as a % which needs to be un-%ed
@@ -5488,7 +5442,7 @@ pre > code {
       
           <div class="two columns golden desktop">
             <div class="inner type width">
-              <p>Composables are CSS classes or collections of classes which give style meaning to an HTML element:</p>
+              <p>Composables are CSS classes or groups of classes which give stylistic meaning to an HTML element:</p>
               <p><pre class="small text-margin-bottom">&lt;button class="<strong>big dark red</strong>"&gt;A button&lt;/button&gt;</pre></p>
               <p class="text-center">This makes: &nbsp;<button class="big dark red">A button</button></p>
               <p>Composables work with any HTML element that's visible on the page.</p>
@@ -5497,7 +5451,7 @@ pre > code {
               <p class="text-center">Try different combinations of composables:</p>
               <p class="text-center"><button class="very light cyan blue small text-margin-bottom">A button</button> 
                 <button class="tiny monospace black">A button</button> 
-                <button class="thick border very light warm orange flatten">A button</button> 
+                <button class="thick border very light green flatten">A button</button> 
                 <button class="tiny monospace dashed thick border text-padding border">A button</button>
               </p>
             </div>
@@ -5709,10 +5663,9 @@ pre > code {
         
       
         <div class="border thick dotted hella light white padding margin-bottom">
-            <p class="text inner-width">There are 15 standard colors, and 120 variant colors with full contrast support.</p>
-            <div class="two column tablet text-left">
+            <p class="text inner-width">There are nine colors to remember:</p>
       
-              <div class="two column desktop">
+              <div class="three columns desktop">
                 <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right red">&nbsp;&nbsp;&nbsp;&nbsp;</span> red
@@ -5736,8 +5689,6 @@ pre > code {
                     <span class="text-padding border rounded text-margin-bottom text-margin-right cyan">&nbsp;&nbsp;&nbsp;&nbsp;</span> cyan
                   </p>
                 </div>
-              </div>
-              <div class="two column desktop">
                 <div class="inner card width margin-bottom">
                   <p class="">
                     <span class="text-padding border rounded text-margin-bottom text-margin-right blue">&nbsp;&nbsp;&nbsp;&nbsp;</span> blue
@@ -5749,6 +5700,9 @@ pre > code {
                     <span class="text-padding border rounded text-margin-bottom text-margin-right magenta">&nbsp;&nbsp;&nbsp;&nbsp;</span> magenta
                   </p>
                 </div>
+              </div>
+              <!-- <div class="two column desktop">
+                
       
                 <div class="inner card width margin-bottom">
                   <p class="">
@@ -5761,8 +5715,8 @@ pre > code {
                     <span class="text-padding border rounded text-margin-bottom text-margin-right black">&nbsp;&nbsp;&nbsp;&nbsp;</span> black
                   </p>
                 </div>
-              </div>
-            </div>
+      
+              </div> -->
       
             <p class="text inner-width">Colors compose with the color next to them in the palette. So composable combinations like <strong>light yellow green</strong> are possible.</p>
             <div class="text-left">
@@ -5806,24 +5760,6 @@ pre > code {
             </div>
         </div>
       
-      
-        <div class="border dotted thick hella light white padding margin-bottom">
-          <p class="text inner-width">Three palette colors are different depending on brand color:</p>
-      
-          <div>
-            <div class="text-align-left three column desktop">
-              <p class="inner card width">
-                <span class="text-padding border rounded text-margin-bottom text-margin-right brand-color">&nbsp;&nbsp;&nbsp;&nbsp;</span> brand-color
-              </p>
-              <p class="inner card width">
-                <span class="text-padding border rounded text-margin-bottom text-margin-right complement">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement
-              </p>
-              <p class="inner card width">
-                <span class="text-padding border rounded text-margin-bottom text-margin-right accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> accent
-              </p>
-            </div>
-          </div>
-        </div>
       
         <div class="two columns golden desktop margin-bottom">
           <div class="border dotted hella light white thick padding vertical-center">
@@ -5873,39 +5809,56 @@ pre > code {
                     <div class="text-padding border rounded hella dim blue">hella dim blue</div>
                   </div>
                 </div>
+      
+                <p>The <strong>contrast</strong> slider determines how initially bright, dim, light or dark the variants are.</p>
           </div>
-          <div class="vertical-center">
+          <div class="vertical-center border dotted thick hella light white padding">
       
-            <div class="border dotted hella light white thick padding margin-bottom">
-              <p>Use color helpers to modify color temperature.</p>
-              <div class="two column tablet">
-                  <div class="vertical-center">
-                    <div class="text-padding border rounded green"> green</div>
-                  </div>
-                  <div class="vertical-center">
-                    <div class="text-padding border rounded warm green">warm green</div>
-                  </div>
-                  <div class="vertical-center">
-                    <div class="text-padding border rounded cool green">cool green</div>
-                  </div>
-                  <div class="vertical-center">
-                    <div class="text-padding border rounded dull green">dull green</div>
-                  </div>
-              </div>
-            </div>
-            <div class="border dotted hella light white thick padding">
-              <p class="text inner-width">Helpers, variants and adverbs can all work together.</p>
-              <div class="two columns tablet">
-                <div class="vertical-center">
-                  <div class="text-padding border rounded very bright warm cyan">very bright warm cyan</div>
-                </div>
-                <div class="vertical-center">
-                  <div class="text-padding border rounded hella dark cool red">hella dark cool red</div>
+            
+            <div class="gutter-bottom">
+              <p class="text inner-width">Four more colors are available based on the brand color:</p>
+          
+              <div>
+                <div class="text-align-left one column desktop">
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right brand-color">&nbsp;&nbsp;&nbsp;&nbsp;</span> brand-color
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right complement">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> accent
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right complement accent">&nbsp;&nbsp;&nbsp;&nbsp;</span> complement accent
+                  </p>
                 </div>
               </div>
             </div>
-                
       
+            <div class="">
+              <p class="text inner-width">Grayscale composes too:</p>
+          
+              <div>
+                <div class="text-align-left one column desktop">
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right white">&nbsp;&nbsp;&nbsp;&nbsp;</span> white
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right white gray">&nbsp;&nbsp;&nbsp;&nbsp;</span> white gray
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right gray">&nbsp;&nbsp;&nbsp;&nbsp;</span> gray
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right gray black">&nbsp;&nbsp;&nbsp;&nbsp;</span> gray black
+                  </p>
+                  <p class="inner card width no-margin-bottom">
+                    <span class="text-padding border rounded text-margin-right black">&nbsp;&nbsp;&nbsp;&nbsp;</span> black
+                  </p>
+                </div>
+              </div>
+            </div>
       
                 
           </div>
