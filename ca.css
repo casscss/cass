@@ -804,86 +804,9 @@ button:active {
   color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(60%, var(--l), 100%)) !important;
   background-color: transparent !important;
 }
-.shade,
-.white,
-.white.gray,
-.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.very.light.black,
-.hella.light.black,
-.brand-color,
-.very.light.complement,
-.hella.light.complement,
-.very.bright.complement,
-.hella.bright.complement,
-.accent,
-.complement.accent,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.very.light.red.orange,
-.hella.light.red.orange,
-.bright.red.orange,
-.very.bright.red.orange,
-.hella.bright.red.orange,
-.orange,
-.orange.yellow,
-.yellow,
-.yellow.green,
-.green,
-.green.teal,
-.teal,
-.teal.cyan,
-.cyan,
-.cyan.blue,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.blue.purple,
-.hella.light.blue.purple,
-.hella.bright.blue.purple,
-.very.light.purple,
-.hella.light.purple,
-.very.light.purple.magenta,
-.hella.light.purple.magenta,
-.hella.bright.purple.magenta,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
-.very.light.magenta.red,
-.hella.light.magenta.red,
-.hella.bright.magenta.red,
-.very.light.orangered,
-.hella.light.orangered,
-.bright.orangered,
-.very.bright.orangered,
-.hella.bright.orangered,
-.gold,
-.lime,
-.jade,
-.aqua,
-.skyblue,
-.very.light.indigo,
-.hella.light.indigo,
-.hella.bright.indigo,
-.very.light.fuchsia,
-.hella.light.fuchsia,
-.hella.bright.fuchsia,
-.very.light.pink,
-.hella.light.pink,
-.hella.bright.pink {
-  color: var(--black);
-  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
-  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
-  --border-h: var(--h);
-  --border-s: var(--s);
-  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
-  --border-a: var(--a);
-}
 .tint,
+.hella.dark.white.gray,
+.very.dark.gray,
 .hella.dark.gray,
 .hella.dim.gray,
 .gray.black,
@@ -912,6 +835,7 @@ button:active {
 .hella.dark.orange.yellow,
 .very.dim.orange.yellow,
 .hella.dim.orange.yellow,
+.very.dark.yellow,
 .hella.dark.yellow,
 .very.dim.yellow,
 .hella.dim.yellow,
@@ -987,6 +911,88 @@ button:active {
 .pink {
   --t: var(--white);
   color: var(--white);
+  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
+  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
+  --border-a: var(--a);
+}
+.shade,
+.white,
+.white.gray,
+.gray,
+.very.light.gray.black,
+.hella.light.gray.black,
+.very.bright.gray.black,
+.hella.bright.gray.black,
+.very.light.black,
+.hella.light.black,
+.brand-color,
+.very.light.complement,
+.hella.light.complement,
+.very.bright.complement,
+.hella.bright.complement,
+.accent,
+.complement.accent,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
+.light.red.orange,
+.very.light.red.orange,
+.hella.light.red.orange,
+.bright.red.orange,
+.very.bright.red.orange,
+.hella.bright.red.orange,
+.orange,
+.orange.yellow,
+.yellow,
+.yellow.green,
+.green,
+.green.teal,
+.teal,
+.teal.cyan,
+.cyan,
+.cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
+.very.light.blue.purple,
+.hella.light.blue.purple,
+.hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
+.very.light.purple.magenta,
+.hella.light.purple.magenta,
+.hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.very.bright.magenta,
+.hella.bright.magenta,
+.very.light.magenta.red,
+.hella.light.magenta.red,
+.hella.bright.magenta.red,
+.light.orangered,
+.very.light.orangered,
+.hella.light.orangered,
+.bright.orangered,
+.very.bright.orangered,
+.hella.bright.orangered,
+.gold,
+.lime,
+.jade,
+.aqua,
+.skyblue,
+.very.light.indigo,
+.hella.light.indigo,
+.hella.bright.indigo,
+.very.light.fuchsia,
+.hella.light.fuchsia,
+.hella.bright.fuchsia,
+.very.light.pink,
+.hella.light.pink,
+.hella.bright.pink {
+  color: var(--black);
   background-color: hsla(var(--h), var(--s), var(--l), var(--a));
   border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
   --border-h: var(--h);
@@ -1317,11 +1323,11 @@ button:active {
 }
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.3;
+  --jump: 0.33;
 }
 .dark {
-  --l: calc(var(--b) - ((var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --l: calc(var(--b) - ((var(--b) - 20%) * var(--jump) * var(--v, 0))) !important;
+  --jump: 0.33;
 }
 .bright {
   --s: calc(var(--b-s) + ((100% - var(--b-s)) * var(--jump) * 6 * var(--v, 0))) !important;
@@ -1337,7 +1343,6 @@ button:active {
   --h: 187;
   --s: 98%;
   --l: 99%;
-  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
@@ -1358,7 +1363,6 @@ button:active {
   --h: 187;
   --s: 12%;
   --l: 94%;
-  --o: 0.07;
   --jump: 0.03;
 }
 .light.white.gray {
@@ -1379,7 +1383,6 @@ button:active {
   --h: 0;
   --s: 0%;
   --l: 80%;
-  --o: 0.1;
   --jump: 0.08;
 }
 .light.gray {
@@ -1400,7 +1403,6 @@ button:active {
   --h: 187;
   --s: 8%;
   --l: 44%;
-  --o: 0.15;
   --jump: 0.1;
 }
 .light.gray.black {
@@ -1421,7 +1423,6 @@ button:active {
   --h: 187;
   --s: 96%;
   --l: 8%;
-  --o: 0.2;
   --jump: 0.15;
 }
 .light.black {
@@ -1482,18 +1483,18 @@ button:active {
   --l: 71%;
 }
 .light.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .complement.accent {
   --h: 48;
@@ -1501,18 +1502,18 @@ button:active {
   --l: 71%;
 }
 .light.complement.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.complement.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.complement.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.complement.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .red {
   --h: 359;
@@ -1520,10 +1521,10 @@ button:active {
   --l: 50%;
 }
 .light.red {
-  --b: 58%;
+  --b: 60%;
 }
 .dark.red {
-  --b: 42%;
+  --b: 40%;
 }
 .bright.red {
   --b-s: 88%;
@@ -1538,15 +1539,14 @@ button:active {
   --h: 24;
   --s: 80%;
   --l: 50%;
-  --o: 0.2;
 }
 .light.red.orange,
 .light.orangered {
-  --b: 53%;
+  --b: 54%;
 }
 .dark.red.orange,
 .dark.orangered {
-  --b: 48%;
+  --b: 46%;
 }
 .bright.red.orange,
 .bright.orangered {
@@ -1562,7 +1562,6 @@ button:active {
   --h: 39;
   --s: 98%;
   --l: 50%;
-  --o: 0.1;
 }
 .light.orange {
   --b: 51%;
@@ -1583,7 +1582,6 @@ button:active {
   --h: 51;
   --s: 94%;
   --l: 50%;
-  --o: 0.075;
 }
 .light.orange.yellow,
 .light.gold {
@@ -1607,7 +1605,6 @@ button:active {
   --h: 63;
   --s: 100%;
   --l: 52%;
-  --o: 0.05;
 }
 .light.yellow {
   --b: 53%;
@@ -1628,7 +1625,6 @@ button:active {
   --h: 88;
   --s: 69%;
   --l: 52%;
-  --o: 0.125;
 }
 .light.yellow.green,
 .light.lime {
@@ -1654,10 +1650,10 @@ button:active {
   --l: 42%;
 }
 .light.green {
-  --b: 50%;
+  --b: 52%;
 }
 .dark.green {
-  --b: 34%;
+  --b: 33%;
 }
 .bright.green {
   --b-s: 91%;
@@ -1697,10 +1693,10 @@ button:active {
   --l: 44%;
 }
 .light.teal {
-  --b: 52%;
+  --b: 54%;
 }
 .dark.teal {
-  --b: 36%;
+  --b: 35%;
 }
 .bright.teal {
   --b-s: 90%;
@@ -1715,7 +1711,6 @@ button:active {
   --h: 181;
   --s: 79%;
   --l: 47%;
-  --o: 0.14;
 }
 .light.teal.cyan,
 .light.aqua {
@@ -1739,17 +1734,16 @@ button:active {
   --h: 180;
   --s: 91%;
   --l: 50%;
-  --o: 0.08;
 }
 .light.cyan {
-  --b: 62%;
+  --b: 64%;
 }
 .dark.cyan {
-  --b: 38%;
+  --b: 36%;
 }
 .bright.cyan {
   --b-s: 100%;
-  --b-l: 52%;
+  --b-l: 53%;
 }
 .dim.cyan {
   --b-s: 58%;
@@ -1760,7 +1754,6 @@ button:active {
   --h: 199;
   --s: 87%;
   --l: 49%;
-  --o: 0.14;
 }
 .light.cyan.blue,
 .light.skyblue {
@@ -1786,10 +1779,10 @@ button:active {
   --l: 48%;
 }
 .light.blue {
-  --b: 60%;
+  --b: 61%;
 }
 .dark.blue {
-  --b: 36%;
+  --b: 34%;
 }
 .bright.blue {
   --b-s: 100%;
@@ -1829,18 +1822,18 @@ button:active {
   --l: 46%;
 }
 .light.purple {
-  --b: 54%;
+  --b: 58%;
 }
 .dark.purple {
-  --b: 38%;
+  --b: 34%;
 }
 .bright.purple {
   --b-s: 73%;
-  --b-l: 48%;
+  --b-l: 49%;
 }
 .dim.purple {
   --b-s: 15%;
-  --b-l: 45%;
+  --b-l: 44%;
 }
 .purple.magenta,
 .fuchsia {
@@ -1872,14 +1865,14 @@ button:active {
   --l: 53%;
 }
 .light.magenta {
-  --b: 61%;
+  --b: 65%;
 }
 .dark.magenta {
-  --b: 45%;
+  --b: 41%;
 }
 .bright.magenta {
   --b-s: 100%;
-  --b-l: 54%;
+  --b-l: 55%;
 }
 .dim.magenta {
   --b-s: 49%;
@@ -1911,6 +1904,9 @@ button:active {
 }
 .desaturated {
   --s: 0% !important;
+}
+.matched {
+  --l: 46.8627451% !important;
 }
 .bright.gray,
 .bright.black,

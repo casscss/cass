@@ -815,86 +815,9 @@ button:active {
   color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(60%, var(--l), 100%)) !important;
   background-color: transparent !important;
 }
-.shade,
-.white,
-.white.gray,
-.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.very.light.black,
-.hella.light.black,
-.brand-color,
-.very.light.complement,
-.hella.light.complement,
-.very.bright.complement,
-.hella.bright.complement,
-.accent,
-.complement.accent,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.very.light.red.orange,
-.hella.light.red.orange,
-.bright.red.orange,
-.very.bright.red.orange,
-.hella.bright.red.orange,
-.orange,
-.orange.yellow,
-.yellow,
-.yellow.green,
-.green,
-.green.teal,
-.teal,
-.teal.cyan,
-.cyan,
-.cyan.blue,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.blue.purple,
-.hella.light.blue.purple,
-.hella.bright.blue.purple,
-.very.light.purple,
-.hella.light.purple,
-.very.light.purple.magenta,
-.hella.light.purple.magenta,
-.hella.bright.purple.magenta,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
-.very.light.magenta.red,
-.hella.light.magenta.red,
-.hella.bright.magenta.red,
-.very.light.orangered,
-.hella.light.orangered,
-.bright.orangered,
-.very.bright.orangered,
-.hella.bright.orangered,
-.gold,
-.lime,
-.jade,
-.aqua,
-.skyblue,
-.very.light.indigo,
-.hella.light.indigo,
-.hella.bright.indigo,
-.very.light.fuchsia,
-.hella.light.fuchsia,
-.hella.bright.fuchsia,
-.very.light.pink,
-.hella.light.pink,
-.hella.bright.pink {
-  color: var(--black);
-  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
-  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
-  --border-h: var(--h);
-  --border-s: var(--s);
-  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
-  --border-a: var(--a);
-}
 .tint,
+.hella.dark.white.gray,
+.very.dark.gray,
 .hella.dark.gray,
 .hella.dim.gray,
 .gray.black,
@@ -923,6 +846,7 @@ button:active {
 .hella.dark.orange.yellow,
 .very.dim.orange.yellow,
 .hella.dim.orange.yellow,
+.very.dark.yellow,
 .hella.dark.yellow,
 .very.dim.yellow,
 .hella.dim.yellow,
@@ -998,6 +922,88 @@ button:active {
 .pink {
   --t: var(--white);
   color: var(--white);
+  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
+  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
+  --border-a: var(--a);
+}
+.shade,
+.white,
+.white.gray,
+.gray,
+.very.light.gray.black,
+.hella.light.gray.black,
+.very.bright.gray.black,
+.hella.bright.gray.black,
+.very.light.black,
+.hella.light.black,
+.brand-color,
+.very.light.complement,
+.hella.light.complement,
+.very.bright.complement,
+.hella.bright.complement,
+.accent,
+.complement.accent,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
+.light.red.orange,
+.very.light.red.orange,
+.hella.light.red.orange,
+.bright.red.orange,
+.very.bright.red.orange,
+.hella.bright.red.orange,
+.orange,
+.orange.yellow,
+.yellow,
+.yellow.green,
+.green,
+.green.teal,
+.teal,
+.teal.cyan,
+.cyan,
+.cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
+.very.light.blue.purple,
+.hella.light.blue.purple,
+.hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
+.very.light.purple.magenta,
+.hella.light.purple.magenta,
+.hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.very.bright.magenta,
+.hella.bright.magenta,
+.very.light.magenta.red,
+.hella.light.magenta.red,
+.hella.bright.magenta.red,
+.light.orangered,
+.very.light.orangered,
+.hella.light.orangered,
+.bright.orangered,
+.very.bright.orangered,
+.hella.bright.orangered,
+.gold,
+.lime,
+.jade,
+.aqua,
+.skyblue,
+.very.light.indigo,
+.hella.light.indigo,
+.hella.bright.indigo,
+.very.light.fuchsia,
+.hella.light.fuchsia,
+.hella.bright.fuchsia,
+.very.light.pink,
+.hella.light.pink,
+.hella.bright.pink {
+  color: var(--black);
   background-color: hsla(var(--h), var(--s), var(--l), var(--a));
   border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
   --border-h: var(--h);
@@ -1328,11 +1334,11 @@ button:active {
 }
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.3;
+  --jump: 0.33;
 }
 .dark {
-  --l: calc(var(--b) - ((var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --l: calc(var(--b) - ((var(--b) - 20%) * var(--jump) * var(--v, 0))) !important;
+  --jump: 0.33;
 }
 .bright {
   --s: calc(var(--b-s) + ((100% - var(--b-s)) * var(--jump) * 6 * var(--v, 0))) !important;
@@ -1348,7 +1354,6 @@ button:active {
   --h: 187;
   --s: 98%;
   --l: 99%;
-  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
@@ -1369,7 +1374,6 @@ button:active {
   --h: 187;
   --s: 12%;
   --l: 94%;
-  --o: 0.07;
   --jump: 0.03;
 }
 .light.white.gray {
@@ -1390,7 +1394,6 @@ button:active {
   --h: 0;
   --s: 0%;
   --l: 80%;
-  --o: 0.1;
   --jump: 0.08;
 }
 .light.gray {
@@ -1411,7 +1414,6 @@ button:active {
   --h: 187;
   --s: 8%;
   --l: 44%;
-  --o: 0.15;
   --jump: 0.1;
 }
 .light.gray.black {
@@ -1432,7 +1434,6 @@ button:active {
   --h: 187;
   --s: 96%;
   --l: 8%;
-  --o: 0.2;
   --jump: 0.15;
 }
 .light.black {
@@ -1493,18 +1494,18 @@ button:active {
   --l: 71%;
 }
 .light.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .complement.accent {
   --h: 48;
@@ -1512,18 +1513,18 @@ button:active {
   --l: 71%;
 }
 .light.complement.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.complement.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.complement.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.complement.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .red {
   --h: 359;
@@ -1531,10 +1532,10 @@ button:active {
   --l: 50%;
 }
 .light.red {
-  --b: 58%;
+  --b: 60%;
 }
 .dark.red {
-  --b: 42%;
+  --b: 40%;
 }
 .bright.red {
   --b-s: 88%;
@@ -1549,15 +1550,14 @@ button:active {
   --h: 24;
   --s: 80%;
   --l: 50%;
-  --o: 0.2;
 }
 .light.red.orange,
 .light.orangered {
-  --b: 53%;
+  --b: 54%;
 }
 .dark.red.orange,
 .dark.orangered {
-  --b: 48%;
+  --b: 46%;
 }
 .bright.red.orange,
 .bright.orangered {
@@ -1573,7 +1573,6 @@ button:active {
   --h: 39;
   --s: 98%;
   --l: 50%;
-  --o: 0.1;
 }
 .light.orange {
   --b: 51%;
@@ -1594,7 +1593,6 @@ button:active {
   --h: 51;
   --s: 94%;
   --l: 50%;
-  --o: 0.075;
 }
 .light.orange.yellow,
 .light.gold {
@@ -1618,7 +1616,6 @@ button:active {
   --h: 63;
   --s: 100%;
   --l: 52%;
-  --o: 0.05;
 }
 .light.yellow {
   --b: 53%;
@@ -1639,7 +1636,6 @@ button:active {
   --h: 88;
   --s: 69%;
   --l: 52%;
-  --o: 0.125;
 }
 .light.yellow.green,
 .light.lime {
@@ -1665,10 +1661,10 @@ button:active {
   --l: 42%;
 }
 .light.green {
-  --b: 50%;
+  --b: 52%;
 }
 .dark.green {
-  --b: 34%;
+  --b: 33%;
 }
 .bright.green {
   --b-s: 91%;
@@ -1708,10 +1704,10 @@ button:active {
   --l: 44%;
 }
 .light.teal {
-  --b: 52%;
+  --b: 54%;
 }
 .dark.teal {
-  --b: 36%;
+  --b: 35%;
 }
 .bright.teal {
   --b-s: 90%;
@@ -1726,7 +1722,6 @@ button:active {
   --h: 181;
   --s: 79%;
   --l: 47%;
-  --o: 0.14;
 }
 .light.teal.cyan,
 .light.aqua {
@@ -1750,17 +1745,16 @@ button:active {
   --h: 180;
   --s: 91%;
   --l: 50%;
-  --o: 0.08;
 }
 .light.cyan {
-  --b: 62%;
+  --b: 64%;
 }
 .dark.cyan {
-  --b: 38%;
+  --b: 36%;
 }
 .bright.cyan {
   --b-s: 100%;
-  --b-l: 52%;
+  --b-l: 53%;
 }
 .dim.cyan {
   --b-s: 58%;
@@ -1771,7 +1765,6 @@ button:active {
   --h: 199;
   --s: 87%;
   --l: 49%;
-  --o: 0.14;
 }
 .light.cyan.blue,
 .light.skyblue {
@@ -1797,10 +1790,10 @@ button:active {
   --l: 48%;
 }
 .light.blue {
-  --b: 60%;
+  --b: 61%;
 }
 .dark.blue {
-  --b: 36%;
+  --b: 34%;
 }
 .bright.blue {
   --b-s: 100%;
@@ -1840,18 +1833,18 @@ button:active {
   --l: 46%;
 }
 .light.purple {
-  --b: 54%;
+  --b: 58%;
 }
 .dark.purple {
-  --b: 38%;
+  --b: 34%;
 }
 .bright.purple {
   --b-s: 73%;
-  --b-l: 48%;
+  --b-l: 49%;
 }
 .dim.purple {
   --b-s: 15%;
-  --b-l: 45%;
+  --b-l: 44%;
 }
 .purple.magenta,
 .fuchsia {
@@ -1883,14 +1876,14 @@ button:active {
   --l: 53%;
 }
 .light.magenta {
-  --b: 61%;
+  --b: 65%;
 }
 .dark.magenta {
-  --b: 45%;
+  --b: 41%;
 }
 .bright.magenta {
   --b-s: 100%;
-  --b-l: 54%;
+  --b-l: 55%;
 }
 .dim.magenta {
   --b-s: 49%;
@@ -1922,6 +1915,9 @@ button:active {
 }
 .desaturated {
   --s: 0% !important;
+}
+.matched {
+  --l: 46.8627451% !important;
 }
 .bright.gray,
 .bright.black,
@@ -1986,7 +1982,7 @@ button:active {
   <div class="text-trim full width placeholder padding no-padding-bottom text-margin-bottom">&nbsp;</div>
     <div class="light accent margin-bottom no-padding-top no-padding-bottom">
 
-      <div class="very dark warm blue two column golden reverse gap-gutter desktop padding margin-auto inner page width">
+      <div class="hella dark indigo two column golden reverse gap-gutter desktop padding margin-auto inner page width">
 
         <div class="vertical-center inner card width padding">
           <p class="hide desktop"></p>          
@@ -2852,86 +2848,9 @@ button:active {
   color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(60%, var(--l), 100%)) !important;
   background-color: transparent !important;
 }
-.shade,
-.white,
-.white.gray,
-.gray,
-.very.light.gray.black,
-.hella.light.gray.black,
-.very.bright.gray.black,
-.hella.bright.gray.black,
-.very.light.black,
-.hella.light.black,
-.brand-color,
-.very.light.complement,
-.hella.light.complement,
-.very.bright.complement,
-.hella.bright.complement,
-.accent,
-.complement.accent,
-.very.light.red,
-.hella.light.red,
-.hella.bright.red,
-.very.light.red.orange,
-.hella.light.red.orange,
-.bright.red.orange,
-.very.bright.red.orange,
-.hella.bright.red.orange,
-.orange,
-.orange.yellow,
-.yellow,
-.yellow.green,
-.green,
-.green.teal,
-.teal,
-.teal.cyan,
-.cyan,
-.cyan.blue,
-.very.light.blue,
-.hella.light.blue,
-.hella.bright.blue,
-.very.light.blue.purple,
-.hella.light.blue.purple,
-.hella.bright.blue.purple,
-.very.light.purple,
-.hella.light.purple,
-.very.light.purple.magenta,
-.hella.light.purple.magenta,
-.hella.bright.purple.magenta,
-.very.light.magenta,
-.hella.light.magenta,
-.hella.bright.magenta,
-.very.light.magenta.red,
-.hella.light.magenta.red,
-.hella.bright.magenta.red,
-.very.light.orangered,
-.hella.light.orangered,
-.bright.orangered,
-.very.bright.orangered,
-.hella.bright.orangered,
-.gold,
-.lime,
-.jade,
-.aqua,
-.skyblue,
-.very.light.indigo,
-.hella.light.indigo,
-.hella.bright.indigo,
-.very.light.fuchsia,
-.hella.light.fuchsia,
-.hella.bright.fuchsia,
-.very.light.pink,
-.hella.light.pink,
-.hella.bright.pink {
-  color: var(--black);
-  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
-  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
-  --border-h: var(--h);
-  --border-s: var(--s);
-  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
-  --border-a: var(--a);
-}
 .tint,
+.hella.dark.white.gray,
+.very.dark.gray,
 .hella.dark.gray,
 .hella.dim.gray,
 .gray.black,
@@ -2960,6 +2879,7 @@ button:active {
 .hella.dark.orange.yellow,
 .very.dim.orange.yellow,
 .hella.dim.orange.yellow,
+.very.dark.yellow,
 .hella.dark.yellow,
 .very.dim.yellow,
 .hella.dim.yellow,
@@ -3035,6 +2955,88 @@ button:active {
 .pink {
   --t: var(--white);
   color: var(--white);
+  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
+  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
+  --border-h: var(--h);
+  --border-s: var(--s);
+  --border-l: clamp(0%, calc(var(--l) * 0.75), 85%);
+  --border-a: var(--a);
+}
+.shade,
+.white,
+.white.gray,
+.gray,
+.very.light.gray.black,
+.hella.light.gray.black,
+.very.bright.gray.black,
+.hella.bright.gray.black,
+.very.light.black,
+.hella.light.black,
+.brand-color,
+.very.light.complement,
+.hella.light.complement,
+.very.bright.complement,
+.hella.bright.complement,
+.accent,
+.complement.accent,
+.very.light.red,
+.hella.light.red,
+.hella.bright.red,
+.light.red.orange,
+.very.light.red.orange,
+.hella.light.red.orange,
+.bright.red.orange,
+.very.bright.red.orange,
+.hella.bright.red.orange,
+.orange,
+.orange.yellow,
+.yellow,
+.yellow.green,
+.green,
+.green.teal,
+.teal,
+.teal.cyan,
+.cyan,
+.cyan.blue,
+.very.light.blue,
+.hella.light.blue,
+.hella.bright.blue,
+.very.light.blue.purple,
+.hella.light.blue.purple,
+.hella.bright.blue.purple,
+.very.light.purple,
+.hella.light.purple,
+.very.light.purple.magenta,
+.hella.light.purple.magenta,
+.hella.bright.purple.magenta,
+.very.light.magenta,
+.hella.light.magenta,
+.very.bright.magenta,
+.hella.bright.magenta,
+.very.light.magenta.red,
+.hella.light.magenta.red,
+.hella.bright.magenta.red,
+.light.orangered,
+.very.light.orangered,
+.hella.light.orangered,
+.bright.orangered,
+.very.bright.orangered,
+.hella.bright.orangered,
+.gold,
+.lime,
+.jade,
+.aqua,
+.skyblue,
+.very.light.indigo,
+.hella.light.indigo,
+.hella.bright.indigo,
+.very.light.fuchsia,
+.hella.light.fuchsia,
+.hella.bright.fuchsia,
+.very.light.pink,
+.hella.light.pink,
+.hella.bright.pink {
+  color: var(--black);
   background-color: hsla(var(--h), var(--s), var(--l), var(--a));
   border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
   --border-h: var(--h);
@@ -3365,11 +3367,11 @@ button:active {
 }
 .light {
   --l: calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.3;
+  --jump: 0.33;
 }
 .dark {
-  --l: calc(var(--b) - ((var(--b)) * var(--jump) * var(--v, 0))) !important;
-  --jump: 0.15;
+  --l: calc(var(--b) - ((var(--b) - 20%) * var(--jump) * var(--v, 0))) !important;
+  --jump: 0.33;
 }
 .bright {
   --s: calc(var(--b-s) + ((100% - var(--b-s)) * var(--jump) * 6 * var(--v, 0))) !important;
@@ -3385,7 +3387,6 @@ button:active {
   --h: 187;
   --s: 98%;
   --l: 99%;
-  --o: 0.025;
   --jump: 0.01;
 }
 .light.white {
@@ -3406,7 +3407,6 @@ button:active {
   --h: 187;
   --s: 12%;
   --l: 94%;
-  --o: 0.07;
   --jump: 0.03;
 }
 .light.white.gray {
@@ -3427,7 +3427,6 @@ button:active {
   --h: 0;
   --s: 0%;
   --l: 80%;
-  --o: 0.1;
   --jump: 0.08;
 }
 .light.gray {
@@ -3448,7 +3447,6 @@ button:active {
   --h: 187;
   --s: 8%;
   --l: 44%;
-  --o: 0.15;
   --jump: 0.1;
 }
 .light.gray.black {
@@ -3469,7 +3467,6 @@ button:active {
   --h: 187;
   --s: 96%;
   --l: 8%;
-  --o: 0.2;
   --jump: 0.15;
 }
 .light.black {
@@ -3530,18 +3527,18 @@ button:active {
   --l: 71%;
 }
 .light.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .complement.accent {
   --h: 48;
@@ -3549,18 +3546,18 @@ button:active {
   --l: 71%;
 }
 .light.complement.accent {
-  --b: 83%;
+  --b: 79%;
 }
 .dark.complement.accent {
-  --b: 59%;
+  --b: 63%;
 }
 .bright.complement.accent {
   --b-s: 100%;
-  --b-l: 74%;
+  --b-l: 73%;
 }
 .dim.complement.accent {
   --b-s: 58%;
-  --b-l: 69%;
+  --b-l: 70%;
 }
 .red {
   --h: 359;
@@ -3568,10 +3565,10 @@ button:active {
   --l: 50%;
 }
 .light.red {
-  --b: 58%;
+  --b: 60%;
 }
 .dark.red {
-  --b: 42%;
+  --b: 40%;
 }
 .bright.red {
   --b-s: 88%;
@@ -3586,15 +3583,14 @@ button:active {
   --h: 24;
   --s: 80%;
   --l: 50%;
-  --o: 0.2;
 }
 .light.red.orange,
 .light.orangered {
-  --b: 53%;
+  --b: 54%;
 }
 .dark.red.orange,
 .dark.orangered {
-  --b: 48%;
+  --b: 46%;
 }
 .bright.red.orange,
 .bright.orangered {
@@ -3610,7 +3606,6 @@ button:active {
   --h: 39;
   --s: 98%;
   --l: 50%;
-  --o: 0.1;
 }
 .light.orange {
   --b: 51%;
@@ -3631,7 +3626,6 @@ button:active {
   --h: 51;
   --s: 94%;
   --l: 50%;
-  --o: 0.075;
 }
 .light.orange.yellow,
 .light.gold {
@@ -3655,7 +3649,6 @@ button:active {
   --h: 63;
   --s: 100%;
   --l: 52%;
-  --o: 0.05;
 }
 .light.yellow {
   --b: 53%;
@@ -3676,7 +3669,6 @@ button:active {
   --h: 88;
   --s: 69%;
   --l: 52%;
-  --o: 0.125;
 }
 .light.yellow.green,
 .light.lime {
@@ -3702,10 +3694,10 @@ button:active {
   --l: 42%;
 }
 .light.green {
-  --b: 50%;
+  --b: 52%;
 }
 .dark.green {
-  --b: 34%;
+  --b: 33%;
 }
 .bright.green {
   --b-s: 91%;
@@ -3745,10 +3737,10 @@ button:active {
   --l: 44%;
 }
 .light.teal {
-  --b: 52%;
+  --b: 54%;
 }
 .dark.teal {
-  --b: 36%;
+  --b: 35%;
 }
 .bright.teal {
   --b-s: 90%;
@@ -3763,7 +3755,6 @@ button:active {
   --h: 181;
   --s: 79%;
   --l: 47%;
-  --o: 0.14;
 }
 .light.teal.cyan,
 .light.aqua {
@@ -3787,17 +3778,16 @@ button:active {
   --h: 180;
   --s: 91%;
   --l: 50%;
-  --o: 0.08;
 }
 .light.cyan {
-  --b: 62%;
+  --b: 64%;
 }
 .dark.cyan {
-  --b: 38%;
+  --b: 36%;
 }
 .bright.cyan {
   --b-s: 100%;
-  --b-l: 52%;
+  --b-l: 53%;
 }
 .dim.cyan {
   --b-s: 58%;
@@ -3808,7 +3798,6 @@ button:active {
   --h: 199;
   --s: 87%;
   --l: 49%;
-  --o: 0.14;
 }
 .light.cyan.blue,
 .light.skyblue {
@@ -3834,10 +3823,10 @@ button:active {
   --l: 48%;
 }
 .light.blue {
-  --b: 60%;
+  --b: 61%;
 }
 .dark.blue {
-  --b: 36%;
+  --b: 34%;
 }
 .bright.blue {
   --b-s: 100%;
@@ -3877,18 +3866,18 @@ button:active {
   --l: 46%;
 }
 .light.purple {
-  --b: 54%;
+  --b: 58%;
 }
 .dark.purple {
-  --b: 38%;
+  --b: 34%;
 }
 .bright.purple {
   --b-s: 73%;
-  --b-l: 48%;
+  --b-l: 49%;
 }
 .dim.purple {
   --b-s: 15%;
-  --b-l: 45%;
+  --b-l: 44%;
 }
 .purple.magenta,
 .fuchsia {
@@ -3920,14 +3909,14 @@ button:active {
   --l: 53%;
 }
 .light.magenta {
-  --b: 61%;
+  --b: 65%;
 }
 .dark.magenta {
-  --b: 45%;
+  --b: 41%;
 }
 .bright.magenta {
   --b-s: 100%;
-  --b-l: 54%;
+  --b-l: 55%;
 }
 .dim.magenta {
   --b-s: 49%;
@@ -3959,6 +3948,9 @@ button:active {
 }
 .desaturated {
   --s: 0% !important;
+}
+.matched {
+  --l: 46.8627451% !important;
 }
 .bright.gray,
 .bright.black,
@@ -4679,8 +4671,9 @@ pre > code {
   background-color: transparent !important;
 }
 
-.shade {
-  color: var(--black);
+.tint {
+  --t: var(--white);
+  color: var(--white);
   background-color: hsla(var(--h), var(--s), var(--l), var(--a));
   border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
   --border-h: var(--h);
@@ -4689,9 +4682,8 @@ pre > code {
   --border-a: var(--a);
 }
 
-.tint {
-  --t: var(--white);
-  color: var(--white);
+.shade {
+  color: var(--black);
   background-color: hsla(var(--h), var(--s), var(--l), var(--a));
   border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
   --border-h: var(--h);
@@ -5034,7 +5026,7 @@ pre > code {
 @complement: .set-color(complement, @complement-base, 1, 1)[];
 
 @accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
-@accent-complement: .set-color(~"complement.accent", @accent-complement-base, 1, 1)[];
+@accent-complement: .set-color(complaccent, @accent-complement-base, 1, 1)[];
 
 .color-helpers(@color, @multiplier: 1) {
 
@@ -5049,12 +5041,12 @@ pre > code {
     @hella-dimmed-guess: desaturate(darken(@dimmed, 30%), 20%);
     
     @lightened: lighten(@color, @multiplier*@lighten-by);
-    @very-lightened-guess: lighten(@lightened, 30%);
-    @hella-lightened-guess: lighten(@lightened, 60%);
+    @very-lightened-guess: lighten(@lightened, 33%);
+    @hella-lightened-guess: lighten(@lightened, 66%);
 
     @darkened: darken(@color, @multiplier*@lighten-by);
-    @very-darkened-guess: darken(@darkened, 15%);
-    @hella-darkened-guess: darken(@darkened, 30%);
+    @very-darkened-guess: darken(@darkened, 25%);
+    @hella-darkened-guess: darken(@darkened, 50%);
     
     @base-contrast-ceiling: .set-contrast-ratio(@color, @white)[];
     @border-color: .set-lumafix(@color, @black, 75%)[];
@@ -5172,52 +5164,14 @@ pre > code {
     --v: 2;
 }
 
-// .set-warm-base() when (red(@base-color) > 128) {
-//     @warm-base: .set-lumafix(@orange, @yellow)[];
-// }
-
-// .set-warm-base() when (red(@base-color) <= 128) {
-//     @warm-base: .set-lumafix(@red, @yellow)[];
-// }
-
-// @warm-base: .set-warm-base()[];
-// @warm-lumafix: .set-lumafix(@warm-base, @base-color, 25%)[];
-// @warm: .set-color(~"warm", @warm-lumafix, 0)[];
-// @warm-rgba: rgba(round(red(@warm), 1), 0, 0, @warm-bg-fill-opacity);
-// @warm-bg-fill-opacity: var(--o);
-
-// .warm {
-//     --o: .2;
-//     background-image: linear-gradient(@warm-rgba, @warm-rgba);
-// }
-
-// .set-cool-base() when (blue(@base-color) > 128) {
-//     @cool-base: @cyan;
-// }
-
-// .set-cool-base() when (blue(@base-color) <= 128) {
-//     @cool-base: .set-lumafix(@blue, @cyan)[];
-// }
-
-// @cool-base: .set-cool-base()[];
-// @cool-lumafix: .set-lumafix(@cool-base, @base-color, 50%)[];
-// @cool: .set-color(~"cool", @cool-lumafix, 0)[];
-// @cool-rgba: rgba(0, 0, round(blue(@cool), 1), var(--o));
-// @cool-bg-fill-opacity: var(--o);
-
-// .cool {
-//     --o: .2;
-//     background-image: linear-gradient(@cool-rgba, @cool-rgba);
-// }
-
 .light {
     --l: ~"calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .3;
+    --jump: .33;
 }
 
 .dark {
-    --l: ~"calc(var(--b) - ((var(--b)) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .15;
+    --l: ~"calc(var(--b) - ((var(--b) - 20%) * var(--jump) * var(--v, 0)))" !important;
+    --jump: .33;
 }
 
 .bright {
@@ -5232,34 +5186,34 @@ pre > code {
     --jump: .15;
 }
 
-.white { .color-helpers(@white, .1); --o: .025; --jump: .01;}
-.white.gray { .color-helpers(@white-gray, .2); --o: .07; --jump: .03;}
-.gray { .color-helpers(@gray, .3); --o: .1; --jump: .08;}
-.gray.black { .color-helpers(@gray-black, .5); --o: .15; --jump: .1;}
-.black { .color-helpers(@black, .75); --o: .2; --jump: .15;}
+.white { .color-helpers(@white, .1); --jump: .01;}
+.white.gray { .color-helpers(@white-gray, .2); --jump: .03;}
+.gray { .color-helpers(@gray, .3); --jump: .08;}
+.gray.black { .color-helpers(@gray-black, .5); --jump: .1;}
+.black { .color-helpers(@black, .75); --jump: .15;}
 
 .brand-color { .color-helpers(@base-color, .4);}
 .complement { .color-helpers(@complement, .4);}
-.accent { .color-helpers(@accent, .75);}
-.complement.accent { .color-helpers(@accent-complement, .75);}
+.accent { .color-helpers(@accent, .5);}
+.complement.accent { .color-helpers(@accent-complement, .5);}
 
-.red { .color-helpers(@red, .5);}
-.red.orange { .color-helpers(@red-orange, .15); --o: .2;}
-.orange { .color-helpers(@orange, .05); --o: .1;}
-.orange.yellow { .color-helpers(@orange-yellow, .05); --o: .075;}
-.yellow { .color-helpers(@yellow, .05); --o: .05;}
-.yellow.green { .color-helpers(@yellow-green, .15); --o: .125;}
-.green { .color-helpers(@green, .5);}
+.red { .color-helpers(@red, .6);}
+.red.orange { .color-helpers(@red-orange, .25);}
+.orange { .color-helpers(@orange, .05);}
+.orange.yellow { .color-helpers(@orange-yellow, .05);}
+.yellow { .color-helpers(@yellow, .05);}
+.yellow.green { .color-helpers(@yellow-green, .15);}
+.green { .color-helpers(@green, .6);}
 .green.teal { .color-helpers(@green-teal, .5);}
-.teal { .color-helpers(@teal, .5);}
-.teal.cyan { .color-helpers(@teal-cyan, .5); --o: .14;}
-.cyan { .color-helpers(@cyan, .75); --o: .08;}
-.cyan.blue { .color-helpers(@cyan-blue); --o: .14;}
-.blue { .color-helpers(@blue, .75);}
+.teal { .color-helpers(@teal, .6);}
+.teal.cyan { .color-helpers(@teal-cyan, .5);}
+.cyan { .color-helpers(@cyan, .85);}
+.cyan.blue { .color-helpers(@cyan-blue);}
+.blue { .color-helpers(@blue, .85);}
 .blue.purple { .color-helpers(@blue-purple);}
-.purple { .color-helpers(@purple, .5);}
+.purple { .color-helpers(@purple, .75);}
 .purple.magenta { .color-helpers(@purple-magenta);}
-.magenta { .color-helpers(@magenta, .5);}
+.magenta { .color-helpers(@magenta, .75);}
 .magenta.red { .color-helpers(@magenta-red);}
 
 .orangered { &:extend(.red.orange all);}
@@ -5274,6 +5228,10 @@ pre > code {
 
 .desaturated {
     --s: 0% !important;
+}
+
+.matched {
+    --l: lightness(@base-color) !important;
 }
 
 .bright.gray, .bright.black, .light.black {
@@ -6284,7 +6242,6 @@ pre > code {
       <p class="type inner width">CASS has hundreds of colors in its composable color system. Each color below uses some combination of these words:</p>
       
       <div class="five-column ">
-        <p class="text-center vertical-center inner card width bold">warm cool dull</p>
         <p class="text-center vertical-center inner card width bold">very hella</p>
         <p class="text-center vertical-center inner card width bold">light dark bright dim</p>
         <p class="text-center vertical-center inner card width bold">red orange yellow grean teal cyan blue purple magenta</p>
@@ -6293,7 +6250,7 @@ pre > code {
 
       <p class="type inner width">Every California Stylesheet has a palette tailored to its base color. Try different base colors for different palettes.</p>
       <section class="inner page width three columns tablet">
-              <div class="brand-color thick border text-padding full width height force border-radius">brand-color</div>                        <div class="light brand-color thick border text-padding full width height force border-radius">light brand-color</div>                        <div class="very light brand-color thick border text-padding full width height force border-radius">very light brand-color</div>                        <div class="hella light brand-color thick border text-padding full width height force border-radius">hella light brand-color</div>                        <div class="bright brand-color thick border text-padding full width height force border-radius">bright brand-color</div>                        <div class="very bright brand-color thick border text-padding full width height force border-radius">very bright brand-color</div>                        <div class="hella bright brand-color thick border text-padding full width height force border-radius">hella bright brand-color</div>                        <div class="dim brand-color thick border text-padding full width height force border-radius">dim brand-color</div>                        <div class="very dim brand-color thick border text-padding full width height force border-radius">very dim brand-color</div>                        <div class="hella dim brand-color thick border text-padding full width height force border-radius">hella dim brand-color</div>                        <div class="dark brand-color thick border text-padding full width height force border-radius">dark brand-color</div>                        <div class="very dark brand-color thick border text-padding full width height force border-radius">very dark brand-color</div>                        <div class="hella dark brand-color thick border text-padding full width height force border-radius">hella dark brand-color</div>                        <div class="complement thick border text-padding full width height force border-radius">complement</div>                        <div class="light complement thick border text-padding full width height force border-radius">light complement</div>                        <div class="very light complement thick border text-padding full width height force border-radius">very light complement</div>                        <div class="hella light complement thick border text-padding full width height force border-radius">hella light complement</div>                        <div class="bright complement thick border text-padding full width height force border-radius">bright complement</div>                        <div class="very bright complement thick border text-padding full width height force border-radius">very bright complement</div>                        <div class="hella bright complement thick border text-padding full width height force border-radius">hella bright complement</div>                        <div class="dim complement thick border text-padding full width height force border-radius">dim complement</div>                        <div class="very dim complement thick border text-padding full width height force border-radius">very dim complement</div>                        <div class="hella dim complement thick border text-padding full width height force border-radius">hella dim complement</div>                        <div class="dark complement thick border text-padding full width height force border-radius">dark complement</div>                        <div class="very dark complement thick border text-padding full width height force border-radius">very dark complement</div>                        <div class="accent thick border text-padding full width height force border-radius">accent</div>                        <div class="light accent thick border text-padding full width height force border-radius">light accent</div>                        <div class="very light accent thick border text-padding full width height force border-radius">very light accent</div>                        <div class="hella light accent thick border text-padding full width height force border-radius">hella light accent</div>                        <div class="bright accent thick border text-padding full width height force border-radius">bright accent</div>                        <div class="very bright accent thick border text-padding full width height force border-radius">very bright accent</div>                        <div class="hella bright accent thick border text-padding full width height force border-radius">hella bright accent</div>                        <div class="dim accent thick border text-padding full width height force border-radius">dim accent</div>                        <div class="very dim accent thick border text-padding full width height force border-radius">very dim accent</div>                        <div class="hella dim accent thick border text-padding full width height force border-radius">hella dim accent</div>                        <div class="dark accent thick border text-padding full width height force border-radius">dark accent</div>                        <div class="very dark accent thick border text-padding full width height force border-radius">very dark accent</div>                        <div class="hella dark accent thick border text-padding full width height force border-radius">hella dark accent</div>                        <div class="hella dark complement thick border text-padding full width height force border-radius">hella dark complement</div>                        <div class="complement accent thick border text-padding full width height force border-radius">complement accent</div>                        <div class="light complement accent thick border text-padding full width height force border-radius">light complement accent</div>                        <div class="very light complement accent thick border text-padding full width height force border-radius">very light complement accent</div>                        <div class="hella light complement accent thick border text-padding full width height force border-radius">hella light complement accent</div>                        <div class="bright complement accent thick border text-padding full width height force border-radius">bright complement accent</div>                        <div class="very bright complement accent thick border text-padding full width height force border-radius">very bright complement accent</div>                        <div class="hella bright complement accent thick border text-padding full width height force border-radius">hella bright complement accent</div>                        <div class="dim complement accent thick border text-padding full width height force border-radius">dim complement accent</div>                        <div class="very dim complement accent thick border text-padding full width height force border-radius">very dim complement accent</div>                        <div class="hella dim complement accent thick border text-padding full width height force border-radius">hella dim complement accent</div>                        <div class="dark complement accent thick border text-padding full width height force border-radius">dark complement accent</div>                        <div class="very dark complement accent thick border text-padding full width height force border-radius">very dark complement accent</div>                        <div class="hella dark complement accent thick border text-padding full width height force border-radius">hella dark complement accent</div>                        <div class="red thick border text-padding full width height force border-radius">red</div>                        <div class="light red thick border text-padding full width height force border-radius">light red</div>                        <div class="very light red thick border text-padding full width height force border-radius">very light red</div>                        <div class="hella light red thick border text-padding full width height force border-radius">hella light red</div>                        <div class="bright red thick border text-padding full width height force border-radius">bright red</div>                        <div class="very bright red thick border text-padding full width height force border-radius">very bright red</div>                        <div class="hella bright red thick border text-padding full width height force border-radius">hella bright red</div>                        <div class="dim red thick border text-padding full width height force border-radius">dim red</div>                        <div class="very dim red thick border text-padding full width height force border-radius">very dim red</div>                        <div class="hella dim red thick border text-padding full width height force border-radius">hella dim red</div>                        <div class="dark red thick border text-padding full width height force border-radius">dark red</div>                        <div class="very dark red thick border text-padding full width height force border-radius">very dark red</div>                        <div class="hella dark red thick border text-padding full width height force border-radius">hella dark red</div>                        <div class="red orange thick border text-padding full width height force border-radius">red orange</div>                        <div class="light red orange thick border text-padding full width height force border-radius">light red orange</div>                        <div class="very light red orange thick border text-padding full width height force border-radius">very light red orange</div>                        <div class="hella light red orange thick border text-padding full width height force border-radius">hella light red orange</div>                        <div class="bright red orange thick border text-padding full width height force border-radius">bright red orange</div>                        <div class="very bright red orange thick border text-padding full width height force border-radius">very bright red orange</div>                        <div class="hella bright red orange thick border text-padding full width height force border-radius">hella bright red orange</div>                        <div class="dim red orange thick border text-padding full width height force border-radius">dim red orange</div>                        <div class="very dim red orange thick border text-padding full width height force border-radius">very dim red orange</div>                        <div class="hella dim red orange thick border text-padding full width height force border-radius">hella dim red orange</div>                        <div class="dark red orange thick border text-padding full width height force border-radius">dark red orange</div>                        <div class="very dark red orange thick border text-padding full width height force border-radius">very dark red orange</div>                        <div class="hella dark red orange thick border text-padding full width height force border-radius">hella dark red orange</div>                        <div class="orange thick border text-padding full width height force border-radius">orange</div>                        <div class="light orange thick border text-padding full width height force border-radius">light orange</div>                        <div class="very light orange thick border text-padding full width height force border-radius">very light orange</div>                        <div class="hella light orange thick border text-padding full width height force border-radius">hella light orange</div>                        <div class="bright orange thick border text-padding full width height force border-radius">bright orange</div>                        <div class="very bright orange thick border text-padding full width height force border-radius">very bright orange</div>                        <div class="hella bright orange thick border text-padding full width height force border-radius">hella bright orange</div>                        <div class="dim orange thick border text-padding full width height force border-radius">dim orange</div>                        <div class="very dim orange thick border text-padding full width height force border-radius">very dim orange</div>                        <div class="hella dim orange thick border text-padding full width height force border-radius">hella dim orange</div>                        <div class="dark orange thick border text-padding full width height force border-radius">dark orange</div>                        <div class="very dark orange thick border text-padding full width height force border-radius">very dark orange</div>                        <div class="hella dark orange thick border text-padding full width height force border-radius">hella dark orange</div>                        <div class="orange yellow thick border text-padding full width height force border-radius">orange yellow</div>                        <div class="light orange yellow thick border text-padding full width height force border-radius">light orange yellow</div>                        <div class="very light orange yellow thick border text-padding full width height force border-radius">very light orange yellow</div>                        <div class="hella light orange yellow thick border text-padding full width height force border-radius">hella light orange yellow</div>                        <div class="bright orange yellow thick border text-padding full width height force border-radius">bright orange yellow</div>                        <div class="very bright orange yellow thick border text-padding full width height force border-radius">very bright orange yellow</div>                        <div class="hella bright orange yellow thick border text-padding full width height force border-radius">hella bright orange yellow</div>                        <div class="dim orange yellow thick border text-padding full width height force border-radius">dim orange yellow</div>                        <div class="very dim orange yellow thick border text-padding full width height force border-radius">very dim orange yellow</div>                        <div class="hella dim orange yellow thick border text-padding full width height force border-radius">hella dim orange yellow</div>                        <div class="dark orange yellow thick border text-padding full width height force border-radius">dark orange yellow</div>                        <div class="very dark orange yellow thick border text-padding full width height force border-radius">very dark orange yellow</div>                        <div class="hella dark orange yellow thick border text-padding full width height force border-radius">hella dark orange yellow</div>                        <div class="yellow thick border text-padding full width height force border-radius">yellow</div>                        <div class="light yellow thick border text-padding full width height force border-radius">light yellow</div>                        <div class="very light yellow thick border text-padding full width height force border-radius">very light yellow</div>                        <div class="hella light yellow thick border text-padding full width height force border-radius">hella light yellow</div>                        <div class="bright yellow thick border text-padding full width height force border-radius">bright yellow</div>                        <div class="very bright yellow thick border text-padding full width height force border-radius">very bright yellow</div>                        <div class="hella bright yellow thick border text-padding full width height force border-radius">hella bright yellow</div>                        <div class="dim yellow thick border text-padding full width height force border-radius">dim yellow</div>                        <div class="very dim yellow thick border text-padding full width height force border-radius">very dim yellow</div>                        <div class="hella dim yellow thick border text-padding full width height force border-radius">hella dim yellow</div>                        <div class="dark yellow thick border text-padding full width height force border-radius">dark yellow</div>                        <div class="very dark yellow thick border text-padding full width height force border-radius">very dark yellow</div>                        <div class="hella dark yellow thick border text-padding full width height force border-radius">hella dark yellow</div>                        <div class="yellow green thick border text-padding full width height force border-radius">yellow green</div>                        <div class="light yellow green thick border text-padding full width height force border-radius">light yellow green</div>                        <div class="very light yellow green thick border text-padding full width height force border-radius">very light yellow green</div>                        <div class="hella light yellow green thick border text-padding full width height force border-radius">hella light yellow green</div>                        <div class="bright yellow green thick border text-padding full width height force border-radius">bright yellow green</div>                        <div class="very bright yellow green thick border text-padding full width height force border-radius">very bright yellow green</div>                        <div class="hella bright yellow green thick border text-padding full width height force border-radius">hella bright yellow green</div>                        <div class="dim yellow green thick border text-padding full width height force border-radius">dim yellow green</div>                        <div class="very dim yellow green thick border text-padding full width height force border-radius">very dim yellow green</div>                        <div class="hella dim yellow green thick border text-padding full width height force border-radius">hella dim yellow green</div>                        <div class="dark yellow green thick border text-padding full width height force border-radius">dark yellow green</div>                        <div class="very dark yellow green thick border text-padding full width height force border-radius">very dark yellow green</div>                        <div class="hella dark yellow green thick border text-padding full width height force border-radius">hella dark yellow green</div>                        <div class="green thick border text-padding full width height force border-radius">green</div>                        <div class="light green thick border text-padding full width height force border-radius">light green</div>                        <div class="very light green thick border text-padding full width height force border-radius">very light green</div>                        <div class="hella light green thick border text-padding full width height force border-radius">hella light green</div>                        <div class="bright green thick border text-padding full width height force border-radius">bright green</div>                        <div class="very bright green thick border text-padding full width height force border-radius">very bright green</div>                        <div class="hella bright green thick border text-padding full width height force border-radius">hella bright green</div>                        <div class="dim green thick border text-padding full width height force border-radius">dim green</div>                        <div class="very dim green thick border text-padding full width height force border-radius">very dim green</div>                        <div class="hella dim green thick border text-padding full width height force border-radius">hella dim green</div>                        <div class="dark green thick border text-padding full width height force border-radius">dark green</div>                        <div class="very dark green thick border text-padding full width height force border-radius">very dark green</div>                        <div class="hella dark green thick border text-padding full width height force border-radius">hella dark green</div>                        <div class="green teal thick border text-padding full width height force border-radius">green teal</div>                        <div class="light green teal thick border text-padding full width height force border-radius">light green teal</div>                        <div class="very light green teal thick border text-padding full width height force border-radius">very light green teal</div>                        <div class="hella light green teal thick border text-padding full width height force border-radius">hella light green teal</div>                        <div class="bright green teal thick border text-padding full width height force border-radius">bright green teal</div>                        <div class="very bright green teal thick border text-padding full width height force border-radius">very bright green teal</div>                        <div class="hella bright green teal thick border text-padding full width height force border-radius">hella bright green teal</div>                        <div class="dim green teal thick border text-padding full width height force border-radius">dim green teal</div>                        <div class="very dim green teal thick border text-padding full width height force border-radius">very dim green teal</div>                        <div class="hella dim green teal thick border text-padding full width height force border-radius">hella dim green teal</div>                        <div class="dark green teal thick border text-padding full width height force border-radius">dark green teal</div>                        <div class="very dark green teal thick border text-padding full width height force border-radius">very dark green teal</div>                        <div class="hella dark green teal thick border text-padding full width height force border-radius">hella dark green teal</div>                        <div class="teal thick border text-padding full width height force border-radius">teal</div>                        <div class="light teal thick border text-padding full width height force border-radius">light teal</div>                        <div class="very light teal thick border text-padding full width height force border-radius">very light teal</div>                        <div class="hella light teal thick border text-padding full width height force border-radius">hella light teal</div>                        <div class="bright teal thick border text-padding full width height force border-radius">bright teal</div>                        <div class="very bright teal thick border text-padding full width height force border-radius">very bright teal</div>                        <div class="hella bright teal thick border text-padding full width height force border-radius">hella bright teal</div>                        <div class="dim teal thick border text-padding full width height force border-radius">dim teal</div>                        <div class="very dim teal thick border text-padding full width height force border-radius">very dim teal</div>                        <div class="hella dim teal thick border text-padding full width height force border-radius">hella dim teal</div>                        <div class="dark teal thick border text-padding full width height force border-radius">dark teal</div>                        <div class="very dark teal thick border text-padding full width height force border-radius">very dark teal</div>                        <div class="hella dark teal thick border text-padding full width height force border-radius">hella dark teal</div>                        <div class="teal cyan thick border text-padding full width height force border-radius">teal cyan</div>                        <div class="light teal cyan thick border text-padding full width height force border-radius">light teal cyan</div>                        <div class="very light teal cyan thick border text-padding full width height force border-radius">very light teal cyan</div>                        <div class="hella light teal cyan thick border text-padding full width height force border-radius">hella light teal cyan</div>                        <div class="bright teal cyan thick border text-padding full width height force border-radius">bright teal cyan</div>                        <div class="very bright teal cyan thick border text-padding full width height force border-radius">very bright teal cyan</div>                        <div class="hella bright teal cyan thick border text-padding full width height force border-radius">hella bright teal cyan</div>                        <div class="dim teal cyan thick border text-padding full width height force border-radius">dim teal cyan</div>                        <div class="very dim teal cyan thick border text-padding full width height force border-radius">very dim teal cyan</div>                        <div class="hella dim teal cyan thick border text-padding full width height force border-radius">hella dim teal cyan</div>                        <div class="dark teal cyan thick border text-padding full width height force border-radius">dark teal cyan</div>                        <div class="very dark teal cyan thick border text-padding full width height force border-radius">very dark teal cyan</div>                        <div class="hella dark teal cyan thick border text-padding full width height force border-radius">hella dark teal cyan</div>                        <div class="cyan thick border text-padding full width height force border-radius">cyan</div>                        <div class="light cyan thick border text-padding full width height force border-radius">light cyan</div>                        <div class="very light cyan thick border text-padding full width height force border-radius">very light cyan</div>                        <div class="hella light cyan thick border text-padding full width height force border-radius">hella light cyan</div>                        <div class="bright cyan thick border text-padding full width height force border-radius">bright cyan</div>                        <div class="very bright cyan thick border text-padding full width height force border-radius">very bright cyan</div>                        <div class="hella bright cyan thick border text-padding full width height force border-radius">hella bright cyan</div>                        <div class="dim cyan thick border text-padding full width height force border-radius">dim cyan</div>                        <div class="very dim cyan thick border text-padding full width height force border-radius">very dim cyan</div>                        <div class="hella dim cyan thick border text-padding full width height force border-radius">hella dim cyan</div>                        <div class="dark cyan thick border text-padding full width height force border-radius">dark cyan</div>                        <div class="very dark cyan thick border text-padding full width height force border-radius">very dark cyan</div>                        <div class="hella dark cyan thick border text-padding full width height force border-radius">hella dark cyan</div>                        <div class="cyan blue thick border text-padding full width height force border-radius">cyan blue</div>                        <div class="light cyan blue thick border text-padding full width height force border-radius">light cyan blue</div>                        <div class="very light cyan blue thick border text-padding full width height force border-radius">very light cyan blue</div>                        <div class="hella light cyan blue thick border text-padding full width height force border-radius">hella light cyan blue</div>                        <div class="bright cyan blue thick border text-padding full width height force border-radius">bright cyan blue</div>                        <div class="very bright cyan blue thick border text-padding full width height force border-radius">very bright cyan blue</div>                        <div class="hella bright cyan blue thick border text-padding full width height force border-radius">hella bright cyan blue</div>                        <div class="dim cyan blue thick border text-padding full width height force border-radius">dim cyan blue</div>                        <div class="very dim cyan blue thick border text-padding full width height force border-radius">very dim cyan blue</div>                        <div class="hella dim cyan blue thick border text-padding full width height force border-radius">hella dim cyan blue</div>                        <div class="dark cyan blue thick border text-padding full width height force border-radius">dark cyan blue</div>                        <div class="very dark cyan blue thick border text-padding full width height force border-radius">very dark cyan blue</div>                        <div class="hella dark cyan blue thick border text-padding full width height force border-radius">hella dark cyan blue</div>                        <div class="blue thick border text-padding full width height force border-radius">blue</div>                        <div class="light blue thick border text-padding full width height force border-radius">light blue</div>                        <div class="very light blue thick border text-padding full width height force border-radius">very light blue</div>                        <div class="hella light blue thick border text-padding full width height force border-radius">hella light blue</div>                        <div class="bright blue thick border text-padding full width height force border-radius">bright blue</div>                        <div class="very bright blue thick border text-padding full width height force border-radius">very bright blue</div>                        <div class="hella bright blue thick border text-padding full width height force border-radius">hella bright blue</div>                        <div class="dim blue thick border text-padding full width height force border-radius">dim blue</div>                        <div class="very dim blue thick border text-padding full width height force border-radius">very dim blue</div>                        <div class="hella dim blue thick border text-padding full width height force border-radius">hella dim blue</div>                        <div class="dark blue thick border text-padding full width height force border-radius">dark blue</div>                        <div class="very dark blue thick border text-padding full width height force border-radius">very dark blue</div>                        <div class="hella dark blue thick border text-padding full width height force border-radius">hella dark blue</div>                        <div class="blue purple thick border text-padding full width height force border-radius">blue purple</div>                        <div class="light blue purple thick border text-padding full width height force border-radius">light blue purple</div>                        <div class="very light blue purple thick border text-padding full width height force border-radius">very light blue purple</div>                        <div class="hella light blue purple thick border text-padding full width height force border-radius">hella light blue purple</div>                        <div class="bright blue purple thick border text-padding full width height force border-radius">bright blue purple</div>                        <div class="very bright blue purple thick border text-padding full width height force border-radius">very bright blue purple</div>                        <div class="hella bright blue purple thick border text-padding full width height force border-radius">hella bright blue purple</div>                        <div class="dim blue purple thick border text-padding full width height force border-radius">dim blue purple</div>                        <div class="very dim blue purple thick border text-padding full width height force border-radius">very dim blue purple</div>                        <div class="hella dim blue purple thick border text-padding full width height force border-radius">hella dim blue purple</div>                        <div class="dark blue purple thick border text-padding full width height force border-radius">dark blue purple</div>                        <div class="very dark blue purple thick border text-padding full width height force border-radius">very dark blue purple</div>                        <div class="hella dark blue purple thick border text-padding full width height force border-radius">hella dark blue purple</div>                        <div class="purple thick border text-padding full width height force border-radius">purple</div>                        <div class="light purple thick border text-padding full width height force border-radius">light purple</div>                        <div class="very light purple thick border text-padding full width height force border-radius">very light purple</div>                        <div class="hella light purple thick border text-padding full width height force border-radius">hella light purple</div>                        <div class="bright purple thick border text-padding full width height force border-radius">bright purple</div>                        <div class="very bright purple thick border text-padding full width height force border-radius">very bright purple</div>                        <div class="hella bright purple thick border text-padding full width height force border-radius">hella bright purple</div>                        <div class="dim purple thick border text-padding full width height force border-radius">dim purple</div>                        <div class="very dim purple thick border text-padding full width height force border-radius">very dim purple</div>                        <div class="hella dim purple thick border text-padding full width height force border-radius">hella dim purple</div>                        <div class="dark purple thick border text-padding full width height force border-radius">dark purple</div>                        <div class="very dark purple thick border text-padding full width height force border-radius">very dark purple</div>                        <div class="hella dark purple thick border text-padding full width height force border-radius">hella dark purple</div>                        <div class="purple magenta thick border text-padding full width height force border-radius">purple magenta</div>                        <div class="light purple magenta thick border text-padding full width height force border-radius">light purple magenta</div>                        <div class="very light purple magenta thick border text-padding full width height force border-radius">very light purple magenta</div>                        <div class="hella light purple magenta thick border text-padding full width height force border-radius">hella light purple magenta</div>                        <div class="bright purple magenta thick border text-padding full width height force border-radius">bright purple magenta</div>                        <div class="very bright purple magenta thick border text-padding full width height force border-radius">very bright purple magenta</div>                        <div class="hella bright purple magenta thick border text-padding full width height force border-radius">hella bright purple magenta</div>                        <div class="dim purple magenta thick border text-padding full width height force border-radius">dim purple magenta</div>                        <div class="very dim purple magenta thick border text-padding full width height force border-radius">very dim purple magenta</div>                        <div class="hella dim purple magenta thick border text-padding full width height force border-radius">hella dim purple magenta</div>                        <div class="dark purple magenta thick border text-padding full width height force border-radius">dark purple magenta</div>                        <div class="very dark purple magenta thick border text-padding full width height force border-radius">very dark purple magenta</div>                        <div class="hella dark purple magenta thick border text-padding full width height force border-radius">hella dark purple magenta</div>                        <div class="magenta thick border text-padding full width height force border-radius">magenta</div>                        <div class="light magenta thick border text-padding full width height force border-radius">light magenta</div>                        <div class="very light magenta thick border text-padding full width height force border-radius">very light magenta</div>                        <div class="hella light magenta thick border text-padding full width height force border-radius">hella light magenta</div>                        <div class="bright magenta thick border text-padding full width height force border-radius">bright magenta</div>                        <div class="very bright magenta thick border text-padding full width height force border-radius">very bright magenta</div>                        <div class="hella bright magenta thick border text-padding full width height force border-radius">hella bright magenta</div>                        <div class="dim magenta thick border text-padding full width height force border-radius">dim magenta</div>                        <div class="very dim magenta thick border text-padding full width height force border-radius">very dim magenta</div>                        <div class="hella dim magenta thick border text-padding full width height force border-radius">hella dim magenta</div>                        <div class="dark magenta thick border text-padding full width height force border-radius">dark magenta</div>                        <div class="very dark magenta thick border text-padding full width height force border-radius">very dark magenta</div>                        <div class="hella dark magenta thick border text-padding full width height force border-radius">hella dark magenta</div>                        <div class="magenta red thick border text-padding full width height force border-radius">magenta red</div>                        <div class="light magenta red thick border text-padding full width height force border-radius">light magenta red</div>                        <div class="very light magenta red thick border text-padding full width height force border-radius">very light magenta red</div>                        <div class="hella light magenta red thick border text-padding full width height force border-radius">hella light magenta red</div>                        <div class="bright magenta red thick border text-padding full width height force border-radius">bright magenta red</div>                        <div class="very bright magenta red thick border text-padding full width height force border-radius">very bright magenta red</div>                        <div class="hella bright magenta red thick border text-padding full width height force border-radius">hella bright magenta red</div>                        <div class="dim magenta red thick border text-padding full width height force border-radius">dim magenta red</div>                        <div class="very dim magenta red thick border text-padding full width height force border-radius">very dim magenta red</div>                        <div class="hella dim magenta red thick border text-padding full width height force border-radius">hella dim magenta red</div>                        <div class="dark magenta red thick border text-padding full width height force border-radius">dark magenta red</div>                        <div class="very dark magenta red thick border text-padding full width height force border-radius">very dark magenta red</div>                        <div class="hella dark magenta red thick border text-padding full width height force border-radius">hella dark magenta red</div>                        <div class="white thick border text-padding full width height force border-radius">white</div>                        <div class="light white thick border text-padding full width height force border-radius">light white</div>                        <div class="very light white thick border text-padding full width height force border-radius">very light white</div>                        <div class="hella light white thick border text-padding full width height force border-radius">hella light white</div>                        <div class="bright white thick border text-padding full width height force border-radius">bright white</div>                        <div class="very bright white thick border text-padding full width height force border-radius">very bright white</div>                        <div class="hella bright white thick border text-padding full width height force border-radius">hella bright white</div>                        <div class="dim white thick border text-padding full width height force border-radius">dim white</div>                        <div class="very dim white thick border text-padding full width height force border-radius">very dim white</div>                        <div class="hella dim white thick border text-padding full width height force border-radius">hella dim white</div>                        <div class="dark white thick border text-padding full width height force border-radius">dark white</div>                        <div class="very dark white thick border text-padding full width height force border-radius">very dark white</div>                        <div class="hella dark white thick border text-padding full width height force border-radius">hella dark white</div>                        <div class="white gray thick border text-padding full width height force border-radius">white gray</div>                        <div class="light white gray thick border text-padding full width height force border-radius">light white gray</div>                        <div class="very light white gray thick border text-padding full width height force border-radius">very light white gray</div>                        <div class="hella light white gray thick border text-padding full width height force border-radius">hella light white gray</div>                        <div class="bright white gray thick border text-padding full width height force border-radius">bright white gray</div>                        <div class="very bright white gray thick border text-padding full width height force border-radius">very bright white gray</div>                        <div class="hella bright white gray thick border text-padding full width height force border-radius">hella bright white gray</div>                        <div class="dim white gray thick border text-padding full width height force border-radius">dim white gray</div>                        <div class="very dim white gray thick border text-padding full width height force border-radius">very dim white gray</div>                        <div class="hella dim white gray thick border text-padding full width height force border-radius">hella dim white gray</div>                        <div class="dark white gray thick border text-padding full width height force border-radius">dark white gray</div>                        <div class="very dark white gray thick border text-padding full width height force border-radius">very dark white gray</div>                        <div class="hella dark white gray thick border text-padding full width height force border-radius">hella dark white gray</div>                        <div class="gray thick border text-padding full width height force border-radius">gray</div>                        <div class="light gray thick border text-padding full width height force border-radius">light gray</div>                        <div class="very light gray thick border text-padding full width height force border-radius">very light gray</div>                        <div class="hella light gray thick border text-padding full width height force border-radius">hella light gray</div>                        <div class="bright gray thick border text-padding full width height force border-radius">bright gray</div>                        <div class="very bright gray thick border text-padding full width height force border-radius">very bright gray</div>                        <div class="hella bright gray thick border text-padding full width height force border-radius">hella bright gray</div>                        <div class="dim gray thick border text-padding full width height force border-radius">dim gray</div>                        <div class="very dim gray thick border text-padding full width height force border-radius">very dim gray</div>                        <div class="hella dim gray thick border text-padding full width height force border-radius">hella dim gray</div>                        <div class="dark gray thick border text-padding full width height force border-radius">dark gray</div>                        <div class="very dark gray thick border text-padding full width height force border-radius">very dark gray</div>                        <div class="hella dark gray thick border text-padding full width height force border-radius">hella dark gray</div>                        <div class="gray black thick border text-padding full width height force border-radius">gray black</div>                        <div class="light gray black thick border text-padding full width height force border-radius">light gray black</div>                        <div class="very light gray black thick border text-padding full width height force border-radius">very light gray black</div>                        <div class="hella light gray black thick border text-padding full width height force border-radius">hella light gray black</div>                        <div class="bright gray black thick border text-padding full width height force border-radius">bright gray black</div>                        <div class="very bright gray black thick border text-padding full width height force border-radius">very bright gray black</div>                        <div class="hella bright gray black thick border text-padding full width height force border-radius">hella bright gray black</div>                        <div class="dim gray black thick border text-padding full width height force border-radius">dim gray black</div>                        <div class="very dim gray black thick border text-padding full width height force border-radius">very dim gray black</div>                        <div class="hella dim gray black thick border text-padding full width height force border-radius">hella dim gray black</div>                        <div class="dark gray black thick border text-padding full width height force border-radius">dark gray black</div>                        <div class="very dark gray black thick border text-padding full width height force border-radius">very dark gray black</div>                        <div class="hella dark gray black thick border text-padding full width height force border-radius">hella dark gray black</div>                        <div class="black thick border text-padding full width height force border-radius">black</div>                        <div class="light black thick border text-padding full width height force border-radius">light black</div>                        <div class="very light black thick border text-padding full width height force border-radius">very light black</div>                        <div class="hella light black thick border text-padding full width height force border-radius">hella light black</div>                        <div class="bright black thick border text-padding full width height force border-radius">bright black</div>                        <div class="very bright black thick border text-padding full width height force border-radius">very bright black</div>                        <div class="hella bright black thick border text-padding full width height force border-radius">hella bright black</div>                        <div class="dim black thick border text-padding full width height force border-radius">dim black</div>                        <div class="very dim black thick border text-padding full width height force border-radius">very dim black</div>                        <div class="hella dim black thick border text-padding full width height force border-radius">hella dim black</div>                        <div class="dark black thick border text-padding full width height force border-radius">dark black</div>                        <div class="very dark black thick border text-padding full width height force border-radius">very dark black</div>                        <div class="hella dark black thick border text-padding full width height force border-radius">hella dark black</div>             
+              <div class="brand-color thick border text-padding full width height force border-radius">brand-color</div>                        <div class="light brand-color thick border text-padding full width height force border-radius">light brand-color</div>                        <div class="very light brand-color thick border text-padding full width height force border-radius">very light brand-color</div>                        <div class="hella light brand-color thick border text-padding full width height force border-radius">hella light brand-color</div>                        <div class="bright brand-color thick border text-padding full width height force border-radius">bright brand-color</div>                        <div class="very bright brand-color thick border text-padding full width height force border-radius">very bright brand-color</div>                        <div class="hella bright brand-color thick border text-padding full width height force border-radius">hella bright brand-color</div>                        <div class="dim brand-color thick border text-padding full width height force border-radius">dim brand-color</div>                        <div class="very dim brand-color thick border text-padding full width height force border-radius">very dim brand-color</div>                        <div class="hella dim brand-color thick border text-padding full width height force border-radius">hella dim brand-color</div>                        <div class="dark brand-color thick border text-padding full width height force border-radius">dark brand-color</div>                        <div class="very dark brand-color thick border text-padding full width height force border-radius">very dark brand-color</div>                        <div class="hella dark brand-color thick border text-padding full width height force border-radius">hella dark brand-color</div>                        <div class="complement thick border text-padding full width height force border-radius">complement</div>                        <div class="light complement thick border text-padding full width height force border-radius">light complement</div>                        <div class="very light complement thick border text-padding full width height force border-radius">very light complement</div>                        <div class="hella light complement thick border text-padding full width height force border-radius">hella light complement</div>                        <div class="bright complement thick border text-padding full width height force border-radius">bright complement</div>                        <div class="very bright complement thick border text-padding full width height force border-radius">very bright complement</div>                        <div class="hella bright complement thick border text-padding full width height force border-radius">hella bright complement</div>                        <div class="dim complement thick border text-padding full width height force border-radius">dim complement</div>                        <div class="very dim complement thick border text-padding full width height force border-radius">very dim complement</div>                        <div class="hella dim complement thick border text-padding full width height force border-radius">hella dim complement</div>                        <div class="dark complement thick border text-padding full width height force border-radius">dark complement</div>                        <div class="very dark complement thick border text-padding full width height force border-radius">very dark complement</div>                        <div class="hella dark complement thick border text-padding full width height force border-radius">hella dark complement</div>                        <div class="accent thick border text-padding full width height force border-radius">accent</div>                        <div class="light accent thick border text-padding full width height force border-radius">light accent</div>                        <div class="very light accent thick border text-padding full width height force border-radius">very light accent</div>                        <div class="hella light accent thick border text-padding full width height force border-radius">hella light accent</div>                        <div class="bright accent thick border text-padding full width height force border-radius">bright accent</div>                        <div class="very bright accent thick border text-padding full width height force border-radius">very bright accent</div>                        <div class="hella bright accent thick border text-padding full width height force border-radius">hella bright accent</div>                        <div class="dim accent thick border text-padding full width height force border-radius">dim accent</div>                        <div class="very dim accent thick border text-padding full width height force border-radius">very dim accent</div>                        <div class="hella dim accent thick border text-padding full width height force border-radius">hella dim accent</div>                        <div class="dark accent thick border text-padding full width height force border-radius">dark accent</div>                        <div class="very dark accent thick border text-padding full width height force border-radius">very dark accent</div>                        <div class="hella dark accent thick border text-padding full width height force border-radius">hella dark accent</div>                        <div class="complement accent thick border text-padding full width height force border-radius">complement accent</div>                        <div class="light complement accent thick border text-padding full width height force border-radius">light complement accent</div>                        <div class="very light complement accent thick border text-padding full width height force border-radius">very light complement accent</div>                        <div class="hella light complement accent thick border text-padding full width height force border-radius">hella light complement accent</div>                        <div class="bright complement accent thick border text-padding full width height force border-radius">bright complement accent</div>                        <div class="very bright complement accent thick border text-padding full width height force border-radius">very bright complement accent</div>                        <div class="hella bright complement accent thick border text-padding full width height force border-radius">hella bright complement accent</div>                        <div class="dim complement accent thick border text-padding full width height force border-radius">dim complement accent</div>                        <div class="very dim complement accent thick border text-padding full width height force border-radius">very dim complement accent</div>                        <div class="hella dim complement accent thick border text-padding full width height force border-radius">hella dim complement accent</div>                        <div class="dark complement accent thick border text-padding full width height force border-radius">dark complement accent</div>                        <div class="very dark complement accent thick border text-padding full width height force border-radius">very dark complement accent</div>                        <div class="hella dark complement accent thick border text-padding full width height force border-radius">hella dark complement accent</div>                        <div class="red thick border text-padding full width height force border-radius">red</div>                        <div class="light red thick border text-padding full width height force border-radius">light red</div>                        <div class="very light red thick border text-padding full width height force border-radius">very light red</div>                        <div class="hella light red thick border text-padding full width height force border-radius">hella light red</div>                        <div class="bright red thick border text-padding full width height force border-radius">bright red</div>                        <div class="very bright red thick border text-padding full width height force border-radius">very bright red</div>                        <div class="hella bright red thick border text-padding full width height force border-radius">hella bright red</div>                        <div class="dim red thick border text-padding full width height force border-radius">dim red</div>                        <div class="very dim red thick border text-padding full width height force border-radius">very dim red</div>                        <div class="hella dim red thick border text-padding full width height force border-radius">hella dim red</div>                        <div class="dark red thick border text-padding full width height force border-radius">dark red</div>                        <div class="very dark red thick border text-padding full width height force border-radius">very dark red</div>                        <div class="hella dark red thick border text-padding full width height force border-radius">hella dark red</div>                        <div class="red orange thick border text-padding full width height force border-radius">red orange</div>                        <div class="light red orange thick border text-padding full width height force border-radius">light red orange</div>                        <div class="very light red orange thick border text-padding full width height force border-radius">very light red orange</div>                        <div class="hella light red orange thick border text-padding full width height force border-radius">hella light red orange</div>                        <div class="bright red orange thick border text-padding full width height force border-radius">bright red orange</div>                        <div class="very bright red orange thick border text-padding full width height force border-radius">very bright red orange</div>                        <div class="hella bright red orange thick border text-padding full width height force border-radius">hella bright red orange</div>                        <div class="dim red orange thick border text-padding full width height force border-radius">dim red orange</div>                        <div class="very dim red orange thick border text-padding full width height force border-radius">very dim red orange</div>                        <div class="hella dim red orange thick border text-padding full width height force border-radius">hella dim red orange</div>                        <div class="dark red orange thick border text-padding full width height force border-radius">dark red orange</div>                        <div class="very dark red orange thick border text-padding full width height force border-radius">very dark red orange</div>                        <div class="hella dark red orange thick border text-padding full width height force border-radius">hella dark red orange</div>                        <div class="orange thick border text-padding full width height force border-radius">orange</div>                        <div class="light orange thick border text-padding full width height force border-radius">light orange</div>                        <div class="very light orange thick border text-padding full width height force border-radius">very light orange</div>                        <div class="hella light orange thick border text-padding full width height force border-radius">hella light orange</div>                        <div class="bright orange thick border text-padding full width height force border-radius">bright orange</div>                        <div class="very bright orange thick border text-padding full width height force border-radius">very bright orange</div>                        <div class="hella bright orange thick border text-padding full width height force border-radius">hella bright orange</div>                        <div class="dim orange thick border text-padding full width height force border-radius">dim orange</div>                        <div class="very dim orange thick border text-padding full width height force border-radius">very dim orange</div>                        <div class="hella dim orange thick border text-padding full width height force border-radius">hella dim orange</div>                        <div class="dark orange thick border text-padding full width height force border-radius">dark orange</div>                        <div class="very dark orange thick border text-padding full width height force border-radius">very dark orange</div>                        <div class="hella dark orange thick border text-padding full width height force border-radius">hella dark orange</div>                        <div class="orange yellow thick border text-padding full width height force border-radius">orange yellow</div>                        <div class="light orange yellow thick border text-padding full width height force border-radius">light orange yellow</div>                        <div class="very light orange yellow thick border text-padding full width height force border-radius">very light orange yellow</div>                        <div class="hella light orange yellow thick border text-padding full width height force border-radius">hella light orange yellow</div>                        <div class="bright orange yellow thick border text-padding full width height force border-radius">bright orange yellow</div>                        <div class="very bright orange yellow thick border text-padding full width height force border-radius">very bright orange yellow</div>                        <div class="hella bright orange yellow thick border text-padding full width height force border-radius">hella bright orange yellow</div>                        <div class="dim orange yellow thick border text-padding full width height force border-radius">dim orange yellow</div>                        <div class="very dim orange yellow thick border text-padding full width height force border-radius">very dim orange yellow</div>                        <div class="hella dim orange yellow thick border text-padding full width height force border-radius">hella dim orange yellow</div>                        <div class="dark orange yellow thick border text-padding full width height force border-radius">dark orange yellow</div>                        <div class="very dark orange yellow thick border text-padding full width height force border-radius">very dark orange yellow</div>                        <div class="hella dark orange yellow thick border text-padding full width height force border-radius">hella dark orange yellow</div>                        <div class="yellow thick border text-padding full width height force border-radius">yellow</div>                        <div class="light yellow thick border text-padding full width height force border-radius">light yellow</div>                        <div class="very light yellow thick border text-padding full width height force border-radius">very light yellow</div>                        <div class="hella light yellow thick border text-padding full width height force border-radius">hella light yellow</div>                        <div class="bright yellow thick border text-padding full width height force border-radius">bright yellow</div>                        <div class="very bright yellow thick border text-padding full width height force border-radius">very bright yellow</div>                        <div class="hella bright yellow thick border text-padding full width height force border-radius">hella bright yellow</div>                        <div class="dim yellow thick border text-padding full width height force border-radius">dim yellow</div>                        <div class="very dim yellow thick border text-padding full width height force border-radius">very dim yellow</div>                        <div class="hella dim yellow thick border text-padding full width height force border-radius">hella dim yellow</div>                        <div class="dark yellow thick border text-padding full width height force border-radius">dark yellow</div>                        <div class="very dark yellow thick border text-padding full width height force border-radius">very dark yellow</div>                        <div class="hella dark yellow thick border text-padding full width height force border-radius">hella dark yellow</div>                        <div class="yellow green thick border text-padding full width height force border-radius">yellow green</div>                        <div class="light yellow green thick border text-padding full width height force border-radius">light yellow green</div>                        <div class="very light yellow green thick border text-padding full width height force border-radius">very light yellow green</div>                        <div class="hella light yellow green thick border text-padding full width height force border-radius">hella light yellow green</div>                        <div class="bright yellow green thick border text-padding full width height force border-radius">bright yellow green</div>                        <div class="very bright yellow green thick border text-padding full width height force border-radius">very bright yellow green</div>                        <div class="hella bright yellow green thick border text-padding full width height force border-radius">hella bright yellow green</div>                        <div class="dim yellow green thick border text-padding full width height force border-radius">dim yellow green</div>                        <div class="very dim yellow green thick border text-padding full width height force border-radius">very dim yellow green</div>                        <div class="hella dim yellow green thick border text-padding full width height force border-radius">hella dim yellow green</div>                        <div class="dark yellow green thick border text-padding full width height force border-radius">dark yellow green</div>                        <div class="very dark yellow green thick border text-padding full width height force border-radius">very dark yellow green</div>                        <div class="hella dark yellow green thick border text-padding full width height force border-radius">hella dark yellow green</div>                        <div class="green thick border text-padding full width height force border-radius">green</div>                        <div class="light green thick border text-padding full width height force border-radius">light green</div>                        <div class="very light green thick border text-padding full width height force border-radius">very light green</div>                        <div class="hella light green thick border text-padding full width height force border-radius">hella light green</div>                        <div class="bright green thick border text-padding full width height force border-radius">bright green</div>                        <div class="very bright green thick border text-padding full width height force border-radius">very bright green</div>                        <div class="hella bright green thick border text-padding full width height force border-radius">hella bright green</div>                        <div class="dim green thick border text-padding full width height force border-radius">dim green</div>                        <div class="very dim green thick border text-padding full width height force border-radius">very dim green</div>                        <div class="hella dim green thick border text-padding full width height force border-radius">hella dim green</div>                        <div class="dark green thick border text-padding full width height force border-radius">dark green</div>                        <div class="very dark green thick border text-padding full width height force border-radius">very dark green</div>                        <div class="hella dark green thick border text-padding full width height force border-radius">hella dark green</div>                        <div class="green teal thick border text-padding full width height force border-radius">green teal</div>                        <div class="light green teal thick border text-padding full width height force border-radius">light green teal</div>                        <div class="very light green teal thick border text-padding full width height force border-radius">very light green teal</div>                        <div class="hella light green teal thick border text-padding full width height force border-radius">hella light green teal</div>                        <div class="bright green teal thick border text-padding full width height force border-radius">bright green teal</div>                        <div class="very bright green teal thick border text-padding full width height force border-radius">very bright green teal</div>                        <div class="hella bright green teal thick border text-padding full width height force border-radius">hella bright green teal</div>                        <div class="dim green teal thick border text-padding full width height force border-radius">dim green teal</div>                        <div class="very dim green teal thick border text-padding full width height force border-radius">very dim green teal</div>                        <div class="hella dim green teal thick border text-padding full width height force border-radius">hella dim green teal</div>                        <div class="dark green teal thick border text-padding full width height force border-radius">dark green teal</div>                        <div class="very dark green teal thick border text-padding full width height force border-radius">very dark green teal</div>                        <div class="hella dark green teal thick border text-padding full width height force border-radius">hella dark green teal</div>                        <div class="teal thick border text-padding full width height force border-radius">teal</div>                        <div class="light teal thick border text-padding full width height force border-radius">light teal</div>                        <div class="very light teal thick border text-padding full width height force border-radius">very light teal</div>                        <div class="hella light teal thick border text-padding full width height force border-radius">hella light teal</div>                        <div class="bright teal thick border text-padding full width height force border-radius">bright teal</div>                        <div class="very bright teal thick border text-padding full width height force border-radius">very bright teal</div>                        <div class="hella bright teal thick border text-padding full width height force border-radius">hella bright teal</div>                        <div class="dim teal thick border text-padding full width height force border-radius">dim teal</div>                        <div class="very dim teal thick border text-padding full width height force border-radius">very dim teal</div>                        <div class="hella dim teal thick border text-padding full width height force border-radius">hella dim teal</div>                        <div class="dark teal thick border text-padding full width height force border-radius">dark teal</div>                        <div class="very dark teal thick border text-padding full width height force border-radius">very dark teal</div>                        <div class="hella dark teal thick border text-padding full width height force border-radius">hella dark teal</div>                        <div class="teal cyan thick border text-padding full width height force border-radius">teal cyan</div>                        <div class="light teal cyan thick border text-padding full width height force border-radius">light teal cyan</div>                        <div class="very light teal cyan thick border text-padding full width height force border-radius">very light teal cyan</div>                        <div class="hella light teal cyan thick border text-padding full width height force border-radius">hella light teal cyan</div>                        <div class="bright teal cyan thick border text-padding full width height force border-radius">bright teal cyan</div>                        <div class="very bright teal cyan thick border text-padding full width height force border-radius">very bright teal cyan</div>                        <div class="hella bright teal cyan thick border text-padding full width height force border-radius">hella bright teal cyan</div>                        <div class="dim teal cyan thick border text-padding full width height force border-radius">dim teal cyan</div>                        <div class="very dim teal cyan thick border text-padding full width height force border-radius">very dim teal cyan</div>                        <div class="hella dim teal cyan thick border text-padding full width height force border-radius">hella dim teal cyan</div>                        <div class="dark teal cyan thick border text-padding full width height force border-radius">dark teal cyan</div>                        <div class="very dark teal cyan thick border text-padding full width height force border-radius">very dark teal cyan</div>                        <div class="hella dark teal cyan thick border text-padding full width height force border-radius">hella dark teal cyan</div>                        <div class="cyan thick border text-padding full width height force border-radius">cyan</div>                        <div class="light cyan thick border text-padding full width height force border-radius">light cyan</div>                        <div class="very light cyan thick border text-padding full width height force border-radius">very light cyan</div>                        <div class="hella light cyan thick border text-padding full width height force border-radius">hella light cyan</div>                        <div class="bright cyan thick border text-padding full width height force border-radius">bright cyan</div>                        <div class="very bright cyan thick border text-padding full width height force border-radius">very bright cyan</div>                        <div class="hella bright cyan thick border text-padding full width height force border-radius">hella bright cyan</div>                        <div class="dim cyan thick border text-padding full width height force border-radius">dim cyan</div>                        <div class="very dim cyan thick border text-padding full width height force border-radius">very dim cyan</div>                        <div class="hella dim cyan thick border text-padding full width height force border-radius">hella dim cyan</div>                        <div class="dark cyan thick border text-padding full width height force border-radius">dark cyan</div>                        <div class="very dark cyan thick border text-padding full width height force border-radius">very dark cyan</div>                        <div class="hella dark cyan thick border text-padding full width height force border-radius">hella dark cyan</div>                        <div class="cyan blue thick border text-padding full width height force border-radius">cyan blue</div>                        <div class="light cyan blue thick border text-padding full width height force border-radius">light cyan blue</div>                        <div class="very light cyan blue thick border text-padding full width height force border-radius">very light cyan blue</div>                        <div class="hella light cyan blue thick border text-padding full width height force border-radius">hella light cyan blue</div>                        <div class="bright cyan blue thick border text-padding full width height force border-radius">bright cyan blue</div>                        <div class="very bright cyan blue thick border text-padding full width height force border-radius">very bright cyan blue</div>                        <div class="hella bright cyan blue thick border text-padding full width height force border-radius">hella bright cyan blue</div>                        <div class="dim cyan blue thick border text-padding full width height force border-radius">dim cyan blue</div>                        <div class="very dim cyan blue thick border text-padding full width height force border-radius">very dim cyan blue</div>                        <div class="hella dim cyan blue thick border text-padding full width height force border-radius">hella dim cyan blue</div>                        <div class="dark cyan blue thick border text-padding full width height force border-radius">dark cyan blue</div>                        <div class="very dark cyan blue thick border text-padding full width height force border-radius">very dark cyan blue</div>                        <div class="hella dark cyan blue thick border text-padding full width height force border-radius">hella dark cyan blue</div>                        <div class="blue thick border text-padding full width height force border-radius">blue</div>                        <div class="light blue thick border text-padding full width height force border-radius">light blue</div>                        <div class="very light blue thick border text-padding full width height force border-radius">very light blue</div>                        <div class="hella light blue thick border text-padding full width height force border-radius">hella light blue</div>                        <div class="bright blue thick border text-padding full width height force border-radius">bright blue</div>                        <div class="very bright blue thick border text-padding full width height force border-radius">very bright blue</div>                        <div class="hella bright blue thick border text-padding full width height force border-radius">hella bright blue</div>                        <div class="dim blue thick border text-padding full width height force border-radius">dim blue</div>                        <div class="very dim blue thick border text-padding full width height force border-radius">very dim blue</div>                        <div class="hella dim blue thick border text-padding full width height force border-radius">hella dim blue</div>                        <div class="dark blue thick border text-padding full width height force border-radius">dark blue</div>                        <div class="very dark blue thick border text-padding full width height force border-radius">very dark blue</div>                        <div class="hella dark blue thick border text-padding full width height force border-radius">hella dark blue</div>                        <div class="blue purple thick border text-padding full width height force border-radius">blue purple</div>                        <div class="light blue purple thick border text-padding full width height force border-radius">light blue purple</div>                        <div class="very light blue purple thick border text-padding full width height force border-radius">very light blue purple</div>                        <div class="hella light blue purple thick border text-padding full width height force border-radius">hella light blue purple</div>                        <div class="bright blue purple thick border text-padding full width height force border-radius">bright blue purple</div>                        <div class="very bright blue purple thick border text-padding full width height force border-radius">very bright blue purple</div>                        <div class="hella bright blue purple thick border text-padding full width height force border-radius">hella bright blue purple</div>                        <div class="dim blue purple thick border text-padding full width height force border-radius">dim blue purple</div>                        <div class="very dim blue purple thick border text-padding full width height force border-radius">very dim blue purple</div>                        <div class="hella dim blue purple thick border text-padding full width height force border-radius">hella dim blue purple</div>                        <div class="dark blue purple thick border text-padding full width height force border-radius">dark blue purple</div>                        <div class="very dark blue purple thick border text-padding full width height force border-radius">very dark blue purple</div>                        <div class="hella dark blue purple thick border text-padding full width height force border-radius">hella dark blue purple</div>                        <div class="purple thick border text-padding full width height force border-radius">purple</div>                        <div class="light purple thick border text-padding full width height force border-radius">light purple</div>                        <div class="very light purple thick border text-padding full width height force border-radius">very light purple</div>                        <div class="hella light purple thick border text-padding full width height force border-radius">hella light purple</div>                        <div class="bright purple thick border text-padding full width height force border-radius">bright purple</div>                        <div class="very bright purple thick border text-padding full width height force border-radius">very bright purple</div>                        <div class="hella bright purple thick border text-padding full width height force border-radius">hella bright purple</div>                        <div class="dim purple thick border text-padding full width height force border-radius">dim purple</div>                        <div class="very dim purple thick border text-padding full width height force border-radius">very dim purple</div>                        <div class="hella dim purple thick border text-padding full width height force border-radius">hella dim purple</div>                        <div class="dark purple thick border text-padding full width height force border-radius">dark purple</div>                        <div class="very dark purple thick border text-padding full width height force border-radius">very dark purple</div>                        <div class="hella dark purple thick border text-padding full width height force border-radius">hella dark purple</div>                        <div class="purple magenta thick border text-padding full width height force border-radius">purple magenta</div>                        <div class="light purple magenta thick border text-padding full width height force border-radius">light purple magenta</div>                        <div class="very light purple magenta thick border text-padding full width height force border-radius">very light purple magenta</div>                        <div class="hella light purple magenta thick border text-padding full width height force border-radius">hella light purple magenta</div>                        <div class="bright purple magenta thick border text-padding full width height force border-radius">bright purple magenta</div>                        <div class="very bright purple magenta thick border text-padding full width height force border-radius">very bright purple magenta</div>                        <div class="hella bright purple magenta thick border text-padding full width height force border-radius">hella bright purple magenta</div>                        <div class="dim purple magenta thick border text-padding full width height force border-radius">dim purple magenta</div>                        <div class="very dim purple magenta thick border text-padding full width height force border-radius">very dim purple magenta</div>                        <div class="hella dim purple magenta thick border text-padding full width height force border-radius">hella dim purple magenta</div>                        <div class="dark purple magenta thick border text-padding full width height force border-radius">dark purple magenta</div>                        <div class="very dark purple magenta thick border text-padding full width height force border-radius">very dark purple magenta</div>                        <div class="hella dark purple magenta thick border text-padding full width height force border-radius">hella dark purple magenta</div>                        <div class="magenta thick border text-padding full width height force border-radius">magenta</div>                        <div class="light magenta thick border text-padding full width height force border-radius">light magenta</div>                        <div class="very light magenta thick border text-padding full width height force border-radius">very light magenta</div>                        <div class="hella light magenta thick border text-padding full width height force border-radius">hella light magenta</div>                        <div class="bright magenta thick border text-padding full width height force border-radius">bright magenta</div>                        <div class="very bright magenta thick border text-padding full width height force border-radius">very bright magenta</div>                        <div class="hella bright magenta thick border text-padding full width height force border-radius">hella bright magenta</div>                        <div class="dim magenta thick border text-padding full width height force border-radius">dim magenta</div>                        <div class="very dim magenta thick border text-padding full width height force border-radius">very dim magenta</div>                        <div class="hella dim magenta thick border text-padding full width height force border-radius">hella dim magenta</div>                        <div class="dark magenta thick border text-padding full width height force border-radius">dark magenta</div>                        <div class="very dark magenta thick border text-padding full width height force border-radius">very dark magenta</div>                        <div class="hella dark magenta thick border text-padding full width height force border-radius">hella dark magenta</div>                        <div class="magenta red thick border text-padding full width height force border-radius">magenta red</div>                        <div class="light magenta red thick border text-padding full width height force border-radius">light magenta red</div>                        <div class="very light magenta red thick border text-padding full width height force border-radius">very light magenta red</div>                        <div class="hella light magenta red thick border text-padding full width height force border-radius">hella light magenta red</div>                        <div class="bright magenta red thick border text-padding full width height force border-radius">bright magenta red</div>                        <div class="very bright magenta red thick border text-padding full width height force border-radius">very bright magenta red</div>                        <div class="hella bright magenta red thick border text-padding full width height force border-radius">hella bright magenta red</div>                        <div class="dim magenta red thick border text-padding full width height force border-radius">dim magenta red</div>                        <div class="very dim magenta red thick border text-padding full width height force border-radius">very dim magenta red</div>                        <div class="hella dim magenta red thick border text-padding full width height force border-radius">hella dim magenta red</div>                        <div class="dark magenta red thick border text-padding full width height force border-radius">dark magenta red</div>                        <div class="very dark magenta red thick border text-padding full width height force border-radius">very dark magenta red</div>                        <div class="hella dark magenta red thick border text-padding full width height force border-radius">hella dark magenta red</div>                        <div class="white thick border text-padding full width height force border-radius">white</div>                        <div class="light white thick border text-padding full width height force border-radius">light white</div>                        <div class="very light white thick border text-padding full width height force border-radius">very light white</div>                        <div class="hella light white thick border text-padding full width height force border-radius">hella light white</div>                        <div class="bright white thick border text-padding full width height force border-radius">bright white</div>                        <div class="very bright white thick border text-padding full width height force border-radius">very bright white</div>                        <div class="hella bright white thick border text-padding full width height force border-radius">hella bright white</div>                        <div class="dim white thick border text-padding full width height force border-radius">dim white</div>                        <div class="very dim white thick border text-padding full width height force border-radius">very dim white</div>                        <div class="hella dim white thick border text-padding full width height force border-radius">hella dim white</div>                        <div class="dark white thick border text-padding full width height force border-radius">dark white</div>                        <div class="very dark white thick border text-padding full width height force border-radius">very dark white</div>                        <div class="hella dark white thick border text-padding full width height force border-radius">hella dark white</div>                        <div class="white gray thick border text-padding full width height force border-radius">white gray</div>                        <div class="light white gray thick border text-padding full width height force border-radius">light white gray</div>                        <div class="very light white gray thick border text-padding full width height force border-radius">very light white gray</div>                        <div class="hella light white gray thick border text-padding full width height force border-radius">hella light white gray</div>                        <div class="bright white gray thick border text-padding full width height force border-radius">bright white gray</div>                        <div class="very bright white gray thick border text-padding full width height force border-radius">very bright white gray</div>                        <div class="hella bright white gray thick border text-padding full width height force border-radius">hella bright white gray</div>                        <div class="dim white gray thick border text-padding full width height force border-radius">dim white gray</div>                        <div class="very dim white gray thick border text-padding full width height force border-radius">very dim white gray</div>                        <div class="hella dim white gray thick border text-padding full width height force border-radius">hella dim white gray</div>                        <div class="dark white gray thick border text-padding full width height force border-radius">dark white gray</div>                        <div class="very dark white gray thick border text-padding full width height force border-radius">very dark white gray</div>                        <div class="hella dark white gray thick border text-padding full width height force border-radius">hella dark white gray</div>                        <div class="gray thick border text-padding full width height force border-radius">gray</div>                        <div class="light gray thick border text-padding full width height force border-radius">light gray</div>                        <div class="very light gray thick border text-padding full width height force border-radius">very light gray</div>                        <div class="hella light gray thick border text-padding full width height force border-radius">hella light gray</div>                        <div class="bright gray thick border text-padding full width height force border-radius">bright gray</div>                        <div class="very bright gray thick border text-padding full width height force border-radius">very bright gray</div>                        <div class="hella bright gray thick border text-padding full width height force border-radius">hella bright gray</div>                        <div class="dim gray thick border text-padding full width height force border-radius">dim gray</div>                        <div class="very dim gray thick border text-padding full width height force border-radius">very dim gray</div>                        <div class="hella dim gray thick border text-padding full width height force border-radius">hella dim gray</div>                        <div class="dark gray thick border text-padding full width height force border-radius">dark gray</div>                        <div class="very dark gray thick border text-padding full width height force border-radius">very dark gray</div>                        <div class="hella dark gray thick border text-padding full width height force border-radius">hella dark gray</div>                        <div class="gray black thick border text-padding full width height force border-radius">gray black</div>                        <div class="light gray black thick border text-padding full width height force border-radius">light gray black</div>                        <div class="very light gray black thick border text-padding full width height force border-radius">very light gray black</div>                        <div class="hella light gray black thick border text-padding full width height force border-radius">hella light gray black</div>                        <div class="bright gray black thick border text-padding full width height force border-radius">bright gray black</div>                        <div class="very bright gray black thick border text-padding full width height force border-radius">very bright gray black</div>                        <div class="hella bright gray black thick border text-padding full width height force border-radius">hella bright gray black</div>                        <div class="dim gray black thick border text-padding full width height force border-radius">dim gray black</div>                        <div class="very dim gray black thick border text-padding full width height force border-radius">very dim gray black</div>                        <div class="hella dim gray black thick border text-padding full width height force border-radius">hella dim gray black</div>                        <div class="dark gray black thick border text-padding full width height force border-radius">dark gray black</div>                        <div class="very dark gray black thick border text-padding full width height force border-radius">very dark gray black</div>                        <div class="hella dark gray black thick border text-padding full width height force border-radius">hella dark gray black</div>                        <div class="black thick border text-padding full width height force border-radius">black</div>                        <div class="light black thick border text-padding full width height force border-radius">light black</div>                        <div class="very light black thick border text-padding full width height force border-radius">very light black</div>                        <div class="hella light black thick border text-padding full width height force border-radius">hella light black</div>                        <div class="bright black thick border text-padding full width height force border-radius">bright black</div>                        <div class="very bright black thick border text-padding full width height force border-radius">very bright black</div>                        <div class="hella bright black thick border text-padding full width height force border-radius">hella bright black</div>                        <div class="dim black thick border text-padding full width height force border-radius">dim black</div>                        <div class="very dim black thick border text-padding full width height force border-radius">very dim black</div>                        <div class="hella dim black thick border text-padding full width height force border-radius">hella dim black</div>                        <div class="dark black thick border text-padding full width height force border-radius">dark black</div>                        <div class="very dark black thick border text-padding full width height force border-radius">very dark black</div>                        <div class="hella dark black thick border text-padding full width height force border-radius">hella dark black</div>             
           <p class="clearfix"></p>
           
       </section>    </div>
