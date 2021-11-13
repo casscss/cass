@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("baseColorLabel").innerHTML = base_color;
     document.getElementById("baseColor").value = base_color;
 
-    document.getElementById("baseLightenByLabel").innerHTML = lighten;
-    document.getElementById("baseLightenBy").value = lighten;
+    // document.getElementById("baseLightenByLabel").innerHTML = lighten;
+    // document.getElementById("baseLightenBy").value = lighten;
 });
 
 function renderLess() {
@@ -29,7 +29,7 @@ function renderLess() {
     var baseColor = document.getElementById("baseColor").value;
     // var textBase = document.getElementById("textBase").value;
     // var basePadding = document.getElementById("basePadding").value + 'rem';
-    var baseLightenBy = document.getElementById("baseLightenBy").value + '%';
+    // var baseLightenBy = document.getElementById("baseLightenBy").value + '%';
     // var baseMargin = basePadding;
     // var baseFontSize = document.getElementById("baseFontSize").value + 'px';
     // var baseLineHeight = document.getElementById("baseLineHeight").value;
@@ -42,7 +42,7 @@ function renderLess() {
     // if (serif) { var fontFamily = 'var(--serif)';}
     // if (monospace) { var fontFamily = 'var(--monospace)';}
 
-    var lessTheme = "@base-color: " + baseColor + ";\n" + "@lighten-by: " + baseLightenBy + ";\n";
+    var lessTheme = "@base-color: " + baseColor + ";\n" + "@lighten-by: 16%;\n";
 
 
     if (document.getElementById("headless_less_basic_textarea")) {

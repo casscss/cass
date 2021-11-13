@@ -85,14 +85,14 @@
 :root {
   --responsive-width: 100%;
   --responsive-padding: calc(var(--padding-base) * 0.6);
-  --responsive-font-size: (16px - 2px);
+  --responsive-font-size: calc(16px - 2px);
 }
 /* Responsive settings for tablet */
 @media screen and (min-width: 31.7rem) {
   :root {
     --responsive-width: var(--type-width);
     --responsive-padding: calc(var(--padding-base) * 0.8);
-    --responsive-font-size: (16px - 1px);
+    --responsive-font-size: calc(16px - 1px);
   }
 }
 /* Responsive settings for desktop */
