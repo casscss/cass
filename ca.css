@@ -31,42 +31,6 @@
   --feature-width: calc(var(--page-width) * 1.6);
   --full-width: 100%;
 }
-/* Colors */
-:root {
-  --contrast: 16%;
-  --brand-color: #0ea2e1;
-  --complement: #c8501d;
-  --accent: #738ef8;
-  --accent-complement: #f8dd73;
-  --white: #fafeff;
-  --white-gray: #eef2f2;
-  --gray: #cbcbcb;
-  --gray-black: #667678;
-  --black: #012226;
-  --red: #cf2f32;
-  --red-orange: #e66a1a;
-  --orange: #fda603;
-  --orange-yellow: #f8d208;
-  --yellow: #f3ff0d;
-  --yellow-green: #8cd931;
-  --green: #24b356;
-  --green-teal: #26b588;
-  --teal: #28b7bb;
-  --teal-cyan: #1ad5d7;
-  --cyan: #0cf2f3;
-  --cyan-blue: #10a6e9;
-  --blue: #1459df;
-  --blue-purple: #4e4bc7;
-  --purple: #893dae;
-  --purple-magenta: #ad30cc;
-  --magenta: #d123e9;
-  --magenta-red: #d0298d;
-  --focus-color: var(--cyan-blue);
-  --h: 186.6;
-  --s: 98.3%;
-  --l: 99%;
-  --a: 1;
-}
 /* Decoration */
 :root {
   --border-width: 1px;
@@ -84,6 +48,38 @@
   --shadow-position: 1px;
   --shadow-blur: 3px;
   --shadow-color: rgba(1, 34, 38, 0.2);
+}
+/* Colors */
+:root {
+  --brand-color: #0ea2e1;
+  --complement: #c8501d;
+  --accent: #738ef8;
+  --white: #fafeff;
+  --gray: #cbcbcb;
+  --black: #012226;
+  --red: #cf2f32;
+  --orangered: #e66a1a;
+  --orange: #fda603;
+  --gold: #f8d208;
+  --yellow: #f3ff0d;
+  --lime: #8cd931;
+  --green: #24b356;
+  --jade: #26b588;
+  --teal: #28b7bb;
+  --aqua: #1ad5d7;
+  --cyan: #0cf2f3;
+  --skyblue: #10a6e9;
+  --blue: #1459df;
+  --indigo: #4e4bc7;
+  --purple: #893dae;
+  --fuchsia: #ad30cc;
+  --magenta: #d123e9;
+  --pink: #d0298d;
+  --focus-color: var(--skyblue);
+  --h: 186.6;
+  --s: 98.3%;
+  --l: 99%;
+  --a: 1;
 }
 /* Responsive settings for mobile **/
 :root {
@@ -783,7 +779,8 @@ button:active {
   --gap: var(--text-padding);
 }
 .gap-padding,
-.gap-medium {
+.gap-medium,
+.gap-default {
   --gap: var(--padding);
 }
 .gap-margin {
@@ -1902,8 +1899,13 @@ button:active {
   --b-s: 34%;
   --b-l: 46%;
 }
-.desaturated {
+.desaturated,
+.desaturated * {
   --s: 0% !important;
+}
+.desaturated img,
+.desaturated svg {
+  filter: grayscale(100%);
 }
 .matched {
   --l: 46.8627451% !important;
@@ -1913,9 +1915,8 @@ button:active {
 .light.black {
   --s: 10% !important;
 }
-.hella.dim.white,
-.hella.dark.white {
-  color: var(--black);
+.white {
+  color: var(--black) !important;
 }
 .black {
   color: var(--white) !important;
