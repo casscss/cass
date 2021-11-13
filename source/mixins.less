@@ -18,26 +18,6 @@
   @media screen and (max-width: calc(@desktop - 1px)) { @rules();}
 }
 
-.set-average(@colors) {
-  // averages a list of colors
-  // sets result to @average
-
-  .find-average(@color, @index) when (@index <= length(@colors)) {
-    @this-color: extract(@colors, @index);
-    @last-color: @color;
-    @weight: 100% * (1/@index);
-    @new-average: mix(@this-color, @last-color, @weight);
-
-    .find-average(@new-average, @index + 1);
-  }
-
-  .find-average(@color, @index) when (default()) {
-    @average: @color;
-  }
-
-  @average: .find-average(extract(@colors, 1), 1)[@average];
-}
-
 .set-color(@color-name, @base, @luma-modifier: .5, @ambient-modifier: 1, @outputs: false) {
 	// @color-name: the name of the color, which will be the class name
 	// @base: the base representative color
@@ -52,14 +32,14 @@
 		.color-helpers(@color);
   }
 
-  @ambient-adjusted: (@ambient-mix * @ambient-modifier);
+  @ambient-adjusted: (100% * @ambient-modifier);
 
 	// apply ambient lighting
 	@color: mix(@color-base, overlay(@ambient, @color-base), @ambient-adjusted);
 }
 
-// sets variable @contrast-ratio to contrast ratio between two colors
-// it uses the WCAG standards for determining contrast ratio
+// sets contrast ratio between two colors
+// uses WCAG standards for determining contrast ratio
 
 .set-contrast-ratio(@x, @y) when (luma(@x) > luma(@y)) {
   @contrast-l1: (unit(luma(@x)) / 100); // luma is expressed as a % which needs to be un-%ed

@@ -1,35 +1,25 @@
-@ambient-mix: 90%;
 @font-size: 16px;
-@font-family: var(--sans-serif);
 @text-base: 48;
 @padding: 1rem;
-@line-height: 1.6;
-@darken-by: @lighten-by;
-@gutter-multiplier: 2;
-@gutter: @gutter-multiplier * @padding;
-@tablet: @text-width + @gutter;
+@gutter: 2 * @padding;
+@tablet: @type-width + @gutter;
 @desktop: @page-width + @gutter;
-@text-width: round((@text-base * .618rem), 1);
-@card-width: round((@text-width * .618), 1);
-@page-width: round((@text-width * 1.618), 1);
-@feature-width: round((@text-width * 2.618), 1);
-@font-size-mobile: calc(var(--font-size-base) * .875);
-@font-size-tablet: calc(var(--font-size-base) * .94);
-@font-size-desktop: var(--font-size-base);
+@type-width: round((@text-base * .618rem), 1);
+@card-width: round((@type-width * .618), 1);
+@page-width: round((@type-width * 1.618), 1);
 
-/* A California Stylesheet (MIT License) */ 
+/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 /* Typography */
 :root {
-    --line-height: @line-height;
+    --line-height: 1.6;
     --text-measure: @text-base;
     --font-size-base: @font-size;
     --font-size-mod: 1;
-    --font-family: @font-family;
-    --headline-font-family: @font-family;
-    --headline-base: 1em;
-    --headline-base-mod: 1;
+    --font-size: calc(var(--font-size-base) * var(--font-size-mod));
+    --font-family: var(--sans-serif);
+    --headline-font-family: var(--sans-serif);
     --text-padding: calc(.4 * var(--padding-base));
     --text-margin: var(--text-padding);
     --text-indent: var(--text-padding);
@@ -41,56 +31,18 @@
 
 /* Layout */
 :root {
+    --padding-base: 1em;
     --padding: var(--padding-base);
     --margin: var(--padding-base);
     --gutter: @gutter;
     --gap: var(--padding-base);
-    --columns: 12;
-    --width: var(--text-width);
-    --text-width: calc(var(--text-measure) * .6rem);
-    --card-width: calc(var(--text-width) * .6);
-    --page-width: calc(var(--text-width) * 1.6);
+    // --columns: 12;
+    --width: var(--type-width);
+    --type-width: calc(var(--text-measure) * .6rem);
+    --card-width: calc(var(--type-width) * .6);
+    --page-width: calc(var(--type-width) * 1.6);
     --feature-width: calc(var(--page-width) * 1.6);
     --full-width: 100%;
-    --grid-template: repeat(var(--columns), minmax(0, 1fr));
-}
-
-/* Colors */
-:root {
-    --contrast: @lighten-by;
-    --brand-color: @base-color;
-    --complement: @complement;
-    --accent: @accent;
-    --white: @white;
-    --white-gray: @white-gray;
-    --gray: @gray;
-    --gray-black: @gray-black;
-    --black: @black;
-    --red: @red;
-    --red-orange: @red-orange;
-    --orange: @orange;
-    --orange-yellow: @orange-yellow;
-    --yellow: @yellow;
-    --yellow-green: @yellow-green;
-    --green: @green;
-    --green-teal: @green-teal;
-    --teal: @teal;
-    --teal-cyan: @teal-cyan;
-    --cyan: @cyan;
-    --cyan-blue: @cyan-blue;
-    --blue: @blue;
-    --blue-purple: @blue-purple;
-    --purple: @purple;
-    --purple-magenta: @purple-magenta;
-    --magenta: @magenta;
-    --magenta-red: @magenta-red;
-    --h: round(hue(@white), 1);
-    --s: round(saturation(@white), 1);
-    --l: round(lightness(@white), 1);
-    --o: .2; // overlay opacity
-    --warm: @warm-rgba;
-    --cool: @cool-rgba;
-    --dull: @dull-rgba;
 }
 
 /* Decoration */
@@ -99,7 +51,7 @@
     --border-style: solid;
     --border-radius: .5em;
     --border-h: var(--h);
-    --border-s: var(--s);
+    --border-s: calc(var(--s) * .5);
     --border-l: 40%;
     --border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
     --border: var(--border-width) var(--border-style) var(--border-color);
@@ -109,35 +61,63 @@
     --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
     --shadow-position: 1px;
     --shadow-blur: 3px;
-    --shadow-color: fade(@black, 30%);
+    --shadow-color: fade(@black, 20%);
 }
 
-/* Responsive settings for mobile */
+/* Colors */
 :root {
-    .on-mobile({
-        --padding-base: calc(.6 * @padding);
-        --font-size: @font-size-mobile;
-        --headline-base: 1em;
-        --responsive-width: var(--text-width);
-    });
+    --brand-color: @base-color;
+    --complement: @complement;
+    --accent: @accent;
+    --white: @white;
+    --gray: @gray;
+    --black: @black;
+    --red: @red;
+    --orangered: @red-orange;
+    --orange: @orange;
+    --gold: @orange-yellow;
+    --yellow: @yellow;
+    --lime: @yellow-green;
+    --green: @green;
+    --jade: @green-teal;
+    --teal: @teal;
+    --aqua: @teal-cyan;
+    --cyan: @cyan;
+    --skyblue: @cyan-blue;
+    --blue: @blue;
+    --indigo: @blue-purple;
+    --purple: @purple;
+    --fuchsia: @purple-magenta;
+    --magenta: @magenta;
+    --pink: @magenta-red;
+    --focus-color: var(--skyblue);
+    --h: round(hue(@white), 1);
+    --s: round(saturation(@white), 1);
+    --l: round(lightness(@white), 1);
+    --a: 1;
+}
+
+/* Responsive settings for mobile **/
+:root {
+    --responsive-width: 100%;
+    --responsive-padding: calc(var(--padding-base) * .6);
+    --responsive-font-size: calc(@font-size - 2px);
 }
 
 /* Responsive settings for tablet */
 :root {
     .on-tablet({
-        --padding-base: calc(.8 * @padding);
-        --font-size: @font-size-tablet;
-        --headline-base: 1.1em;
-        --responsive-width: var(--text-width);
+        --responsive-width: var(--type-width);
+        --responsive-padding: calc(var(--padding-base) * .8);
+        --responsive-font-size: calc(@font-size - 1px);
     });
 }
 
 /* Responsive settings for desktop */
 :root {
     .on-desktop({
-        --padding-base: @padding;
-        --font-size: @font-size-desktop;
-        --headline-base: 1.2em;
         --responsive-width: var(--page-width);
+        --responsive-padding: var(--padding-base);
+        --responsive-font-size: @font-size;
     });
 }
