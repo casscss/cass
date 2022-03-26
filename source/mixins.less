@@ -18,26 +18,6 @@
   @media screen and (max-width: calc(@desktop - 1px)) { @rules();}
 }
 
-.set-color(@color-name, @base, @luma-modifier: .5, @ambient-modifier: 1, @outputs: false) {
-	// @color-name: the name of the color, which will be the class name
-	// @base: the base representative color
-	// @luma-modifier: [0 - 1] how much the color is luma-matched to @base-color
-	// @ambient-modifier: [.9 - 1.1 works best] how much the ambient light affects the color
-
-	// generate the color base
-	@color-base: .set-lumafix(@base; @strength: @luma-modifier;)[];
-
-	// output the class and rules if outputs are enabled
-	.@{color-name} when (@outputs = true) {
-		.color-helpers(@color);
-  }
-
-  @ambient-adjusted: (100% * @ambient-modifier);
-
-	// apply ambient lighting
-	@color: mix(@color-base, overlay(@ambient, @color-base), @ambient-adjusted);
-}
-
 // sets contrast ratio between two colors
 // uses WCAG standards for determining contrast ratio
 

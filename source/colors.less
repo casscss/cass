@@ -8,64 +8,45 @@
     @rep-color: @base-color;
 }
 
-@rep-color: .set-rep-color()[];
-@ambient: softlight(screen(@base-color, @base-color), @base-color);
+.set-color(@color-name, @base, @luma-modifier: .5, @ambient-modifier: 1, @outputs: false) {
+	// @color-name: the name of the color, which will be the class name
+	// @base: the base representative color
+	// @luma-modifier: [0 - 1] how much the color is luma-matched to @base-color
+	// @ambient-modifier: [.9 - 1.1 works best] how much the ambient light affects the color
 
-@white: mix(white, @ambient, 98%);
-@black: desaturate(mix(black, @ambient, 85%), 0%);
-@gray: .set-color(~"gray", rgb(204, 204, 204), (5/6))[];
+	// generate the color base
+	@color-base: .set-lumafix(@base; @strength: @luma-modifier;)[];
 
-@red: .set-color(~"red", rgb(218, 39, 39), (1/3), .95)[];
-@orange: .set-color(~"orange", orange, (1/12), .99)[];
-@yellow: .set-color(~"yellow", yellow, (1/12), .95)[];
-@green: .set-color(~"green", rgb(45, 165, 45), (1/2), .8)[];
-@teal: .set-color(~"teal", rgb(49, 170, 170), (1/2), .8)[];
-@cyan: .set-color(~"cyan", rgb(14, 241, 241), (1/3), .85)[];
-@blue: .set-color(~"blue", rgb(23, 68, 218), (2/3), .85)[];
-@purple: .set-color(~"purple", rgb(160, 36, 160), (2/3), .85)[];
-@magenta: .set-color(~"magenta", rgb(231, 17, 231), (7/8), .9)[];
+	// output the class and rules if outputs are enabled
+	.@{color-name} when (@outputs = true) {
+		.color-helpers(@color);
+  }
 
-@white-gray: mix(@white, @gray, 75%);
-@gray-black: average(@gray, @black);
+  @ambient-adjusted: (100% * @ambient-modifier);
 
-@red-orange: average(@red, @orange);
-@orange-yellow: average(@orange, @yellow);
-@yellow-green: average(@yellow, @green);
-@green-teal: average(@green, @teal);
-@teal-cyan: average(@teal, @cyan);
-@cyan-blue: average(@cyan, @blue);
-@blue-purple: average(@blue, @purple);
-@purple-magenta: average(@purple, @magenta);
-@magenta-red: average(@magenta, @red);
-
-@accent-base: .set-lumafix(spin(@rep-color, 30), @yellow)[];
-@accent: .set-color(accent, @accent-base, 1, 1)[];
-
-@complement-base: .set-lumafix(spin(@rep-color, 180), average(@orange, @teal))[];
-@complement: .set-color(complement, @complement-base, 1, 1)[];
-
-@accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
-@accent-complement: .set-color(complaccent, @accent-complement-base, 1, 1)[];
+	// apply ambient lighting
+	@color: mix(@color-base, overlay(@ambient, @color-base), @ambient-adjusted);
+}
 
 .color-helpers(@color, @multiplier: 1) {
 
     // create the color and its twelve basic variants
     
-    @brightened: saturate(lighten(@color, (@multiplier*@lighten-by*.2)), 25%);
-    @very-brightened-guess: saturate(lighten(@brightened, 10%), 20%);
-    @hella-brightened-guess: saturate(lighten(@brightened, 20%), 40%);
+    @brightened: saturate(lighten(@color, (@multiplier*@lighten-by*.5)), 10%);
+    @very-brightened-guess: saturate(lighten(@brightened, 3%), 15%);
+    @hella-brightened-guess: saturate(lighten(@brightened, 6%), 25%);
     
-    @dimmed: desaturate(darken(@color, (@multiplier*@lighten-by*.15)), 33%);
-    @very-dimmed-guess: desaturate(darken(@dimmed, 15%), 10%);
-    @hella-dimmed-guess: desaturate(darken(@dimmed, 30%), 20%);
+    @dimmed: desaturate(darken(@color, (@multiplier*@lighten-by*.1)), 12%);
+    @very-dimmed-guess: desaturate(darken(@dimmed, 8%), 10%);
+    @hella-dimmed-guess: desaturate(darken(@dimmed, 16%), 20%);
     
     @lightened: lighten(@color, @multiplier*@lighten-by);
     @very-lightened-guess: lighten(@lightened, 33%);
     @hella-lightened-guess: lighten(@lightened, 66%);
 
     @darkened: darken(@color, @multiplier*@lighten-by);
-    @very-darkened-guess: darken(@darkened, 25%);
-    @hella-darkened-guess: darken(@darkened, 50%);
+    @very-darkened-guess: darken(@darkened, 15%);
+    @hella-darkened-guess: darken(@darkened, 25%);
     
     @base-contrast-ceiling: .set-contrast-ratio(@color, @white)[];
     @border-color: .set-lumafix(@color, @black, 75%)[];
@@ -163,87 +144,125 @@
     }
 }
 
+@rep-color: .set-rep-color()[];
+@ambient: softlight(screen(@base-color, @base-color), @base-color);
+
+@white: mix(white, @ambient, 98%);
+@black: desaturate(mix(black, @ambient, 85%), 0%);
+@gray: .set-color(~"gray", mix(rgb(204, 204, 204), @base-color, 90%), (2/3))[];
+
+@red-base: rgb(218, 39, 39); 
+@orange-base: rgb(246, 164, 10); 
+@yellow-base: rgb(251, 251, 5); 
+@green-base: rgb(45, 165, 45); 
+@teal-base: rgb(49, 170, 170); 
+@cyan-base: rgb(14, 241, 241); 
+@blue-base: rgb(23, 68, 218); 
+@purple-base: rgb(160, 36, 160); 
+@magenta-base: rgb(231, 17, 231); 
+
+@red:                                   .set-color(~"red", @red-base, (1/2), .9)[];
+@red-orange: .set-color(~"orangered", average(@red-base, @orange-base), (1/6), .95)[];
+@orange:                                .set-color(~"orange", @orange-base, (1/24), .95)[];
+@orange-yellow: .set-color(~"gold", average(@orange-base, @yellow-base), (1/18), .925)[];
+@yellow:                                .set-color(~"yellow", @yellow-base, (1/12), .925)[];
+@yellow-green: .set-color(~"lime", average(@yellow-base, @green-base), (1/5), .85)[];
+@green:                                 .set-color(~"green", @green-base, (1/2), .7)[];
+@green-teal: .set-color(~"jade", average(@green-base, @teal-base), (5/8), .8)[];
+@teal:                                  .set-color(~"teal", @teal-base, (5/8), .8)[];
+@teal-cyan: .set-color(~"aqua", average(@teal-base, @cyan-base), (7/8), .75)[];
+@cyan:                                  .set-color(~"cyan", @cyan-base, (3/8), .9)[];
+@cyan-blue: .set-color(~"skyblue", average(@cyan-base, @blue-base), (3/8), .85)[];
+@blue:                                  .set-color(~"blue", @blue-base, (1/2), .8)[];
+@blue-purple: .set-color(~"indigo", average(@blue-base, @purple-base), (7/8), .9)[];
+@purple:                                .set-color(~"purple", @purple-base, (2/5), .8)[];
+@purple-magenta: .set-color(~"fuchsia", average(@purple-base, @magenta-base), (2/5), .85)[];
+@magenta:                               .set-color(~"magenta", @magenta-base, (1/3), .9)[];
+@magenta-red: .set-color(~"pink", average(@magenta-base, @red-base), (1/5), .9)[];
+
+@white-gray: mix(@white, @gray, 75%);
+@gray-black: average(@gray, @black);
+
+@accent-base: .set-lumafix(spin(@rep-color, 30), @yellow)[];
+@accent: .set-color(accent, @accent-base, 1, 1)[];
+
+@complement-base: .set-lumafix(spin(@rep-color, 180), @base-color, 50%)[];
+@complement: .set-color(complement, @complement-base, 1, 1)[];
+
+@accent-complement-base: .set-lumafix(spin(@rep-color, 210), @yellow)[];
+@accent-complement: .set-color(complaccent, @accent-complement-base, 1, 1)[];
+
 .default {
     --v: 0;
 }
 
-.sorta > *, .very > *, .hella > * {
+.default > *, .sorta > *, .very > *, .hella > *, .super > * {
     --v: 0;
 }
 
 .sorta {
-    --v: .5;
+    --v: .6;
 }
 
 .very {
-    --v: 1;
+    --v: 1.2;
 }
 
-.hella {
-    --v: 2;
+.hella, .super {
+    --v: 1.8;
 }
 
 .light {
     --l: ~"calc(var(--b) + ((100% - var(--b)) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .33;
+    --jump: .35;
 }
 
 .dark {
-    --l: ~"calc(var(--b) - ((var(--b) - 20%) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .33;
+    --l: ~"calc(var(--b) - ((var(--b) - 20%) * var(--jump) * 2 * var(--v, 0)))" !important;
+    --jump: .15;
 }
 
 .bright {
-    --s: ~"calc(var(--b-s) + ((100% - var(--b-s)) * var(--jump) * 6 * var(--v, 0)))" !important;
-    --l: ~"calc(var(--b-l) + ((100% - var(--b-l)) * var(--jump) * var(--v, 0)))" !important;
-    --jump: .15;
+    --s: ~"calc(var(--b-s) + ((100% - var(--b-s)) * var(--jump) * 1 * var(--v, 0)))" !important;
+    --l: ~"calc(var(--b-l) + ((100% - var(--b-l)) * var(--jump) * 1 * var(--v, 0)))" !important;
+    --jump: .2;
 }
 
 .dim {
-    --s: ~"calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 2 * var(--v, 0)))" !important;
-    --l: ~"calc(var(--b-l) - ((var(--b-l)) * var(--jump) * 1 * var(--v, 0)))" !important;
-    --jump: .15;
+    --s: ~"calc(var(--b-s) - ((var(--b-s)) * var(--jump) * 4 * var(--v, 0)))" !important;
+    --l: ~"calc(var(--b-l) - ((var(--b-l)) * var(--jump) * .5 * var(--v, 0)))" !important;
+    --jump: .1;
 }
 
-.white { .color-helpers(@white, .1); --jump: .01;}
-.white.gray { .color-helpers(@white-gray, .2); --jump: .03;}
+.white { .color-helpers(@white, .01); --jump: .01;}
+.white.gray { .color-helpers(@white-gray, .2); --jump: .1;}
 .gray { .color-helpers(@gray, .3); --jump: .08;}
 .gray.black { .color-helpers(@gray-black, .5); --jump: .1;}
 .black { .color-helpers(@black, .75); --jump: .15;}
 
-.brand-color { .color-helpers(@base-color, .4);}
-.complement { .color-helpers(@complement, .4);}
+.brand-color, .base-color, .base { .color-helpers(@base-color, .5);}
+.complement { .color-helpers(@complement, .5);}
 .accent { .color-helpers(@accent, .5);}
 .complement.accent { .color-helpers(@accent-complement, .5);}
 
 .red { .color-helpers(@red, .6);}
-.red.orange { .color-helpers(@red-orange, .25);}
+.red.orange, .orangered { .color-helpers(@red-orange, .25);}
 .orange { .color-helpers(@orange, .05);}
-.orange.yellow { .color-helpers(@orange-yellow, .05);}
+.orange.yellow, .gold { .color-helpers(@orange-yellow, .05);}
 .yellow { .color-helpers(@yellow, .05);}
-.yellow.green { .color-helpers(@yellow-green, .15);}
+.yellow.green, .lime { .color-helpers(@yellow-green, .15);}
 .green { .color-helpers(@green, .6);}
-.green.teal { .color-helpers(@green-teal, .5);}
-.teal { .color-helpers(@teal, .6);}
-.teal.cyan { .color-helpers(@teal-cyan, .5);}
+.green.teal, .jade { .color-helpers(@green-teal, .5);}
+.teal { .color-helpers(@teal, .2);}
+.teal.cyan, .aqua { .color-helpers(@teal-cyan, .5);}
 .cyan { .color-helpers(@cyan, .85);}
-.cyan.blue { .color-helpers(@cyan-blue);}
+.cyan.blue, .skyblue, .sky { .color-helpers(@cyan-blue);}
 .blue { .color-helpers(@blue, .85);}
-.blue.purple { .color-helpers(@blue-purple);}
+.blue.purple, .indigo { .color-helpers(@blue-purple);}
 .purple { .color-helpers(@purple, .75);}
-.purple.magenta { .color-helpers(@purple-magenta);}
+.purple.magenta, .fuchsia { .color-helpers(@purple-magenta);}
 .magenta { .color-helpers(@magenta, .75);}
-.magenta.red { .color-helpers(@magenta-red);}
-
-.orangered { &:extend(.red.orange all);}
-.gold { &:extend(.orange.yellow all);}
-.lime { &:extend(.yellow.green all);}
-.jade { &:extend(.green.teal all);}
-.aqua { &:extend(.teal.cyan all);}
-.skyblue { &:extend(.cyan.blue all);}
-.indigo { &:extend(.blue.purple all);}
-.fuchsia { &:extend(.purple.magenta all);}
-.pink { &:extend(.magenta.red all);}
+.magenta.red, .pink { .color-helpers(@magenta-red, .9);}
 
 .desaturated, .desaturated * {
     --s: 0% !important;
@@ -267,4 +286,12 @@
 
 .black {
     color: var(--white) !important;
+}
+
+.text-color.white {
+    color: var(--white) !important;
+}
+
+.text-color.black {
+    color: var(--black) !important;
 }

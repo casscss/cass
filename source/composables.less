@@ -11,6 +11,7 @@
 
 .grid, .column { &:extend(.columns all);}
 
+.auto.columns, .auto.column { --columns: 1;}
 .one.columns { --columns: 1;}
 .two.columns { --columns: 2;}
 .three.columns { --columns: 3;}
@@ -50,6 +51,7 @@
 
   .golden.tablet { grid-template-columns: 1.618fr 1fr;}
   .golden.reverse.tablet { grid-template-columns: 1fr 1.618fr;}
+  .auto.columns, .auto.column { --columns: 2;}
 });
 
 .under-desktop({
@@ -68,6 +70,7 @@
 
   .golden.desktop { grid-template-columns: 1.618fr 1fr;}
   .golden.reverse.desktop { grid-template-columns: 1fr 1.618fr;}
+  .auto.columns, .auto.column { --columns: 3;}
 });
 
 .wide { grid-column: auto / span var(--span);}
@@ -88,7 +91,7 @@
 
 .button, button {
   display: inline;
-  border-width: 0;
+  &:extend(.border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   position: relative;
@@ -114,6 +117,9 @@
 
 .padding-responsive { 
   &:extend(.padding all);
+}
+
+.padding-responsive {
   --padding: var(--responsive-padding);
 }
 
@@ -143,6 +149,8 @@
 .text-padding-bottom { padding-bottom: var(--text-padding);}
 .text-padding-left { padding-left: var(--text-padding);}
 
+// .padding, .padding-left, .padding-right { padding: var(--padding-base);}
+
 .text-margin-top { margin-top: var(--text-padding);}
 .text-margin-right { margin-right: var(--text-padding);}
 .text-margin-bottom { margin-bottom: var(--text-padding);}
@@ -150,7 +158,7 @@
 
 .trim > *:last-child { margin-bottom: 0;}
 
-.text-border-radius, .text-rounded { border-radius: var(--text-padding);}
+.text-border-radius, .text-rounded { border-radius: 6px;}
 
 .block {
   display: block;
@@ -280,24 +288,29 @@
   background-position: center center;
 }
 
+.border, .border-top, .border-right, .border-bottom, .border-left {
+  border-color: hsl(var(--h), clamp(0%, var(--s), 50%), clamp(0%, calc(var(--l) * .85), 35%));
+  border-style: solid;
+}
+
 .border {
-  border: var(--border);
+  border-width: var(--border-width);
 }
 
 .border-top {
-  border-top: var(--border);
+  border-top-width: var(--border-width);
 }
 
 .border-right {
-  border-right: var(--border);
+  border-right-width: var(--border-width);
 }
 
 .border-bottom {
-  border-bottom: var(--border);
+  border-bottom-width: var(--border-width);
 }
 
 .border-left {
-  border-left: var(--border);
+  border-left-width: var(--border-width);
 }
 
 .border-radius, .rounded {
@@ -412,6 +425,10 @@
   --gap: calc(2 * var(--gutter));
 }
 
+.gap-responsive {
+  --gap: var(--responsive-padding);
+}
+
 .text-color {
   color: hsl(var(--h), clamp(0%, var(--s), 90%), clamp(0%, var(--l), 30%)) !important;
   background-color: transparent !important;
@@ -423,24 +440,13 @@
 }
 
 .tint {
-  --t: var(--white);
   color: var(--white);
-  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
-  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
-  --border-h: var(--h);
-  --border-s: var(--s);
-  --border-l: clamp(0%, calc(var(--l) * .75), 85%);
-  --border-a: var(--a);
+  background-color: hsl(var(--h), var(--s), var(--l));
 }
 
 .shade {
   color: var(--black);
-  background-color: hsla(var(--h), var(--s), var(--l), var(--a));
-  border-color: hsla(var(--border-h), var(--border-s), var(--border-l), var(--border-a));
-  --border-h: var(--h);
-  --border-s: var(--s);
-  --border-l: clamp(0%, calc(var(--l) * .75), 85%);
-  --border-a: var(--a);
+  background-color: hsl(var(--h), var(--s), var(--l));
 }
 
 .transparent {
@@ -518,12 +524,15 @@
 .responsive {
   --width: var(--responsive-width);
 }
-.card { 
-  --width: var(--card-width);
-}
 .full, .type, .page { 
   --width: 100%;
 }
+
+.on-desktop({
+  .page { 
+    --width: var(--page-width);
+  }
+});
 
 .on-tablet({
   .type { 
@@ -531,9 +540,9 @@
   }
 });
 
-.on-desktop({
-  .page { 
-    --width: var(--page-width);
+.on-mobile({
+  .card { 
+    --width: var(--card-width);
   }
 });
 
@@ -548,6 +557,14 @@
 
   &.padding-right, &.padding, &.padding-responsive {
       padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));
+  }
+
+  &.text-padding-left, &.text-padding {
+    padding-left: max(var(--text-padding), calc(50% - (var(--width) * .5) + var(--text-padding)));
+  }
+
+  &.text-padding-right, &.text-padding {
+    padding-right: max(var(--text-padding), calc(50% - (var(--width) * .5) + var(--text-padding)));
   }
 }
 

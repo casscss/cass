@@ -2,14 +2,19 @@
 @text-base: 48;
 @padding: 1rem;
 @gutter: 2 * @padding;
-@tablet: @type-width + @gutter;
-@desktop: @page-width + @gutter;
+@tablet: @type-width;
+@desktop: @page-width;
 @type-width: round((@text-base * .618rem), 1);
 @card-width: round((@type-width * .618), 1);
 @page-width: round((@type-width * 1.618), 1);
 
 /* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
+
+/* The base color used to generate this CASS */
+:root {
+    --base-color: @base-color;
+}
 
 /* Typography */
 :root {
@@ -22,8 +27,8 @@
     --headline-font-family: var(--sans-serif);
     --text-padding: calc(.4 * var(--padding-base));
     --text-margin: var(--text-padding);
-    --text-indent: var(--text-padding);
-    --text-border-radius: calc(.6 * var(--text-padding));
+    --text-indent: 0;
+    --text-border-radius: 4px;
     --monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", Courier, monospace;
     --serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "Droid Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
     --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
@@ -36,7 +41,6 @@
     --margin: var(--padding-base);
     --gutter: @gutter;
     --gap: var(--padding-base);
-    // --columns: 12;
     --width: var(--type-width);
     --type-width: calc(var(--text-measure) * .6rem);
     --card-width: calc(var(--type-width) * .6);
@@ -49,15 +53,10 @@
 :root {
     --border-width: 1px;
     --border-style: solid;
-    --border-radius: .5em;
-    --border-h: var(--h);
-    --border-s: calc(var(--s) * .5);
-    --border-l: 40%;
-    --border-color: hsl(var(--border-h), var(--border-s), var(--border-l));
-    --border: var(--border-width) var(--border-style) var(--border-color);
+    --border-color: black;
+    --border-radius: 6px;
     --border-thin: calc(var(--border-width) / 2);
     --border-thick: calc(var(--border-width) * 2);
-    --border-radius: var(--text-padding);
     --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
     --shadow-position: 1px;
     --shadow-blur: 3px;

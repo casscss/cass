@@ -1,5 +1,15 @@
 /* Elements */
 
+body, html, :root {
+    color: var(--t, var(--black, black));
+    background-color: var(--white);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height);
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,15 +19,6 @@
 
 *::before, *::after {
     box-sizing: inherit;
-}
-
-body {
-    color: var(--t, var(--black, black));
-    background-color: var(--white);
-    font-family: var(--font-family);
-    line-height: var(--line-height);
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -38,24 +39,24 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-h1.huge { --font-size-mod: 2.8;}
-h1.big, h2.huge { --font-size-mod: 2.4;}
-h1, h1.medium h2.big, h3.huge { --font-size-mod: 2;}
+h1.huge { --font-size-mod: 3;}
+h1.big, h2.huge { --font-size-mod: 2.6;}
+h1, h1.medium h2.big, h3.huge { --font-size-mod: 2.2;}
 h1.small, h2, h2.medium, h3.big, h4.huge { --font-size-mod: 1.8;}
-h1.tiny, h2.small, h3, h3.medium, h4.small, h5.tiny { --font-size-mod: 1.6;}
-h2.tiny, h3.small, h4, h4.medium, h5.small, h6.tiny { --font-size-mod: 1.4;}
-h3.tiny, h4.small, h5, h5.medium, h6.small { --font-size-mod: 1.3;}
+h1.tiny, h2.small, h3, h3.medium, h4.big, h5.huge { --font-size-mod: 1.6;}
+h2.tiny, h3.small, h4, h4.medium, h5.big, h6.huge { --font-size-mod: 1.4;}
+h3.tiny, h4.small, h5, h5.medium, h6.big { --font-size-mod: 1.3;}
 h4.tiny, h5.small, h6, h6.medium { --font-size-mod: 1.2;}
 h5.tiny, h6.small { --font-size-mod: 1.1;}
 h6.tiny { --font-size-mod: 1;}
 
 
 p {
-    margin-bottom: 1em;
+    margin-bottom: var(--margin);
     text-indent: var(--text-indent);
 
     &.gutter-bottom {
-        margin-bottom: 2em;
+        margin-bottom: calc(2 * var(--margin));
     }
 }
 
@@ -63,7 +64,7 @@ p:only-of-type {
     text-indent: 0;
 }
 
-img {
+img, svg {
     max-width: 100%;
     height: auto;
 }
@@ -91,7 +92,8 @@ input {
     font-size: var(--font-size);
     background: var(--white);
     color: var(--black);
-    border: var(--border);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
     line-height: var(--line-height);
     padding: var(--text-padding);
     max-width: 100%;
@@ -102,7 +104,8 @@ input:focus, select:focus, textarea:focus, button:focus { outline: 3px solid var
 textarea {
     font-family: var(--font-family);
     line-height: var(--line-height);
-    border: var(--border);
+    border: var(--border-width) var(--border-style) var(--border-color);
+    border-radius: var(--border-radius);
     margin-bottom: var(--margin);
     background: var(--white);
     color: var(--black);
@@ -112,7 +115,7 @@ textarea {
 
 ul, ol {
     margin-left: var(--gutter);
-    margin-bottom: var(--margin-bottom);
+    margin-bottom: var(--margin);
 }
 
 li {
