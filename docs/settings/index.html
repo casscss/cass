@@ -28,7 +28,7 @@
 
   <main class="no-overflow-x">
 
-  <nav class="raised text-trim cyan blue fixed top right left inner page width padding no-padding-top no-padding-bottom">
+  <nav class="raised text-trim base-color fixed top right left inner page width padding no-padding-top no-padding-bottom">
       <div class="padding-top">
           <div class="float-right text-margin-top">
               <span>
@@ -47,10 +47,10 @@
                       <path fill="none" stroke="#000000" stroke-width="0.3064" stroke-miterlimit="10" d="M104.068,47.53c0,0,8.783-3.881,17.821,0.562   C119.54,50.623,104.324,50.339,104.068,47.53z"/>
                   </g>
                   </svg>
-              <span class="hide mobile tint text-margin-bottom" style="padding-left: 2.4em;">
+              <span class="hide mobile text-margin-bottom tint" style="padding-left: 2.4em;">
                   California Stylesheets
               </span>
-              <span class="hide tablet tint text-margin-bottom" style="padding-left: 2em;">
+              <span class="hide tablet text-margin-bottom tint" style="padding-left: 2em;">
                   CASS
               </span>
           </a>
@@ -119,9 +119,6 @@
     <li><strong>--s</strong>: The saturation value of the current color</li>
     <li><strong>--l</strong>: The lightness value of the current color</li>
     <li><strong>--o</strong>: The overlay alpha value</li>
-    <li><strong>--warm</strong>: The color used by the warm helper</li>
-    <li><strong>--cool</strong>: The color used by the cool helper</li>
-    <li><strong>--dull</strong>: The gray used by the dull helper</li>
     <li><strong>--border-width</strong>: The default border width</li>
     <li><strong>--border-style</strong>: The default border style</li>
     <li><strong>--border-radius</strong>: The default border radiuss</li>
@@ -139,9 +136,24 @@
     <li><strong>--shadow-color</strong>: The default shadow color</li>
 </ul>
 
+<h2>Writing CSS</h2>
+
+<p>Most CASS concepts are available in CSS through the above settings, and other CSS custom properties used within elements.</p>
+
+<p>Writing your own CSS classes can be a good way to cut down on repetition in your markup.</p>
+
+<pre>.profile-pic {
+    margin-right: var(--gutter);
+    width: var(--card-width);
+}</pre>
+
+<p>This will save you from putting <strong>margin-right card width</strong> on every profile picture. Similar results can be achieved with CSS preprocessors.</p>
+
+<p>Our official advice is to <em>not worry about it</em>. Markup duplication can be handled on a local level by any good modern text editor. It can be handled on the project level by templating or JSX or any other number of things. </p>
+
 <h2>Theming</h2>
 
-<p>You can create a theme by overwriting the CSS custom properties and including it on your page after <strong>ca.css</strong></p>
+<p>You can create a theme by overwriting the CSS custom properties and including it on your page after <strong>ca.css</strong>. By overwriting variables in <strong>:root</strong> (or <strong>html</strong>) you can write a theme that works with any California Stylesheet:</p>
 
 <pre>:root {
     --font-size-base: 18px;
