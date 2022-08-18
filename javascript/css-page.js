@@ -2,54 +2,8 @@
 output = {};
 
 document.addEventListener("DOMContentLoaded", function() {
-    var base_color = "#4084dc";
-
-    document.getElementById("baseColorLabel").innerHTML = base_color;
-    document.getElementById("baseColor").value = base_color;
-    // buildPage();
+    console.log('testing event listener');    
 });
-
-function renderLess() {
-
-    // don't compile if the button is faded
-    if (document.getElementById("build_button").classList.contains('fade')) {
-        return false;
-    }
-
-    if (document.getElementById("headless_less_textarea")) {
-        var headlessLessInput = document.getElementById("headless_less_textarea").value;
-    } else {
-        console.log('missing Less');
-    }
-    var baseColor = document.getElementById("baseColor").value;
-
-    var lessTheme = "@base-color: " + baseColor + ";\n" + "@lighten-by: 16%;\n";
-
-    var lessInputBasic = lessTheme + headlessLessInput;
-
-    // var less_options = {
-    //     env: "production",
-    //     async: false,
-    //     fileAsync: false,
-    //     relativeUrls: true
-    // };
-
-    less.render(lessInputBasic)
-        .then(function(output) {
-            // output.css = string of css
-            var theCSS = output.css;
-            document.getElementById("css").innerHTML = theCSS;
-            document.getElementById("css_textarea").innerHTML = theCSS;
-
-            var buildButton = document.getElementById("build_button");
-            buildButton.classList.add("fade");
-            buildButton.classList.add("dull");
-            buildButton.classList.add("no-press");
-        },
-        function(error) {
-            console.log('something went wrong: ' + error);
-        });
-}
 
 function copyCSS() {
     var textToCopy = document.getElementById("css_textarea");
@@ -306,318 +260,67 @@ function saveTextAsFile(textToWrite, fileNameToSaveAs) {
     downloadLink.click();
 }
 
+function updateColor() {
+    var h = document.getElementById("baseHue").value;
+    var s = document.getElementById("baseSaturation").value;
+    var l = document.getElementById("baseLightness").value;    
 
-// feenix
+    console.log('updateColor did run');
 
-// document.getElementById('content').innerHTML =
-//       marked.parse('# Marked in the browser\n\nRendered by **marked**.');
+    var original_css = document.getElementById("css_textarea").innerHTML;
 
-    // const page = {
-    //     title: "A Feenix page",
-    //     style: "relative white inner page width padding",
-    //     sections: [
-    //         {
-    //             style: '',
-    //             content: ''
-    //         }
-    //     ]
-    // }
+    var css_template = `:root {
+            --base-h: ${h};
+            --base-s: ${s}%;
+            --base-l: ${l}%;
+        }`;
 
-    var page = {
-        title: "Test page",
-        author: "Author name",
-        description: "A description of the page",
-        style: "relative inner type width padding",
-        sections: [
-            {
-                style: 'very bright accent trim vertical-center golden viewport height reverse',
-                content: '# This is the editor.'
-            },
-            {
-                style: 'white bold trim',
-                content: 'Add your own content here!'
-            },
-        ]
-    }
+    var css_template_alt = `:root {
+        --base-h: ${h};
+        --base-s: ${s}%;
+        --base-l: ${l}%;
+        --base-tint: var(--white);
+    }`;
 
-    function prepend(value, array) {
-      var newArray = array.slice();
-      newArray.unshift(value);
-      return newArray;
-    }
+    var css_header = `/* A California Stylesheet (MIT License) */
+/* https://github.com/casscss/cass */
 
-    function editSection(section) {
+:root {
+    --base-h: ${h};
+    --base-s: ${s};
+    --base-l: ${l};
+    --base-tint: var(--black);
+`;
 
-        let section_id = section;
+    var css_header_alt = `/* A California Stylesheet (MIT License) */
+/* https://github.com/casscss/cass */
 
-        let this_section = page.sections[section];
+:root {
+    --base-h: ${h};
+    --base-s: ${s};
+    --base-l: ${l};
+    --base-tint: var(--white);
+`;
 
-        const edit_view = `<div id="edit${section}" class="draft inner type width very dark base-color no-shadow absolute top left bottom right padding text-left medium no-bold" style="z-index: 100;">
-                    
-                    <label class="text-padding text-left force full width" for="edit${section}_style">This section has these classes:</label>
-                    <input autocomplete="off" id="edit${section}_style" name="edit${section}_style" class="monospace margin-bottom full width force" type="text" value="${this_section.style}"/>
-                    <label class="text-padding text-left force full width" for="edit${section}_content">This section has this content:</label>
-                    <textarea id="edit${section}_content" class="full width force monospace" name="" style="min-height: 52%" id="">${this_section.content}</textarea>
-                    <div class="text-right">
-                        <button class="dark complement float-left" onclick="deleteSection(${section_id})">
-                            Delete
-                        </button>
-                        
-                        <button class="no-background no-border no-shadow text-margin-right" onclick="cancelEdits(${section_id})">
-                            Cancel
-                        </button>
-                        <button class="accent" onclick="saveSection(${section_id})">
-                            Save
-                        </button>
-                    </div>
-                </div>`;
-
-        const whats_there = document.getElementById('section'+section).innerHTML;
-        
-        document.getElementById('section'+section).innerHTML = edit_view + whats_there;
-    }
-
-    function editPage() {
-
-      let this_page = page;
-
-      const edit_view = `<div id="edit_page" class="draft fixed block inner type width very dark base-color border no-shadow absolute top left bottom right padding block vertical-center" style="z-index: 1000;">
-                  
-                <label class="small text-padding" for="edit_page_style">Each section has these classes:</label>
-                <input autocomplete="off" id="edit_page_style" name="edit_page_style" class="monospace margin-bottom full width force" type="text" value="${this_page.style}">
-
-                <hr class="gutter hella light brand-color">
-                
-                <label class="small text-padding" for="edit_page_title">This is the page's title:</label>
-                <input id="edit_page_title" name="edit_page_title" class="full width force monospace margin-bottom" value="${this_page.title}"></input>
-
-                <label class="small text-padding" for="edit_page_description">A brief description of the page:</label>
-                <input id="edit_page_description" name="edit_page_description" class="full width force monospace margin-bottom" value="${this_page.description}"></input>
-                <label class="small text-padding" for="edit_page_author">A brief author of the page:</label>
-                <input id="edit_page_author" name="edit_page_author" class="full width force monospace margin-bottom" value="${this_page.author}"></input>
-
-                  <div class="text-right">
-                    <button class="no-background no-shadow no-border margin" onclick="cancelPageEdits()">
-                          Cancel
-                      </button>
-                      <button class="huge padding text-padding-top text-padding-bottom dark brand-color" onclick="savePage()">
-                          Save
-                      </button>
-                      
-                  </div>
-              </div>`;
-
-      document.getElementById('page_editor').innerHTML = edit_view;
-    }
-
-    function cancelPageEdits() {
-        document.getElementById("page_editor").innerHTML = '';
-    }
-
-    function cancelEdits(section) {
-        document.getElementById("edit"+section).remove();
-    }
-
-    function whichSection() {
-      console.log(document.querySelector("html").scrollTop);
-      // this will use scrollTop to figure out which section the user is looking at
-
-    }
-
-    function addSection() {
-      whichSection();
-      console.log(page.sections);
-      var new_page = page.sections;
-      page.sections = prepend({ style: 'white', content: `Click "Edit" to edit this.
-
-It's a simple **Markdown**-powered text field.
-
-The field at the top lets you edit the **CASS** classes associated with this section. Click 'Help' to see which classes you can add.
-
-- It
-- Supports
-- Lists
-
-Use the output at the bottom of this page as a starting point for your own HTML.`}, new_page);
-      
-      buildPage();
-      console.log(page.sections);
-    }
-
-    function moveSectionUp(section) {
-      if (section > 0) {
-        var arr = page.sections;
-        var old_index = section;
-        var new_index = section - 1;
-        if (new_index >= arr.length) {
-            var k = new_index - arr.length + 1;
-            while (k--) {
-                arr.push(undefined);
-            }
-        }
-        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-        buildPage();
-      }
+    const deleteLines = (string, n = 1)=>{
+        return string.replace(new RegExp(`(?:.*?\n){${n-1}}(?:.*?\n)`), '');
     };
 
-    function moveSectionDown(section) {
-      if (section < (page.sections.length - 1)) {
-        var arr = page.sections;
-        var old_index = section;
-        var new_index = section + 1;
-        if (new_index >= arr.length) {
-            var k = new_index - arr.length + 1;
-            while (k--) {
-                arr.push(undefined);
-            }
-        }
-        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-        buildPage();
-      }
-    };
+    var rest_css = deleteLines(original_css, 8);
 
-    function saveSection(section) {
-        var sectionString = '';
-        var sectionInner = '';
+    if (l > 60) {
+        document.getElementById('added_theme').innerHTML = css_template;
+        document.getElementById('css_textarea').innerHTML = css_header + rest_css;
 
-        const style = document.getElementById('edit'+section+'_style').value;
-        const pre_content = document.getElementById('edit'+section+'_content').value;
-        const markdown_content = marked.parse(pre_content);
+    } else {
+        document.getElementById('added_theme').innerHTML = css_template_alt;
+        document.getElementById('css_textarea').innerHTML = css_header_alt + rest_css;
 
-        let section_id = section;
-
-        let this_section = {
-                style: style,
-                content: pre_content
-        };
-
-        page.sections[section] = this_section;
-        buildPage();
-
-        return false;
 
     }
 
-    function deleteSection(section) {
-      page.sections.splice(section, 1);
-      buildPage();
-    }
-
-    function savePage() {
-        // var sectionString = '';
-        // var sectionInner = '';
-        // let word1 = document.getElementById('three_word_input1').value;
-        // let word2 = document.getElementById('three_word_input2').value;
-        // let word3 = document.getElementById('three_word_input3').value;
-
-        // trip = [word1, word2, word3];
-
-        const style = document.getElementById('edit_page_style').value;
-        // const pre_content = document.getElementById('edit'+section+'_content').value;
-        // const markdown_content = marked.parse(pre_content);
-
-        // if (word1 !== "" && word2 !== "" && word3 !== "") {
-        //   console.log(word1);
-        //   console.log(word2);
-        //   console.log(word3);
-        //   console.log('saving...');
-        // }
-
-        page.style = style;
-
-        // syncHHS([word1, word2, word3]);
-        // getHHS();
-        
-        buildPage();
-
-        document.getElementById('page_editor').innerHTML = '';
-
-        return false;
-
-    }
-
-    function buildPage() {
-
-      // render function
-      // runs after every page change
-
-        let sections = page.sections;
-        
-        var pageString = '';
-        for (const key in sections) {
-            if (sections.hasOwnProperty(key)) {
-                let section_id = key;
-                let this_section = sections[key];
-
-                let section_content = this_section.content;
-                let display_content = marked.parse(section_content);
 
 
-                pageString += `<div id="section${section_id}_container">
-    <section id="section${section_id}" class="${page.style} ${this_section.style}">
-        ${display_content} 
-    </section>
-    <div class="small inner page width text-right relative padding-right padding-left" style="height: 0; top: -48px; z-index: 10;">
-        <button class="medium sans-serif very dark base-color border no-shadow" onclick="editSection(${section_id})">Edit</button>&nbsp;
-        <button class="medium sans-serif very dark base-color border no-shadow" onclick="moveSectionUp(${section_id})">&uarr;</button>&nbsp;
-        <button class="medium sans-serif very dark base-color border no-shadow" onclick="moveSectionDown(${section_id})">&darr;</button>
-    </div>
-</div>
-`;
-
-            }
-        }
-        document.getElementById("output").innerHTML = '';
-        document.getElementById("output").innerHTML = pageString;
-        buildFinalHTML();
-
-    }
-
-    function buildFinalHTML() {
-
-    // render function just for the product HTML
-
-      let sections = page.sections;
-      
-      
-
-      var page_title = page.page_title;
-      var author_name = page.author_name;
-      var page_description = page.page_description;
-
-      var pageString = '';
-
-      pageString += `<!DOCTYPE html>
-<html lang="en"><head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta charset="utf-8">
-  <title>${page_title}</title>
-  <meta name="description" content="${page_description}">
-  <meta name="author" content="${author_name}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body class="">
-`;
-
-      for (const key in sections) {
-          if (sections.hasOwnProperty(key)) {
-              let section_id = key;
-              let this_section = sections[key];
-
-              let section_content = this_section.content;
-              let display_content = marked.parse(section_content);
-
-
-              pageString += `<section id="section${section_id}" class="${page.style} ${this_section.style}">
-${display_content}</section>
-`;
-
-      }
-  }
-
-  pageString += `<style>`;
-  pageString += `</style>`;
-  pageString += `</body></html>`;
-  document.getElementById("textarea_output").innerHTML = pageString;
+    
 
 }
