@@ -14,7 +14,7 @@
     --font-size: calc(var(--font-size-base) * var(--font-size-mod));
     --font-family: var(--sans-serif);
     --headline-font-family: var(--sans-serif);
-    --text-padding: calc(.4 * var(--padding-base));
+    --text-padding-base: .4em;
     --text-margin: var(--text-padding);
     --text-indent: var(--text-margin);
     --text-border-radius: 4px;
@@ -23,7 +23,6 @@
     --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
 
     --padding-base: 1em;
-    --padding: var(--responsive-padding);
     --margin: var(--padding-base);
     --gutter: calc(2 * var(--padding-base));
     --gap: var(--padding-base);
@@ -70,18 +69,20 @@
 
     /* Responsive settings for mobile */
     --responsive-width: 100%;
-    --responsive-padding: calc(var(--padding-base) * .6);
+    --padding: calc(var(--padding-base) * .6);
+    --text-padding: calc(var(--text-padding-base) * .8);
     --gap: calc(var(--padding-base) * .6);
-    --responsive-font-size: calc(var(--font-size-base) - 2px);
+    --font-size: calc(var(--font-size-base) - 2px);
 }
 
 /* Responsive settings for tablet */
 @media screen and (min-width: 30rem) {
     :root {
         --responsive-width: var(--type-width);
-        --responsive-padding: calc(var(--padding-base) * .8);
+        --padding: calc(var(--padding-base) * .8);
+        --text-padding: calc(var(--text-padding-base) * .9);
         --gap: calc(var(--padding-base) * .8);
-        --responsive-font-size: calc(var(--font-size-base) - 1px);
+        --font-size: calc(var(--font-size-base) - 1px);
     }
 }
 
@@ -89,9 +90,10 @@
 @media screen and (min-width: 50rem) {
     :root {
         --responsive-width: var(--page-width);
-        --responsive-padding: var(--padding-base);
+        --padding: var(--padding-base);
+        --text-padding: var(--text-padding-base);
         --gap: var(--padding-base);
-        --responsive-font-size: var(--font-size-base);
+        --font-size: var(--font-size-base);
     }
 }
 
@@ -315,7 +317,6 @@
 .gap-margin { --gap: var(--margin);}
 .gap-gutter, .gap-big { --gap: var(--gutter);}
 .gap-huge { --gap: calc(2 * var(--gutter));}
-.gap-responsive { --gap: var(--responsive-padding);}
 
 .text-color {
   color: hsl(var(--h, var(--hue)), clamp(0%, var(--s, var(--sat)), 90%), clamp(0%, var(--l, var(--lit)), 60%)) !important;
@@ -433,7 +434,7 @@ body, html, :root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: calc(var(--responsive-font-size) * var(--font-size-mod));
+  font-size: calc(var(--font-size-base) * var(--font-size-mod));
 }
 
 *::before, *::after { box-sizing: inherit;}
@@ -518,7 +519,7 @@ textarea {
   box-shadow: var(--box-shadow);
   position: relative;
   font-family: inherit;
-  padding: var(--text-padding) var(--padding);
+  padding: calc(var(--padding) * .6) var(--padding);
   color: inherit;
   background-color: inherit;
   border: var(--border);
@@ -532,6 +533,8 @@ textarea {
   transform: scale(1);
   transition: scale .08s linear;
 }
+
+.button.big, .button.huge { padding: calc(var(--padding) * .9) calc(var(--padding) * 1.5);}
 
 .button:active, button:active {
   transform: scale(.96);
