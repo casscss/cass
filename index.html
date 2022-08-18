@@ -70,10 +70,10 @@
               <div>
                   <div class="block relative">
                       <span class="fade block absolute top right float-right text-crunch"><span class="hella dim green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="hella bright green">&nbsp;&nbsp;&nbsp;</span></span>
-                      <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
+                      <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">65</span>%</strong>)</span>
                   </div>
                   
-                  <input type="range" id="baseSaturation" min="0" max="100" value="55" step="1" class="thick-slider force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
+                  <input type="range" id="baseSaturation" min="0" max="100" value="65" step="1" class="thick-slider force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
               </div>
           
               <div>
@@ -103,7 +103,7 @@
 
 :root {
     --base-h: 214;
-    --base-s: 55%;
+    --base-s: 65%;
     --base-l: 65%;
     --base-tint: var(--black);
 
@@ -1061,8 +1061,8 @@ pre > code {
 
       <p class="text-margin-bottom">Add the <strong>two</strong> or <strong>three</strong> class for fewer columns.</p>
       
-      <div class="one columns margin-bottom">
-        <div>
+      <div class="margin-bottom">
+        <div class="text-margin-bottom">
           <p class="small">two columns</p>
           <div class="two columns gap-small">
             <div class="thin light dim yellow border dashed">&nbsp;</div>
@@ -1153,7 +1153,7 @@ pre > code {
   <div class="two columns reverse golden desktop margin-bottom gap-big">
     <div class="vertical-center">
       <p>Add <strong>card</strong>, <strong>text</strong>, <strong>page</strong> or <strong>responsive</strong> with <strong>width</strong> to specify the width.</p>
-      <div class="two columns golden text-margin-bottom">
+      <div class="two columns golden gap-small text-margin-bottom">
         <div class="">
           <p class="text-margin-bottom">type width</p>
           <div class="border thin border-text-color placeholder full-width force">
@@ -1186,15 +1186,15 @@ pre > code {
     </div>
     <div class="vertical-center">
       <p class="text inner width">The <strong>wide</strong> composable lets you specify column span within an any-column grid.</p>
-      <div class="columns margin-bottom">
+      <div class="columns gap-small margin-bottom">
         <div class="border border-text-color text-padding five wide hella light pink"><span class="">five wide</span></div>
         <div class="border border-text-color text-padding seven wide hella light pink"><span class="">seven wide</span></div>
       </div>
-      <div class="columns margin-bottom">
+      <div class="columns gap-small margin-bottom">
         <div class="border border-text-color text-padding six wide hella light pink"><span class="">six wide</span></div>
         <div class="border border-text-color text-padding six wide hella light pink"><span class="">six wide</span></div>
       </div>
-      <div class="columns margin-bottom">
+      <div class="columns gap-small margin-bottom">
         <div class="border border-text-color text-padding two wide hella light pink"><span class="">two wide</span></div>
         <div class="border border-text-color text-padding two wide hella light pink"><span class="">two wide</span></div>
         <div class="border border-text-color text-padding two wide hella light pink"><span class="">two wide</span></div>
@@ -1524,10 +1524,10 @@ pre > code {
 
       <div class="text-align-center">
         <ul class="no-list-style no-margin-bottom">
-          <li class="light blue padding margin-bottom rounded border border-text-color border ">border-text-color border</li>
-          <li class="light blue padding margin-bottom rounded border thin border ">thin border</li>
-          <li class="light blue padding margin-bottom rounded border dashed border ">dashed border</li>
-          <li class="light blue padding rounded border solid border ">solid border</li>
+          <li class="white padding margin-bottom rounded border border-text-color border ">border-text-color border</li>
+          <li class="white padding margin-bottom rounded border thin border ">thin border</li>
+          <li class="white padding margin-bottom rounded border dashed border ">dashed border</li>
+          <li class="white padding rounded border solid border ">solid border</li>
         </ul>
       </div>
     </div>
@@ -1599,7 +1599,7 @@ pre > code {
       
       :root {
           --base-h: 214;
-          --base-s: 55%;
+          --base-s: 65%;
           --base-l: 65%;
           --base-tint: var(--black);
       

@@ -287,8 +287,8 @@ function updateColor() {
 
 :root {
     --base-h: ${h};
-    --base-s: ${s};
-    --base-l: ${l};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
     --base-tint: var(--black);
 `;
 
@@ -297,8 +297,8 @@ function updateColor() {
 
 :root {
     --base-h: ${h};
-    --base-s: ${s};
-    --base-l: ${l};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
     --base-tint: var(--white);
 `;
 
