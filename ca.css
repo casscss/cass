@@ -289,14 +289,14 @@
 }
 
 .border, .border-top, .border-right, .border-bottom, .border-left {
+  --border-color: hsla(
+    var(--hue),
+    clamp(0%, var(--s, var(--sat)), 70%),
+    clamp(0%, var(--l, var(--lit)), 60%),
+    var(--a));
   border-width: var(--border-width);
   border-style: var(--border-style);
-  border: var(--border-width) var(--border-style) hsla(
-    calc(var(--hue) + var(--hue-offset, 0) + var(--hue-shift, 0)),
-    clamp(0%, var(--sat), 70%),
-    clamp(0%, var(--lit), 60%),
-    var(--a));
-  border-style: solid;
+  border-color: var(--border-color);
 }
 
 .border { border-width: var(--border-width);}
