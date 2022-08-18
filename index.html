@@ -53,11 +53,11 @@
       
   </nav>
   <div class="full width placeholder padding no-padding-bottom">&nbsp;</div>
-  <div class="raised fixed bottom left right text-padding">
+  <div class="raised fixed bottom left right text-padding small">
   
       <nav class="border white raised text-padding margin-auto page width shadow no-shadow-direction rounded">
   
-          <div class="white three columns desktop gap-responsive text-left text-rounded">
+          <div class="white three columns gap-responsive text-left text-rounded">
               <div>
                   <div class="block relative">
                       <span class="fade block absolute top right float-right text-crunch"><span class="default red">&nbsp;&nbsp;&nbsp;</span> <span class="default green">&nbsp;&nbsp;&nbsp;</span> <span class="default blue">&nbsp;&nbsp;&nbsp;</span></span>
@@ -70,7 +70,7 @@
               <div>
                   <div class="block relative">
                       <span class="fade block absolute top right float-right text-crunch"><span class="hella dim green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="hella bright green">&nbsp;&nbsp;&nbsp;</span></span>
-                      <span class="block full width">saturation (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
+                      <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
                   </div>
                   
                   <input type="range" id="baseSaturation" min="0" max="100" value="55" step="1" class="thick-slider force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
@@ -79,7 +79,7 @@
               <div>
                   <div class="block relative">
                       <span class="fade block absolute top right float-right text-crunch"><span class="very dark green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="very light green">&nbsp;&nbsp;&nbsp;</span></span>
-                      <span class="block full width">lightness (<strong><span id="baseLightnessLabel" for="baseLightness">65</span>%</strong>)</span>
+                      <span class="block full width">l<span class="hide mobile">i<span class="hide mobile tablet">gh</span>t<span class="hide mobile tablet">ness</span></span> (<strong><span id="baseLightnessLabel" for="baseLightness">65</span>%</strong>)</span>
                   </div>
                   
                   <input type="range" id="baseLightness" min="0" max="100" value="65" step="1" class="thick-slider force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseLightnessLabel').innerHTML = document.getElementById('baseLightness').value; updateColor();">
