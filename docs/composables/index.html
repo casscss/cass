@@ -59,19 +59,21 @@
   </nav>
   <div class="text-trim full width placeholder padding no-padding-bottom text-margin-bottom">&nbsp;</div>
   
-  <div class="hella dark indigo viewport height golden reverse vertical-center inner responsive width padding no-padding-top">
+  <div class="hella dark indigo vertical-center inner type width padding no-padding-top gutter-bottom">
     <div class="two column golden reverse desktop">
-      <div class="gutter-top inner type width">
-        <ul class="no-list-style">
-          <div>
-            <li><a class=" text-padding" href="../">install</a></li>
-            <li><a class="bold text-padding" href="../composables">composables</a></li>
-          </div>
-        </ul>
-      </div>      <div class="vertical-center inner type width margin-bottom">
-        <h1 class="margin-top gutter-bottom">Composable classes</h1>
-        <p>Composable classes are regular CSS classes designed to work together with other composable CSS classes.</p>
+      <div class="vertical-center">
+        <div class="gutter-top inner type width">
+          <ul class="no-list-style no-margin-left">
+            <div>
+              <li><a class=" text-padding" href="../">install</a></li>
+              <li><a class="bold text-padding" href="../composables">composables</a></li>
+            </div>
+          </ul>
+        </div>      </div>  
+      <div class="vertical-center">
+        <h1 class="">Composables</h1>
       </div>
+          
     </div>
 
   </div>
@@ -79,7 +81,6 @@
     
         
 <section class="gutter-bottom padding-bottom">
-  <h2>A language in a language</h2>
   <p>Composables are a bit like a language that plays out entirely within <strong>class=""</strong> in an HTML element.</p>
   <p>CSS classes (typically noted in bold) are composed together in phrases to give shape and meaning to elements.</p>
   <p>Here's a <strong>red</strong> test div:</p>
@@ -101,11 +102,11 @@
 </section>
 
 <section class="gutter-bottom padding-bottom">
-  <h2 class="section-headline">Enforcing text measure</h2>
+  <h2 class="section-headline">Easy typography</h2>
 
-  <p>The composable <strong>type width</strong> enforces a standard text measure. Text measure is how many characters fit on each line. This paragraph is set to this standard text measure.</p>
+  <p>The composable <strong>type width</strong> uses the standard text measure. Text measure is how many characters fit on each line. This paragraph is set to this standard text measure.</p>
 
-  <p>A smaller version of the same concept is <strong>card width</strong>, which works for pull-out quotes, notations or other smaller blocks of text.</p>
+  <p>A smaller version of the same concept is <strong>card width</strong>, which works well for pull-out quotes, notations or other smaller blocks of text.</p>
 
   <p>Each content width concept also has a corresponding <strong>inner width</strong> version which enforces the width inside the element using padding.</p>
 
@@ -116,13 +117,6 @@
   <p>The inner width composables compose with <strong>padding</strong>.</p>
 
   <p>Both forms work: <strong>page inner width</strong> and <strong>inner page width</strong> have the same effect, because the order doesn't matter in composing CASS.</p>
-
-</section>
-
-<section class="gutter-bottom padding-bottom">
-  <h2 class="section-headline">Responsive text</h2>
-
-  <p>Text size is responsive, meaning it's smaller on small screens and larger on large screens. This behavior is automatic, but you can tweak it through CASS's responsive CSS custom properties, at the top of every California Stylesheet.</p>
 
 </section>
 
@@ -229,7 +223,7 @@
 
   <pre class="white-space gutter-bottom">&lt;p class="monospace"&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu bibendum urna, eget volutpat arcu. Donec consequat eros purus, vel ultricies libero dictum et. Sed tempor turpis in ipsum iaculis viverra. Donec vitae auctor urna.&lt;/p&gt;</pre>
 
-  <p>Like any CSS, California Stylesheets will work fine with web fonts. The font stacks can be edited in their corresponding CSS custom properties in the typography section at the top of any California Stylesheet.</p>
+  <p>Like any CSS, California Stylesheets will work fine with web fonts. The font stacks can be edited in their corresponding CSS custom properties in the typography section at the top of any California Stylesheet. Add your favorite fonts to the top of the stack.</p>
 </section>
 
 <section>

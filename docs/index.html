@@ -59,19 +59,21 @@
   </nav>
   <div class="text-trim full width placeholder padding no-padding-bottom text-margin-bottom">&nbsp;</div>
   
-  <div class="hella dark indigo viewport height golden reverse vertical-center inner responsive width padding no-padding-top">
+  <div class="hella dark indigo vertical-center inner type width padding no-padding-top gutter-bottom">
     <div class="two column golden reverse desktop">
-      <div class="gutter-top inner type width">
-        <ul class="no-list-style">
-          <div>
-            <li><a class="bold text-padding" href="">install</a></li>
-            <li><a class=" text-padding" href="composables">composables</a></li>
-          </div>
-        </ul>
-      </div>      <div class="vertical-center inner type width margin-bottom">
-        <h1 class="margin-top gutter-bottom">Getting the file</h1>
-        <p>Here are some ways to get a hot-swappable, works-like-a-framework California Stylesheets CSS file.</p>
+      <div class="vertical-center">
+        <div class="gutter-top inner type width">
+          <ul class="no-list-style no-margin-left">
+            <div>
+              <li><a class="bold text-padding" href="">install</a></li>
+              <li><a class=" text-padding" href="composables">composables</a></li>
+            </div>
+          </ul>
+        </div>      </div>  
+      <div class="vertical-center">
+        <h1 class="">Install CASS</h1>
       </div>
+          
     </div>
 
   </div>
@@ -79,24 +81,12 @@
     
         
 <section class="gutter-bottom">
-
-  <h2 class="section-headline">The CSS file</h2>
-
-  <div>
-    <p>Visit the <a href="../">main page</a> to customize and download a California Stylesheet.</p>
-    <p>Or just a default <a href="../ca.css">here</a>.</p>
-
-  </div>
-</section>
-
-<section class="gutter-bottom">
-  <h3>Reference ca.css</h3>
+  <p><a href="../ca.css">Download it here</a>. You can visit the <a href="../">main page</a> to preview base colors.</p>
+  
   <p>Reference the file inside the head tag:</p>
   <pre class="gutter-bottom">&lt;head&gt;
   &lt;link rel="stylesheet" href="ca.css"&gt;
 &lt;/head&gt;</pre>
-
-  <h3>The &lt;style&gt; tag</h3>
   <p>Or you can include it in the HTML:</p>
   <pre>&lt;style&gt;[[ the whole output ]]&lt;/style&gt;</pre>
 </section>
@@ -105,7 +95,7 @@
 
   <h2 class="section-headline">Visual Studio Code</h2>
   <div>
-    <p>Both palette options are also available through the Visual Studio Code extension. Install it in two minutes.</p>
+    <p>Grab CASS quickly through the Visual Studio Code extension. Install it in two minutes.</p>
     
     <p><a href="https://marketplace.visualstudio.com/items?itemName=casscss.CASS-viewer" target="_blank"><img src="../images/cass-viewer.png" alt="A screenshot of the CASS viewer extension in VS Code"></a></p>
     
@@ -116,23 +106,11 @@
 </section>
 
 <section id="composables" class="gutter-bottom">
-    <h2>Naming conventions</h2>
-    <div class="gutter-bottom">
-      <p>CASS keeps things simple:</p>
-      <ul>
-        <li>No numerals (1, 5, 100, etc)</li>
-        <li>No abbreviations (xt, MGS, xt:phablet-xxt)</li>
-        <li>If it already exists, use that word</li>
-        <li>"No" is powerful, and overrides other classes</li>
-        <li>One- or two-word shortcuts to everything useful</li>
-      </ul>
-    </div>
-
     <h2 class="no-margin-top">Frequently Asked Questions</h2>
 
     <h5>"What's the file size?"</h5>
-    <p>About <strong>24kb</strong>.</p>
-    <p>California Stylesheets are meant to be human-readable, not gzipped, tucked away in the JS or otherwise obscured from the user.</p>
+    <p>About <strong>20kb</strong>.</p>
+    <p>California Stylesheets are meant to be human-readable, not gzipped or tucked away in the JS or otherwise obscured from the user.</p>
     <p>It's not a minimalist microframework or an entrenched all-style solution. It's a middleweight CSS file for people who need to give structure and style to a page fast, all while maintaining a site's style standards along with strong typography conventions.</p>
 
     <h5>"If it's not a framework, what is it?"</h5>
@@ -157,9 +135,19 @@
     <p>Of course! That's basically the whole point.</p>
     <p>All you need to use California Stylesheets is knowledge of how HTML works. If you can put together HTML elements and add classes to those elements, you're ready to use get started.</p>
     <p>In fact, CASS is a great way to learn CSS, because so many of the classes and conventions use names and terms from CSS.</p>
-
+    
     <h5>"Wait, the point is writing <em>less</em> CSS?"</h5>
     <p>The point is to cover about 95% of a site's basic design needs and to write about 90% less CSS overall, yes. The composable classes based on standards do most of the boring parts of design and layout for you. With CASS, the remaining CSS that needs to be written is the last 5%-- the fun 5% that really makes a page stand out. The fun part.</p>
+
+    <h5>"What makes it easier?</h5>
+    <p>Conventions and simplicity. You probably already know all the words and abbreviatons in CASS (because there are no abbreviations). CASS follows these rules:</p>
+      <ul>
+        <li>No numerals (1, 5, 100, etc)</li>
+        <li>No abbreviations (xt, MGS, xt:phablet-xxt)</li>
+        <li>If it already exists, use that word</li>
+        <li>"No" is powerful, and overrides other classes</li>
+        <li>One- or two-word shortcuts to everything useful</li>
+      </ul>
 
     <h5>"I don't know Cassandra. Can I use CASS?"</h5>
     <p>California Stylesheets has nothing at all to do with Cassandra DB. That came out wrong. We're sure they're great. It's a backend thing, right?</p>
@@ -176,8 +164,6 @@
     <li><strong>--font-size-mod</strong>: The default font-size multiplier</li>
     <li><strong>--font-family</strong>: The default font-family</li>
     <li><strong>--headline-font-family</strong>: The default headline font-family</li>
-    <li><strong>--headline-base</strong>: The base headline size on desktop</li>
-    <li><strong>--headline-base-mod</strong>: The default headline font-size multiplier</li>
     <li><strong>--text-padding</strong>: The value used by text-padding</li>
     <li><strong>--text-margin</strong>: The value used by text-margin</li>
     <li><strong>--text-indent</strong>: The amount to indent paragraphs</li>
@@ -222,30 +208,15 @@
     <li><strong>--shadow-color</strong>: The default shadow color</li>
 </ul>
 
-<h2>Writing CSS</h2>
-
-<p>Most CASS concepts are available in CSS through the above settings, and other CSS custom properties used within elements.</p>
-
-<p>Writing your own CSS classes can be a good way to cut down on repetition in your markup.</p>
-
-<pre>.profile-pic {
-    margin-right: var(--gutter);
-    width: var(--card-width);
-}</pre>
-
-<p>This will save you from putting <strong>margin-right card width</strong> on every profile picture. Similar results can be achieved with CSS preprocessors.</p>
-
-<p>Our official advice is to <em>not worry about it</em>. Markup duplication can be handled on a local level by any good modern text editor. It can be handled on the project level by templating or JSX or any other number of things. </p>
-
 <h2>Theming</h2>
 
 <p>You can create a theme by overwriting the CSS custom properties and including it on your page after <strong>ca.css</strong>. By overwriting variables in <strong>:root</strong> (or <strong>html</strong>) you can write a theme that works with any California Stylesheet:</p>
 
 <pre>:root {
-    --font-size-base: 18px;
-    --line-height: 2px;
-    --text-measure: 58;
-    --padding-base: .5rem;
+  --font-size-base: 18px;
+  --line-height: 2em;
+  --text-measure: 58;
+  --padding-base: .5rem;
 }</pre>
 
 <p>This CASS theme makes for a more academic look by only changing a few custom properties. Any of the variables in the prior section can be overwritten in this style.</p>
