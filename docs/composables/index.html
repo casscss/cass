@@ -59,7 +59,7 @@
   </nav>
   <div class="text-trim full width placeholder padding no-padding-bottom text-margin-bottom">&nbsp;</div>
   
-  <div class="hella dark indigo vertical-center inner type width padding no-padding-top gutter-bottom">
+  <div class="hella dark indigo vertical-center inner type width padding no-padding-top margin-bottom">
     <div class="two column golden reverse desktop">
       <div class="vertical-center">
         <div class="gutter-top inner type width">
@@ -77,7 +77,7 @@
     </div>
 
   </div>
-  <main id="main" class="min-viewport height inner type width padding white">
+  <main id="main" class="viewport height inner type width padding no-padding-top white">
     
         
 <section class="gutter-bottom padding-bottom">
@@ -258,10 +258,10 @@
 
     <h4>Two columns:</h4>
     <div class="two columns margin-bottom">
-        <div class="base placeholder">
+        <div class="base line-height">
 
         </div>
-        <div class="base placeholder">
+        <div class="base line-height">
 
         </div>
     </div>
@@ -273,13 +273,13 @@
 
     <h4>Three columns:</h4>
     <div class="three columns margin-bottom">
-        <div class="base placeholder">
+        <div class="base line-height">
 
         </div>
-        <div class="base placeholder">
+        <div class="base line-height">
 
         </div>
-        <div class="base placeholder">
+        <div class="base line-height">
 
         </div>
     </div>
@@ -303,34 +303,34 @@
 
 <section class="padding-bottom gutter-bottom">
     <h2 class="section-headline">Grid layout</h2>
-    <p>The <em>.columns</em> and <em>[number]</em> classes make for a simple, easy-to-use grid system based on CSS's grid system. The numbers are spelled out. There aren't any numerals in CASS's composable class names.</p>
+    <p>The <strong>.columns</strong> and <strong>[number]</strong> classes make for a simple, easy-to-use grid system based on CSS's grid system. The numbers are spelled out. There aren't any numerals in CASS's composable class names.</p>
 
     <p>The grid is based on a twelve-column grid:</p>
 
     <div class="columns gap-text-padding margin-bottom">
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
-        <div class="one wide base text-padding placeholder dotted border">
+        <div class="one wide base text-padding line-height dotted border">
         </div>
     </div>
 
@@ -339,37 +339,37 @@
     <div class="columns gap-text-padding margin-bottom">
         <div class="seven wide light green text-padding">seven wide
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
     </div>
     <div class="columns gap-text-padding margin-bottom">
         <div class="five wide dark green text-padding">five wide
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
-        <div class="one wide base text-padding placeholder">
+        <div class="one wide base text-padding line-height">
         </div>
     </div>
 
-    <p>A simple column layout is achieved by finding a good pair of grid-width- classes.</p>
+    <p>A simple column layout is achieved by finding a good pair of numbered classes.</p>
 
     <div class="columns gap-text-padding margin-bottom">
         <div class="seven wide light green text-padding">seven wide
@@ -378,37 +378,12 @@
         </div>
     </div>
 
-    <p>You can leave off the 'grid-width-' part of the class.</p>
+    <p>These examples use the <strong>.gap-text-padding</strong> composable which sets the gap to the project's base text-padding.</p>
 
-    <p>These examples use the <strong>.gap-text-padding</strong> composable which sets the gap to the project's base text-padding border-width. By base text-padding, the padding value is used:</p>
-
-    
-
-  <h3>A three-column layout using the grid</h3>
-  <p>The <strong>grid</strong> composable is powerful enough on its own to act like the simpler column shortcuts. Here's an example of three equal-width <strong>four wide</strong> columns:</p>
-
-  <div class="columns margin-bottom">
-        <div class="four wide base text-padding">
-            four wide
-        </div>
-        <div class="four wide base text-padding">
-            four wide
-        </div>
-        <div class="four wide base text-padding">
-            four wide
-        </div>
-    </div>
-  
-
-<pre class="white-space gutter-bottom">&lt;div class="columns gap-padding"&gt;
-    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
-    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
-    &lt;div class="four wide"&gt;four wide&lt;/div&gt;
-&lt;/div&gt;</pre>
 
 <h3>Alternate column schemes</h3>
 
-<p>The <strong>grid</strong> composable composes with <strong>four columns</strong>, <strong>five columns</strong>, <strong>six columns</strong>, <strong>seven columns</strong>, <strong>eight columns</strong>, <strong>nine columns</strong>, <strong>ten columns</strong>, <strong>eleven columns</strong>, and <strong>twelve columns</strong> (the default) to support the corresponding column schemes.</p>
+<p>The <strong>columns</strong> composable composes with <strong>four</strong>, <strong>five</strong>, <strong>six</strong>, <strong>seven</strong>, <strong>eight</strong>, <strong>nine</strong>, <strong>ten</strong>, <strong>eleven</strong>, and <strong>twelve</strong> (the default) to support the corresponding column schemes.</p>
 
 <div class="five columns margin-bottom">
     <div class="two wide base text-padding">
@@ -543,33 +518,33 @@
 <div class="columns text-align-center gutter-bottom">
     <div class="three wide">
         <p>On mobile:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height">
 
             </div>
-            <div class="base placeholder">
+            <div class="base line-height">
 
             </div>
         </div>
     </div>
     <div class="four wide">
         <p>On tablet:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>
     <div class="five wide">
         <p>On desktop:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -577,15 +552,15 @@
 </div>
 
 
-<p>Here's <strong>two column mobile</strong>:</p>
+<p>Here's <strong>two columns mobile</strong>:</p>
 <div class="columns text-align-center gutter-bottom">
     <div class="three wide">
         <p>On mobile:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -593,10 +568,10 @@
     <div class="four wide">
         <p>On tablet:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -604,37 +579,37 @@
     <div class="five wide">
         <p>On desktop:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>  
 </div>
 
-<p>The <strong>mobile</strong> and <strong>tablet</strong> composables compose with each other in <strong>two column mobile tablet</strong>:</p>
+<p>The <strong>mobile</strong> and <strong>tablet</strong> composables compose with each other in <strong>two columns mobile tablet</strong>:</p>
 
 <div class="columns text-align-center gutter-bottom">
     <div class="three wide">
         <p>On mobile:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>
     <div class="four wide">
         <p>On tablet:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -642,48 +617,48 @@
     <div class="five wide">
         <p>On desktop:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>  
 </div>
 
-<p>Here's <strong>two column tablet</strong>:</p>
+<p>Here's <strong>two columns tablet</strong>:</p>
 
 <div class="columns text-align-center gutter-bottom">
     <div class="three wide">
         <p>On mobile:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>
     <div class="four wide">
         <p>On tablet:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>
     <div class="five wide">
         <p>On desktop:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -691,16 +666,16 @@
 </div>
 
 
-<p>Finally, here's <strong>two column desktop</strong>:</p>
+<p>Finally, here's <strong>two columns desktop</strong>:</p>
 
 <div class="columns text-align-center gutter-bottom">
     <div class="three wide">
         <p>On mobile:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -708,21 +683,21 @@
     <div class="four wide">
         <p>On tablet:</p>
         <div class="gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
     </div>
     <div class="five wide">
         <p>On desktop:</p>
-        <div class="two column gap-text-padding">
-            <div class="base placeholder text-margin-bottom">
+        <div class="two columns gap-text-padding">
+            <div class="base line-height text-margin-bottom">
 
             </div>
-            <div class="base placeholder text-margin-bottom">
+            <div class="base line-height text-margin-bottom">
 
             </div>
         </div>
@@ -947,9 +922,6 @@ A button!
 
 <h2 class="section-headline">Hiding and fixing elements</h2>
 
-
-<h3>TL;DR</h3>
-
 <p>The <strong>hide</strong> composable class hides elements. The <strong>fixed</strong> composable class fixes them to the page.</p>
 
 <p>They both just work everywhere until you use one of the breakpoint composable classes with it: <strong>mobile</strong>, <strong>tablet</strong> or <strong>desktop</strong>.</p>
@@ -970,33 +942,37 @@ A button!
 <p>Nullifiers start with "no-" and cancel out other rules.</p>
 
 <ul>
-    <li>no-padding-top</li>
-    <li>no-padding-right</li>
-    <li>no-padding-bottom</li>
-    <li>no-padding-left</li>
-    <li>no-margin-top</li>
-    <li>no-margin-right</li>
-    <li>no-margin-bottom</li>
-    <li>no-margin-left</li>
-    <li>no-padding</li>
-    <li>no-margin</li>
-    <li>no-gutter</li>
-    <li>no-min-width</li>
-    <li>no-max-width</li>
-    <li>no-min-height</li>
-    <li>no-max-height</li>
-    <li>no-box-shadow</li>
-    <li>no-text-shadow</li>
-    <li>no-shadow</li>
-    <li>no-border-radius</li>
-    <li>no-border</li>
-    <li>no-background</li>
-    <li>no-text-indent</li>
-    <li>no-text-align</li>
-    <li>no-underline</li>
-    <li>no-user-select</li>
-    <li>no-pointer-events</li>
-    <li>no-list-style</li>
-    <li>no-gap</li>
-    <li>no-column-gap</li>
+    <li>.no-padding-top </li>
+    <li>.no-padding-right</li>
+    <li>.no-padding-bottom</li>
+    <li>.no-padding-left</li>
+    <li>.no-margin-top</li>
+    <li>.no-margin-right</li>
+    <li>.no-margin-bottom</li>
+    <li>.no-margin-left</li>
+    <li>.no-padding</li>
+    <li>.no-margin, .no-gutter</li>
+    <li>.no-wrap</li>
+    <li>.no-box-shadow, .no-shadow</li>
+    <li>.no-text-shadow, .no-shadow</li>
+    <li>.no-border-radius</li>
+    <li>.no-border</li>
+    <li>.no-border-top</li>
+    <li>.no-border-right</li>
+    <li>.no-border-bottom</li>
+    <li>.no-border-left</li>
+    <li>.no-background</li>
+    <li>.no-caps</li>
+    <li>.no-bold</li>
+    <li>.no-overflow</li>
+    <li>.no-overflow-x</li>
+    <li>.no-text-indent</li>
+    <li>.no-text</li>
+    <li>.no-underline</li>
+    <li>.no-user-select</li>
+    <li>.no-click</li>
+    <li>.no-pointer-events</li>
+    <li>.no-list-style</li>
+    <li>.no-gap</li>
+    <li>.no-press</li>
 </ul>

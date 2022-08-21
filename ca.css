@@ -2,88 +2,88 @@
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: 214;
-    --base-s: 65%;
-    --base-l: 65%;
-    --base-tint: var(--black);
+  --base-h: 214;
+  --base-s: 65%;
+  --base-l: 65%;
+  --base-tint: var(--black);
 
-    --line-height: 1.7;
-    --text-measure: 52;
-    --font-size-base: 16px;
-    --font-size-mod: 1;
-    --font-family: var(--sans-serif);
-    --headline-font-family: var(--sans-serif);
-    --text-padding-base: .4em;
-    --text-margin: var(--text-padding);
-    --text-indent: var(--text-margin);
-    --text-border-radius: 4px;
-    --monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", Courier, monospace;
-    --serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "Droid Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
-    --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  --line-height: 1.7;
+  --text-measure: 52;
+  --font-size-base: 16px;
+  --font-size-mod: 1;
+  --font-family: var(--sans-serif);
+  --headline-font-family: var(--sans-serif);
+  --text-padding-base: .4em;
+  --text-margin: var(--text-padding);
+  --text-indent: var(--text-margin);
+  --text-border-radius: 4px;
+  --monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, "DejaVu Sans Mono", Courier, monospace;
+  --serif: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "Droid Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  --sans-serif: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
 
-    --padding-base: 1em;
-    --margin: var(--padding-base);
-    --gutter: calc(2 * var(--padding-base));
-    --gap: var(--padding);
-    --width: var(--type-width);
-    --type-width: calc(var(--text-measure) * .618rem);
-    --card-width: calc(var(--type-width) * .618);
-    --page-width: calc(var(--type-width) * 1.618);
-    --full-width: 100%;
+  --padding-base: 1em;
+  --margin: var(--padding-base);
+  --gutter: calc(2 * var(--padding-base));
+  --gap: var(--padding);
+  --width: var(--type-width);
+  --type-width: calc(var(--text-measure) * .618rem);
+  --card-width: calc(var(--type-width) * .618);
+  --page-width: calc(var(--type-width) * 1.618);
+  --full-width: 100%;
 
-    --border-width: 1px;
-    --border-style: solid;
-    --border-color: black;
-    --border-radius: 6px;
-    --border-thin: calc(var(--border-width) / 2);
-    --border-thick: calc(var(--border-width) * 2);
-    --border: var(--border-width) var(--border-style) var(--border-color);
-    --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
-    --shadow-position: 1px;
-    --shadow-blur: 3px;
-    --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: black;
+  --border-radius: 6px;
+  --border-thin: calc(var(--border-width) / 2);
+  --border-thick: calc(var(--border-width) * 2);
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
+  --shadow-position: 1px;
+  --shadow-blur: 3px;
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
 
-    --white-h: var(--base-h);
-    --white-s: calc(var(--base-s) * .02);
-    --white-l: 99.5%;
+  --white-h: var(--base-h);
+  --white-s: calc(var(--base-s) * .02);
+  --white-l: 99.5%;
 
-    --black-h: var(--base-h);
-    --black-s: calc(var(--base-s) * .1);
-    --black-l: 16%;
+  --black-h: var(--base-h);
+  --black-s: calc(var(--base-s) * .1);
+  --black-l: 16%;
 
-    --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-    --white: hsl(var(--white-h), var(--white-s), var(--white-l));
-    --black: hsl(var(--black-h), var(--black-s), var(--black-l));
-    --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
+  --base: hsl(var(--base-h), var(--base-s), var(--base-l));
+  --white: hsl(var(--white-h), var(--white-s), var(--white-l));
+  --black: hsl(var(--black-h), var(--black-s), var(--black-l));
+  --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
 
-    --a: 1;
-    --v: 0;
-    --hue-offset: 0;
-    --hue-shift: 0;
+  --a: 1;
+  --v: 0;
+  --hue-offset: 0;
+  --hue-shift: 0;
 
-    --width: 100%;
-    --padding: calc(var(--padding-base) * .6);
-    --text-padding: calc(var(--text-padding-base) * .8);
-    --gap: var(--padding);
-    --font-size: calc((var(--font-size-base) * var(--font-size-mod)) - 2px);
+  --width: 100%;
+  --padding: calc(var(--padding-base) * .6);
+  --text-padding: calc(var(--text-padding-base) * .8);
+  --gap: var(--padding);
+  --font-size: calc(var(--font-size-base) - 2px);
 }
 
 @media screen and (min-width: 31rem) {
-    :root {
-        --width: var(--type-width);
-        --padding: calc(var(--padding-base) * .8);
-        --text-padding: calc(var(--text-padding-base) * .9);
-        --font-size: calc((var(--font-size-base) * var(--font-size-mod)) - 1px);
-      }
+  :root {
+    --width: var(--type-width);
+    --padding: calc(var(--padding-base) * .8);
+    --text-padding: calc(var(--text-padding-base) * .9);
+    --font-size: calc(var(--font-size-base) - 1px);
+  }
 }
 
 @media screen and (min-width: 50rem) {
-    :root {
-        --width: var(--page-width);
-        --padding: var(--padding-base);
-        --text-padding: var(--text-padding-base);
-        --font-size: calc(var(--font-size-base) * var(--font-size-mod));
-    }
+  :root {
+    --width: var(--page-width);
+    --padding: var(--padding-base);
+    --text-padding: var(--text-padding-base);
+    --font-size: var(--font-size-base);
+  }
 }
 
 body, html, :root {
@@ -294,7 +294,7 @@ pre > code {
     clamp(0%, var(--s, var(--sat)), 70%),
     clamp(0%, var(--l, var(--lit)), 60%),
     var(--a));
-  border-width: 0;
+  border-width: var(--border-width);
   border-style: var(--border-style);
   border-color: var(--border-color);
 }
@@ -529,7 +529,7 @@ pre > code {
   background-color: hsla(
     var(--h, calc(var(--hue) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     var(--s, calc( ((var(--sat) * 9) + var(--base-s)) / 10 )),
-    var(--l, calc( ((var(--lit) * 19) + var(--base-l)) / 20 )),
+    var(--l, calc( ((var(--lit) * 9) + var(--base-l)) / 10 )),
     var(--a));
 }
 
@@ -548,130 +548,130 @@ pre > code {
 .white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
   color: var(--black);
 }
-
-.light { color: var(--black);}
-.dark { color: var(--white);}
-
-.white { --hue: var(--white-h); --sat: var(--white-s); --lit: var(--white-l);}
-.black { --hue: var(--black-h); --sat: var(--black-s); --lit: var(--black-l);}
-
 .base { 
   --hue: var(--base-h); 
   --sat: var(--base-s); 
   --lit: var(--base-l);
 }
-.gray {
-  --hue: var(--base-h);
-  --sat: calc(var(--base-s) * .1);
+.white { 
+  --hue: var(--white-h); 
+  --sat: var(--white-s); 
+  --lit: var(--white-l);
+}
+.black { 
+  --hue: var(--black-h); 
+  --sat: var(--black-s); 
+  --lit: var(--black-l);
+}
+.gray { 
+  --hue: var(--base-h); 
+  --sat: calc(var(--base-s) * .1); 
   --lit: var(--base-l);
 }
-.red {
-  --hue: 0;
-  --sat: 71%;
+.red { 
+  --hue: 0; 
+  --sat: 71%; 
   --lit: 50%;
 }
-.orangered {
-  --hue: 24;
-  --sat: 82%;
+.orangered { 
+  --hue: 24; 
+  --sat: 82%; 
   --lit: 52%;
 }
-.orange {
-  --hue: 40;
-  --sat: 93%;
+.orange { 
+  --hue: 40; 
+  --sat: 93%; 
   --lit: 50%;
 }
-.gold {
-  --hue: 54;
-  --sat: 95%;
+.gold { 
+  --hue: 54; 
+  --sat: 95%; 
   --lit: 53%;
 }
-.yellow {
-  --hue: 60;
-  --sat: 97%;
+.yellow { 
+  --hue: 60; 
+  --sat: 97%; 
   --lit: 50%;
 }
-.lime {
-  --hue: 80;
-  --sat: 66%;
-  --lit: 52%;
-}
-.green {
-  --hue: 110;
-  --sat: 57%;
-  --lit: 41%;
-}
-.jade {
-  --hue: 135;
-  --sat: 41%;
-  --lit: 52%;
-}
-.teal {
-  --hue: 170;
-  --sat: 40%;
-  --lit: 45%;
-}
-.aqua {
-  --hue: 175;
-  --sat: 64%;
-  --lit: 57%;
-}
-.cyan {
-  --hue: 180;
-  --sat: 89%;
-  --lit: 54%;
-}
-.sky {
-  --hue: 200;
-  --sat: 80%;
-  --lit: 55%;
-}
-.blue {
-  --hue: 220;
-  --sat: 81%;
-  --lit: 50%;
-}
-.indigo {
-  --hue: 235;
-  --sat: 72%;
-  --lit: 48%;
-}
-.purple {
-  --hue: 270;
-  --sat: 63%;
-  --lit: 45%;
-}
-.fuchsia {
-  --hue: 280;
-  --sat: 51%;
-  --lit: 55%;
-}
-.magenta {
-  --hue: 300;
-  --sat: 73%;
+.lime { 
+  --hue: 80; 
+  --sat: 66%; 
   --lit: 60%;
 }
-.pink {
+.green { 
+  --hue: 110; 
+  --sat: 57%; 
+  --lit: 41%;
+}
+.jade { 
+  --hue: 135; 
+  --sat: 41%; 
+  --lit: 52%;
+}
+.teal { 
+  --hue: 170; 
+  --sat: 40%; 
+  --lit: 45%;
+}
+.aqua { 
+  --hue: 175; 
+  --sat: 64%; 
+  --lit: 57%;
+}
+.cyan { 
+  --hue: 180; 
+  --sat: 89%; 
+  --lit: 54%;
+}
+.sky { 
+  --hue: 200; 
+  --sat: 80%; 
+  --lit: 65%;
+}
+.blue { 
+  --hue: 220; 
+  --sat: 81%; 
+  --lit: 50%;
+}
+.indigo { 
+  --hue: 235; 
+  --sat: 72%; 
+  --lit: 48%;
+}
+.purple { 
+  --hue: 270; 
+  --sat: 63%; 
+  --lit: 45%;
+}
+.fuchsia { 
+  --hue: 280; 
+  --sat: 51%; 
+  --lit: 55%;
+}
+.magenta { 
+  --hue: 300; 
+  --sat: 73%; 
+  --lit: 60%;
+}
+.pink { 
   --hue: 330;
   --sat: 86%;
-  --lit: 68%;
+  --lit: 70%;
 }
 
 .bright { --s: calc(100% - (100% - calc( ((var(--sat) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
 .dim { --s: calc(calc( ((var(--sat) * 19) + var(--base-s)) / 20 ) - (20% + (10% * var(--v))));}
-.light { --l: calc(100% - (100% - calc( ((var(--lit) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
-.dark { --l: calc(calc( ((var(--lit) * 9) + var(--base-l)) / 10 ) - (10% + (5% * var(--v))));}
+.light { color: var(--black); --l: calc(100% - (100% - calc( ((var(--lit) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
+.dark { color: var(--white); --l: calc(calc( ((var(--lit) * 9) + var(--base-l)) / 10 ) - (10% + (5% * var(--v))));}
 
 .default, .color { --l: var(--lit); --s: var(--sat); --v: 0;}
 
 .light.white { --l: calc(var(--lit) + (.2% + (.2% * var(--v))));}
 .light.black { --l: calc(var(--lit) + (4% + (1.5% * var(--v))));}
-
 .dark.white { --l: calc(var(--lit) - (1.5% + (1.5% * var(--v))));}
 .dark.black { --l: calc(var(--lit) - (10% + (5% * var(--v))));}
-
 .bright.white { --s: calc(var(--sat) + (6% + (2% * var(--v))));}
 .bright.black { --s: calc(var(--sat) + (8% + (3% * var(--v))));}
-
 .dim.white { --s: calc(var(--sat) - (1.5% + (1.5% * var(--v))));}
 .dim.black { --s: calc(var(--sat) - (10% + (5% * var(--v))));}
 

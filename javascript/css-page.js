@@ -265,41 +265,39 @@ function updateColor() {
     var s = document.getElementById("baseSaturation").value;
     var l = document.getElementById("baseLightness").value;    
 
-    console.log('updateColor did run');
-
     var original_css = document.getElementById("css_textarea").innerHTML;
 
     var css_template = `:root {
-            --base-h: ${h};
-            --base-s: ${s}%;
-            --base-l: ${l}%;
-        }`;
+  --base-h: ${h};
+  --base-s: ${s}%;
+  --base-l: ${l}%;
+}`;
 
     var css_template_alt = `:root {
-        --base-h: ${h};
-        --base-s: ${s}%;
-        --base-l: ${l}%;
-        --base-tint: var(--white);
-    }`;
+  --base-h: ${h};
+  --base-s: ${s}%;
+  --base-l: ${l}%;
+  --base-tint: var(--white);
+}`;
 
     var css_header = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tint: var(--black);
+  --base-h: ${h};
+  --base-s: ${s}%;
+  --base-l: ${l}%;
+  --base-tint: var(--black);
 `;
 
     var css_header_alt = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tint: var(--white);
+  --base-h: ${h};
+  --base-s: ${s}%;
+  --base-l: ${l}%;
+  --base-tint: var(--white);
 `;
 
     const deleteLines = (string, n = 1)=>{
