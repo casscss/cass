@@ -2,7 +2,7 @@
 output = {};
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('testing event listener');    
+    // console.log('testing event listener');    
 });
 
 function copyCSS() {
@@ -28,7 +28,7 @@ function copyHTML() {
 
 function copyLess() {
     var textToCopy = document.getElementById("less_textarea");
-    console.log(textToCopy);
+    // console.log(textToCopy);
     textToCopy.select();
     textToCopy.setSelectionRange(0, 99999);
     document.execCommand("copy");
@@ -46,7 +46,7 @@ function rgbToHex(r, g, b) {
 function copyColorString(id) {
     var stringToCopy = document.getElementById(id);
     var theStringItself = stringToCopy.value;
-    console.log(stringToCopy);
+    // console.log(stringToCopy);
     stringToCopy.select();
     stringToCopy.setSelectionRange(0, 99999);
     document.execCommand("copy");
@@ -141,7 +141,7 @@ function copyColorStringNoHide(id) {
         var successful = document.execCommand('copy');
         var msg = successful ? 'successful' : 'unsuccessful';
       } catch (err) {
-        console.log('Oops, unable to copy');
+        // console.log('Oops, unable to copy');
       }
     
       document.body.removeChild(textArea);

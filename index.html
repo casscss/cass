@@ -8,7 +8,6 @@
   <meta name="author" content="Rex Riepe">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <script src="javascript/css-page.js" type="text/javascript"></script>
-  <script src="javascript/color.js" type="text/javascript"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -141,7 +140,7 @@
   --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
 
   --white-h: var(--base-h);
-  --white-s: calc(var(--base-s) * .02);
+  --white-s: calc(var(--base-s) * .2);
   --white-l: 99.5%;
 
   --black-h: var(--base-h);
@@ -307,7 +306,6 @@ pre > code {
   padding: 0;
 }
 
-
 .base, 
 .red,
 .orangered,
@@ -327,7 +325,13 @@ pre > code {
 .fuchsia,
 .magenta,
 .pink,
-.gray {
+.gray,
+.action,
+.reaction,
+.failure,
+.success,
+.warning,
+.info {
   background-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
@@ -350,29 +354,6 @@ pre > code {
 .white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
   color: var(--black);
 }
-
-.base { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orangered { --h: 24; --s: 82%; --l: 52%;}
-.orange { --h: 40; --s: 93%; --l: 50%;}
-.gold { --h: 54; --s: 95%; --l: 53%;}
-.yellow { --h: 60; --s: 97%; --l: 50%;}
-.lime { --h: 80; --s: 66%; --l: 60%;}
-.green { --h: 110; --s: 57%; --l: 41%;}
-.jade { --h: 135; --s: 41%; --l: 52%;}
-.teal { --h: 170; --s: 40%; --l: 45%;}
-.aqua { --h: 175; --s: 64%; --l: 57%;}
-.cyan { --h: 180; --s: 89%; --l: 54%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 220; --s: 81%; --l: 50%;}
-.indigo { --h: 235; --s: 72%; --l: 48%;}
-.purple { --h: 270; --s: 63%; --l: 45%;}
-.fuchsia { --h: 280; --s: 51%; --l: 55%;}
-.magenta { --h: 300; --s: 73%; --l: 60%;}
-.pink { --h: 330;--s: 86%;--l: 70%;}
 
 .bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
 .normal { --sat: --s;}
@@ -408,6 +389,30 @@ pre > code {
 .sorta { --v: 1;}
 .very { --v: 2;}
 .hella, .super { --v: 3.5;}
+
+.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.reaction { --h: calc(var(--base-h) + 180);}
+.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+.red { --h: 0; --s: 71%; --l: 50%;}
+.orangered { --h: 24; --s: 82%; --l: 52%;}
+.orange { --h: 40; --s: 93%; --l: 50%;}
+.gold { --h: 54; --s: 95%; --l: 53%;}
+.yellow { --h: 60; --s: 97%; --l: 50%;}
+.lime { --h: 80; --s: 66%; --l: 60%;}
+.green { --h: 110; --s: 57%; --l: 41%;}
+.jade { --h: 135; --s: 41%; --l: 52%;}
+.teal { --h: 170; --s: 40%; --l: 45%;}
+.aqua { --h: 175; --s: 64%; --l: 57%;}
+.cyan { --h: 180; --s: 89%; --l: 54%;}
+.sky { --h: 200; --s: 80%; --l: 65%;}
+.blue { --h: 220; --s: 81%; --l: 50%;}
+.indigo { --h: 235; --s: 72%; --l: 48%;}
+.purple { --h: 270; --s: 63%; --l: 45%;}
+.fuchsia { --h: 280; --s: 51%; --l: 55%;}
+.magenta { --h: 300; --s: 73%; --l: 60%;}
+.pink { --h: 330;--s: 86%;--l: 70%;}
 
 .shade, .text-black, .white { color: var(--black);}
 .tint, .text-white, .black { color: var(--white);}
@@ -608,7 +613,7 @@ pre > code {
 
 .cursor, .pointer { cursor: pointer;}
 
-.columns, .column {
+.columns {
   --columns: 12;
   --multi-column: repeat(var(--columns), minmax(0, 1fr));
   --one-column: repeat(1, minmax(0, 1fr));
@@ -634,8 +639,6 @@ pre > code {
 
 .columns.tablet, 
 .columns.desktop,
-.column.tablet, 
-.column.desktop,
 .golden.tablet,
 .golden.desktop,
 .golden.reverse.tablet,
@@ -644,9 +647,7 @@ pre > code {
 }
 
 .columns.mobile,
-.column.mobile,
-.columns.mobile.tablet,
-.column.mobile.tablet {
+.columns.mobile.tablet {
   grid-template-columns: var(--multi-column);
 }
 
@@ -1293,6 +1294,8 @@ pre > code {
         </div>
       </div>
 
+      <p>Use <strong>neutral</strong>, <strong>normal</strong> and <strong>unlit</strong> to reset color variables for hue, saturation and lightness respectively.</p>
+
     </div>
   </div>
 
@@ -1381,10 +1384,10 @@ pre > code {
               <div class="">
                 <p>CASS is written for the decentralized web. It seeks to make web styles more understandable and accessible by developers, users, robots, archivists or anyone else who looks at a website.</p>
               </div>
-              <div class="two column small">
+              <div class="two columns small">
                 <div>
                   <h6 class="tiny">Documentation</h6>
-                  <ul class="two column mobile tablet">
+                  <ul class="two columns mobile tablet">
                       <div>
                         <li><a class="text-padding" href="docs/">Install</a></li>
                         <li><a class="text-padding" href="docs/composables">Composables</a></li>
@@ -1393,7 +1396,7 @@ pre > code {
                 </div>
                 <div>
                   <h6 class="tiny">Other links</h6>
-                  <ul class="two column mobile tablet">
+                  <ul class="two columns mobile tablet">
                       <div>
                         <li><a class="text-padding" href="https://github.com/casscss/cass">Github</a></li>
                         <li><a class="text-padding" href="https://www.twitter.com/yousuckatcss">Twitter</a></li>
@@ -1460,7 +1463,7 @@ pre > code {
         --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
       
         --white-h: var(--base-h);
-        --white-s: calc(var(--base-s) * .02);
+        --white-s: calc(var(--base-s) * .2);
         --white-l: 99.5%;
       
         --black-h: var(--base-h);
@@ -1626,7 +1629,6 @@ pre > code {
         padding: 0;
       }
       
-      
       .base, 
       .red,
       .orangered,
@@ -1646,7 +1648,13 @@ pre > code {
       .fuchsia,
       .magenta,
       .pink,
-      .gray {
+      .gray,
+      .action,
+      .reaction,
+      .failure,
+      .success,
+      .warning,
+      .info {
         background-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
@@ -1669,29 +1677,6 @@ pre > code {
       .white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
         color: var(--black);
       }
-      
-      .base { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-      .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-      .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-      .red { --h: 0; --s: 71%; --l: 50%;}
-      .orangered { --h: 24; --s: 82%; --l: 52%;}
-      .orange { --h: 40; --s: 93%; --l: 50%;}
-      .gold { --h: 54; --s: 95%; --l: 53%;}
-      .yellow { --h: 60; --s: 97%; --l: 50%;}
-      .lime { --h: 80; --s: 66%; --l: 60%;}
-      .green { --h: 110; --s: 57%; --l: 41%;}
-      .jade { --h: 135; --s: 41%; --l: 52%;}
-      .teal { --h: 170; --s: 40%; --l: 45%;}
-      .aqua { --h: 175; --s: 64%; --l: 57%;}
-      .cyan { --h: 180; --s: 89%; --l: 54%;}
-      .sky { --h: 200; --s: 80%; --l: 65%;}
-      .blue { --h: 220; --s: 81%; --l: 50%;}
-      .indigo { --h: 235; --s: 72%; --l: 48%;}
-      .purple { --h: 270; --s: 63%; --l: 45%;}
-      .fuchsia { --h: 280; --s: 51%; --l: 55%;}
-      .magenta { --h: 300; --s: 73%; --l: 60%;}
-      .pink { --h: 330;--s: 86%;--l: 70%;}
       
       .bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
       .normal { --sat: --s;}
@@ -1727,6 +1712,30 @@ pre > code {
       .sorta { --v: 1;}
       .very { --v: 2;}
       .hella, .super { --v: 3.5;}
+      
+      .base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+      .reaction { --h: calc(var(--base-h) + 180);}
+      .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+      .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+      .red { --h: 0; --s: 71%; --l: 50%;}
+      .orangered { --h: 24; --s: 82%; --l: 52%;}
+      .orange { --h: 40; --s: 93%; --l: 50%;}
+      .gold { --h: 54; --s: 95%; --l: 53%;}
+      .yellow { --h: 60; --s: 97%; --l: 50%;}
+      .lime { --h: 80; --s: 66%; --l: 60%;}
+      .green { --h: 110; --s: 57%; --l: 41%;}
+      .jade { --h: 135; --s: 41%; --l: 52%;}
+      .teal { --h: 170; --s: 40%; --l: 45%;}
+      .aqua { --h: 175; --s: 64%; --l: 57%;}
+      .cyan { --h: 180; --s: 89%; --l: 54%;}
+      .sky { --h: 200; --s: 80%; --l: 65%;}
+      .blue { --h: 220; --s: 81%; --l: 50%;}
+      .indigo { --h: 235; --s: 72%; --l: 48%;}
+      .purple { --h: 270; --s: 63%; --l: 45%;}
+      .fuchsia { --h: 280; --s: 51%; --l: 55%;}
+      .magenta { --h: 300; --s: 73%; --l: 60%;}
+      .pink { --h: 330;--s: 86%;--l: 70%;}
       
       .shade, .text-black, .white { color: var(--black);}
       .tint, .text-white, .black { color: var(--white);}
@@ -1927,7 +1936,7 @@ pre > code {
       
       .cursor, .pointer { cursor: pointer;}
       
-      .columns, .column {
+      .columns {
         --columns: 12;
         --multi-column: repeat(var(--columns), minmax(0, 1fr));
         --one-column: repeat(1, minmax(0, 1fr));
@@ -1953,8 +1962,6 @@ pre > code {
       
       .columns.tablet, 
       .columns.desktop,
-      .column.tablet, 
-      .column.desktop,
       .golden.tablet,
       .golden.desktop,
       .golden.reverse.tablet,
@@ -1963,9 +1970,7 @@ pre > code {
       }
       
       .columns.mobile,
-      .column.mobile,
-      .columns.mobile.tablet,
-      .column.mobile.tablet {
+      .columns.mobile.tablet {
         grid-template-columns: var(--multi-column);
       }
       
