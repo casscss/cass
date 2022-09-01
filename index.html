@@ -21,8 +21,7 @@
   </style>
 </head>
 
-<body class="">
-  <main class="no-overflow-x">
+<body>
   <nav class="raised text-trim fixed top right left shadow">
       
       <div class="base inner page width padding no-padding-top no-padding-bottom">
@@ -536,7 +535,7 @@ pre > code {
 }
 
 @media screen and (min-width: 30rem) {
-  .type.width { --width: var(--type-width);}
+  .width, .type.width { --width: var(--type-width);}
 
   .columns.mobile { grid-template-columns: var(--one-column);}
   .columns.tablet { grid-template-columns: var(--multi-column);}
@@ -555,7 +554,7 @@ pre > code {
 }
 
 @media screen and (min-width: 51.5rem) {
-  .page.width { --width: var(--page-width);}
+  .width, .page.width { --width: var(--page-width);}
 
   .columns.mobile.tablet { grid-template-columns: var(--one-column);}
   .columns.desktop { grid-template-columns: var(--multi-column);}
@@ -608,7 +607,7 @@ pre > code {
 
 .border, .border-top, .border-right, .border-bottom, .border-left {
   --border-color: hsla(
-    var(--hue, var(--h)),
+    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
     clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
     var(--a));
@@ -618,7 +617,7 @@ pre > code {
 
 .border-light {
   --border-color: hsla(
-    var(--hue, var(--h)),
+    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
     clamp(75%, calc(.9 * var(--lit, var(--l))), 95%),
     var(--a));
@@ -628,7 +627,7 @@ pre > code {
 
 .border-dark {
   --border-color: hsla(
-    var(--hue, var(--h)),
+    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
     clamp(0%, calc(.4 * var(--lit, var(--l))), 40%),
     var(--a));
@@ -701,7 +700,7 @@ pre > code {
 .dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
 .normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(3 + var(--v)));}
+.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
 .dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
 .unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 
@@ -892,7 +891,7 @@ pre > code {
 
     
     <div class="margin padding page width margin-auto">
-<section id="cheatsheet" class="inner width">
+<section id="cheatsheet" class="inner responsive width">
 
   <div class="vertical-center margin-bottom">
     <div class="two columns golden desktop">
@@ -1931,7 +1930,7 @@ pre > code {
       }
       
       @media screen and (min-width: 30rem) {
-        .type.width { --width: var(--type-width);}
+        .width, .type.width { --width: var(--type-width);}
       
         .columns.mobile { grid-template-columns: var(--one-column);}
         .columns.tablet { grid-template-columns: var(--multi-column);}
@@ -1950,7 +1949,7 @@ pre > code {
       }
       
       @media screen and (min-width: 51.5rem) {
-        .page.width { --width: var(--page-width);}
+        .width, .page.width { --width: var(--page-width);}
       
         .columns.mobile.tablet { grid-template-columns: var(--one-column);}
         .columns.desktop { grid-template-columns: var(--multi-column);}
@@ -2003,7 +2002,7 @@ pre > code {
       
       .border, .border-top, .border-right, .border-bottom, .border-left {
         --border-color: hsla(
-          var(--hue, var(--h)),
+          var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
           clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
           var(--a));
@@ -2013,7 +2012,7 @@ pre > code {
       
       .border-light {
         --border-color: hsla(
-          var(--hue, var(--h)),
+          var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
           clamp(75%, calc(.9 * var(--lit, var(--l))), 95%),
           var(--a));
@@ -2023,7 +2022,7 @@ pre > code {
       
       .border-dark {
         --border-color: hsla(
-          var(--hue, var(--h)),
+          var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
           clamp(0%, calc(.4 * var(--lit, var(--l))), 40%),
           var(--a));
@@ -2096,7 +2095,7 @@ pre > code {
       .dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
       .normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
       
-      .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(3 + var(--v)));}
+      .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
       .dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
       .unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       
