@@ -26,14 +26,6 @@ function copyHTML() {
     document.execCommand("copy");
 }
 
-function copyLess() {
-    var textToCopy = document.getElementById("less_textarea");
-    // console.log(textToCopy);
-    textToCopy.select();
-    textToCopy.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-}
-
 function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;

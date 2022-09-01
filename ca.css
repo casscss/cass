@@ -8,7 +8,7 @@
   --base-tint: var(--black);
 
   --line-height: 1.7;
-  --text-measure: 54;
+  --text-measure: 50;
   --font-size-base: 16px;
   --font-size-mod: 1;
   --font-family: var(--sans-serif);
@@ -41,15 +41,15 @@
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
   --shadow-position: 1px;
   --shadow-blur: 3px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.36);
 
   --white-h: var(--base-h);
   --white-s: calc(var(--base-s) * .2);
   --white-l: 99.5%;
 
   --black-h: var(--base-h);
-  --black-s: calc(var(--base-s) * .1);
-  --black-l: 16%;
+  --black-s: calc(var(--base-s) * .2);
+  --black-l: calc(var(--base-l) * .2);
 
   --base: hsl(var(--base-h), var(--base-s), var(--base-l));
   --white: hsl(var(--white-h), var(--white-s), var(--white-l));
@@ -210,117 +210,6 @@ pre > code {
   padding: 0;
 }
 
-.base, 
-.red,
-.orangered,
-.orange,
-.gold,
-.yellow,
-.lime,
-.green,
-.jade,
-.teal,
-.aqua,
-.cyan,
-.sky,
-.blue,
-.indigo,
-.purple,
-.fuchsia,
-.magenta,
-.pink,
-.gray,
-.action,
-.reaction,
-.failure,
-.success,
-.warning,
-.info {
-  background-color: hsla(
-    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-    var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
-    var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
-    var(--a));
-}
-
-.white, .black {
-  background-color: hsla(
-    var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-    var(--s, var(--sat)),
-    var(--l, var(--lit)),
-    var(--a));
-}
-
-.base, .gray, .dark.gray, .light.gray { color: var(--base-tint, var(--black));}
-.black, .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia {
-  color: var(--white);
-}
-.white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
-  color: var(--black);
-}
-
-.bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
-.normal { --sat: --s;}
-.dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (20% + (10% * var(--v))));}
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
-.unlit { --lit: --l;}
-.dark { color: var(--white); --lit: calc(calc( ((var(--l) * 9) + var(--base-l)) / 10 ) - (10% + (5% * var(--v))));}
-
-.default, .color, .bright > *, .dim > *, .light > *, .dark > * { --lit: var(--l); --sat: var(--s); --v: 0;}
-
-.light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
-.light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
-.dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
-.dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
-.bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
-.bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
-.dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
-.dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
-.bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
-
-.warm { --hue-shift: -8;}
-.neutral { --hue-shift: 0;}
-.cool { --hue-shift: 8;}
-
-.complement { --hue-offset: 180;}
-.complement > * { --hue-offset: 0;}
-.accent { --hue-offset: 15;}
-.accent > * { --hue-offset: 0;}
-.square { --hue-offset: 90;}
-.square > * { --hue-offset: 0;}
-
-.basic { --v: 0;}
-.sorta { --v: 1;}
-.very { --v: 2;}
-.hella, .super { --v: 3.5;}
-
-.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-.reaction { --h: calc(var(--base-h) + 180);}
-.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orangered { --h: 24; --s: 82%; --l: 52%;}
-.orange { --h: 40; --s: 93%; --l: 50%;}
-.gold { --h: 54; --s: 95%; --l: 53%;}
-.yellow { --h: 60; --s: 97%; --l: 50%;}
-.lime { --h: 80; --s: 66%; --l: 60%;}
-.green { --h: 110; --s: 57%; --l: 41%;}
-.jade { --h: 135; --s: 41%; --l: 52%;}
-.teal { --h: 170; --s: 40%; --l: 45%;}
-.aqua { --h: 175; --s: 64%; --l: 57%;}
-.cyan { --h: 180; --s: 89%; --l: 54%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 220; --s: 81%; --l: 50%;}
-.indigo { --h: 235; --s: 72%; --l: 48%;}
-.purple { --h: 270; --s: 63%; --l: 45%;}
-.fuchsia { --h: 280; --s: 51%; --l: 55%;}
-.magenta { --h: 300; --s: 73%; --l: 60%;}
-.pink { --h: 330;--s: 86%;--l: 70%;}
-
-.shade, .text-black, .white { color: var(--black);}
-.tint, .text-white, .black { color: var(--white);}
-
 .padding { padding: var(--padding);}
 .margin { margin: var(--margin);}
 .gutter { margin: var(--gutter);}
@@ -374,7 +263,7 @@ pre > code {
 .shadow { box-shadow: var(--box-shadow);}
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.1);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -398,49 +287,6 @@ pre > code {
   background-size: cover;
   background-position: center center;
 }
-
-.border, .border-light, .border-dark, .border-top, .border-right, .border-bottom, .border-left {
-  --border-color: hsla(
-    var(--hue, var(--h)),
-    clamp(0%, calc(.6 * var(--sat, var(--s))), 50%),
-    clamp(0%, calc(.6 * var(--lit, var(--l))), 33%),
-    var(--a));
-  border-width: var(--border-width);
-  border-style: var(--border-style);
-  border-color: var(--border-color);
-}
-
-.border-light {
-  --border-color: hsla(
-    var(--hue),
-    clamp(0%, var(--s, var(--sat)), 90%),
-    clamp(60%, var(--l, var(--lit)), 90%),
-    var(--a));
-}
-
-.border-dark {
-  --border-color: hsla(
-    var(--hue),
-    clamp(0%, var(--s, var(--sat)), 70%),
-    clamp(0%, var(--l, var(--lit)), 30%),
-    var(--a));
-}
-
-.border { border-width: var(--border-width);}
-.border-top { border-top-width: var(--border-width);}
-.border-right { border-right-width: var(--border-width);}
-.border-bottom { border-bottom-width: var(--border-width);}
-.border-left { border-left-width: var(--border-width);}
-.border-radius, .rounded { border-radius: var(--border-radius);}
-
-.dashed { border-style: dashed;}
-.dotted { border-style: dotted;}
-.thick { border-width: var(--border-thick);}
-.thin {
-  --border-l: clamp(0%, calc(var(--l) * .9), 85%);
-  border-width: var(--border-thin);
-}
-.border-text-color { border-color: currentColor;}
 
 .fade { opacity: .65;}
 
@@ -661,3 +507,156 @@ pre > code {
 .no-list-style { list-style-type: none; margin-left: 0;}
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
+
+.border, .border-top, .border-right, .border-bottom, .border-left {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
+    clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border-light {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
+    clamp(75%, calc(.9 * var(--lit, var(--l))), 95%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border-dark {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
+    clamp(0%, calc(.4 * var(--lit, var(--l))), 40%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border, .border-light, .border-dark { border-width: var(--border-width);}
+.border-top { border-top-width: var(--border-width);}
+.border-right { border-right-width: var(--border-width);}
+.border-bottom { border-bottom-width: var(--border-width);}
+.border-left { border-left-width: var(--border-width);}
+.border-radius, .rounded { border-radius: var(--border-radius);}
+
+.dashed { border-style: dashed;}
+.dotted { border-style: dotted;}
+.thick { border-width: var(--border-thick);}
+.thin {
+  --border-l: clamp(0%, calc(var(--l) * .9), 85%);
+  border-width: var(--border-thin);
+}
+.border-text-color { border-color: currentColor;}
+
+.base, 
+.red,
+.orangered,
+.orange,
+.gold,
+.yellow,
+.lime,
+.green,
+.jade,
+.teal,
+.aqua,
+.cyan,
+.sky,
+.blue,
+.indigo,
+.purple,
+.fuchsia,
+.magenta,
+.pink,
+.gray,
+.action,
+.reaction,
+.failure,
+.success,
+.warning,
+.info {
+  background-color: hsla(
+    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+    var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
+    var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
+    var(--a));
+}
+
+.white, .black {
+  background-color: hsla(
+    var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+    var(--s, var(--sat)),
+    var(--l, var(--lit)),
+    var(--a));
+}
+
+.base, .gray, .dark.gray { color: var(--base-tint, var(--black));}
+.red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia { color: var(--white);}
+.yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
+
+.bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(1 + var(--v)));}
+.dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
+.normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+
+.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(3 + var(--v)));}
+.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
+.unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+
+.black { color: var(--white);}
+.white { color: var(--black);}
+.light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
+.light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
+.dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
+.dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
+.bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
+.bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
+.dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
+.dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
+.bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
+
+.warm { --hue-shift: -8;}
+.neutral { --hue-shift: 0;}
+.cool { --hue-shift: 8;}
+
+.complement { --hue-offset: 180;}
+.accent { --hue-offset: 23;}
+.square { --hue-offset: 90;}
+.accent.other { --hue-offset: -23;}
+.square.other { --hue-offset: -90;}
+.unspin, .no-spin { --hue-offset: 0;}
+
+.basic, .very > *, .hella > * { --v: 0;}
+.very { --v: 1;}
+.hella { --v: 2;}
+
+.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.reaction { --h: calc(var(--base-h) + 180);}
+.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+.red { --h: 0; --s: 71%; --l: 50%;}
+.orangered { --h: 24; --s: 82%; --l: 52%;}
+.orange { --h: 40; --s: 93%; --l: 50%;}
+.gold { --h: 48; --s: 95%; --l: 53%;}
+.yellow { --h: 56; --s: 97%; --l: 50%;}
+.lime { --h: 75; --s: 66%; --l: 55%;}
+.green { --h: 110; --s: 57%; --l: 41%;}
+.jade { --h: 135; --s: 41%; --l: 52%;}
+.teal { --h: 170; --s: 40%; --l: 45%;}
+.aqua { --h: 175; --s: 64%; --l: 57%;}
+.cyan { --h: 180; --s: 89%; --l: 54%;}
+.sky { --h: 200; --s: 80%; --l: 65%;}
+.blue { --h: 225; --s: 81%; --l: 50%;}
+.indigo { --h: 255; --s: 72%; --l: 48%;}
+.purple { --h: 275; --s: 63%; --l: 45%;}
+.fuchsia { --h: 295; --s: 51%; --l: 55%;}
+.magenta { --h: 315; --s: 73%; --l: 60%;}
+.pink { --h: 335;--s: 86%;--l: 70%;}
+
+.shade, .text-black { color: var(--black);}
+.tint, .text-white { color: var(--white);}

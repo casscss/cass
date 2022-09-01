@@ -7,8 +7,6 @@
   <meta name="description" content="California Stylesheets, composable class and color library for CSS">
   <meta name="author" content="Rex Riepe">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <script src="javascript/css-page.js" type="text/javascript"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="site.webmanifest">
@@ -17,6 +15,10 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="cass/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
+
+  <style>
+  
+  </style>
 </head>
 
 <body class="">
@@ -104,7 +106,7 @@
   --base-tint: var(--black);
 
   --line-height: 1.7;
-  --text-measure: 54;
+  --text-measure: 50;
   --font-size-base: 16px;
   --font-size-mod: 1;
   --font-family: var(--sans-serif);
@@ -137,15 +139,15 @@
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
   --shadow-position: 1px;
   --shadow-blur: 3px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.36);
 
   --white-h: var(--base-h);
   --white-s: calc(var(--base-s) * .2);
   --white-l: 99.5%;
 
   --black-h: var(--base-h);
-  --black-s: calc(var(--base-s) * .1);
-  --black-l: 16%;
+  --black-s: calc(var(--base-s) * .2);
+  --black-l: calc(var(--base-l) * .2);
 
   --base: hsl(var(--base-h), var(--base-s), var(--base-l));
   --white: hsl(var(--white-h), var(--white-s), var(--white-l));
@@ -306,117 +308,6 @@ pre > code {
   padding: 0;
 }
 
-.base, 
-.red,
-.orangered,
-.orange,
-.gold,
-.yellow,
-.lime,
-.green,
-.jade,
-.teal,
-.aqua,
-.cyan,
-.sky,
-.blue,
-.indigo,
-.purple,
-.fuchsia,
-.magenta,
-.pink,
-.gray,
-.action,
-.reaction,
-.failure,
-.success,
-.warning,
-.info {
-  background-color: hsla(
-    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-    var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
-    var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
-    var(--a));
-}
-
-.white, .black {
-  background-color: hsla(
-    var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-    var(--s, var(--sat)),
-    var(--l, var(--lit)),
-    var(--a));
-}
-
-.base, .gray, .dark.gray, .light.gray { color: var(--base-tint, var(--black));}
-.black, .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia {
-  color: var(--white);
-}
-.white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
-  color: var(--black);
-}
-
-.bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
-.normal { --sat: --s;}
-.dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (20% + (10% * var(--v))));}
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
-.unlit { --lit: --l;}
-.dark { color: var(--white); --lit: calc(calc( ((var(--l) * 9) + var(--base-l)) / 10 ) - (10% + (5% * var(--v))));}
-
-.default, .color, .bright > *, .dim > *, .light > *, .dark > * { --lit: var(--l); --sat: var(--s); --v: 0;}
-
-.light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
-.light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
-.dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
-.dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
-.bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
-.bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
-.dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
-.dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
-.bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
-
-.warm { --hue-shift: -8;}
-.neutral { --hue-shift: 0;}
-.cool { --hue-shift: 8;}
-
-.complement { --hue-offset: 180;}
-.complement > * { --hue-offset: 0;}
-.accent { --hue-offset: 15;}
-.accent > * { --hue-offset: 0;}
-.square { --hue-offset: 90;}
-.square > * { --hue-offset: 0;}
-
-.basic { --v: 0;}
-.sorta { --v: 1;}
-.very { --v: 2;}
-.hella, .super { --v: 3.5;}
-
-.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-.reaction { --h: calc(var(--base-h) + 180);}
-.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orangered { --h: 24; --s: 82%; --l: 52%;}
-.orange { --h: 40; --s: 93%; --l: 50%;}
-.gold { --h: 54; --s: 95%; --l: 53%;}
-.yellow { --h: 60; --s: 97%; --l: 50%;}
-.lime { --h: 80; --s: 66%; --l: 60%;}
-.green { --h: 110; --s: 57%; --l: 41%;}
-.jade { --h: 135; --s: 41%; --l: 52%;}
-.teal { --h: 170; --s: 40%; --l: 45%;}
-.aqua { --h: 175; --s: 64%; --l: 57%;}
-.cyan { --h: 180; --s: 89%; --l: 54%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 220; --s: 81%; --l: 50%;}
-.indigo { --h: 235; --s: 72%; --l: 48%;}
-.purple { --h: 270; --s: 63%; --l: 45%;}
-.fuchsia { --h: 280; --s: 51%; --l: 55%;}
-.magenta { --h: 300; --s: 73%; --l: 60%;}
-.pink { --h: 330;--s: 86%;--l: 70%;}
-
-.shade, .text-black, .white { color: var(--black);}
-.tint, .text-white, .black { color: var(--white);}
-
 .padding { padding: var(--padding);}
 .margin { margin: var(--margin);}
 .gutter { margin: var(--gutter);}
@@ -470,7 +361,7 @@ pre > code {
 .shadow { box-shadow: var(--box-shadow);}
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.1);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -494,49 +385,6 @@ pre > code {
   background-size: cover;
   background-position: center center;
 }
-
-.border, .border-light, .border-dark, .border-top, .border-right, .border-bottom, .border-left {
-  --border-color: hsla(
-    var(--hue, var(--h)),
-    clamp(0%, calc(.6 * var(--sat, var(--s))), 50%),
-    clamp(0%, calc(.6 * var(--lit, var(--l))), 33%),
-    var(--a));
-  border-width: var(--border-width);
-  border-style: var(--border-style);
-  border-color: var(--border-color);
-}
-
-.border-light {
-  --border-color: hsla(
-    var(--hue),
-    clamp(0%, var(--s, var(--sat)), 90%),
-    clamp(60%, var(--l, var(--lit)), 90%),
-    var(--a));
-}
-
-.border-dark {
-  --border-color: hsla(
-    var(--hue),
-    clamp(0%, var(--s, var(--sat)), 70%),
-    clamp(0%, var(--l, var(--lit)), 30%),
-    var(--a));
-}
-
-.border { border-width: var(--border-width);}
-.border-top { border-top-width: var(--border-width);}
-.border-right { border-right-width: var(--border-width);}
-.border-bottom { border-bottom-width: var(--border-width);}
-.border-left { border-left-width: var(--border-width);}
-.border-radius, .rounded { border-radius: var(--border-radius);}
-
-.dashed { border-style: dashed;}
-.dotted { border-style: dotted;}
-.thick { border-width: var(--border-thick);}
-.thin {
-  --border-l: clamp(0%, calc(var(--l) * .9), 85%);
-  border-width: var(--border-thin);
-}
-.border-text-color { border-color: currentColor;}
 
 .fade { opacity: .65;}
 
@@ -757,6 +605,159 @@ pre > code {
 .no-list-style { list-style-type: none; margin-left: 0;}
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
+
+.border, .border-top, .border-right, .border-bottom, .border-left {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
+    clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border-light {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
+    clamp(75%, calc(.9 * var(--lit, var(--l))), 95%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border-dark {
+  --border-color: hsla(
+    var(--hue, var(--h)),
+    clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
+    clamp(0%, calc(.4 * var(--lit, var(--l))), 40%),
+    var(--a));
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+.border, .border-light, .border-dark { border-width: var(--border-width);}
+.border-top { border-top-width: var(--border-width);}
+.border-right { border-right-width: var(--border-width);}
+.border-bottom { border-bottom-width: var(--border-width);}
+.border-left { border-left-width: var(--border-width);}
+.border-radius, .rounded { border-radius: var(--border-radius);}
+
+.dashed { border-style: dashed;}
+.dotted { border-style: dotted;}
+.thick { border-width: var(--border-thick);}
+.thin {
+  --border-l: clamp(0%, calc(var(--l) * .9), 85%);
+  border-width: var(--border-thin);
+}
+.border-text-color { border-color: currentColor;}
+
+.base, 
+.red,
+.orangered,
+.orange,
+.gold,
+.yellow,
+.lime,
+.green,
+.jade,
+.teal,
+.aqua,
+.cyan,
+.sky,
+.blue,
+.indigo,
+.purple,
+.fuchsia,
+.magenta,
+.pink,
+.gray,
+.action,
+.reaction,
+.failure,
+.success,
+.warning,
+.info {
+  background-color: hsla(
+    var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+    var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
+    var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
+    var(--a));
+}
+
+.white, .black {
+  background-color: hsla(
+    var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+    var(--s, var(--sat)),
+    var(--l, var(--lit)),
+    var(--a));
+}
+
+.base, .gray, .dark.gray { color: var(--base-tint, var(--black));}
+.red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia { color: var(--white);}
+.yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
+
+.bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(1 + var(--v)));}
+.dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
+.normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+
+.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(3 + var(--v)));}
+.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
+.unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+
+.black { color: var(--white);}
+.white { color: var(--black);}
+.light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
+.light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
+.dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
+.dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
+.bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
+.bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
+.dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
+.dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
+.bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
+
+.warm { --hue-shift: -8;}
+.neutral { --hue-shift: 0;}
+.cool { --hue-shift: 8;}
+
+.complement { --hue-offset: 180;}
+.accent { --hue-offset: 23;}
+.square { --hue-offset: 90;}
+.accent.other { --hue-offset: -23;}
+.square.other { --hue-offset: -90;}
+.unspin, .no-spin { --hue-offset: 0;}
+
+.basic, .very > *, .hella > * { --v: 0;}
+.very { --v: 1;}
+.hella { --v: 2;}
+
+.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.reaction { --h: calc(var(--base-h) + 180);}
+.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+.red { --h: 0; --s: 71%; --l: 50%;}
+.orangered { --h: 24; --s: 82%; --l: 52%;}
+.orange { --h: 40; --s: 93%; --l: 50%;}
+.gold { --h: 48; --s: 95%; --l: 53%;}
+.yellow { --h: 56; --s: 97%; --l: 50%;}
+.lime { --h: 75; --s: 66%; --l: 55%;}
+.green { --h: 110; --s: 57%; --l: 41%;}
+.jade { --h: 135; --s: 41%; --l: 52%;}
+.teal { --h: 170; --s: 40%; --l: 45%;}
+.aqua { --h: 175; --s: 64%; --l: 57%;}
+.cyan { --h: 180; --s: 89%; --l: 54%;}
+.sky { --h: 200; --s: 80%; --l: 65%;}
+.blue { --h: 225; --s: 81%; --l: 50%;}
+.indigo { --h: 255; --s: 72%; --l: 48%;}
+.purple { --h: 275; --s: 63%; --l: 45%;}
+.fuchsia { --h: 295; --s: 51%; --l: 55%;}
+.magenta { --h: 315; --s: 73%; --l: 60%;}
+.pink { --h: 335;--s: 86%;--l: 70%;}
+
+.shade, .text-black { color: var(--black);}
+.tint, .text-white { color: var(--white);}
 </textarea>
           <div class="text-right">
             <button class="bright dark red" onclick="copyCSS()">Copy to clipboard</button>
@@ -770,7 +771,7 @@ pre > code {
   
 
 
-    <div class="hella dark indigo padding inner page width two columns golden desktop gap-big">
+    <div class="very dark indigo padding inner page width two columns golden desktop gap-big">
 
       <div class="inner type width">
         <h1>The <span class="text-color bright yellow tint text-shadow">easiest</span> CSS&nbsp;system.</h1>
@@ -780,7 +781,7 @@ pre > code {
         <p class="gutter-bottom">Since every California Stylesheet is a CSS file, there's nothing to install, run, preprocess or compile. Just reference the file or throw it in a style tag and the conventions will be available on your page.</p>
 
         <p class="no-text-indent gutter-top gutter-bottom text-center">
-          <a href="docs/composables/" class="button big very bright lime">See the conventions &raquo;</a>
+          <a href="docs/composables/" class="button big very bright unlit lime">See the conventions &raquo;</a>
         </p>
       </div>
 
@@ -797,7 +798,7 @@ pre > code {
       </div>
     </div>
 
-    <section class="inner page width padding very dark dim base">
+    <section class="inner page width padding hella dark dim base complement border-top border-bottom">
         <div class="three columns desktop margin-bottom">
           <div class="inner card width">
             <h4>No workflow</h4>
@@ -826,6 +827,68 @@ pre > code {
         </li>
       </ul>
     </div>
+
+
+<!-- 
+
+    <section id="splash" class="golden viewport height hella dark dim base square inner width padding vertical-center">
+      <div class="text-center">
+        <h1 class="big">The splash page template</h1>
+        <p class="gutter-bottom">A headline, a tagline, and a button. A classic.</p>
+        <div class="inner card width">
+  
+          <p><a class="block unspin big bright unlit red button" href="https://casscss.github.io/cass/">CASS</a>
+        </div>
+        
+        
+        </p>
+      </div>
+    </section>
+    <section class="inner page width padding very light gray">
+      <div class="three columns tablet margin-bottom">
+        <div class="inner card width">
+          <h4>The first thing</h4>
+          <p>Include your text here.</p>
+        </div>
+        <div class="inner card width">
+          <h4>The second thing</h4>
+          <p>Include your text here.</p>
+        </div>
+        <div class="inner card width">
+          <h4>The third thing</h4>
+          <p>Include your text here.</p>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="inner width columns padding">
+      <nav class="three wide">
+        <ul>
+          <li>
+            <a href="https://github.com/casscss/cass">CASS</a>
+          </li>
+          <li>
+            <a href="https://github.com/casscss/cass">CASS</a>
+          </li>
+          <li>
+            <a href="https://github.com/casscss/cass">CASS</a>
+          </li>
+          <hr class="light blue">
+        </ul>
+      </nav>
+      <div class="nine wide">
+        <h1>The term paper template</h1>
+        <p class="big">The term paper template is good for any straightforward reading material.</p>
+        <p>It doesn't have to just be a term paper. CASS is based on typography, so it's great for any long-form reading material.</p>
+      </div>
+    </section>
+     -->
+
+
+
+
 
     
     <div class="margin padding page width margin-auto">
@@ -1120,22 +1183,22 @@ pre > code {
           <p>Use color alternates for variant colors.</p>
           <div class="two columns tablet margin-bottom">
             <div class="vertical-center">
-              <div class="text-padding border rounded blue">blue</div>
+              <div class="text-padding border rounded base">base</div>
             </div>
             <div class="vertical-center">
               &nbsp;
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded light blue">light blue</div>
+              <div class="text-padding border rounded light base">light base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded dark blue">dark blue</div>
+              <div class="text-padding border rounded dark base">dark base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded bright blue">bright blue</div>
+              <div class="text-padding border rounded bright base">bright base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded dim blue">dim blue</div>
+              <div class="text-padding border rounded dim base">dim base</div>
             </div>
           </div>
 
@@ -1145,28 +1208,28 @@ pre > code {
 
           <div class="two columns tablet margin-bottom">
             <div class="vertical-center">
-              <div class="text-padding border rounded very light blue">very light blue</div>
+              <div class="text-padding border rounded very light base">very light base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded very dark blue">very dark blue</div>
+              <div class="text-padding border rounded very dark base">very dark base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded very bright blue">very bright blue</div>
+              <div class="text-padding border rounded very bright base">very bright base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded very dim blue">very dim blue</div>
+              <div class="text-padding border rounded very dim base">very dim base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded hella light blue">hella light blue</div>
+              <div class="text-padding border rounded hella light base">hella light base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded hella dark blue">hella dark blue</div>
+              <div class="text-padding border rounded hella dark base">hella dark base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded hella bright blue">hella bright blue</div>
+              <div class="text-padding border rounded hella bright base">hella bright base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded hella dim blue">hella dim blue</div>
+              <div class="text-padding border rounded hella dim base">hella dim base</div>
             </div>
           </div>
 
@@ -1174,35 +1237,35 @@ pre > code {
 
           <div class="two columns tablet margin-bottom">
             <div class="vertical-center">
-              <div class="text-padding border rounded light bright blue">light bright blue</div>
+              <div class="text-padding border rounded light bright base">light bright base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded dark dim blue">dark dim blue</div>
+              <div class="text-padding border rounded dark dim base">dark dim base</div>
             </div>
 
             <div class="vertical-center">
-              <div class="text-padding border rounded light dim blue">light dim blue</div>
+              <div class="text-padding border rounded light dim base">light dim base</div>
             </div>
             
 
             <div class="vertical-center">
-              <div class="text-padding border rounded dark bright blue">dark bright blue</div>
+              <div class="text-padding border rounded dark bright base">dark bright base</div>
             </div>
 
             <div class="vertical-center">
-              <div class="text-padding border rounded very light bright blue">very light bright blue</div>
+              <div class="text-padding border rounded very light bright base">very light bright base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded very dark dim blue">very dark dim blue</div>
+              <div class="text-padding border rounded very dark dim base">very dark dim base</div>
             </div>
 
             <div class="vertical-center">
-              <div class="text-padding border rounded very light dim blue">very light dim blue</div>
+              <div class="text-padding border rounded very light dim base">very light dim base</div>
             </div>
             
 
             <div class="vertical-center">
-              <div class="text-padding border rounded very dark bright blue">very dark bright blue</div>
+              <div class="text-padding border rounded very dark bright base">very dark bright base</div>
             </div>
           </div>
 
@@ -1210,18 +1273,26 @@ pre > code {
 
           <div class="two columns tablet margin-bottom">
             <div class="vertical-center">
-              <div class="text-padding border rounded teal">teal</div>
+              <div class="text-padding border rounded base">base</div>
             </div>
             <div class="vertical-center">
-              <div class="text-padding border rounded teal complement">teal complement</div>
-            </div>
-
-            <div class="vertical-center">
-              <div class="text-padding border rounded teal accent">teal accent</div>
+              <div class="text-padding border rounded base complement">base complement</div>
             </div>
 
             <div class="vertical-center">
-              <div class="text-padding border rounded teal square">teal square</div>
+              <div class="text-padding border rounded base accent">base accent</div>
+            </div>
+
+            <div class="vertical-center">
+              <div class="text-padding border rounded base square">base square</div>
+            </div>
+
+            <div class="vertical-center">
+              <div class="text-padding border rounded base other accent">base other accent</div>
+            </div>
+
+            <div class="vertical-center">
+              <div class="text-padding border rounded base other square">base other square</div>
             </div>
           </div>
 
@@ -1294,8 +1365,7 @@ pre > code {
         </div>
       </div>
 
-      <p>Use <strong>neutral</strong>, <strong>normal</strong> and <strong>unlit</strong> to reset color variables for hue, saturation and lightness respectively.</p>
-
+      <p>Use <strong>unspin</strong>, <strong>neutral</strong>, <strong>unlit</strong> and <strong>basic</strong> to reset hue, saturation, lightness and adjectives respectively. Since colors use variables, every color used inside a light color will be light by default.</p>
     </div>
   </div>
 
@@ -1349,7 +1419,7 @@ pre > code {
   </div>
   <div class="margin-bottom">
 
-    <p class="text-center">Composables can give elements different looks:</p>
+    <p class="text-center">Composables give elements different looks:</p>
     <div class="two columns tablet text-align-center">
       <div class="text-align-center ">
         <ul class="no-list-style no-margin-left no-margin-bottom inner card width">
@@ -1357,15 +1427,19 @@ pre > code {
           <li class="padding margin-bottom rounded inset dull default white">inset</li>
           <li class="padding margin-bottom rounded shallow shadow default white">shallow shadow</li>
           <li class="padding rounded deep shadow default white">deep shadow</li>
+          <li class="padding rounded deep shadow inset default white">deep shadow inset</li>
+          <li class="padding rounded thick border shadow inset default white">thick border inset</li>
         </ul>
       </div>
 
       <div class="text-align-center">
         <ul class="no-list-style no-margin-left no-margin-bottom inner card width">
           <li class="white padding margin-bottom rounded border border-text-color border ">border-text-color border</li>
-          <li class="white padding margin-bottom rounded border thin border ">thin border</li>
+          <li class="white padding margin-bottom rounded border thick border ">thick border</li>
           <li class="white padding margin-bottom rounded border dashed border ">dashed border</li>
           <li class="white padding rounded border solid border ">solid border</li>
+          <li class="white padding rounded border-light solid ">solid border-light</li>
+          <li class="white padding rounded solid border-dark ">solid border-dark</li>
         </ul>
       </div>
     </div>
@@ -1427,7 +1501,7 @@ pre > code {
         --base-tint: var(--black);
       
         --line-height: 1.7;
-        --text-measure: 54;
+        --text-measure: 50;
         --font-size-base: 16px;
         --font-size-mod: 1;
         --font-family: var(--sans-serif);
@@ -1460,15 +1534,15 @@ pre > code {
         --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
         --shadow-position: 1px;
         --shadow-blur: 3px;
-        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.36);
       
         --white-h: var(--base-h);
         --white-s: calc(var(--base-s) * .2);
         --white-l: 99.5%;
       
         --black-h: var(--base-h);
-        --black-s: calc(var(--base-s) * .1);
-        --black-l: 16%;
+        --black-s: calc(var(--base-s) * .2);
+        --black-l: calc(var(--base-l) * .2);
       
         --base: hsl(var(--base-h), var(--base-s), var(--base-l));
         --white: hsl(var(--white-h), var(--white-s), var(--white-l));
@@ -1629,117 +1703,6 @@ pre > code {
         padding: 0;
       }
       
-      .base, 
-      .red,
-      .orangered,
-      .orange,
-      .gold,
-      .yellow,
-      .lime,
-      .green,
-      .jade,
-      .teal,
-      .aqua,
-      .cyan,
-      .sky,
-      .blue,
-      .indigo,
-      .purple,
-      .fuchsia,
-      .magenta,
-      .pink,
-      .gray,
-      .action,
-      .reaction,
-      .failure,
-      .success,
-      .warning,
-      .info {
-        background-color: hsla(
-          var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-          var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
-          var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
-          var(--a));
-      }
-      
-      .white, .black {
-        background-color: hsla(
-          var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-          var(--s, var(--sat)),
-          var(--l, var(--lit)),
-          var(--a));
-      }
-      
-      .base, .gray, .dark.gray, .light.gray { color: var(--base-tint, var(--black));}
-      .black, .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia {
-        color: var(--white);
-      }
-      .white, .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink {
-        color: var(--black);
-      }
-      
-      .bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(2 + var(--v)));}
-      .normal { --sat: --s;}
-      .dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (20% + (10% * var(--v))));}
-      .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
-      .unlit { --lit: --l;}
-      .dark { color: var(--white); --lit: calc(calc( ((var(--l) * 9) + var(--base-l)) / 10 ) - (10% + (5% * var(--v))));}
-      
-      .default, .color, .bright > *, .dim > *, .light > *, .dark > * { --lit: var(--l); --sat: var(--s); --v: 0;}
-      
-      .light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
-      .light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
-      .dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
-      .dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
-      .bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
-      .bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
-      .dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
-      .dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
-      .bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
-      
-      .warm { --hue-shift: -8;}
-      .neutral { --hue-shift: 0;}
-      .cool { --hue-shift: 8;}
-      
-      .complement { --hue-offset: 180;}
-      .complement > * { --hue-offset: 0;}
-      .accent { --hue-offset: 15;}
-      .accent > * { --hue-offset: 0;}
-      .square { --hue-offset: 90;}
-      .square > * { --hue-offset: 0;}
-      
-      .basic { --v: 0;}
-      .sorta { --v: 1;}
-      .very { --v: 2;}
-      .hella, .super { --v: 3.5;}
-      
-      .base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-      .reaction { --h: calc(var(--base-h) + 180);}
-      .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-      .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-      .red { --h: 0; --s: 71%; --l: 50%;}
-      .orangered { --h: 24; --s: 82%; --l: 52%;}
-      .orange { --h: 40; --s: 93%; --l: 50%;}
-      .gold { --h: 54; --s: 95%; --l: 53%;}
-      .yellow { --h: 60; --s: 97%; --l: 50%;}
-      .lime { --h: 80; --s: 66%; --l: 60%;}
-      .green { --h: 110; --s: 57%; --l: 41%;}
-      .jade { --h: 135; --s: 41%; --l: 52%;}
-      .teal { --h: 170; --s: 40%; --l: 45%;}
-      .aqua { --h: 175; --s: 64%; --l: 57%;}
-      .cyan { --h: 180; --s: 89%; --l: 54%;}
-      .sky { --h: 200; --s: 80%; --l: 65%;}
-      .blue { --h: 220; --s: 81%; --l: 50%;}
-      .indigo { --h: 235; --s: 72%; --l: 48%;}
-      .purple { --h: 270; --s: 63%; --l: 45%;}
-      .fuchsia { --h: 280; --s: 51%; --l: 55%;}
-      .magenta { --h: 300; --s: 73%; --l: 60%;}
-      .pink { --h: 330;--s: 86%;--l: 70%;}
-      
-      .shade, .text-black, .white { color: var(--black);}
-      .tint, .text-white, .black { color: var(--white);}
-      
       .padding { padding: var(--padding);}
       .margin { margin: var(--margin);}
       .gutter { margin: var(--gutter);}
@@ -1793,7 +1756,7 @@ pre > code {
       .shadow { box-shadow: var(--box-shadow);}
       .shallow {
         --shadow-position: 1px;
-        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.1);
+        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
         --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
       }
       .deep {
@@ -1817,49 +1780,6 @@ pre > code {
         background-size: cover;
         background-position: center center;
       }
-      
-      .border, .border-light, .border-dark, .border-top, .border-right, .border-bottom, .border-left {
-        --border-color: hsla(
-          var(--hue, var(--h)),
-          clamp(0%, calc(.6 * var(--sat, var(--s))), 50%),
-          clamp(0%, calc(.6 * var(--lit, var(--l))), 33%),
-          var(--a));
-        border-width: var(--border-width);
-        border-style: var(--border-style);
-        border-color: var(--border-color);
-      }
-      
-      .border-light {
-        --border-color: hsla(
-          var(--hue),
-          clamp(0%, var(--s, var(--sat)), 90%),
-          clamp(60%, var(--l, var(--lit)), 90%),
-          var(--a));
-      }
-      
-      .border-dark {
-        --border-color: hsla(
-          var(--hue),
-          clamp(0%, var(--s, var(--sat)), 70%),
-          clamp(0%, var(--l, var(--lit)), 30%),
-          var(--a));
-      }
-      
-      .border { border-width: var(--border-width);}
-      .border-top { border-top-width: var(--border-width);}
-      .border-right { border-right-width: var(--border-width);}
-      .border-bottom { border-bottom-width: var(--border-width);}
-      .border-left { border-left-width: var(--border-width);}
-      .border-radius, .rounded { border-radius: var(--border-radius);}
-      
-      .dashed { border-style: dashed;}
-      .dotted { border-style: dotted;}
-      .thick { border-width: var(--border-thick);}
-      .thin {
-        --border-l: clamp(0%, calc(var(--l) * .9), 85%);
-        border-width: var(--border-thin);
-      }
-      .border-text-color { border-color: currentColor;}
       
       .fade { opacity: .65;}
       
@@ -2080,6 +2000,159 @@ pre > code {
       .no-list-style { list-style-type: none; margin-left: 0;}
       .no-gap { gap: 0; column-gap: 0;}
       .no-press:active { transform: scale(1); box-shadow: unset;}
+      
+      .border, .border-top, .border-right, .border-bottom, .border-left {
+        --border-color: hsla(
+          var(--hue, var(--h)),
+          clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
+          clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
+          var(--a));
+        border-style: var(--border-style);
+        border-color: var(--border-color);
+      }
+      
+      .border-light {
+        --border-color: hsla(
+          var(--hue, var(--h)),
+          clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
+          clamp(75%, calc(.9 * var(--lit, var(--l))), 95%),
+          var(--a));
+        border-style: var(--border-style);
+        border-color: var(--border-color);
+      }
+      
+      .border-dark {
+        --border-color: hsla(
+          var(--hue, var(--h)),
+          clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
+          clamp(0%, calc(.4 * var(--lit, var(--l))), 40%),
+          var(--a));
+        border-style: var(--border-style);
+        border-color: var(--border-color);
+      }
+      
+      .border, .border-light, .border-dark { border-width: var(--border-width);}
+      .border-top { border-top-width: var(--border-width);}
+      .border-right { border-right-width: var(--border-width);}
+      .border-bottom { border-bottom-width: var(--border-width);}
+      .border-left { border-left-width: var(--border-width);}
+      .border-radius, .rounded { border-radius: var(--border-radius);}
+      
+      .dashed { border-style: dashed;}
+      .dotted { border-style: dotted;}
+      .thick { border-width: var(--border-thick);}
+      .thin {
+        --border-l: clamp(0%, calc(var(--l) * .9), 85%);
+        border-width: var(--border-thin);
+      }
+      .border-text-color { border-color: currentColor;}
+      
+      .base, 
+      .red,
+      .orangered,
+      .orange,
+      .gold,
+      .yellow,
+      .lime,
+      .green,
+      .jade,
+      .teal,
+      .aqua,
+      .cyan,
+      .sky,
+      .blue,
+      .indigo,
+      .purple,
+      .fuchsia,
+      .magenta,
+      .pink,
+      .gray,
+      .action,
+      .reaction,
+      .failure,
+      .success,
+      .warning,
+      .info {
+        background-color: hsla(
+          var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+          var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
+          var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
+          var(--a));
+      }
+      
+      .white, .black {
+        background-color: hsla(
+          var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
+          var(--s, var(--sat)),
+          var(--l, var(--lit)),
+          var(--a));
+      }
+      
+      .base, .gray, .dark.gray { color: var(--base-tint, var(--black));}
+      .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia { color: var(--white);}
+      .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
+      
+      .bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(1 + var(--v)));}
+      .dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
+      .normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+      
+      .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(3 + var(--v)));}
+      .dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
+      .unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+      
+      .black { color: var(--white);}
+      .white { color: var(--black);}
+      .light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
+      .light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
+      .dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
+      .dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
+      .bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
+      .bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
+      .dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
+      .dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
+      .bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
+      
+      .warm { --hue-shift: -8;}
+      .neutral { --hue-shift: 0;}
+      .cool { --hue-shift: 8;}
+      
+      .complement { --hue-offset: 180;}
+      .accent { --hue-offset: 23;}
+      .square { --hue-offset: 90;}
+      .accent.other { --hue-offset: -23;}
+      .square.other { --hue-offset: -90;}
+      .unspin, .no-spin { --hue-offset: 0;}
+      
+      .basic, .very > *, .hella > * { --v: 0;}
+      .very { --v: 1;}
+      .hella { --v: 2;}
+      
+      .base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+      .reaction { --h: calc(var(--base-h) + 180);}
+      .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+      .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+      .red { --h: 0; --s: 71%; --l: 50%;}
+      .orangered { --h: 24; --s: 82%; --l: 52%;}
+      .orange { --h: 40; --s: 93%; --l: 50%;}
+      .gold { --h: 48; --s: 95%; --l: 53%;}
+      .yellow { --h: 56; --s: 97%; --l: 50%;}
+      .lime { --h: 75; --s: 66%; --l: 55%;}
+      .green { --h: 110; --s: 57%; --l: 41%;}
+      .jade { --h: 135; --s: 41%; --l: 52%;}
+      .teal { --h: 170; --s: 40%; --l: 45%;}
+      .aqua { --h: 175; --s: 64%; --l: 57%;}
+      .cyan { --h: 180; --s: 89%; --l: 54%;}
+      .sky { --h: 200; --s: 80%; --l: 65%;}
+      .blue { --h: 225; --s: 81%; --l: 50%;}
+      .indigo { --h: 255; --s: 72%; --l: 48%;}
+      .purple { --h: 275; --s: 63%; --l: 45%;}
+      .fuchsia { --h: 295; --s: 51%; --l: 55%;}
+      .magenta { --h: 315; --s: 73%; --l: 60%;}
+      .pink { --h: 335;--s: 86%;--l: 70%;}
+      
+      .shade, .text-black { color: var(--black);}
+      .tint, .text-white { color: var(--white);}
     </style>
     <style>
       #seagull_color { fill: var(--white);}
@@ -2087,5 +2160,6 @@ pre > code {
     </style>
     <style id="added_theme">
     </style>
+    <script src="javascript/css-page.js" type="text/javascript"></script>
 </body>
 </html>
