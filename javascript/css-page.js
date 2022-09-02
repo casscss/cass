@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log('testing event listener');    
 });
 
+function luma(color) {
+    // color can be a hx string or an array of RGB values 0-255
+    var rgb = (typeof color === 'string') ? hexToRgb(color) : color;
+    return (0.2126 * rgb.r) + (0.7152 * rgb.g) + (0.0722 * rgb.b); // SMPTE C, Rec. 709 weightings
+}
+
 function copyCSS() {
     var textToCopy = document.getElementById("css_textarea");
     textToCopy.select();
@@ -300,7 +306,7 @@ function updateColor() {
 
     var rgb_color = hslToRgb((h/360), (s/100), (l/100));
 
-    if (l > 60) {
+    if (luma(rgb_color) > 165) {
         document.getElementById('added_theme').innerHTML = css_template;
         document.getElementById('css_textarea').innerHTML = css_header + rest_css;
 
