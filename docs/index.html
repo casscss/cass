@@ -627,7 +627,7 @@
       .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
       .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
       .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-      .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 60%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
+      .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
       .red, .failure { --h: 0; --s: 71%; --l: 50%;}
       .orangered { --h: 24; --s: 86%; --l: 50%;}
       .orange, .warning { --h: 40; --s: 93%; --l: 50%;}
@@ -683,7 +683,7 @@
       }
       
       .text-color.tint {
-        color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(30%, var(--lit, var(--l)), 100%));
+        color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(50%, var(--lit, var(--l)), 100%));
         background-color: transparent;
       }
     </style>
@@ -1393,7 +1393,7 @@ pre > code {
 .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
 .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
 .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 60%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
+.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
 .red, .failure { --h: 0; --s: 71%; --l: 50%;}
 .orangered { --h: 24; --s: 86%; --l: 50%;}
 .orange, .warning { --h: 40; --s: 93%; --l: 50%;}
@@ -1449,7 +1449,7 @@ pre > code {
 }
 
 .text-color.tint {
-  color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(30%, var(--lit, var(--l)), 100%));
+  color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(50%, var(--lit, var(--l)), 100%));
   background-color: transparent;
 }
 </textarea>
