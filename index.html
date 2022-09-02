@@ -424,16 +424,6 @@ pre > code {
 .gap-gutter, .gap-big { --gap: var(--gutter);}
 .gap-huge { --gap: calc(2 * var(--gutter));}
 
-.text-color {
-  color: hsl(var(--h, var(--hue)), clamp(0%, var(--s, var(--sat)), 90%), clamp(0%, var(--l, var(--lit)), 60%));
-  background-color: transparent;
-}
-
-.text-color.tint {
-  color: hsl(var(--h, var(--hue)), clamp(0%, var(--s, var(--sat)), 100%), clamp(30%, var(--l, var(--lit)), 100%));
-  background-color: transparent;
-}
-
 .text-crunch { line-height: calc(var(--line-height) * .85);}
 .text-indent { text-indent: var(--text-indent);}
 .text-justify { text-justify: justify;}
@@ -766,6 +756,16 @@ pre > code {
 
 .shade, .text-black { color: var(--black);}
 .tint, .text-white { color: var(--white);}
+
+.text-color {
+  color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 90%), clamp(0%, var(--lit, var(--l)), 60%));
+  background-color: transparent;
+}
+
+.text-color.tint {
+  color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(30%, var(--lit, var(--l)), 100%));
+  background-color: transparent;
+}
 </textarea>
           <div class="text-right">
             <button class="bright dark red" onclick="copyCSS()">Copy to clipboard</button>
@@ -2615,16 +2615,6 @@ pre > code {
       .gap-gutter, .gap-big { --gap: var(--gutter);}
       .gap-huge { --gap: calc(2 * var(--gutter));}
       
-      .text-color {
-        color: hsl(var(--h, var(--hue)), clamp(0%, var(--s, var(--sat)), 90%), clamp(0%, var(--l, var(--lit)), 60%));
-        background-color: transparent;
-      }
-      
-      .text-color.tint {
-        color: hsl(var(--h, var(--hue)), clamp(0%, var(--s, var(--sat)), 100%), clamp(30%, var(--l, var(--lit)), 100%));
-        background-color: transparent;
-      }
-      
       .text-crunch { line-height: calc(var(--line-height) * .85);}
       .text-indent { text-indent: var(--text-indent);}
       .text-justify { text-justify: justify;}
@@ -2957,6 +2947,16 @@ pre > code {
       
       .shade, .text-black { color: var(--black);}
       .tint, .text-white { color: var(--white);}
+      
+      .text-color {
+        color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 90%), clamp(0%, var(--lit, var(--l)), 60%));
+        background-color: transparent;
+      }
+      
+      .text-color.tint {
+        color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(30%, var(--lit, var(--l)), 100%));
+        background-color: transparent;
+      }
     </style>
     <style>
       #seagull_color { fill: var(--white);}
