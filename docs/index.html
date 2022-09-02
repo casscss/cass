@@ -105,6 +105,19 @@
   </div>
 </section>
 
+<h2>Theming</h2>
+
+<p>Create a theme by overriding CSS custom properties:</p>
+
+<pre>:root {
+  --font-size-base: 18px;
+  --line-height: 2em;
+  --text-measure: 58;
+  --padding-base: .5rem;
+}</pre>
+
+<p>You can also just edit the variables that come with your CASS file directly, if that's easier. Just remember that when you swap in a new one, you'll be potentially losing those old settings.</p>
+
 <section id="composables" class="gutter-bottom">
     <h2 class="no-margin-top">Frequently Asked Questions</h2>
 
@@ -152,7 +165,7 @@
     <h5>"I don't know Cassandra. Can I use CASS?"</h5>
     <p>California Stylesheets has nothing at all to do with Cassandra DB. That came out wrong. We're sure they're great. It's a backend thing, right?</p>
 </section>
-
+<!-- 
 <h2>CSS Custom properties</h2>
 <p>Your project's settings are at the top of your <strong>ca.css</strong> file.</p>
 <p>Here's everything you'll find there.</p>
@@ -201,21 +214,4 @@
     <li><strong>--shadow-position</strong>: The default shadow position</li>
     <li><strong>--shadow-blur</strong>: The default shadow blur</li>
     <li><strong>--shadow-color</strong>: The default shadow color</li>
-</ul>
-
-<h2>Theming</h2>
-
-<p>You can create a theme by overwriting the CSS custom properties and including it on your page after <strong>ca.css</strong>. By overwriting variables in <strong>:root</strong> (or <strong>html</strong>) you can write a theme that works with any California Stylesheet:</p>
-
-<pre>:root {
-  --font-size-base: 18px;
-  --line-height: 2em;
-  --text-measure: 58;
-  --padding-base: .5rem;
-}</pre>
-
-<p>This CASS theme makes for a more academic look by only changing a few custom properties. Any of the variables in the prior section can be overwritten in this style.</p>
-
-<p>You can also just edit the variables that come with your CASS file directly, if that's easier. Just remember that when you swap in a new one, you'll be potentially losing those old settings.</p>
-
-<p>Unfortunately, changing any of the colors here won't change the automatic color palette generation. You should get a new CASS if you want a new color scheme.</p>
+</ul> -->

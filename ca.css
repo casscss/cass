@@ -7,7 +7,7 @@
   --base-l: 65%;
   --base-tint: var(--black);
 
-  --line-height: 1.7;
+  --line-height: 1.618;
   --text-measure: 50;
   --font-size-base: 16px;
   --font-size-mod: 1;
@@ -45,7 +45,7 @@
 
   --white-h: var(--base-h);
   --white-s: calc(var(--base-s) * .2);
-  --white-l: 99.5%;
+  --white-l: 99%;
 
   --black-h: var(--base-h);
   --black-s: calc(var(--base-s) * .2);
@@ -57,7 +57,7 @@
   --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
 
   --a: 1;
-  --v: 0;
+  --v: 1;
   --hue-offset: 0;
   --hue-shift: 0;
 
@@ -85,6 +85,8 @@
     --font-size: var(--font-size-base);
   }
 }
+
+/* elements */
 
 body, html, :root {
   color: var(--black);
@@ -169,7 +171,7 @@ input:focus, select:focus, textarea:focus, button:focus { outline: 3px solid var
   box-shadow: var(--box-shadow);
   position: relative;
   font-family: inherit;
-  padding: calc(var(--padding) * .6) var(--padding);
+  padding: calc(var(--padding) * .62) var(--padding);
   color: inherit;
   background-color: inherit;
   border: var(--border);
@@ -209,6 +211,8 @@ pre > code {
   background: transparent;
   padding: 0;
 }
+
+/* composables */
 
 .padding { padding: var(--padding);}
 .margin { margin: var(--margin);}
@@ -356,6 +360,8 @@ pre > code {
 .text-margin-bottom { margin-bottom: var(--text-padding);}
 .text-margin-left { margin-left: var(--text-padding);}
 
+/* layout */
+
 .top { top: 0;}
 .right { right: 0;}
 .bottom { bottom: 0;}
@@ -475,6 +481,8 @@ pre > code {
   .fixed.desktop { position: fixed;}
 }
 
+/* nullifiers */
+
 .no-padding-top { padding-top: 0;}
 .no-padding-right { padding-right: 0;}
 .no-padding-bottom { padding-bottom: 0;}
@@ -507,6 +515,8 @@ pre > code {
 .no-list-style { list-style-type: none; margin-left: 0;}
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
+
+/* borders */
 
 .border, .border-top, .border-right, .border-bottom, .border-left {
   --border-color: hsla(
@@ -554,6 +564,8 @@ pre > code {
 }
 .border-text-color { border-color: currentColor;}
 
+/* colors */
+
 .base, 
 .red,
 .orangered,
@@ -574,6 +586,7 @@ pre > code {
 .magenta,
 .pink,
 .gray,
+.brown,
 .action,
 .reaction,
 .failure,
@@ -595,33 +608,58 @@ pre > code {
     var(--a));
 }
 
-.base, .gray, .dark.gray { color: var(--base-tint, var(--black));}
-.red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia { color: var(--white);}
+.base, .gray { color: var(--base-tint, var(--black));}
+.red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
 .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
 
 .bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(1 + var(--v)));}
 .dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
 .normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(2 + var(--v)));}
-.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1.6 + (var(--v) * .5)));}
+.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(1 + var(--v)));}
+.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1 + (var(--v) * .5)));}
 .unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+
+.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.reaction { --h: calc(var(--base-h) + 180);}
+.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
+.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 60%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
+.red, .failure { --h: 0; --s: 71%; --l: 50%;}
+.orangered { --h: 24; --s: 86%; --l: 50%;}
+.orange, .warning { --h: 40; --s: 93%; --l: 50%;}
+.gold { --h: 48; --s: 95%; --l: 53%;}
+.yellow { --h: 56; --s: 97%; --l: 50%;}
+.lime { --h: 75; --s: 66%; --l: 55%;}
+.green, .success { --h: 110; --s: 57%; --l: 35%;}
+.jade { --h: 135; --s: 41%; --l: 45%;}
+.teal { --h: 170; --s: 40%; --l: 40%;}
+.aqua { --h: 175; --s: 64%; --l: 57%;}
+.cyan { --h: 180; --s: 89%; --l: 54%;}
+.sky, .info { --h: 200; --s: 80%; --l: 65%;}
+.blue { --h: 225; --s: 81%; --l: 65%;}
+.indigo { --h: 255; --s: 72%; --l: 55%;}
+.purple { --h: 275; --s: 63%; --l: 45%;}
+.fuchsia { --h: 295; --s: 51%; --l: 55%;}
+.magenta { --h: 315; --s: 73%; --l: 60%;}
+.pink { --h: 335;--s: 86%;--l: 70%;}
 
 .black { color: var(--white);}
 .white { color: var(--black);}
-.light.white { --lit: calc(var(--l) + (.2% + (.2% * var(--v))));}
-.light.black { --lit: calc(var(--l) + (4% + (1.5% * var(--v))));}
-.dark.white { --lit: calc(var(--l) - (1.5% + (1.5% * var(--v))));}
-.dark.black { --lit: calc(var(--l) - (10% + (5% * var(--v))));}
+.light.white { --l: calc(var(--white-l) + (.2% + (.2% * var(--v))));}
+.light.black { --l: calc(var(--black-l) + (4% + (1.5% * var(--v))));}
+.dark.white { --l: calc(var(--white-l) - (1.5% + (1.5% * var(--v))));}
+.dark.black { --l: calc(var(--black-l) - (10% + (5% * var(--v))));}
 .bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
 .bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
 .dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
 .dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
-.bright.gray { --sat: calc(var(--s) + (5% + (5% * var(--v))));}
+.bright.gray { --sat: calc(var(--s) + (2.5% + (2.5% * var(--v))));}
 
-.warm { --hue-shift: -8;}
+.warm { --hue-shift: -12;}
 .neutral { --hue-shift: 0;}
-.cool { --hue-shift: 8;}
+.cool { --hue-shift: 12;}
 
 .complement { --hue-offset: 180;}
 .accent { --hue-offset: 23;}
@@ -630,33 +668,9 @@ pre > code {
 .square.other { --hue-offset: -90;}
 .unspin, .no-spin { --hue-offset: 0;}
 
-.basic, .very > *, .hella > * { --v: 0;}
-.very { --v: 1;}
-.hella { --v: 2;}
-
-.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-.reaction { --h: calc(var(--base-h) + 180);}
-.white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
-.black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orangered { --h: 24; --s: 82%; --l: 52%;}
-.orange { --h: 40; --s: 93%; --l: 50%;}
-.gold { --h: 48; --s: 95%; --l: 53%;}
-.yellow { --h: 56; --s: 97%; --l: 50%;}
-.lime { --h: 75; --s: 66%; --l: 55%;}
-.green { --h: 110; --s: 57%; --l: 41%;}
-.jade { --h: 135; --s: 41%; --l: 52%;}
-.teal { --h: 170; --s: 40%; --l: 45%;}
-.aqua { --h: 175; --s: 64%; --l: 57%;}
-.cyan { --h: 180; --s: 89%; --l: 54%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 225; --s: 81%; --l: 50%;}
-.indigo { --h: 255; --s: 72%; --l: 48%;}
-.purple { --h: 275; --s: 63%; --l: 45%;}
-.fuchsia { --h: 295; --s: 51%; --l: 55%;}
-.magenta { --h: 315; --s: 73%; --l: 60%;}
-.pink { --h: 335;--s: 86%;--l: 70%;}
+.basic, .very > *, .hella > * { --v: 1;}
+.very { --v: 2;}
+.hella { --v: 3;}
 
 .shade, .text-black { color: var(--black);}
 .tint, .text-white { color: var(--white);}
