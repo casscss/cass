@@ -602,7 +602,7 @@ pre > code {
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
 
-.border, .border-top, .border-right, .border-bottom, .border-left {
+.border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
   --border-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -612,7 +612,7 @@ pre > code {
   border-color: var(--border-color);
 }
 
-.border-light {
+.border-light, button, .button {
   --border-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
@@ -622,7 +622,7 @@ pre > code {
   border-color: var(--border-color);
 }
 
-.border-dark {
+.border-dark, button, .button {
   --border-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
@@ -2793,7 +2793,7 @@ pre > code {
       .no-gap { gap: 0; column-gap: 0;}
       .no-press:active { transform: scale(1); box-shadow: unset;}
       
-      .border, .border-top, .border-right, .border-bottom, .border-left {
+      .border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
         --border-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -2803,7 +2803,7 @@ pre > code {
         border-color: var(--border-color);
       }
       
-      .border-light {
+      .border-light, button, .button {
         --border-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.9 * var(--sat, var(--s))), 90%),
@@ -2813,7 +2813,7 @@ pre > code {
         border-color: var(--border-color);
       }
       
-      .border-dark {
+      .border-dark, button, .button {
         --border-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.7 * var(--sat, var(--s))), 70%),
