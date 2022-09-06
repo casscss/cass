@@ -25,11 +25,9 @@
   --margin: var(--padding-base);
   --gutter: calc(2 * var(--padding-base));
   --gap: var(--padding);
-  --width: 100%;
   --type-width: calc(var(--text-measure) * .575rem);
   --card-width: calc(var(--type-width) * .618);
   --page-width: calc(var(--type-width) * 1.618);
-  --full-width: 100%;
 
   --border-width: 1px;
   --border-style: solid;
@@ -44,8 +42,8 @@
   --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.36);
 
   --white-h: var(--base-h);
-  --white-s: calc(var(--base-s) * .2);
-  --white-l: 99%;
+  --white-s: calc(var(--base-s) * .8);
+  --white-l: 98.5%;
 
   --black-h: var(--base-h);
   --black-s: calc(var(--base-s) * .2);
@@ -183,7 +181,6 @@ input:focus, select:focus, textarea:focus, button:focus { outline: 3px solid var
   touch-action: manipulation;
   cursor: pointer;
   transform: scale(1);
-  transition: scale .08s linear;
 }
 
 .button:active, button:active {
@@ -568,18 +565,13 @@ pre > code {
 .magenta,
 .pink,
 .gray,
-.brown,
-.action,
-.reaction,
-.failure,
-.success,
-.warning,
-.info {
+.brown {
   background-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
-    var(--sat, calc( ((var(--s) * 9) + var(--base-s)) / 10 )),
-    var(--lit, calc( ((var(--l) * 9) + var(--base-l)) / 10 )),
-    var(--a));
+    var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
+    var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 )),
+    var(--a, 1)
+  );
 }
 
 .white, .black {
@@ -587,57 +579,57 @@ pre > code {
     var(--h, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     var(--s, var(--sat)),
     var(--l, var(--lit)),
-    var(--a));
+    var(--a, 1)
+  );
 }
 
 .base, .gray { color: var(--base-tint, var(--black));}
 .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
 .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
 
-.bright { --sat: calc(100% - (100% - calc( ((var(--s) * 9) + var(--base-s)) / 10 ))/(1 + var(--v)));}
-.dim { --sat: calc(calc( ((var(--s) * 19) + var(--base-s)) / 20 ) - (10% + (10% * var(--v))));}
-.normal, .bright > *, .dim > * { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+.bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
+.dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .6)));}
+.normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 ))/(1 + var(--v)));}
-.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 )/(1 + (var(--v) * .5)));}
-.unlit, .light > *, .dark > * { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
+.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 ) / (1 + (var(--v) * .25)));}
+.unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 
-.base, .action, .reaction { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
-.reaction { --h: calc(var(--base-h) + 180);}
+.base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
 .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
 .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
 .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
 .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
-.red, .failure { --h: 0; --s: 71%; --l: 50%;}
+.red { --h: 0; --s: 71%; --l: 50%;}
 .orangered { --h: 24; --s: 86%; --l: 50%;}
-.orange, .warning { --h: 40; --s: 93%; --l: 50%;}
+.orange { --h: 40; --s: 93%; --l: 50%;}
 .gold { --h: 48; --s: 95%; --l: 53%;}
 .yellow { --h: 56; --s: 97%; --l: 50%;}
 .lime { --h: 75; --s: 66%; --l: 55%;}
-.green, .success { --h: 110; --s: 57%; --l: 35%;}
-.jade { --h: 145; --s: 45%; --l: 45%;}
+.green { --h: 110; --s: 57%; --l: 35%;}
+.jade { --h: 145; --s: 45%; --l: 40%;}
 .teal { --h: 170; --s: 40%; --l: 40%;}
 .aqua { --h: 175; --s: 64%; --l: 57%;}
 .cyan { --h: 180; --s: 89%; --l: 54%;}
-.sky, .info { --h: 200; --s: 80%; --l: 65%;}
+.sky { --h: 200; --s: 80%; --l: 65%;}
 .blue { --h: 225; --s: 81%; --l: 65%;}
 .indigo { --h: 255; --s: 72%; --l: 55%;}
 .purple { --h: 275; --s: 63%; --l: 45%;}
-.fuchsia { --h: 295; --s: 51%; --l: 55%;}
-.magenta { --h: 315; --s: 73%; --l: 60%;}
+.fuchsia { --h: 295; --s: 51%; --l: 60%;}
+.magenta { --h: 315; --s: 73%; --l: 75%;}
 .pink { --h: 335;--s: 86%;--l: 70%;}
 
 .black { color: var(--white);}
 .white { color: var(--black);}
-.light.white { --l: calc(var(--white-l) + (.2% + (.2% * var(--v))));}
-.light.black { --l: calc(var(--black-l) + (4% + (1.5% * var(--v))));}
-.dark.white { --l: calc(var(--white-l) - (1.5% + (1.5% * var(--v))));}
-.dark.black { --l: calc(var(--black-l) - (10% + (5% * var(--v))));}
-.bright.white { --sat: calc(var(--s) + (6% + (2% * var(--v))));}
-.bright.black { --sat: calc(var(--s) + (8% + (3% * var(--v))));}
-.dim.white { --sat: calc(var(--s) - (1.5% + (1.5% * var(--v))));}
-.dim.black { --sat: calc(var(--s) - (10% + (5% * var(--v))));}
-.bright.gray { --sat: calc(var(--s) + (2.5% + (2.5% * var(--v))));}
+.light.white { --l: calc(var(--white-l) + (.5% + .5% * var(--v)));}
+.light.black { --l: calc(var(--black-l) + (8% + 4% * var(--v)));}
+.dark.white { --l: calc(var(--white-l) - (1% + 1% * var(--v)));}
+.dark.black { --l: calc(var(--black-l) - (10% + 5% * var(--v)));}
+.bright.white { --sat: calc(var(--s) + (6% + 2% * var(--v)));}
+.bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
+.dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
+.dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
+.bright.gray { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
 
 .warm { --hue-shift: -12;}
 .neutral { --hue-shift: 0;}
@@ -648,7 +640,7 @@ pre > code {
 .square { --hue-offset: 90;}
 .accent.other { --hue-offset: -23;}
 .square.other { --hue-offset: -90;}
-.unspin, .no-spin { --hue-offset: 0;}
+.unspin, .no-spin, .reset { --hue-offset: 0;}
 
 .basic, .very > *, .hella > * { --v: 1;}
 .very { --v: 2;}

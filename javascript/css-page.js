@@ -2,7 +2,7 @@
 output = {};
 
 document.addEventListener("DOMContentLoaded", function() {
-    // console.log('testing event listener');    
+    // readyOneLiner();
 });
 
 function luma(color) {
@@ -13,6 +13,13 @@ function luma(color) {
 
 function copyCSS() {
     var textToCopy = document.getElementById("css_textarea");
+    textToCopy.select();
+    textToCopy.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+}
+
+function copyOneLiner() {
+    var textToCopy = document.getElementById("css_oneline");
     textToCopy.select();
     textToCopy.setSelectionRange(0, 99999);
     document.execCommand("copy");
@@ -227,6 +234,16 @@ function readyForm() {
     readyLabel();
 }
 
+// function readyOneLiner() {
+//     var the_css = minify(document.getElementById("css_textarea").value);
+//     var the_style_tag = '<style>'
+//                         + '/* A California Stylesheet (MIT License) */'
+//                         + '/* https://github.com/casscss/cass */'
+//                          + the_css 
+//                          + '</style>';
+//     document.getElementById("css_oneline").innerHTML = the_style_tag;
+// }
+
 function showMessageNoHide(string) {
     document.getElementById("nav_message_container").classList.remove("hide");
     var messageDiv = document.getElementById("nav_message");
@@ -316,6 +333,7 @@ function updateColor() {
     }
 
     document.getElementById("baseColor").value = rgb_color;
+    // readyOneLiner();
 
 }
 
@@ -415,3 +433,9 @@ function hexToRgb(hex) {
       b: parseInt(result[3], 16)
     } : null;
   }
+
+
+function minify(css) {
+    return css.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1");
+}
+  
