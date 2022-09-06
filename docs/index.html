@@ -585,6 +585,7 @@
       .magenta,
       .pink,
       .gray,
+      .grey,
       .brown {
         background-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
@@ -603,7 +604,7 @@
         );
       }
       
-      .base, .gray { color: var(--base-tint, var(--black));}
+      .base, .gray, .grey { color: var(--base-tint, var(--black));}
       .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
       .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
       
@@ -612,13 +613,13 @@
       .normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
       
       .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
-      .dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 ) / (1 + (var(--v) * .25)));}
+      .dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
       .unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       
       .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
       .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
       .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+      .gray, .grey { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
       .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
       .red { --h: 0; --s: 71%; --l: 50%;}
       .orangered { --h: 24; --s: 86%; --l: 50%;}
@@ -627,17 +628,18 @@
       .yellow { --h: 56; --s: 97%; --l: 50%;}
       .lime { --h: 75; --s: 66%; --l: 55%;}
       .green { --h: 110; --s: 57%; --l: 35%;}
-      .jade { --h: 145; --s: 45%; --l: 40%;}
+      .jade { --h: 150; --s: 45%; --l: 40%;}
       .teal { --h: 170; --s: 40%; --l: 40%;}
       .aqua { --h: 175; --s: 64%; --l: 57%;}
-      .cyan { --h: 180; --s: 89%; --l: 54%;}
+      .cyan { --h: 180; --s: 85%; --l: 50%;}
       .sky { --h: 200; --s: 80%; --l: 65%;}
-      .blue { --h: 225; --s: 75%; --l: 60%;}
-      .indigo { --h: 255; --s: 72%; --l: 55%;}
+      .blue { --h: 222; --s: 75%; --l: 60%;}
+      .indigo { --h: 245; --s: 68%; --l: 55%;}
       .purple { --h: 275; --s: 63%; --l: 45%;}
       .fuchsia { --h: 295; --s: 51%; --l: 60%;}
       .magenta { --h: 315; --s: 73%; --l: 75%;}
       .pink { --h: 335;--s: 86%;--l: 70%;}
+      
       
       .black { color: var(--white);}
       .white { color: var(--black);}
@@ -649,7 +651,7 @@
       .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
       .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
       .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-      .bright.gray { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+      .bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
       
       .warm { --hue-shift: -12;}
       .neutral { --hue-shift: 0;}
@@ -1371,6 +1373,7 @@ pre > code {
 .magenta,
 .pink,
 .gray,
+.grey,
 .brown {
   background-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
@@ -1389,7 +1392,7 @@ pre > code {
   );
 }
 
-.base, .gray { color: var(--base-tint, var(--black));}
+.base, .gray, .grey { color: var(--base-tint, var(--black));}
 .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
 .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
 
@@ -1398,13 +1401,13 @@ pre > code {
 .normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 
 .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
-.dark { color: var(--white); --lit: calc(( ((var(--l) * 3) + var(--base-l)) / 4 ) / (1 + (var(--v) * .25)));}
+.dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
 .unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 
 .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
 .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
 .black { --h: var(--black-h); --s: var(--black-s); --l: var(--black-l);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
+.gray, .grey { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l);}
 .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: calc((var(--base-l) + var(--black-l)) * .5);}
 .red { --h: 0; --s: 71%; --l: 50%;}
 .orangered { --h: 24; --s: 86%; --l: 50%;}
@@ -1413,17 +1416,18 @@ pre > code {
 .yellow { --h: 56; --s: 97%; --l: 50%;}
 .lime { --h: 75; --s: 66%; --l: 55%;}
 .green { --h: 110; --s: 57%; --l: 35%;}
-.jade { --h: 145; --s: 45%; --l: 40%;}
+.jade { --h: 150; --s: 45%; --l: 40%;}
 .teal { --h: 170; --s: 40%; --l: 40%;}
 .aqua { --h: 175; --s: 64%; --l: 57%;}
-.cyan { --h: 180; --s: 89%; --l: 54%;}
+.cyan { --h: 180; --s: 85%; --l: 50%;}
 .sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 225; --s: 75%; --l: 60%;}
-.indigo { --h: 255; --s: 72%; --l: 55%;}
+.blue { --h: 222; --s: 75%; --l: 60%;}
+.indigo { --h: 245; --s: 68%; --l: 55%;}
 .purple { --h: 275; --s: 63%; --l: 45%;}
 .fuchsia { --h: 295; --s: 51%; --l: 60%;}
 .magenta { --h: 315; --s: 73%; --l: 75%;}
 .pink { --h: 335;--s: 86%;--l: 70%;}
+
 
 .black { color: var(--white);}
 .white { color: var(--black);}
@@ -1435,7 +1439,7 @@ pre > code {
 .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
 .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
 .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-.bright.gray { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+.bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
 
 .warm { --hue-shift: -12;}
 .neutral { --hue-shift: 0;}
