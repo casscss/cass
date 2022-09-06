@@ -612,7 +612,7 @@ pre > code {
 .aqua { --h: 175; --s: 64%; --l: 57%;}
 .cyan { --h: 180; --s: 89%; --l: 54%;}
 .sky { --h: 200; --s: 80%; --l: 65%;}
-.blue { --h: 225; --s: 81%; --l: 65%;}
+.blue { --h: 225; --s: 75%; --l: 60%;}
 .indigo { --h: 255; --s: 72%; --l: 55%;}
 .purple { --h: 275; --s: 63%; --l: 45%;}
 .fuchsia { --h: 295; --s: 51%; --l: 60%;}
@@ -636,9 +636,9 @@ pre > code {
 .cool { --hue-shift: 12;}
 
 .complement { --hue-offset: 180;}
-.accent { --hue-offset: 23;}
+.accent { --hue-offset: 15;}
 .square { --hue-offset: 90;}
-.accent.other { --hue-offset: -23;}
+.accent.other { --hue-offset: -15;}
 .square.other { --hue-offset: -90;}
 .unspin, .no-spin, .reset { --hue-offset: 0;}
 
