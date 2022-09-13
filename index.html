@@ -15,10 +15,6 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="msapplication-config" content="cass/browserconfig.xml">
   <meta name="theme-color" content="#ffffff">
-
-  <style>
-  
-  </style>
 </head>
 
 <body>
@@ -67,10 +63,10 @@
           <div class="two wide">
               <div class="block relative">
                   <span class="fade block absolute top right float-right"><span class="hella dim green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="hella bright green">&nbsp;&nbsp;&nbsp;</span></span>
-                  <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">65</span>%</strong>)</span>
+                  <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
               </div>
               
-              <input type="range" id="baseSaturation" min="0" max="100" value="65" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
+              <input type="range" id="baseSaturation" min="0" max="100" value="55" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
           </div>
       
           <div class="two wide">
@@ -103,9 +99,9 @@
 
 :root {
   --base-h: 214;
-  --base-s: 65%;
+  --base-s: 55%;
   --base-l: 65%;
-  --base-tint: var(--black);
+  --base-tint: var(--white);
 
   --line-height: 1.618;
   --text-measure: 50;
@@ -143,7 +139,7 @@
 
   --white-h: var(--base-h);
   --white-s: calc(var(--base-s) * .8);
-  --white-l: 98.5%;
+  --white-l: 99%;
 
   --black-h: var(--base-h);
   --black-s: calc(var(--base-s) * .2);
@@ -364,7 +360,7 @@ pre > code {
 .shadow { box-shadow: var(--box-shadow);}
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.15);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -599,7 +595,7 @@ pre > code {
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
 
-.border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
+.border, .border-top, .border-right, .border-bottom, .border-left, button, .button, hr {
   --border-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -688,13 +684,13 @@ pre > code {
 .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
 .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
 
+.normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-.dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .6)));}
-.normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+.dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .75)));}
 
+.unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
 .dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
-.unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 
 .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
 .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
@@ -712,18 +708,18 @@ pre > code {
 .teal { --h: 170; --s: 40%; --l: 40%;}
 .aqua { --h: 175; --s: 64%; --l: 57%;}
 .cyan { --h: 180; --s: 85%; --l: 50%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
+.sky { --h: 200; --s: 80%; --l: 70%;}
 .blue { --h: 222; --s: 75%; --l: 60%;}
 .indigo { --h: 245; --s: 68%; --l: 55%;}
 .purple { --h: 275; --s: 63%; --l: 45%;}
 .fuchsia { --h: 295; --s: 51%; --l: 60%;}
 .magenta { --h: 315; --s: 73%; --l: 75%;}
-.pink { --h: 335;--s: 86%;--l: 70%;}
+.pink { --h: 335;--s: 86%;--l: 80%;}
 
 
 .black { color: var(--white);}
 .white { color: var(--black);}
-.light.white { --l: calc(var(--white-l) + (.5% + .5% * var(--v)));}
+.light.white { --l: calc(var(--white-l) + (.3% + .3% * var(--v)));}
 .light.black { --l: calc(var(--black-l) + (8% + 4% * var(--v)));}
 .dark.white { --l: calc(var(--white-l) - (1% + 1% * var(--v)));}
 .dark.black { --l: calc(var(--black-l) - (10% + 5% * var(--v)));}
@@ -731,7 +727,7 @@ pre > code {
 .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
 .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
 .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-.bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+.bright.gray, .bright.grey { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
 
 .warm { --hue-shift: -12;}
 .neutral { --hue-shift: 0;}
@@ -744,7 +740,7 @@ pre > code {
 .square.other { --hue-offset: -90;}
 .unspin, .no-spin, .reset { --hue-offset: 0;}
 
-.basic, .very > *, .hella > * { --v: 1;}
+.basic, .very *, .hella * { --v: 1;}
 .very { --v: 2;}
 .hella { --v: 3;}
 
@@ -765,18 +761,10 @@ pre > code {
             <button class="bright dark red" onclick="copyCSS()">Copy to clipboard</button>
             <button class="bright dark base" onclick="saveTextAsFile(document.getElementById('css_textarea').value,'ca.css')">Download</button>
           </div>
-          <!-- <p class="text-margin-bottom">Or grab the one-line <strong>&lt;style&gt;</strong> tag:</p>
-          <textarea readonly name="" class="code full width no-padding-bottom force tiny monospace text-padding text-margin-bottom" id="css_oneline" cols="30" rows="1">    </textarea>
-          <div class="text-right margin-bottom">
-            <button class="bright dark red" onclick="copyOneLiner()">Copy to clipboard</button>
-          </div> -->
         </div>
       </div>
     </div>
   </div>
-
-  
-
 
     <div class="very dark base accent padding inner page width two columns golden tablet">
 
@@ -816,9 +804,7 @@ pre > code {
             <p>Simple class names, taken mostly from CSS, with no abbreviations or numbers.</p>
           </div>
         </div>
-        
     </section>
-
 
     <div class="hella dark cool base padding inner width">
       <ul class="two columns tablet text-center big bold page width margin-auto no-margin-bottom no-list-style no-padding-left">
@@ -829,71 +815,7 @@ pre > code {
           <a href="docs/" class="">&raquo; Read the docs</a>
         </li>
       </ul>
-    </div>
-
-
-<!-- 
-
-    <section id="splash" class="golden viewport height hella dark dim base square inner width padding vertical-center">
-      <div class="text-center">
-        <h1 class="big">The splash page template</h1>
-        <p class="gutter-bottom">A headline, a tagline, and a button. A classic.</p>
-        <div class="inner card width">
-  
-          <p><a class="block unspin big bright unlit red button" href="https://casscss.github.io/cass/">CASS</a>
-        </div>
-        
-        
-        </p>
-      </div>
-    </section>
-    <section class="inner page width padding very light gray">
-      <div class="three columns tablet margin-bottom">
-        <div class="inner card width">
-          <h4>The first thing</h4>
-          <p>Include your text here.</p>
-        </div>
-        <div class="inner card width">
-          <h4>The second thing</h4>
-          <p>Include your text here.</p>
-        </div>
-        <div class="inner card width">
-          <h4>The third thing</h4>
-          <p>Include your text here.</p>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="inner width columns padding">
-      <nav class="three wide">
-        <ul>
-          <li>
-            <a href="https://github.com/casscss/cass">CASS</a>
-          </li>
-          <li>
-            <a href="https://github.com/casscss/cass">CASS</a>
-          </li>
-          <li>
-            <a href="https://github.com/casscss/cass">CASS</a>
-          </li>
-          <hr class="light blue">
-        </ul>
-      </nav>
-      <div class="nine wide">
-        <h1>The term paper template</h1>
-        <p class="big">The term paper template is good for any straightforward reading material.</p>
-        <p>It doesn't have to just be a term paper. CASS is based on typography, so it's great for any long-form reading material.</p>
-      </div>
-    </section>
-     -->
-
-
-
-
-
-    
+    </div>    
     <div class="margin padding page width margin-auto">
 <section id="cheatsheet" class="inner responsive width">
 
@@ -2258,8 +2180,7 @@ pre > code {
                   <h6 class="tiny">Documentation</h6>
                   <ul class="two columns mobile tablet">
                       <div>
-                        <li><a class="text-padding" href="docs/">Install</a></li>
-                        <li><a class="text-padding" href="docs/composables">Composables</a></li>
+                        <li><a class="text-padding" href="docs/">Docs</a></li>
                       </div>
                     </ul>
                 </div>
@@ -2291,9 +2212,9 @@ pre > code {
       
       :root {
         --base-h: 214;
-        --base-s: 65%;
+        --base-s: 55%;
         --base-l: 65%;
-        --base-tint: var(--black);
+        --base-tint: var(--white);
       
         --line-height: 1.618;
         --text-measure: 50;
@@ -2331,7 +2252,7 @@ pre > code {
       
         --white-h: var(--base-h);
         --white-s: calc(var(--base-s) * .8);
-        --white-l: 98.5%;
+        --white-l: 99%;
       
         --black-h: var(--base-h);
         --black-s: calc(var(--base-s) * .2);
@@ -2552,7 +2473,7 @@ pre > code {
       .shadow { box-shadow: var(--box-shadow);}
       .shallow {
         --shadow-position: 1px;
-        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.15);
         --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
       }
       .deep {
@@ -2787,7 +2708,7 @@ pre > code {
       .no-gap { gap: 0; column-gap: 0;}
       .no-press:active { transform: scale(1); box-shadow: unset;}
       
-      .border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
+      .border, .border-top, .border-right, .border-bottom, .border-left, button, .button, hr {
         --border-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -2876,13 +2797,13 @@ pre > code {
       .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
       .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
       
+      .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
       .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-      .dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .6)));}
-      .normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+      .dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .75)));}
       
+      .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
       .dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
-      .unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       
       .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
       .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
@@ -2900,18 +2821,18 @@ pre > code {
       .teal { --h: 170; --s: 40%; --l: 40%;}
       .aqua { --h: 175; --s: 64%; --l: 57%;}
       .cyan { --h: 180; --s: 85%; --l: 50%;}
-      .sky { --h: 200; --s: 80%; --l: 65%;}
+      .sky { --h: 200; --s: 80%; --l: 70%;}
       .blue { --h: 222; --s: 75%; --l: 60%;}
       .indigo { --h: 245; --s: 68%; --l: 55%;}
       .purple { --h: 275; --s: 63%; --l: 45%;}
       .fuchsia { --h: 295; --s: 51%; --l: 60%;}
       .magenta { --h: 315; --s: 73%; --l: 75%;}
-      .pink { --h: 335;--s: 86%;--l: 70%;}
+      .pink { --h: 335;--s: 86%;--l: 80%;}
       
       
       .black { color: var(--white);}
       .white { color: var(--black);}
-      .light.white { --l: calc(var(--white-l) + (.5% + .5% * var(--v)));}
+      .light.white { --l: calc(var(--white-l) + (.3% + .3% * var(--v)));}
       .light.black { --l: calc(var(--black-l) + (8% + 4% * var(--v)));}
       .dark.white { --l: calc(var(--white-l) - (1% + 1% * var(--v)));}
       .dark.black { --l: calc(var(--black-l) - (10% + 5% * var(--v)));}
@@ -2919,7 +2840,7 @@ pre > code {
       .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
       .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
       .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-      .bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+      .bright.gray, .bright.grey { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
       
       .warm { --hue-shift: -12;}
       .neutral { --hue-shift: 0;}
@@ -2932,7 +2853,7 @@ pre > code {
       .square.other { --hue-offset: -90;}
       .unspin, .no-spin, .reset { --hue-offset: 0;}
       
-      .basic, .very > *, .hella > * { --v: 1;}
+      .basic, .very *, .hella * { --v: 1;}
       .very { --v: 2;}
       .hella { --v: 3;}
       

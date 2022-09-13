@@ -23,9 +23,9 @@
       
       :root {
         --base-h: 214;
-        --base-s: 65%;
+        --base-s: 55%;
         --base-l: 65%;
-        --base-tint: var(--black);
+        --base-tint: var(--white);
       
         --line-height: 1.618;
         --text-measure: 50;
@@ -63,7 +63,7 @@
       
         --white-h: var(--base-h);
         --white-s: calc(var(--base-s) * .8);
-        --white-l: 98.5%;
+        --white-l: 99%;
       
         --black-h: var(--base-h);
         --black-s: calc(var(--base-s) * .2);
@@ -284,7 +284,7 @@
       .shadow { box-shadow: var(--box-shadow);}
       .shallow {
         --shadow-position: 1px;
-        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+        --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.15);
         --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
       }
       .deep {
@@ -519,7 +519,7 @@
       .no-gap { gap: 0; column-gap: 0;}
       .no-press:active { transform: scale(1); box-shadow: unset;}
       
-      .border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
+      .border, .border-top, .border-right, .border-bottom, .border-left, button, .button, hr {
         --border-color: hsla(
           var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
           clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -608,13 +608,13 @@
       .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
       .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
       
+      .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
       .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-      .dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .6)));}
-      .normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+      .dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .75)));}
       
+      .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
       .dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
-      .unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
       
       .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
       .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
@@ -632,18 +632,18 @@
       .teal { --h: 170; --s: 40%; --l: 40%;}
       .aqua { --h: 175; --s: 64%; --l: 57%;}
       .cyan { --h: 180; --s: 85%; --l: 50%;}
-      .sky { --h: 200; --s: 80%; --l: 65%;}
+      .sky { --h: 200; --s: 80%; --l: 70%;}
       .blue { --h: 222; --s: 75%; --l: 60%;}
       .indigo { --h: 245; --s: 68%; --l: 55%;}
       .purple { --h: 275; --s: 63%; --l: 45%;}
       .fuchsia { --h: 295; --s: 51%; --l: 60%;}
       .magenta { --h: 315; --s: 73%; --l: 75%;}
-      .pink { --h: 335;--s: 86%;--l: 70%;}
+      .pink { --h: 335;--s: 86%;--l: 80%;}
       
       
       .black { color: var(--white);}
       .white { color: var(--black);}
-      .light.white { --l: calc(var(--white-l) + (.5% + .5% * var(--v)));}
+      .light.white { --l: calc(var(--white-l) + (.3% + .3% * var(--v)));}
       .light.black { --l: calc(var(--black-l) + (8% + 4% * var(--v)));}
       .dark.white { --l: calc(var(--white-l) - (1% + 1% * var(--v)));}
       .dark.black { --l: calc(var(--black-l) - (10% + 5% * var(--v)));}
@@ -651,7 +651,7 @@
       .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
       .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
       .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-      .bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+      .bright.gray, .bright.grey { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
       
       .warm { --hue-shift: -12;}
       .neutral { --hue-shift: 0;}
@@ -664,7 +664,7 @@
       .square.other { --hue-offset: -90;}
       .unspin, .no-spin, .reset { --hue-offset: 0;}
       
-      .basic, .very > *, .hella > * { --v: 1;}
+      .basic, .very *, .hella * { --v: 1;}
       .very { --v: 2;}
       .hella { --v: 3;}
       
@@ -737,10 +737,10 @@
           <div class="two wide">
               <div class="block relative">
                   <span class="fade block absolute top right float-right"><span class="hella dim green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="hella bright green">&nbsp;&nbsp;&nbsp;</span></span>
-                  <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">65</span>%</strong>)</span>
+                  <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
               </div>
               
-              <input type="range" id="baseSaturation" min="0" max="100" value="65" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
+              <input type="range" id="baseSaturation" min="0" max="100" value="55" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
           </div>
       
           <div class="two wide">
@@ -811,9 +811,9 @@
 
 :root {
   --base-h: 214;
-  --base-s: 65%;
+  --base-s: 55%;
   --base-l: 65%;
-  --base-tint: var(--black);
+  --base-tint: var(--white);
 
   --line-height: 1.618;
   --text-measure: 50;
@@ -851,7 +851,7 @@
 
   --white-h: var(--base-h);
   --white-s: calc(var(--base-s) * .8);
-  --white-l: 98.5%;
+  --white-l: 99%;
 
   --black-h: var(--base-h);
   --black-s: calc(var(--base-s) * .2);
@@ -1072,7 +1072,7 @@ pre > code {
 .shadow { box-shadow: var(--box-shadow);}
 .shallow {
   --shadow-position: 1px;
-  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.2);
+  --shadow-color: hsla(var(--black-h), var(--black-s), var(--black-l), 0.15);
   --box-shadow: 0 var(--shadow-position) var(--shadow-blur) var(--shadow-color);
 }
 .deep {
@@ -1307,7 +1307,7 @@ pre > code {
 .no-gap { gap: 0; column-gap: 0;}
 .no-press:active { transform: scale(1); box-shadow: unset;}
 
-.border, .border-top, .border-right, .border-bottom, .border-left, button, .button {
+.border, .border-top, .border-right, .border-bottom, .border-left, button, .button, hr {
   --border-color: hsla(
     var(--hue, calc(var(--h) + var(--hue-offset, 0) + var(--hue-shift, 0))),
     clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
@@ -1396,13 +1396,13 @@ pre > code {
 .red, .orangered, .green, .jade, .teal, .blue, .indigo, .purple, .fuchsia, .brown { color: var(--white);}
 .yellow, .orange, .cyan, .gold, .magenta, .aqua, .lime, .sky, .pink { color: var(--black);}
 
+.normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-.dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .6)));}
-.normal, .bright > *, .dim > *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
+.dim { --sat: calc(( ((var(--s) * 9) + var(--base-s)) / 10 ) / (1 + (var(--v) * .75)));}
 
+.unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
 .dark { color: var(--white); --lit: calc(( ((var(--l) * 9) + var(--base-l)) / 10 ) / (1.25 + (var(--v) * .2)));}
-.unlit, .light > *, .dark > *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
 
 .base{ --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
 .white { --h: var(--white-h); --s: var(--white-s); --l: var(--white-l);}
@@ -1420,18 +1420,18 @@ pre > code {
 .teal { --h: 170; --s: 40%; --l: 40%;}
 .aqua { --h: 175; --s: 64%; --l: 57%;}
 .cyan { --h: 180; --s: 85%; --l: 50%;}
-.sky { --h: 200; --s: 80%; --l: 65%;}
+.sky { --h: 200; --s: 80%; --l: 70%;}
 .blue { --h: 222; --s: 75%; --l: 60%;}
 .indigo { --h: 245; --s: 68%; --l: 55%;}
 .purple { --h: 275; --s: 63%; --l: 45%;}
 .fuchsia { --h: 295; --s: 51%; --l: 60%;}
 .magenta { --h: 315; --s: 73%; --l: 75%;}
-.pink { --h: 335;--s: 86%;--l: 70%;}
+.pink { --h: 335;--s: 86%;--l: 80%;}
 
 
 .black { color: var(--white);}
 .white { color: var(--black);}
-.light.white { --l: calc(var(--white-l) + (.5% + .5% * var(--v)));}
+.light.white { --l: calc(var(--white-l) + (.3% + .3% * var(--v)));}
 .light.black { --l: calc(var(--black-l) + (8% + 4% * var(--v)));}
 .dark.white { --l: calc(var(--white-l) - (1% + 1% * var(--v)));}
 .dark.black { --l: calc(var(--black-l) - (10% + 5% * var(--v)));}
@@ -1439,7 +1439,7 @@ pre > code {
 .bright.black { --sat: calc(var(--s) + (8% + 3% * var(--v)));}
 .dim.white { --sat: calc(var(--s) - (1.5% + 1.5% * var(--v)));}
 .dim.black { --sat: calc(var(--s) - (10% + 5% * var(--v)));}
-.bright.gray, .bright.grey, .bright.silver { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
+.bright.gray, .bright.grey { --sat: calc(var(--s) + (2.5% + 2.5% * var(--v)));}
 
 .warm { --hue-shift: -12;}
 .neutral { --hue-shift: 0;}
@@ -1452,7 +1452,7 @@ pre > code {
 .square.other { --hue-offset: -90;}
 .unspin, .no-spin, .reset { --hue-offset: 0;}
 
-.basic, .very > *, .hella > * { --v: 1;}
+.basic, .very *, .hella * { --v: 1;}
 .very { --v: 2;}
 .hella { --v: 3;}
 
@@ -1479,7 +1479,7 @@ pre > code {
 </style>
 
 <section id="download" class="gutter-bottom">
-  <h2>Download it</h2>
+  <h2 class="section-headline">Download it</h2>
   <p><a href="../ca.css">Download it here</a>. You can visit the <a href="../">main page</a> to preview base colors.</p>
   
   <p>Reference the file inside the head tag:</p>
@@ -1504,7 +1504,7 @@ pre > code {
 </section>
 
 <section id="theming">
-  <h2>Theming</h2>
+  <h2 class="section-headline">Theming</h2>
 
   <p>Create a theme by overriding CSS custom properties:</p>
   
@@ -1522,7 +1522,7 @@ pre > code {
 
 
 <section id="faq" class="gutter-bottom">
-    <h2 class="no-margin-top">Frequently Asked Questions</h2>
+    <h2 class="section-headline">Frequently Asked Questions</h2>
 
     <h5>"What's the file size?"</h5>
     <p>About <strong>20kb</strong>.</p>
@@ -1571,7 +1571,7 @@ pre > code {
 
 
 <section id="overview" class="gutter-bottom padding-bottom">
-  <h2>Composables</h2>
+  <h2 class="section-headline">Composables</h2>
   <p>Composables are a bit like a language that plays out entirely within <strong>class=""</strong> in an HTML element.</p>
   <p>CSS classes (typically noted in bold) are composed together in phrases to give shape and meaning to elements.</p>
   <p>Here's a <strong>red</strong> test div:</p>

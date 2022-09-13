@@ -162,66 +162,6 @@ function copyColorStringNoHide(id) {
     }
 }
 
-function showBuilder() {
-    document.getElementById("builder_container").classList.remove("hide");
-    document.getElementById("palette").classList.add("hide");
-    document.getElementById("css_output_container").classList.add("hide");
-
-    document.getElementById("the_color_menu").classList.add("hide");
-    document.getElementById("css_options").classList.add("hide");
-
-    document.getElementById("css_button").classList.add("dim", "fade");
-    document.getElementById("palette_button").classList.add("dim", "fade");
-    document.getElementById("builder_button").classList.remove("dim", "fade");
-}
-
-function showHelp() {
-    document.getElementById("css_output_container").classList.remove("hide");
-    document.getElementById("palette").classList.add("hide");
-    document.getElementById("builder_container").classList.add("hide");
-
-    document.getElementById("the_color_menu").classList.remove("hide");
-    document.getElementById("css_options").classList.add("hide");
-
-    document.getElementById("css_button").classList.remove("dim", "fade");
-    document.getElementById("palette_button").classList.add("dim", "fade");
-    document.getElementById("builder_button").classList.add("dim", "fade");
-}
-
-function showCSS() {
-    document.getElementById("css_output_container").classList.add("hide");
-    document.getElementById("builder_container").classList.add("hide");
-    document.getElementById("palette").classList.remove("hide");
-
-    document.getElementById("the_color_menu").classList.remove("hide");
-    document.getElementById("css_options").classList.remove("hide");
-
-    document.getElementById("css_button").classList.add("dim", "fade");
-    document.getElementById("builder_button").classList.add("dim", "fade");
-    document.getElementById("palette_button").classList.remove("dim", "fade");
-}
-
-function showMessage(string) {
-    document.getElementById("nav_message_container").classList.remove("hide");
-    var messageDiv = document.getElementById("nav_message");
-    messageDiv.innerText = string;
-    messageDiv.classList.remove("hide");
-
-    setTimeout(function() { messageDiv.classList.add("hide"); }, 3000);
-}
-
-function hideMessage() {
-    var messageDiv = document.getElementById("nav_message_container");
-    messageDiv.classList.add("hide");
-}
-
-function readyButton() {
-    var button = document.getElementById("build_button");
-    button.classList.remove("dull");
-    button.classList.remove("fade");
-    
-}
-
 function readyLabel() {
     var label = document.getElementById("baseColorLabel");
     var preview = document.getElementById("baseColorPreview");
@@ -286,6 +226,7 @@ function updateColor() {
   --base-h: ${h};
   --base-s: ${s}%;
   --base-l: ${l}%;
+  --base-tint: var(--black);
 }`;
 
     var css_template_alt = `:root {
