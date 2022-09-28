@@ -182,6 +182,7 @@ button, .button {
 .padding-bottom, .padding { padding-bottom: var(--padding);}
 .padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
 .padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
+.tight { --padding: calc(.6 * var(--padding-base));}
 
 .margin { margin: var(--padding);}
 .margin-auto { margin-left: auto; margin-right: auto;}
@@ -548,52 +549,52 @@ button, .button {
 
   <div class="columns tablet no-text-indent margin-bottom" style="--c: 4;">
     <p class="">
-      <span class="padding rounded border block base">base</span>
+      <span class="tight padding rounded border block base">base</span>
     </p>
     <p class="">
-      <span class="padding rounded border block complement">complement</span>
+      <span class="tight padding rounded border block complement">complement</span>
     </p>
     <p class="">
-      <span class="padding rounded border block accent">accent</span>
+      <span class="tight padding rounded border block accent">accent</span>
     </p>
     <p class="">
-      <span class="padding rounded border block brown">brown</span>
+      <span class="tight padding rounded border block brown">brown</span>
     </p>
       <p class="">
-        <span class="padding rounded border block red">red</span>
+        <span class="tight padding rounded border block red">red</span>
       </p>
       <p class="">
-        <span class="padding rounded border block orange">orange</span>
+        <span class="tight padding rounded border block orange">orange</span>
       </p>
       <p class="">
-        <span class="padding rounded border block yellow">yellow</span>
+        <span class="tight padding rounded border block yellow">yellow</span>
       </p>
       <p class="">
-        <span class="padding rounded border block green">green</span>
+        <span class="tight padding rounded border block green">green</span>
       </p>
       <p class="">
-        <span class="padding rounded border block teal">teal</span>
+        <span class="tight padding rounded border block teal">teal</span>
       </p>
       <p class="">
-        <span class="padding rounded border block cyan">cyan</span>
+        <span class="tight padding rounded border block cyan">cyan</span>
       </p>
       <p class="">
-        <span class="padding rounded border block blue">blue</span>
+        <span class="tight padding rounded border block blue">blue</span>
       </p>
       <p class="">
-        <span class="padding rounded border block purple">purple</span>
+        <span class="tight padding rounded border block purple">purple</span>
       </p>
       <p class="">
-        <span class="padding rounded border block pink">pink</span>
+        <span class="tight padding rounded border block pink">pink</span>
       </p>
       <p class="">
-        <span class="padding rounded border block white">white</span>
+        <span class="tight padding rounded border block white">white</span>
       </p>
       <p class="">
-        <span class="padding rounded border block gray">gray</span>
+        <span class="tight padding rounded border block gray">gray</span>
       </p>
       <p class="">
-        <span class="padding rounded border block black">black</span>
+        <span class="tight padding rounded border block black">black</span>
       </p>
   </div>
 
@@ -649,6 +650,8 @@ button, .button {
 
   <h4>padding</h4>
   <p>Use the class <strong>padding</strong> to pad color edges. The classes <strong>padding-top</strong>, <strong>padding-right</strong>, <strong>padding-bottom</strong>, and <strong>padding-left</strong> work too.</p>
+
+  <p>Add <strong>tight</strong> for tighter padding.</p>
 
   <div class="type">
     <p class="no-text-indent text-center small">INPUT</p>
@@ -806,6 +809,7 @@ button, .button {
       .padding-bottom, .padding { padding-bottom: var(--padding);}
       .padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
       .padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
+      .tight { --padding: calc(.6 * var(--padding-base));}
       
       .margin { margin: var(--padding);}
       .margin-auto { margin-left: auto; margin-right: auto;}

@@ -96,6 +96,7 @@ button, .button {
 .padding-bottom, .padding { padding-bottom: var(--padding);}
 .padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
 .padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
+.tight { --padding: calc(.6 * var(--padding-base));}
 
 .margin { margin: var(--padding);}
 .margin-auto { margin-left: auto; margin-right: auto;}
