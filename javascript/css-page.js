@@ -223,37 +223,37 @@ function updateColor() {
     var original_css = document.getElementById("css_textarea").innerHTML;
 
     var css_template = `:root {
-  --base-h: ${h};
-  --base-s: ${s}%;
-  --base-l: ${l}%;
-  --base-tint: var(--black);
-}`;
+    --base-h: ${h};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
+    --base-tone: var(--black);
+`;
 
     var css_template_alt = `:root {
-  --base-h: ${h};
-  --base-s: ${s}%;
-  --base-l: ${l}%;
-  --base-tint: var(--white);
-}`;
+    --base-h: ${h};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
+    --base-tone: var(--white);
+`;
 
     var css_header = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-  --base-h: ${h};
-  --base-s: ${s}%;
-  --base-l: ${l}%;
-  --base-tint: var(--black);
+    --base-h: ${h};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
+    --base-tone: var(--black);
 `;
 
     var css_header_alt = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-  --base-h: ${h};
-  --base-s: ${s}%;
-  --base-l: ${l}%;
-  --base-tint: var(--white);
+    --base-h: ${h};
+    --base-s: ${s}%;
+    --base-l: ${l}%;
+    --base-tone: var(--white);
 `;
 
     const deleteLines = (string, n = 1)=>{
@@ -265,15 +265,16 @@ function updateColor() {
     var rgb_color = hslToRgb((h/360), (s/100), (l/100));
 
     if (luma(rgb_color) > 165) {
-        document.getElementById('added_theme').innerHTML = css_template;
+        document.getElementById('added_theme').innerHTML = css_template + '}';
         document.getElementById('css_textarea').innerHTML = css_header + rest_css;
 
     } else {
-        document.getElementById('added_theme').innerHTML = css_template_alt;
+        document.getElementById('added_theme').innerHTML = css_template_alt + '}';
         document.getElementById('css_textarea').innerHTML = css_header_alt + rest_css;
     }
 
     document.getElementById("baseColor").value = rgb_color;
+
     // readyOneLiner();
 
 }
