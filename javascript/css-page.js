@@ -222,47 +222,52 @@ function updateColor() {
 
     var original_css = document.getElementById("css_textarea").innerHTML;
 
+    var rgb_color = hslToRgb((h/360), (s/100), (l/100));
+    var alt_color = hslToRgb((h/360 + .5), (s/100), (l/100));
+
+    var complement_tone = (luma(alt_color) > 165 ? `        --alt-tone: var(--black);
+`:`        --alt-tone: var(--white);
+`);
+
     var css_template = `:root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tone: var(--black);
-`;
+        --base-h: ${h};
+        --base-s: ${s}%;
+        --base-l: ${l}%;
+        --base-tone: var(--black);
+` + complement_tone;
 
     var css_template_alt = `:root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tone: var(--white);
-`;
+        --base-h: ${h};
+        --base-s: ${s}%;
+        --base-l: ${l}%;
+        --base-tone: var(--white);
+` + complement_tone;
 
     var css_header = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tone: var(--black);
-`;
+        --base-h: ${h};
+        --base-s: ${s}%;
+        --base-l: ${l}%;
+        --base-tone: var(--black);
+` + complement_tone;
 
     var css_header_alt = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: ${h};
-    --base-s: ${s}%;
-    --base-l: ${l}%;
-    --base-tone: var(--white);
-`;
+        --base-h: ${h};
+        --base-s: ${s}%;
+        --base-l: ${l}%;
+        --base-tone: var(--white);
+` + complement_tone;
 
     const deleteLines = (string, n = 1)=>{
         return string.replace(new RegExp(`(?:.*?\n){${n-1}}(?:.*?\n)`), '');
     };
 
-    var rest_css = deleteLines(original_css, 8);
-
-    var rgb_color = hslToRgb((h/360), (s/100), (l/100));
+    var rest_css = deleteLines(original_css, 9);
 
     if (luma(rgb_color) > 165) {
         document.getElementById('added_theme').innerHTML = css_template + '}';

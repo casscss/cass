@@ -2,105 +2,90 @@
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: 214;
-    --base-s: 55%;
-    --base-l: 65%;
-    --base-tone: var(--white);
-  
-    --line-height: 1.618;
-    --text-measure: 50;
-    --font-size-base: 16px;
-    --text-indent: 1ch;
-  
-    --padding-base: 1em;
-    --type-width: calc(var(--text-measure) * .575rem);
-    --page-width: calc(var(--type-width) * 1.62);
-  
-    --white: hsl(var(--w-h), var(--w-s), var(--w-l));
-    --w-h: var(--base-h);
-    --w-s: calc(var(--base-s) * .8);
-    --w-l: 99.5%;
-  
-    --black: hsl(var(--b-h), var(--b-s), var(--b-l));
-    --b-h: var(--base-h);
-    --b-s: calc(var(--base-s) * .2);
-    --b-l: calc(var(--base-l) * .2);
-  
-    --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-    --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
-  
-    --a: 1;
-    --v: 1;
-  
-    --width: 100%;
-    --padding: calc(var(--padding-base) * .6);
-    --font-size: calc(var(--font-size-base) - 2px);
-}
+	--base-h: 214;
+	--base-s: 55%;
+	--base-l: 65%;
+	--base-tone: var(--white);
+	--alt-tone: var(--black);
+	--base: hsl(var(--base-h), var(--base-s), var(--base-l));
+	--text-measure: 50;
+	--font-size-base: 16px;
+	--text-indent: 1ch;
+	--padding-base: 1em;
+	--card: calc(var(--type)*.62);
+	--type: calc(var(--text-measure)*.575rem);
+	--page: calc(var(--type)*1.62);
+	--w-h: var(--base-h);
+	--w-s: calc(var(--base-s) * .8);
+	--w-l: 99.5%;
+	--white: hsl(var(--w-h), var(--w-s), var(--w-l));
+	--w: var(--white);
+	--b-h: var(--base-h);
+	--b-s: calc(var(--base-s) * .2);
+	--b-l: calc(var(--base-l) * .2);
+	--black: hsl(var(--b-h), var(--b-s), var(--b-l));
+	--b: var(--black);
+	--v: 1;
+	--width: 100%;
+	--padding: calc(var(--padding-base) * .6);
+	--p: var(--padding);
+	--font-size: calc(var(--font-size-base) - 2px);
 
-body, html, :root {
-    color: var(--black);
-    background-color: var(--white);
-    font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-    line-height: var(--line-height);
-    margin: 0;
-}
-
-body {
-    font-size: var(--font-size);
-    max-width: 100%;
+	color: var(--b);
+	background-color: var(--w);
+	font-family: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+	margin: 0;
+	font-size: var(--font-size);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.7;
 }
 
 body * {
-    padding-left: calc(50% - var(--width) * .5);
-    padding-right: calc(50% - var(--width) * .5);
+	padding-left: calc(50% - var(--width) * .5);
+	padding-right: calc(50% - var(--width) * .5);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    --width: var(--type-width);
-    line-height: 1.2;
-    margin-top: .6em;
-    margin-bottom: .6em;
-    font-size: 
+	--width: var(--type);
+	line-height: 1.2;
+	margin-top: .6em;
+	margin-bottom: .6em;
+	font-size: 
 }
 
-p  { text-indent: var(--text-indent);}
-
-p, ul, ol {
-    --width: var(--type-width);
-    margin-bottom: 1em;
-}
-
+p { text-indent: var(--text-indent);}
+p, ul, ol { --width: var(--type); margin-bottom: 1em;}
 ul, ol { margin-left: 1.6em;}
-
-a {
-    color: inherit;
-}
-
-pre { overflow-x: hidden;}
+a { color: inherit;}
 
 button, .button {
-    font-size: inherit;
-    padding: var(--padding);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+	font-size: inherit;
+	padding: .6em 1em;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
-.padding-top, .padding { padding-top: var(--padding);}
-.padding-bottom, .padding { padding-bottom: var(--padding);}
-.padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-.padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-.tight { --padding: calc(.6 * var(--padding-base));}
+.padding-top, .padding { padding-top: var(--p);}
+.padding-bottom, .padding { padding-bottom: var(--p);}
+.padding-left, .padding { padding-left: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+.padding-right, .padding { padding-right: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+.tight { --p: calc(.6 * var(--padding-base));}
 
-.margin { margin: var(--padding);}
+.margin { margin: var(--p);}
+.margin-left { margin-left: var(--p);}
+.margin-right { margin-right: var(--p);}
+.margin-top { margin-top: var(--p);}
+.margin-bottom { margin-bottom: var(--p);}
 .margin-auto { margin-left: auto; margin-right: auto;}
-.margin-bottom { margin-bottom: var(--padding);}
+
+.text-center { text-align: center;}
+.text-right { text-align: right;}
 
 .tiny { font-size: 85%;}
 .small { font-size: 92%;}
@@ -111,25 +96,22 @@ button, .button {
 .cursor, .pointer { cursor: pointer;}
 
 .rounded { border-radius: .6em;}
-.border { 
-	border: 1px solid hsla(
-		var(--hue, var(--h)),
-		clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
-		clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
-		var(--a));
-}
+.border { border: 1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.8 * var(--sat, var(--s))), 50%), clamp(0%, calc(.8 * var(--lit, var(--l))), 67%));}
+.dashed { border-style: dashed;}
+.dotted { border-style: dotted;}
+.thick { border-width: 2px;}
 
-.shadow { box-shadow: 0 1px .4em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
+.shadow { box-shadow: 0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
 
 .no-underline { text-decoration: none;}
 .no-text-indent { --text-indent: 0;}
 .no-margin-bottom { margin-bottom: 0;}
 
 .vertical-center { 
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .block { display: block;}
@@ -140,7 +122,6 @@ button, .button {
 
 .fixed, .fixed.mobile, .fixed.mobile.tablet { position: fixed;}
 .fixed.tablet, .fixed.desktop { position: initial;}
-
 .relative { position: relative;}
 .absolute { position: absolute;}
 
@@ -149,17 +130,18 @@ button, .button {
 .bottom { bottom: 0;}
 .left { left: 0;}
 
-.type { --width: var(--type-width);}
-.page { --width: var(--page-width);}
-.full.width { width: 100% !important; --width: var(--page-width);}
+.card { --width: var(--card);}
+.type { --width: var(--type);}
+.page { --width: var(--page);}
+.full.width { width: 100%; --width: var(--page);}
 
 .columns {
-    --c: 2;
-    --multi: repeat(var(--c), minmax(0, 1fr));
-    --single: repeat(1, minmax(0, 1fr));
-    display: grid;
-    gap: var(--padding);
-    grid-template-columns: var(--multi);
+	--c: 2;
+	--multi: repeat(var(--c), minmax(0, 1fr));
+	--single: repeat(1, minmax(0, 1fr));
+	display: grid;
+	gap: var(--p);
+	grid-template-columns: var(--multi);
 }
 
 .three { --c: 3;}
@@ -172,14 +154,14 @@ button, .button {
 
 @media screen and (min-width: 30rem) {
 	:root {
-        --width: var(--type-width);
-        --padding: calc(var(--padding-base) * .8);
-        --font-size: calc(var(--font-size-base) - 1px);
-    }
+		--width: var(--type);
+		--padding: calc(var(--padding-base) * .8);
+		--font-size: calc(var(--font-size-base) - 1px);
+	}
 
-    .columns.mobile { grid-template-columns: var(--single);}
-    .columns.tablet { grid-template-columns: var(--multi);}
-    .hide.mobile { display: initial;}
+	.columns.mobile { grid-template-columns: var(--single);}
+	.columns.tablet { grid-template-columns: var(--multi);}
+	.hide.mobile { display: initial;}
 	.hide.tablet { display: none;}
 	.fixed.mobile { position: initial;}
 	.fixed.tablet { position: fixed;}
@@ -187,101 +169,105 @@ button, .button {
 
 @media screen and (min-width: 51rem) {
 	:root {
-        --width: var(--page-width);
-        --padding: var(--padding-base);
-        --font-size: var(--font-size-base);
-    }
+		--width: var(--page);
+		--padding: var(--padding-base);
+		--font-size: var(--font-size-base);
+	}
 
-    .columns.mobile.tablet { grid-template-columns: var(--single);}
-    .columns.desktop { grid-template-columns: var(--multi);}
-    .hide.mobile.tablet { display: initial;}
+	.columns.mobile.tablet { grid-template-columns: var(--single);}
+	.columns.desktop { grid-template-columns: var(--multi);}
+	.hide.mobile.tablet { display: initial;}
 	.hide.desktop { display: none;}
 	.fixed.mobile.tablet { position: initial;}
 	.fixed.desktop { position: fixed;}
 }
 
-.base, 
+.base,
 .accent,
-.complement, 
+.complement,
 .red,
+.orangered,
 .orange,
+.gold,
 .yellow,
+.lime,
 .green,
+.jade,
 .teal,
+.aqua,
 .cyan,
+.sky,
 .blue,
+.indigo,
 .purple,
+.fuchsia,
+.magenta,
 .pink,
 .gray,
-.brown {
-    background-color: hsla(
-        var(--hue, var(--h)),
-        var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
-        var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 )),
-        var(--a, 1)
-    );
+.brown,
+.white,
+.black {
+	color: var(--t);
+	background-color: hsl(
+		var(--hue, var(--h)),
+		var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
+		var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 ))
+	);
 }
 
 .white, .black {
-    background-color: hsla(
-        var(--hue, var(--h)),
-        var(--sat, var(--s)),
-        var(--lit, var(--l)),
-        var(--a, 1)
-    );
+	background-color: hsl(var(--hue, var(--h)),var(--sat, var(--s)),var(--lit, var(--l)));
 }
 
-.base, .gray, .accent, .complement { color: var(--base-tone, var(--black));}
-.red, .green, .teal, .blue, .purple, .brown { color: var(--white);}
-.yellow, .orange, .cyan, .pink { color: var(--black);}
+.base, .gray, .accent { color: var(--base-tone);}
+.complement { color: var(--alt-tone);}
 
 .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
-.dark { color: var(--white); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1.25 + (var(--v) * .5)));}
+.light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v) * var(--vv)));}
+.dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1 + (var(--v) * var(--vv))));}
 .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
 .dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1 + (var(--v) * .75)));}
 
-.base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
 .complement { --h: calc(var(--base-h) + 180);}
 .accent { --h: calc(var(--base-h) + 15);}
-.white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l);}
-.black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l);}
-.gray, .grey { --h: var(--base-h); --s: calc(var(--base-s) * .1) !important; --l: var(--base-l);}
-.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orange { --h: 40; --s: 95%; --l: 55%;}
-.yellow { --h: 54; --s: 97%; --l: 50%;}
-.green { --h: 110; --s: 57%; --l: 35%;}
-.teal { --h: 170; --s: 35%; --l: 45%;}
-.cyan { --h: 180; --s: 85%; --l: 50%;}
-.blue { --h: 222; --s: 75%; --l: 60%;}
-.purple { --h: 275; --s: 63%; --l: 48%;}
-.pink { --h: 325;--s: 86%;--l: 80%;}
+.white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l); --vv:.05;}
+.black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.1;}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
+.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:1;}
+.red { --h:0;--s:71%;--l:50%;--t:var(--w);--vv:.6;}
+.orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.5;}
+.orange { --h:40;--s:96%;--l:55%;--t:var(--b);--vv:.4;}
+.gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.4;}
+.yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.6;}
+.lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.6;}
+.green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.5;}
+.jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.5;}
+.teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
+.aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
+.cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
+.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+.blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
+.indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
+.purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
+.fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
+.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
+.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
 
-.light.white { --lit: calc(var(--w-l) + (.3% + .3% * var(--v)));}
-.light.black { --lit: calc(var(--b-l) + (8% + 4% * var(--v)));}
-.dark.white { --lit: calc(var(--w-l) - (1% + 1% * var(--v)));}
-.dark.black { --lit: calc(var(--b-l) - (10% + 5% * var(--v)));}
+.basic, .very *, .hella * { --v: calc(1 * var(--vv));}
+.very { --v: calc(2 * var(--vv));}
+.hella { --v: calc(3 * var(--vv));}
 
-.basic, .very *, .hella * { --v: 1;}
-.very { --v: 2;}
-.hella { --v: 3;}
-
-.text-dark { color: var(--black);}
-.text-light { color: var(--white);}
-.text-center { text-align: center;}
-.text-right { text-align: right;}
-
+.text-dark { color: var(--b);}
+.text-light { color: var(--w);}
 .text-color {
-    color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 90%), clamp(0%, var(--lit, var(--l)), 44%));
-    background-color: transparent;
+	color: hsl(var(--hue, var(--h)), var(--s), clamp(0%, var(--lit, var(--l)), 44%));
+	background-color: transparent;
 }
-
 .text-color.text-light {
-    color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(50%, var(--lit, var(--l)), 100%));
-    background-color: transparent;
+	color: hsl(var(--hue, var(--h)), var(--s), clamp(50%, var(--lit, var(--l)), 100%));
 }
 
-.black { color: var(--white);}
-.white { color: var(--black);}
+.black { color: var(--w);}
+.white { color: var(--b);}

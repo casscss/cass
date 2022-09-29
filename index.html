@@ -38,6 +38,7 @@
               </a>     
       </div>
   </nav>
+  
   <br><br>
   <div class="white vertical-center">
     <div class="two columns golden reverse tablet">
@@ -88,105 +89,90 @@
 /* https://github.com/casscss/cass */
 
 :root {
-    --base-h: 214;
-    --base-s: 55%;
-    --base-l: 65%;
-    --base-tone: var(--white);
-  
-    --line-height: 1.618;
-    --text-measure: 50;
-    --font-size-base: 16px;
-    --text-indent: 1ch;
-  
-    --padding-base: 1em;
-    --type-width: calc(var(--text-measure) * .575rem);
-    --page-width: calc(var(--type-width) * 1.62);
-  
-    --white: hsl(var(--w-h), var(--w-s), var(--w-l));
-    --w-h: var(--base-h);
-    --w-s: calc(var(--base-s) * .8);
-    --w-l: 99.5%;
-  
-    --black: hsl(var(--b-h), var(--b-s), var(--b-l));
-    --b-h: var(--base-h);
-    --b-s: calc(var(--base-s) * .2);
-    --b-l: calc(var(--base-l) * .2);
-  
-    --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-    --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
-  
-    --a: 1;
-    --v: 1;
-  
-    --width: 100%;
-    --padding: calc(var(--padding-base) * .6);
-    --font-size: calc(var(--font-size-base) - 2px);
-}
+	--base-h: 214;
+	--base-s: 55%;
+	--base-l: 65%;
+	--base-tone: var(--white);
+	--alt-tone: var(--black);
+	--base: hsl(var(--base-h), var(--base-s), var(--base-l));
+	--text-measure: 50;
+	--font-size-base: 16px;
+	--text-indent: 1ch;
+	--padding-base: 1em;
+	--card: calc(var(--type)*.62);
+	--type: calc(var(--text-measure)*.575rem);
+	--page: calc(var(--type)*1.62);
+	--w-h: var(--base-h);
+	--w-s: calc(var(--base-s) * .8);
+	--w-l: 99.5%;
+	--white: hsl(var(--w-h), var(--w-s), var(--w-l));
+	--w: var(--white);
+	--b-h: var(--base-h);
+	--b-s: calc(var(--base-s) * .2);
+	--b-l: calc(var(--base-l) * .2);
+	--black: hsl(var(--b-h), var(--b-s), var(--b-l));
+	--b: var(--black);
+	--v: 1;
+	--width: 100%;
+	--padding: calc(var(--padding-base) * .6);
+	--p: var(--padding);
+	--font-size: calc(var(--font-size-base) - 2px);
 
-body, html, :root {
-    color: var(--black);
-    background-color: var(--white);
-    font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-    line-height: var(--line-height);
-    margin: 0;
-}
-
-body {
-    font-size: var(--font-size);
-    max-width: 100%;
+	color: var(--b);
+	background-color: var(--w);
+	font-family: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+	margin: 0;
+	font-size: var(--font-size);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	line-height: 1.7;
 }
 
 body * {
-    padding-left: calc(50% - var(--width) * .5);
-    padding-right: calc(50% - var(--width) * .5);
+	padding-left: calc(50% - var(--width) * .5);
+	padding-right: calc(50% - var(--width) * .5);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    --width: var(--type-width);
-    line-height: 1.2;
-    margin-top: .6em;
-    margin-bottom: .6em;
-    font-size: 
+	--width: var(--type);
+	line-height: 1.2;
+	margin-top: .6em;
+	margin-bottom: .6em;
+	font-size: 
 }
 
-p  { text-indent: var(--text-indent);}
-
-p, ul, ol {
-    --width: var(--type-width);
-    margin-bottom: 1em;
-}
-
+p { text-indent: var(--text-indent);}
+p, ul, ol { --width: var(--type); margin-bottom: 1em;}
 ul, ol { margin-left: 1.6em;}
-
-a {
-    color: inherit;
-}
-
-pre { overflow-x: hidden;}
+a { color: inherit;}
 
 button, .button {
-    font-size: inherit;
-    padding: var(--padding);
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+	font-size: inherit;
+	padding: .6em 1em;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
 }
 
-.padding-top, .padding { padding-top: var(--padding);}
-.padding-bottom, .padding { padding-bottom: var(--padding);}
-.padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-.padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-.tight { --padding: calc(.6 * var(--padding-base));}
+.padding-top, .padding { padding-top: var(--p);}
+.padding-bottom, .padding { padding-bottom: var(--p);}
+.padding-left, .padding { padding-left: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+.padding-right, .padding { padding-right: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+.tight { --p: calc(.6 * var(--padding-base));}
 
-.margin { margin: var(--padding);}
+.margin { margin: var(--p);}
+.margin-left { margin-left: var(--p);}
+.margin-right { margin-right: var(--p);}
+.margin-top { margin-top: var(--p);}
+.margin-bottom { margin-bottom: var(--p);}
 .margin-auto { margin-left: auto; margin-right: auto;}
-.margin-bottom { margin-bottom: var(--padding);}
+
+.text-center { text-align: center;}
+.text-right { text-align: right;}
 
 .tiny { font-size: 85%;}
 .small { font-size: 92%;}
@@ -197,25 +183,22 @@ button, .button {
 .cursor, .pointer { cursor: pointer;}
 
 .rounded { border-radius: .6em;}
-.border { 
-	border: 1px solid hsla(
-		var(--hue, var(--h)),
-		clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
-		clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
-		var(--a));
-}
+.border { border: 1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.8 * var(--sat, var(--s))), 50%), clamp(0%, calc(.8 * var(--lit, var(--l))), 67%));}
+.dashed { border-style: dashed;}
+.dotted { border-style: dotted;}
+.thick { border-width: 2px;}
 
-.shadow { box-shadow: 0 1px .4em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
+.shadow { box-shadow: 0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
 
 .no-underline { text-decoration: none;}
 .no-text-indent { --text-indent: 0;}
 .no-margin-bottom { margin-bottom: 0;}
 
 .vertical-center { 
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: column;
-    justify-content: center;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .block { display: block;}
@@ -226,7 +209,6 @@ button, .button {
 
 .fixed, .fixed.mobile, .fixed.mobile.tablet { position: fixed;}
 .fixed.tablet, .fixed.desktop { position: initial;}
-
 .relative { position: relative;}
 .absolute { position: absolute;}
 
@@ -235,17 +217,18 @@ button, .button {
 .bottom { bottom: 0;}
 .left { left: 0;}
 
-.type { --width: var(--type-width);}
-.page { --width: var(--page-width);}
-.full.width { width: 100% !important; --width: var(--page-width);}
+.card { --width: var(--card);}
+.type { --width: var(--type);}
+.page { --width: var(--page);}
+.full.width { width: 100%; --width: var(--page);}
 
 .columns {
-    --c: 2;
-    --multi: repeat(var(--c), minmax(0, 1fr));
-    --single: repeat(1, minmax(0, 1fr));
-    display: grid;
-    gap: var(--padding);
-    grid-template-columns: var(--multi);
+	--c: 2;
+	--multi: repeat(var(--c), minmax(0, 1fr));
+	--single: repeat(1, minmax(0, 1fr));
+	display: grid;
+	gap: var(--p);
+	grid-template-columns: var(--multi);
 }
 
 .three { --c: 3;}
@@ -258,14 +241,14 @@ button, .button {
 
 @media screen and (min-width: 30rem) {
 	:root {
-        --width: var(--type-width);
-        --padding: calc(var(--padding-base) * .8);
-        --font-size: calc(var(--font-size-base) - 1px);
-    }
+		--width: var(--type);
+		--padding: calc(var(--padding-base) * .8);
+		--font-size: calc(var(--font-size-base) - 1px);
+	}
 
-    .columns.mobile { grid-template-columns: var(--single);}
-    .columns.tablet { grid-template-columns: var(--multi);}
-    .hide.mobile { display: initial;}
+	.columns.mobile { grid-template-columns: var(--single);}
+	.columns.tablet { grid-template-columns: var(--multi);}
+	.hide.mobile { display: initial;}
 	.hide.tablet { display: none;}
 	.fixed.mobile { position: initial;}
 	.fixed.tablet { position: fixed;}
@@ -273,116 +256,116 @@ button, .button {
 
 @media screen and (min-width: 51rem) {
 	:root {
-        --width: var(--page-width);
-        --padding: var(--padding-base);
-        --font-size: var(--font-size-base);
-    }
+		--width: var(--page);
+		--padding: var(--padding-base);
+		--font-size: var(--font-size-base);
+	}
 
-    .columns.mobile.tablet { grid-template-columns: var(--single);}
-    .columns.desktop { grid-template-columns: var(--multi);}
-    .hide.mobile.tablet { display: initial;}
+	.columns.mobile.tablet { grid-template-columns: var(--single);}
+	.columns.desktop { grid-template-columns: var(--multi);}
+	.hide.mobile.tablet { display: initial;}
 	.hide.desktop { display: none;}
 	.fixed.mobile.tablet { position: initial;}
 	.fixed.desktop { position: fixed;}
 }
 
-.base, 
+.base,
 .accent,
-.complement, 
+.complement,
 .red,
+.orangered,
 .orange,
+.gold,
 .yellow,
+.lime,
 .green,
+.jade,
 .teal,
+.aqua,
 .cyan,
+.sky,
 .blue,
+.indigo,
 .purple,
+.fuchsia,
+.magenta,
 .pink,
 .gray,
-.brown {
-    background-color: hsla(
-        var(--hue, var(--h)),
-        var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
-        var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 )),
-        var(--a, 1)
-    );
+.brown,
+.white,
+.black {
+	color: var(--t);
+	background-color: hsl(
+		var(--hue, var(--h)),
+		var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
+		var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 ))
+	);
 }
 
 .white, .black {
-    background-color: hsla(
-        var(--hue, var(--h)),
-        var(--sat, var(--s)),
-        var(--lit, var(--l)),
-        var(--a, 1)
-    );
+	background-color: hsl(var(--hue, var(--h)),var(--sat, var(--s)),var(--lit, var(--l)));
 }
 
-.base, .gray, .accent, .complement { color: var(--base-tone, var(--black));}
-.red, .green, .teal, .blue, .purple, .brown { color: var(--white);}
-.yellow, .orange, .cyan, .pink { color: var(--black);}
+.base, .gray, .accent { color: var(--base-tone);}
+.complement { color: var(--alt-tone);}
 
 .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-.light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
-.dark { color: var(--white); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1.25 + (var(--v) * .5)));}
+.light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v) * var(--vv)));}
+.dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1 + (var(--v) * var(--vv))));}
 .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
 .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
 .dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1 + (var(--v) * .75)));}
 
-.base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+.base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
 .complement { --h: calc(var(--base-h) + 180);}
 .accent { --h: calc(var(--base-h) + 15);}
-.white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l);}
-.black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l);}
-.gray, .grey { --h: var(--base-h); --s: calc(var(--base-s) * .1) !important; --l: var(--base-l);}
-.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);}
-.red { --h: 0; --s: 71%; --l: 50%;}
-.orange { --h: 40; --s: 95%; --l: 55%;}
-.yellow { --h: 54; --s: 97%; --l: 50%;}
-.green { --h: 110; --s: 57%; --l: 35%;}
-.teal { --h: 170; --s: 35%; --l: 45%;}
-.cyan { --h: 180; --s: 85%; --l: 50%;}
-.blue { --h: 222; --s: 75%; --l: 60%;}
-.purple { --h: 275; --s: 63%; --l: 48%;}
-.pink { --h: 325;--s: 86%;--l: 80%;}
+.white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l); --vv:.05;}
+.black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.1;}
+.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
+.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:1;}
+.red { --h:0;--s:71%;--l:50%;--t:var(--w);--vv:.6;}
+.orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.5;}
+.orange { --h:40;--s:96%;--l:55%;--t:var(--b);--vv:.4;}
+.gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.4;}
+.yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.6;}
+.lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.6;}
+.green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.5;}
+.jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.5;}
+.teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
+.aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
+.cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
+.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+.blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
+.indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
+.purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
+.fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
+.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
+.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
 
-.light.white { --lit: calc(var(--w-l) + (.3% + .3% * var(--v)));}
-.light.black { --lit: calc(var(--b-l) + (8% + 4% * var(--v)));}
-.dark.white { --lit: calc(var(--w-l) - (1% + 1% * var(--v)));}
-.dark.black { --lit: calc(var(--b-l) - (10% + 5% * var(--v)));}
+.basic, .very *, .hella * { --v: calc(1 * var(--vv));}
+.very { --v: calc(2 * var(--vv));}
+.hella { --v: calc(3 * var(--vv));}
 
-.basic, .very *, .hella * { --v: 1;}
-.very { --v: 2;}
-.hella { --v: 3;}
-
-.text-dark { color: var(--black);}
-.text-light { color: var(--white);}
-.text-center { text-align: center;}
-.text-right { text-align: right;}
-
+.text-dark { color: var(--b);}
+.text-light { color: var(--w);}
 .text-color {
-    color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 90%), clamp(0%, var(--lit, var(--l)), 44%));
-    background-color: transparent;
+	color: hsl(var(--hue, var(--h)), var(--s), clamp(0%, var(--lit, var(--l)), 44%));
+	background-color: transparent;
 }
-
 .text-color.text-light {
-    color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(50%, var(--lit, var(--l)), 100%));
-    background-color: transparent;
+	color: hsl(var(--hue, var(--h)), var(--s), clamp(50%, var(--lit, var(--l)), 100%));
 }
 
-.black { color: var(--white);}
-.white { color: var(--black);}
+.black { color: var(--w);}
+.white { color: var(--b);}
 </textarea>
           <div class="text-right">
-            <button class="small bright dark red" onclick="copyCSS()">Copy to clipboard</button>
+            <button class="small bright dark complement" onclick="copyCSS()">Copy to clipboard</button>
             <button class="small bright dark base" onclick="saveTextAsFile(document.getElementById('css_textarea').value,'ca.css')">Download</button>
           </div>
         </div>
       </div>
-
     </div>
-
-
-
 
   </div>
 
@@ -400,7 +383,7 @@ button, .button {
           <li>Typography-first</li>
           <li>Hundreds of colors</li>
           <li>No build step</li>
-          <li>Just <strong>8kb</strong></li>
+          <li>Just <strong>8.5kb</strong></li>
           <li>No abbreviations or numerals</li>
           <li>Only normal English words (and some from California)</li>
         </ul>
@@ -425,7 +408,7 @@ button, .button {
     </section>
 <section class="very dark base padding">
   <h2>Philosophy</h2>
-  <p>Use CASS to quickly frame out your pages into usable, testable layouts. CASS is designed to meet 90% of your CSS needs with just 8kb of CSS.
+  <p>Use CASS to quickly frame out your pages into usable, testable layouts. CASS is designed to meet 90% of your CSS needs with just 8.5kb of CSS.
   </p>
   <p>Spend your CSS-writing time on that last 10% that really sets your page apart, not on repeating the basics of typography, layout, color and responsiveness.</p>
 
@@ -438,7 +421,7 @@ button, .button {
 
   <p>Most typography features are automatic. You can use the <strong>type</strong> class to enforce text measure inside an element.</p>
 </section>
-<section class="dark white padding">
+<section class="white padding">
 
   <h2>Layout</h2>
 
@@ -474,7 +457,7 @@ button, .button {
 <pre class="black type small padding rounded margin-bottom">&lt;div class="<span class="text-color light yellow text-light">three columns</span>"&gt;
   &lt;div class="light blue"&gt;California&lt;/div&gt;
   &lt;div class="light blue"&gt;Stylesheets&lt;/div&gt;
-  &lt;div class="light blue"&gt;(CASS))&lt;/div&gt;
+  &lt;div class="light blue"&gt;(CASS)&lt;/div&gt;
 &lt;/div&gt;
 </pre>
   </div>
@@ -545,57 +528,76 @@ button, .button {
   <p>By default, color classes change the background color. Add the <strong>text-color</strong> class to change the text color</p>
 
   <p>The color palette</p>
-  <p>These are the sixteen colors in the color palette:</p>
+  <p>These are the 25 colors in the color palette:</p>
 
-  <div class="columns tablet no-text-indent margin-bottom" style="--c: 4;">
-    <p class="">
+  <div class="type columns tablet no-text-indent margin-bottom">
       <span class="tight padding rounded border block base">base</span>
-    </p>
-    <p class="">
       <span class="tight padding rounded border block complement">complement</span>
-    </p>
-    <p class="">
       <span class="tight padding rounded border block accent">accent</span>
-    </p>
-    <p class="">
       <span class="tight padding rounded border block brown">brown</span>
-    </p>
-      <p class="">
+
         <span class="tight padding rounded border block red">red</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block orangered">orangered</span>
+
+
         <span class="tight padding rounded border block orange">orange</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block gold">gold</span>
+
+
         <span class="tight padding rounded border block yellow">yellow</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block lime">lime</span>
+
+
         <span class="tight padding rounded border block green">green</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block jade">jade</span>
+
+
         <span class="tight padding rounded border block teal">teal</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block aqua">aqua</span>
+
+
         <span class="tight padding rounded border block cyan">cyan</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block sky">sky</span>
+
+
         <span class="tight padding rounded border block blue">blue</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block indigo">indigo</span>
+
+
         <span class="tight padding rounded border block purple">purple</span>
-      </p>
-      <p class="">
+
+
+        <span class="tight padding rounded border block fuchsia">fuchsia</span>
+
+
+        <span class="tight padding rounded border block magenta">magenta</span>
+
+
         <span class="tight padding rounded border block pink">pink</span>
-      </p>
-      <p class="">
+
+
         <span class="tight padding rounded border block white">white</span>
-      </p>
-      <p class="">
+
+
         <span class="tight padding rounded border block gray">gray</span>
-      </p>
-      <p class="">
+
+
         <span class="tight padding rounded border block black">black</span>
-      </p>
+
   </div>
 
   <h4>light, bright, dim and dark</h4>
@@ -694,20 +696,862 @@ button, .button {
   <h4>shadow</h4>
   <p>Add a shadow.</p>
 </section>
-      
-    <footer class="viewport height golden reverse hella dark dim cool base square inner responsive width padding">
-        <div class="two columns gap-responsive golden reverse desktop gutter-top">
-            <div class="vertical-center text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="padding margin-auto margin-bottom" style="max-width: 200px;" x="0px" y="0px" viewBox="0 0 385 401" overflow="visible"><g clip-rule="evenodd"><path fill-rule="evenodd" fill="#FFF" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="3.864" d="M.5 262.02C.5 139.257 81.231 35.353 192.5.5c111.27 34.853 192 138.757 192 261.52v63.642c0 29.993-21.304 55.014-49.602 60.76l-.189.038-.187.037-.187.037c-45.924 9.168-93.317 13.967-141.835 13.967-48.519 0-95.911-4.799-141.835-13.967l-.187-.037-.187-.037-.19-.038C21.804 380.676.5 355.655.5 325.662V262.02z"/></g><path fill-rule="evenodd" clip-rule="evenodd" fill="#006B54" d="M192.5 13.104c104.55 34.42 180 132.87 180 248.916v63.642c0 24.173-17.166 44.365-39.982 48.998-45.164 9.016-92.303 13.841-140.018 13.841s-94.33-4.72-139.492-13.735C30.191 370.132 12.5 349.835 12.5 325.662V262.02c0-116.046 75.45-214.497 180-248.916z"/><path fill-rule="evenodd" clip-rule="evenodd" fill="#FFF" d="M80.844 145.72a11.176 11.176 0 0 1-.887 3.466 13.627 13.627 0 0 1-1.826 3.05 13.576 13.576 0 0 1-2.599 2.493 14.622 14.622 0 0 1-3.204 1.792c-1.881.76-3.714 1.085-5.498.978s-3.466-.598-5.044-1.469c-1.578-.87-3.017-2.113-4.316-3.726-1.298-1.614-2.397-3.533-3.295-5.756-.91-2.252-1.455-4.402-1.636-6.45s-.004-3.928.533-5.636a11.663 11.663 0 0 1 2.626-4.517c1.214-1.303 2.761-2.335 4.642-3.094 2.309-.934 4.676-1.251 7.1-.954 2.424.297 4.6 1.232 6.53 2.807l-3.548 4.268c-.64-.437-1.153-.744-1.54-.92a5.827 5.827 0 0 0-1.333-.406c-.754-.226-1.606-.304-2.556-.235s-1.81.259-2.58.57c-1.31.53-2.29 1.265-2.937 2.206a7.393 7.393 0 0 0-1.231 3.108c-.174 1.13-.146 2.306.08 3.523a18.2 18.2 0 0 0 1.014 3.494c1.267 3.136 2.861 5.318 4.784 6.547 1.922 1.23 3.966 1.406 6.132.531a8.101 8.101 0 0 0 1.697-.909 6.9 6.9 0 0 0 1.297-1.22 8.376 8.376 0 0 0 1.068-1.725c.324-.678.66-1.485 1.011-2.423l5.516.606zM111.655 142.417l-5.04-6.077-12.876 3.936-.736 7.844-5.82 1.779 3.401-33.345 5.38-1.645 21.379 25.769-5.688 1.739zm-16.13-19.322-1.097 11.233 8.29-2.535-7.193-8.698zM122.64 140.019l-5.894-30.326 5.43-1.056 4.99 25.664 17.245-3.352.905 4.662zM152.296 103.834l3.765 30.662-5.491.675-3.765-30.663zM167.857 107.961l.438 6.256 9.613-.673.392 5.612-9.613.673.94 13.43-5.612.393-2.156-30.818 23.045-1.611.386 5.52zM217.816 117.521c-.085 2.428-.462 4.621-1.13 6.582-.667 1.96-1.58 3.628-2.735 5.002s-2.537 2.426-4.146 3.155c-1.61.728-3.399 1.057-5.365.989-2.273-.08-4.215-.617-5.826-1.61s-2.926-2.271-3.949-3.83c-1.022-1.558-1.753-3.306-2.193-5.244a22.591 22.591 0 0 1-.558-5.81c.085-2.457.462-4.659 1.13-6.604.667-1.945 1.594-3.589 2.778-4.932 1.186-1.343 2.598-2.354 4.237-3.035s3.47-.986 5.499-.915c1.904.066 3.627.51 5.167 1.333a12.115 12.115 0 0 1 3.942 3.368c1.088 1.422 1.905 3.119 2.452 5.091.546 1.972.778 4.126.697 6.46zm-5.535-.054c.114-3.257-.427-5.828-1.622-7.716s-2.96-2.872-5.295-2.953-4.194.776-5.58 2.574c-1.386 1.796-2.136 4.323-2.249 7.58-.115 3.318.455 5.922 1.711 7.81 1.258 1.89 3.053 2.876 5.388 2.957 1.474.052 2.691-.229 3.651-.842a6.91 6.91 0 0 0 2.299-2.41c.572-.995.988-2.112 1.247-3.348.259-1.237.41-2.454.45-3.652zM243.01 136.45l-3.242-12.702-8.174-1.148-1.688 12.008-5.48-.77 4.3-30.592 14.064 1.976c1.126.158 2.072.384 2.838.678s1.51.74 2.233 1.339a8.996 8.996 0 0 1 3.002 3.82c.65 1.55.855 3.194.612 4.929-.245 1.735-.9 3.25-1.967 4.543-1.067 1.293-2.45 2.255-4.154 2.885l3.775 13.894-6.118-.86zm2.984-21.232c.168-1.187-.096-2.187-.789-2.998-.693-.811-1.725-1.313-3.094-1.506l-8.675-1.219-1.073 7.625 8.676 1.22c1.37.192 2.5.001 3.387-.572.887-.574 1.41-1.424 1.568-2.55zM274.827 143.273l-9.13-24.183-5.142 20.625-5.28-1.316 7.475-29.976 5.28 1.317 8.804 23.199 4.93-19.775 5.19 1.294-7.474 29.976zM301.947 119.047l-9.547 29.38-5.262-1.709 9.547-29.38zM321.208 159.23l-.093-7.896-12.483-5.043-5.508 5.632-5.644-2.28 23.63-23.773 5.215 2.108.398 33.48-5.515-2.229zm-.375-25.167-7.923 8.039 8.037 3.247-.114-11.286z"/><path style="font-style:normal;font-weight:400;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0;word-spacing:0;fill:#fff;fill-opacity:1;stroke:none" d="M107.688 189.62c-2.601 0-4.947.316-7.038.948-2.066.608-3.876 1.543-5.431 2.807-1.531 1.24-2.747 2.82-3.647 4.74-.899 1.896-1.347 4.13-1.347 6.707 0 2.334.388 4.279 1.166 5.834.777 1.556 1.822 2.845 3.134 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.432 1.459c1.434.291 2.795.594 4.084.91 1.312.291 2.49.682 3.535 1.168 1.045.486 1.873 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.283.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.629-1.251-7.035-2.297v7.547c1.701.948 3.827 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.912 2.552-.608 4.716-1.532 6.49-2.772 1.8-1.264 3.185-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.275-6.27-.851-1.652-2.005-2.99-3.463-4.011-1.459-1.02-3.136-1.81-5.032-2.37a65.337 65.337 0 0 0-5.906-1.53 60.238 60.238 0 0 1-3.719-.875c-1.166-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.789-3.743 2.369-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.217.232 6.526.693 2.333.438 4.763 1.154 7.29 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.838-.765zm22.275.911v7.475h15.75v41.306h8.933v-41.306h15.713v-7.475h-40.396zm42.219 0 18.484 29.131v19.65h8.934v-19.65l18.484-29.13h-9.918l-12.978 21h-.11l-12.978-21h-9.918zm52.5 0v48.781h31.756v-7.474h-22.823V190.53h-8.933zm40.105 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.47v-12.613h22.678v-7.475h-31.609zM82.531 259.62c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.431 2.806-1.532 1.24-2.748 2.82-3.647 4.74-.9 1.896-1.348 4.13-1.348 6.707 0 2.334.389 4.279 1.166 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.833 1.786 4.559 2.37a57.02 57.02 0 0 0 5.431 1.459c1.434.291 2.796.594 4.084.91 1.313.291 2.49.682 3.536 1.168 1.045.486 1.872 1.116 2.48 1.894.608.754.91 1.75.91 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.284.96-3.645 1.204a26.152 26.152 0 0 1-4.156.328c-2.43 0-4.79-.232-7.074-.694-2.285-.486-4.63-1.251-7.035-2.296v7.546c1.701.948 3.826 1.677 6.379 2.188 2.576.535 5.19.803 7.84.803 3.038 0 5.832-.305 8.384-.913 2.552-.607 4.716-1.531 6.49-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.457-4.194 1.457-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.004-2.99-3.463-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.336 65.336 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.2-.73-3.1-1.24-.899-.535-1.615-1.202-2.15-2.005-.51-.802-.766-1.822-.766-3.062 0-2.139.79-3.743 2.37-4.813 1.604-1.069 3.877-1.605 6.818-1.605 2.042 0 4.216.232 6.525.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.978 40.978 0 0 0-7.839-.765zm222.834 0c-2.6 0-4.947.317-7.037.95-2.066.607-3.876 1.542-5.432 2.806-1.53 1.24-2.747 2.82-3.646 4.74-.9 1.896-1.35 4.13-1.35 6.707 0 2.334.39 4.279 1.168 5.834.778 1.556 1.823 2.845 3.135 3.865 1.313.997 2.831 1.786 4.557 2.37a57.062 57.062 0 0 0 5.433 1.459c1.434.291 2.794.594 4.082.91 1.313.291 2.492.682 3.538 1.168 1.045.486 1.87 1.116 2.478 1.894.608.754.912 1.75.912 2.99 0 1.41-.328 2.6-.984 3.573-.656.948-1.531 1.702-2.625 2.261-1.07.56-2.286.96-3.647 1.204a26.152 26.152 0 0 1-4.156.328 35.61 35.61 0 0 1-7.072-.694c-2.285-.486-4.631-1.251-7.037-2.296v7.546c1.701.948 3.828 1.677 6.38 2.188 2.577.535 5.19.803 7.838.803 3.039 0 5.835-.305 8.387-.913 2.552-.607 4.714-1.531 6.488-2.771 1.799-1.264 3.184-2.855 4.157-4.775.972-1.92 1.459-4.194 1.459-6.819 0-2.552-.425-4.64-1.276-6.27-.85-1.652-2.006-2.99-3.465-4.011-1.458-1.02-3.135-1.81-5.03-2.37a65.337 65.337 0 0 0-5.907-1.53 60.238 60.238 0 0 1-3.719-.875c-1.167-.316-2.198-.73-3.098-1.24-.899-.535-1.617-1.202-2.152-2.005-.51-.802-.765-1.822-.765-3.062 0-2.139.79-3.743 2.37-4.813 1.605-1.069 3.876-1.605 6.817-1.605 2.042 0 4.218.232 6.527.693 2.334.438 4.764 1.154 7.291 2.15v-7.655c-1.895-.803-4.156-1.459-6.78-1.97a40.977 40.977 0 0 0-7.839-.765zm-195.818.912v48.781h8.932v-21.218h22.605v21.219h8.932V260.53h-8.932v20.088h-22.605v-20.088h-8.932zm52.209 0v48.781h32.922v-7.474h-23.99v-13.744h19.468v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm42.437 0v48.781h32.922v-7.474h-23.99v-13.744h19.469v-7.475h-19.469v-12.613h22.678v-7.475h-31.61zm37.698 0v7.475h15.75v41.307h8.931v-41.307h15.715v-7.475h-40.396z"/></svg>
-            </div>
-    
-            <div class="vertical-center">
-                <p>CASS is written for the decentralized web. It seeks to make web styles more understandable and accessible by developers, users, robots, archivists or anyone else who looks at a website.</p>
-            </div>
-    
-            
-        </div>
-        <p class="no-margin-bottom hella light black inset padding margin-top text-rounded full width"><a href="">California Stylesheets</a> <span class="float-right clearfix">&copy; 2022 Rex Riepe</span></p>
+<section class="inner page width margin-bottom text-center" style="line-height:3em;">
+    <p>Combine the words for a huge natural language color palette:</p>
+        <span class=" border text-rounded text-margin tight padding base" id="base">base</span>
+    <span class=" border text-rounded text-margin tight padding bright base" id="bright_base">bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding light base" id="light_base">light&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding dark base" id="dark_base">dark&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding dim base" id="dim_base">dim&nbsp;base</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright base" id="bright_base">very&nbsp;bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding very light base" id="light_base">very&nbsp;light&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding very dark base" id="dark_base">very&nbsp;dark&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding very dim base" id="dim_base">very&nbsp;dim&nbsp;base</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright base" id="bright_base">hella&nbsp;bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding hella light base" id="light_base">hella&nbsp;light&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding hella dark base" id="dark_base">hella&nbsp;dark&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding hella dim base" id="dim_base">hella&nbsp;dim&nbsp;base</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright base">light&nbsp;bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright base">dark&nbsp;bright&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding light dim base">light&nbsp;dim&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding dark dim base">dark&nbsp;dim&nbsp;base</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright base">very&nbsp;light&nbsp;bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright base">very&nbsp;dark&nbsp;bright&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding very light dim base">very&nbsp;light&nbsp;dim&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim base">very&nbsp;dark&nbsp;dim&nbsp;base</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright base">hella&nbsp;light&nbsp;bright&nbsp;base</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright base">hella&nbsp;dark&nbsp;bright&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim base">hella&nbsp;light&nbsp;dim&nbsp;base</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim base">hella&nbsp;dark&nbsp;dim&nbsp;base</span>    <span class=" border text-rounded text-margin tight padding complement" id="complement">complement</span>
+    <span class=" border text-rounded text-margin tight padding bright complement" id="bright_complement">bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding light complement" id="light_complement">light&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding dark complement" id="dark_complement">dark&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding dim complement" id="dim_complement">dim&nbsp;complement</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright complement" id="bright_complement">very&nbsp;bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding very light complement" id="light_complement">very&nbsp;light&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding very dark complement" id="dark_complement">very&nbsp;dark&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding very dim complement" id="dim_complement">very&nbsp;dim&nbsp;complement</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright complement" id="bright_complement">hella&nbsp;bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding hella light complement" id="light_complement">hella&nbsp;light&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding hella dark complement" id="dark_complement">hella&nbsp;dark&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding hella dim complement" id="dim_complement">hella&nbsp;dim&nbsp;complement</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright complement">light&nbsp;bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright complement">dark&nbsp;bright&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding light dim complement">light&nbsp;dim&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding dark dim complement">dark&nbsp;dim&nbsp;complement</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright complement">very&nbsp;light&nbsp;bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright complement">very&nbsp;dark&nbsp;bright&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding very light dim complement">very&nbsp;light&nbsp;dim&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim complement">very&nbsp;dark&nbsp;dim&nbsp;complement</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright complement">hella&nbsp;light&nbsp;bright&nbsp;complement</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright complement">hella&nbsp;dark&nbsp;bright&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim complement">hella&nbsp;light&nbsp;dim&nbsp;complement</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim complement">hella&nbsp;dark&nbsp;dim&nbsp;complement</span>    <span class=" border text-rounded text-margin tight padding accent" id="accent">accent</span>
+    <span class=" border text-rounded text-margin tight padding bright accent" id="bright_accent">bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding light accent" id="light_accent">light&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding dark accent" id="dark_accent">dark&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding dim accent" id="dim_accent">dim&nbsp;accent</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright accent" id="bright_accent">very&nbsp;bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding very light accent" id="light_accent">very&nbsp;light&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding very dark accent" id="dark_accent">very&nbsp;dark&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding very dim accent" id="dim_accent">very&nbsp;dim&nbsp;accent</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright accent" id="bright_accent">hella&nbsp;bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding hella light accent" id="light_accent">hella&nbsp;light&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding hella dark accent" id="dark_accent">hella&nbsp;dark&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding hella dim accent" id="dim_accent">hella&nbsp;dim&nbsp;accent</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright accent">light&nbsp;bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright accent">dark&nbsp;bright&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding light dim accent">light&nbsp;dim&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding dark dim accent">dark&nbsp;dim&nbsp;accent</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright accent">very&nbsp;light&nbsp;bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright accent">very&nbsp;dark&nbsp;bright&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding very light dim accent">very&nbsp;light&nbsp;dim&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim accent">very&nbsp;dark&nbsp;dim&nbsp;accent</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright accent">hella&nbsp;light&nbsp;bright&nbsp;accent</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright accent">hella&nbsp;dark&nbsp;bright&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim accent">hella&nbsp;light&nbsp;dim&nbsp;accent</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim accent">hella&nbsp;dark&nbsp;dim&nbsp;accent</span>    <span class=" border text-rounded text-margin tight padding red" id="red">red</span>
+    <span class=" border text-rounded text-margin tight padding bright red" id="bright_red">bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding light red" id="light_red">light&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding dark red" id="dark_red">dark&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding dim red" id="dim_red">dim&nbsp;red</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright red" id="bright_red">very&nbsp;bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding very light red" id="light_red">very&nbsp;light&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding very dark red" id="dark_red">very&nbsp;dark&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding very dim red" id="dim_red">very&nbsp;dim&nbsp;red</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright red" id="bright_red">hella&nbsp;bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding hella light red" id="light_red">hella&nbsp;light&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding hella dark red" id="dark_red">hella&nbsp;dark&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding hella dim red" id="dim_red">hella&nbsp;dim&nbsp;red</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright red">light&nbsp;bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright red">dark&nbsp;bright&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding light dim red">light&nbsp;dim&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding dark dim red">dark&nbsp;dim&nbsp;red</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright red">very&nbsp;light&nbsp;bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright red">very&nbsp;dark&nbsp;bright&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding very light dim red">very&nbsp;light&nbsp;dim&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim red">very&nbsp;dark&nbsp;dim&nbsp;red</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright red">hella&nbsp;light&nbsp;bright&nbsp;red</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright red">hella&nbsp;dark&nbsp;bright&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim red">hella&nbsp;light&nbsp;dim&nbsp;red</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim red">hella&nbsp;dark&nbsp;dim&nbsp;red</span>    <span class=" border text-rounded text-margin tight padding orangered" id="orangered">orangered</span>
+    <span class=" border text-rounded text-margin tight padding bright orangered" id="bright_orangered">bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding light orangered" id="light_orangered">light&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding dark orangered" id="dark_orangered">dark&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding dim orangered" id="dim_orangered">dim&nbsp;orangered</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright orangered" id="bright_orangered">very&nbsp;bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding very light orangered" id="light_orangered">very&nbsp;light&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding very dark orangered" id="dark_orangered">very&nbsp;dark&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding very dim orangered" id="dim_orangered">very&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright orangered" id="bright_orangered">hella&nbsp;bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding hella light orangered" id="light_orangered">hella&nbsp;light&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding hella dark orangered" id="dark_orangered">hella&nbsp;dark&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding hella dim orangered" id="dim_orangered">hella&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright orangered">light&nbsp;bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright orangered">dark&nbsp;bright&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding light dim orangered">light&nbsp;dim&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding dark dim orangered">dark&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright orangered">very&nbsp;light&nbsp;bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright orangered">very&nbsp;dark&nbsp;bright&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding very light dim orangered">very&nbsp;light&nbsp;dim&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim orangered">very&nbsp;dark&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright orangered">hella&nbsp;light&nbsp;bright&nbsp;orangered</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright orangered">hella&nbsp;dark&nbsp;bright&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim orangered">hella&nbsp;light&nbsp;dim&nbsp;orangered</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim orangered">hella&nbsp;dark&nbsp;dim&nbsp;orangered</span>    <span class=" border text-rounded text-margin tight padding orange" id="orange">orange</span>
+    <span class=" border text-rounded text-margin tight padding bright orange" id="bright_orange">bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding light orange" id="light_orange">light&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding dark orange" id="dark_orange">dark&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding dim orange" id="dim_orange">dim&nbsp;orange</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright orange" id="bright_orange">very&nbsp;bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding very light orange" id="light_orange">very&nbsp;light&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding very dark orange" id="dark_orange">very&nbsp;dark&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding very dim orange" id="dim_orange">very&nbsp;dim&nbsp;orange</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright orange" id="bright_orange">hella&nbsp;bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding hella light orange" id="light_orange">hella&nbsp;light&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding hella dark orange" id="dark_orange">hella&nbsp;dark&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding hella dim orange" id="dim_orange">hella&nbsp;dim&nbsp;orange</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright orange">light&nbsp;bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright orange">dark&nbsp;bright&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding light dim orange">light&nbsp;dim&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding dark dim orange">dark&nbsp;dim&nbsp;orange</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright orange">very&nbsp;light&nbsp;bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright orange">very&nbsp;dark&nbsp;bright&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding very light dim orange">very&nbsp;light&nbsp;dim&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim orange">very&nbsp;dark&nbsp;dim&nbsp;orange</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright orange">hella&nbsp;light&nbsp;bright&nbsp;orange</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright orange">hella&nbsp;dark&nbsp;bright&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim orange">hella&nbsp;light&nbsp;dim&nbsp;orange</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim orange">hella&nbsp;dark&nbsp;dim&nbsp;orange</span>    <span class=" border text-rounded text-margin tight padding gold" id="gold">gold</span>
+    <span class=" border text-rounded text-margin tight padding bright gold" id="bright_gold">bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding light gold" id="light_gold">light&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding dark gold" id="dark_gold">dark&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding dim gold" id="dim_gold">dim&nbsp;gold</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright gold" id="bright_gold">very&nbsp;bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding very light gold" id="light_gold">very&nbsp;light&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding very dark gold" id="dark_gold">very&nbsp;dark&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding very dim gold" id="dim_gold">very&nbsp;dim&nbsp;gold</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright gold" id="bright_gold">hella&nbsp;bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding hella light gold" id="light_gold">hella&nbsp;light&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding hella dark gold" id="dark_gold">hella&nbsp;dark&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding hella dim gold" id="dim_gold">hella&nbsp;dim&nbsp;gold</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright gold">light&nbsp;bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright gold">dark&nbsp;bright&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding light dim gold">light&nbsp;dim&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding dark dim gold">dark&nbsp;dim&nbsp;gold</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright gold">very&nbsp;light&nbsp;bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright gold">very&nbsp;dark&nbsp;bright&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding very light dim gold">very&nbsp;light&nbsp;dim&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim gold">very&nbsp;dark&nbsp;dim&nbsp;gold</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright gold">hella&nbsp;light&nbsp;bright&nbsp;gold</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright gold">hella&nbsp;dark&nbsp;bright&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim gold">hella&nbsp;light&nbsp;dim&nbsp;gold</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim gold">hella&nbsp;dark&nbsp;dim&nbsp;gold</span>    <span class=" border text-rounded text-margin tight padding yellow" id="yellow">yellow</span>
+    <span class=" border text-rounded text-margin tight padding bright yellow" id="bright_yellow">bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding light yellow" id="light_yellow">light&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding dark yellow" id="dark_yellow">dark&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding dim yellow" id="dim_yellow">dim&nbsp;yellow</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright yellow" id="bright_yellow">very&nbsp;bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding very light yellow" id="light_yellow">very&nbsp;light&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding very dark yellow" id="dark_yellow">very&nbsp;dark&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding very dim yellow" id="dim_yellow">very&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright yellow" id="bright_yellow">hella&nbsp;bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding hella light yellow" id="light_yellow">hella&nbsp;light&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding hella dark yellow" id="dark_yellow">hella&nbsp;dark&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding hella dim yellow" id="dim_yellow">hella&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright yellow">light&nbsp;bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright yellow">dark&nbsp;bright&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding light dim yellow">light&nbsp;dim&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding dark dim yellow">dark&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright yellow">very&nbsp;light&nbsp;bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright yellow">very&nbsp;dark&nbsp;bright&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding very light dim yellow">very&nbsp;light&nbsp;dim&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim yellow">very&nbsp;dark&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright yellow">hella&nbsp;light&nbsp;bright&nbsp;yellow</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright yellow">hella&nbsp;dark&nbsp;bright&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim yellow">hella&nbsp;light&nbsp;dim&nbsp;yellow</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim yellow">hella&nbsp;dark&nbsp;dim&nbsp;yellow</span>    <span class=" border text-rounded text-margin tight padding lime" id="lime">lime</span>
+    <span class=" border text-rounded text-margin tight padding bright lime" id="bright_lime">bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding light lime" id="light_lime">light&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding dark lime" id="dark_lime">dark&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding dim lime" id="dim_lime">dim&nbsp;lime</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright lime" id="bright_lime">very&nbsp;bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding very light lime" id="light_lime">very&nbsp;light&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding very dark lime" id="dark_lime">very&nbsp;dark&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding very dim lime" id="dim_lime">very&nbsp;dim&nbsp;lime</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright lime" id="bright_lime">hella&nbsp;bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding hella light lime" id="light_lime">hella&nbsp;light&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding hella dark lime" id="dark_lime">hella&nbsp;dark&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding hella dim lime" id="dim_lime">hella&nbsp;dim&nbsp;lime</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright lime">light&nbsp;bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright lime">dark&nbsp;bright&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding light dim lime">light&nbsp;dim&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding dark dim lime">dark&nbsp;dim&nbsp;lime</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright lime">very&nbsp;light&nbsp;bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright lime">very&nbsp;dark&nbsp;bright&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding very light dim lime">very&nbsp;light&nbsp;dim&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim lime">very&nbsp;dark&nbsp;dim&nbsp;lime</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright lime">hella&nbsp;light&nbsp;bright&nbsp;lime</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright lime">hella&nbsp;dark&nbsp;bright&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim lime">hella&nbsp;light&nbsp;dim&nbsp;lime</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim lime">hella&nbsp;dark&nbsp;dim&nbsp;lime</span>    <span class=" border text-rounded text-margin tight padding green" id="green">green</span>
+    <span class=" border text-rounded text-margin tight padding bright green" id="bright_green">bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding light green" id="light_green">light&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding dark green" id="dark_green">dark&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding dim green" id="dim_green">dim&nbsp;green</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright green" id="bright_green">very&nbsp;bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding very light green" id="light_green">very&nbsp;light&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding very dark green" id="dark_green">very&nbsp;dark&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding very dim green" id="dim_green">very&nbsp;dim&nbsp;green</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright green" id="bright_green">hella&nbsp;bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding hella light green" id="light_green">hella&nbsp;light&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding hella dark green" id="dark_green">hella&nbsp;dark&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding hella dim green" id="dim_green">hella&nbsp;dim&nbsp;green</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright green">light&nbsp;bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright green">dark&nbsp;bright&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding light dim green">light&nbsp;dim&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding dark dim green">dark&nbsp;dim&nbsp;green</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright green">very&nbsp;light&nbsp;bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright green">very&nbsp;dark&nbsp;bright&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding very light dim green">very&nbsp;light&nbsp;dim&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim green">very&nbsp;dark&nbsp;dim&nbsp;green</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright green">hella&nbsp;light&nbsp;bright&nbsp;green</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright green">hella&nbsp;dark&nbsp;bright&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim green">hella&nbsp;light&nbsp;dim&nbsp;green</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim green">hella&nbsp;dark&nbsp;dim&nbsp;green</span>    <span class=" border text-rounded text-margin tight padding jade" id="jade">jade</span>
+    <span class=" border text-rounded text-margin tight padding bright jade" id="bright_jade">bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding light jade" id="light_jade">light&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding dark jade" id="dark_jade">dark&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding dim jade" id="dim_jade">dim&nbsp;jade</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright jade" id="bright_jade">very&nbsp;bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding very light jade" id="light_jade">very&nbsp;light&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding very dark jade" id="dark_jade">very&nbsp;dark&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding very dim jade" id="dim_jade">very&nbsp;dim&nbsp;jade</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright jade" id="bright_jade">hella&nbsp;bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding hella light jade" id="light_jade">hella&nbsp;light&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding hella dark jade" id="dark_jade">hella&nbsp;dark&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding hella dim jade" id="dim_jade">hella&nbsp;dim&nbsp;jade</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright jade">light&nbsp;bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright jade">dark&nbsp;bright&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding light dim jade">light&nbsp;dim&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding dark dim jade">dark&nbsp;dim&nbsp;jade</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright jade">very&nbsp;light&nbsp;bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright jade">very&nbsp;dark&nbsp;bright&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding very light dim jade">very&nbsp;light&nbsp;dim&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim jade">very&nbsp;dark&nbsp;dim&nbsp;jade</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright jade">hella&nbsp;light&nbsp;bright&nbsp;jade</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright jade">hella&nbsp;dark&nbsp;bright&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim jade">hella&nbsp;light&nbsp;dim&nbsp;jade</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim jade">hella&nbsp;dark&nbsp;dim&nbsp;jade</span>    <span class=" border text-rounded text-margin tight padding teal" id="teal">teal</span>
+    <span class=" border text-rounded text-margin tight padding bright teal" id="bright_teal">bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding light teal" id="light_teal">light&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding dark teal" id="dark_teal">dark&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding dim teal" id="dim_teal">dim&nbsp;teal</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright teal" id="bright_teal">very&nbsp;bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding very light teal" id="light_teal">very&nbsp;light&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding very dark teal" id="dark_teal">very&nbsp;dark&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding very dim teal" id="dim_teal">very&nbsp;dim&nbsp;teal</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright teal" id="bright_teal">hella&nbsp;bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding hella light teal" id="light_teal">hella&nbsp;light&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding hella dark teal" id="dark_teal">hella&nbsp;dark&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding hella dim teal" id="dim_teal">hella&nbsp;dim&nbsp;teal</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright teal">light&nbsp;bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright teal">dark&nbsp;bright&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding light dim teal">light&nbsp;dim&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding dark dim teal">dark&nbsp;dim&nbsp;teal</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright teal">very&nbsp;light&nbsp;bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright teal">very&nbsp;dark&nbsp;bright&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding very light dim teal">very&nbsp;light&nbsp;dim&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim teal">very&nbsp;dark&nbsp;dim&nbsp;teal</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright teal">hella&nbsp;light&nbsp;bright&nbsp;teal</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright teal">hella&nbsp;dark&nbsp;bright&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim teal">hella&nbsp;light&nbsp;dim&nbsp;teal</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim teal">hella&nbsp;dark&nbsp;dim&nbsp;teal</span>    <span class=" border text-rounded text-margin tight padding aqua" id="aqua">aqua</span>
+    <span class=" border text-rounded text-margin tight padding bright aqua" id="bright_aqua">bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding light aqua" id="light_aqua">light&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding dark aqua" id="dark_aqua">dark&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding dim aqua" id="dim_aqua">dim&nbsp;aqua</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright aqua" id="bright_aqua">very&nbsp;bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding very light aqua" id="light_aqua">very&nbsp;light&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding very dark aqua" id="dark_aqua">very&nbsp;dark&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding very dim aqua" id="dim_aqua">very&nbsp;dim&nbsp;aqua</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright aqua" id="bright_aqua">hella&nbsp;bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding hella light aqua" id="light_aqua">hella&nbsp;light&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding hella dark aqua" id="dark_aqua">hella&nbsp;dark&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding hella dim aqua" id="dim_aqua">hella&nbsp;dim&nbsp;aqua</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright aqua">light&nbsp;bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright aqua">dark&nbsp;bright&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding light dim aqua">light&nbsp;dim&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding dark dim aqua">dark&nbsp;dim&nbsp;aqua</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright aqua">very&nbsp;light&nbsp;bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright aqua">very&nbsp;dark&nbsp;bright&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding very light dim aqua">very&nbsp;light&nbsp;dim&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim aqua">very&nbsp;dark&nbsp;dim&nbsp;aqua</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright aqua">hella&nbsp;light&nbsp;bright&nbsp;aqua</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright aqua">hella&nbsp;dark&nbsp;bright&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim aqua">hella&nbsp;light&nbsp;dim&nbsp;aqua</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim aqua">hella&nbsp;dark&nbsp;dim&nbsp;aqua</span>    <span class=" border text-rounded text-margin tight padding cyan" id="cyan">cyan</span>
+    <span class=" border text-rounded text-margin tight padding bright cyan" id="bright_cyan">bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding light cyan" id="light_cyan">light&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding dark cyan" id="dark_cyan">dark&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding dim cyan" id="dim_cyan">dim&nbsp;cyan</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright cyan" id="bright_cyan">very&nbsp;bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding very light cyan" id="light_cyan">very&nbsp;light&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding very dark cyan" id="dark_cyan">very&nbsp;dark&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding very dim cyan" id="dim_cyan">very&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright cyan" id="bright_cyan">hella&nbsp;bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding hella light cyan" id="light_cyan">hella&nbsp;light&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding hella dark cyan" id="dark_cyan">hella&nbsp;dark&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding hella dim cyan" id="dim_cyan">hella&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright cyan">light&nbsp;bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright cyan">dark&nbsp;bright&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding light dim cyan">light&nbsp;dim&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding dark dim cyan">dark&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright cyan">very&nbsp;light&nbsp;bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright cyan">very&nbsp;dark&nbsp;bright&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding very light dim cyan">very&nbsp;light&nbsp;dim&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim cyan">very&nbsp;dark&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright cyan">hella&nbsp;light&nbsp;bright&nbsp;cyan</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright cyan">hella&nbsp;dark&nbsp;bright&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim cyan">hella&nbsp;light&nbsp;dim&nbsp;cyan</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim cyan">hella&nbsp;dark&nbsp;dim&nbsp;cyan</span>    <span class=" border text-rounded text-margin tight padding sky" id="sky">sky</span>
+    <span class=" border text-rounded text-margin tight padding bright sky" id="bright_sky">bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding light sky" id="light_sky">light&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding dark sky" id="dark_sky">dark&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding dim sky" id="dim_sky">dim&nbsp;sky</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright sky" id="bright_sky">very&nbsp;bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding very light sky" id="light_sky">very&nbsp;light&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding very dark sky" id="dark_sky">very&nbsp;dark&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding very dim sky" id="dim_sky">very&nbsp;dim&nbsp;sky</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright sky" id="bright_sky">hella&nbsp;bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding hella light sky" id="light_sky">hella&nbsp;light&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding hella dark sky" id="dark_sky">hella&nbsp;dark&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding hella dim sky" id="dim_sky">hella&nbsp;dim&nbsp;sky</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright sky">light&nbsp;bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright sky">dark&nbsp;bright&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding light dim sky">light&nbsp;dim&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding dark dim sky">dark&nbsp;dim&nbsp;sky</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright sky">very&nbsp;light&nbsp;bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright sky">very&nbsp;dark&nbsp;bright&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding very light dim sky">very&nbsp;light&nbsp;dim&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim sky">very&nbsp;dark&nbsp;dim&nbsp;sky</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright sky">hella&nbsp;light&nbsp;bright&nbsp;sky</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright sky">hella&nbsp;dark&nbsp;bright&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim sky">hella&nbsp;light&nbsp;dim&nbsp;sky</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim sky">hella&nbsp;dark&nbsp;dim&nbsp;sky</span>    <span class=" border text-rounded text-margin tight padding blue" id="blue">blue</span>
+    <span class=" border text-rounded text-margin tight padding bright blue" id="bright_blue">bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding light blue" id="light_blue">light&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding dark blue" id="dark_blue">dark&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding dim blue" id="dim_blue">dim&nbsp;blue</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright blue" id="bright_blue">very&nbsp;bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding very light blue" id="light_blue">very&nbsp;light&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding very dark blue" id="dark_blue">very&nbsp;dark&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding very dim blue" id="dim_blue">very&nbsp;dim&nbsp;blue</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright blue" id="bright_blue">hella&nbsp;bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding hella light blue" id="light_blue">hella&nbsp;light&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding hella dark blue" id="dark_blue">hella&nbsp;dark&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding hella dim blue" id="dim_blue">hella&nbsp;dim&nbsp;blue</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright blue">light&nbsp;bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright blue">dark&nbsp;bright&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding light dim blue">light&nbsp;dim&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding dark dim blue">dark&nbsp;dim&nbsp;blue</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright blue">very&nbsp;light&nbsp;bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright blue">very&nbsp;dark&nbsp;bright&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding very light dim blue">very&nbsp;light&nbsp;dim&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim blue">very&nbsp;dark&nbsp;dim&nbsp;blue</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright blue">hella&nbsp;light&nbsp;bright&nbsp;blue</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright blue">hella&nbsp;dark&nbsp;bright&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim blue">hella&nbsp;light&nbsp;dim&nbsp;blue</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim blue">hella&nbsp;dark&nbsp;dim&nbsp;blue</span>    <span class=" border text-rounded text-margin tight padding indigo" id="indigo">indigo</span>
+    <span class=" border text-rounded text-margin tight padding bright indigo" id="bright_indigo">bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding light indigo" id="light_indigo">light&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding dark indigo" id="dark_indigo">dark&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding dim indigo" id="dim_indigo">dim&nbsp;indigo</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright indigo" id="bright_indigo">very&nbsp;bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding very light indigo" id="light_indigo">very&nbsp;light&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding very dark indigo" id="dark_indigo">very&nbsp;dark&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding very dim indigo" id="dim_indigo">very&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright indigo" id="bright_indigo">hella&nbsp;bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding hella light indigo" id="light_indigo">hella&nbsp;light&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding hella dark indigo" id="dark_indigo">hella&nbsp;dark&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding hella dim indigo" id="dim_indigo">hella&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright indigo">light&nbsp;bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright indigo">dark&nbsp;bright&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding light dim indigo">light&nbsp;dim&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding dark dim indigo">dark&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright indigo">very&nbsp;light&nbsp;bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright indigo">very&nbsp;dark&nbsp;bright&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding very light dim indigo">very&nbsp;light&nbsp;dim&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim indigo">very&nbsp;dark&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright indigo">hella&nbsp;light&nbsp;bright&nbsp;indigo</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright indigo">hella&nbsp;dark&nbsp;bright&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim indigo">hella&nbsp;light&nbsp;dim&nbsp;indigo</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim indigo">hella&nbsp;dark&nbsp;dim&nbsp;indigo</span>    <span class=" border text-rounded text-margin tight padding purple" id="purple">purple</span>
+    <span class=" border text-rounded text-margin tight padding bright purple" id="bright_purple">bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding light purple" id="light_purple">light&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding dark purple" id="dark_purple">dark&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding dim purple" id="dim_purple">dim&nbsp;purple</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright purple" id="bright_purple">very&nbsp;bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding very light purple" id="light_purple">very&nbsp;light&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding very dark purple" id="dark_purple">very&nbsp;dark&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding very dim purple" id="dim_purple">very&nbsp;dim&nbsp;purple</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright purple" id="bright_purple">hella&nbsp;bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding hella light purple" id="light_purple">hella&nbsp;light&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding hella dark purple" id="dark_purple">hella&nbsp;dark&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding hella dim purple" id="dim_purple">hella&nbsp;dim&nbsp;purple</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright purple">light&nbsp;bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright purple">dark&nbsp;bright&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding light dim purple">light&nbsp;dim&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding dark dim purple">dark&nbsp;dim&nbsp;purple</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright purple">very&nbsp;light&nbsp;bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright purple">very&nbsp;dark&nbsp;bright&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding very light dim purple">very&nbsp;light&nbsp;dim&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim purple">very&nbsp;dark&nbsp;dim&nbsp;purple</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright purple">hella&nbsp;light&nbsp;bright&nbsp;purple</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright purple">hella&nbsp;dark&nbsp;bright&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim purple">hella&nbsp;light&nbsp;dim&nbsp;purple</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim purple">hella&nbsp;dark&nbsp;dim&nbsp;purple</span>    <span class=" border text-rounded text-margin tight padding fuchsia" id="fuchsia">fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding bright fuchsia" id="bright_fuchsia">bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding light fuchsia" id="light_fuchsia">light&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding dark fuchsia" id="dark_fuchsia">dark&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding dim fuchsia" id="dim_fuchsia">dim&nbsp;fuchsia</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright fuchsia" id="bright_fuchsia">very&nbsp;bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding very light fuchsia" id="light_fuchsia">very&nbsp;light&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding very dark fuchsia" id="dark_fuchsia">very&nbsp;dark&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding very dim fuchsia" id="dim_fuchsia">very&nbsp;dim&nbsp;fuchsia</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright fuchsia" id="bright_fuchsia">hella&nbsp;bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding hella light fuchsia" id="light_fuchsia">hella&nbsp;light&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding hella dark fuchsia" id="dark_fuchsia">hella&nbsp;dark&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding hella dim fuchsia" id="dim_fuchsia">hella&nbsp;dim&nbsp;fuchsia</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright fuchsia">light&nbsp;bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright fuchsia">dark&nbsp;bright&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding light dim fuchsia">light&nbsp;dim&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding dark dim fuchsia">dark&nbsp;dim&nbsp;fuchsia</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright fuchsia">very&nbsp;light&nbsp;bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright fuchsia">very&nbsp;dark&nbsp;bright&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding very light dim fuchsia">very&nbsp;light&nbsp;dim&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim fuchsia">very&nbsp;dark&nbsp;dim&nbsp;fuchsia</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright fuchsia">hella&nbsp;light&nbsp;bright&nbsp;fuchsia</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright fuchsia">hella&nbsp;dark&nbsp;bright&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim fuchsia">hella&nbsp;light&nbsp;dim&nbsp;fuchsia</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim fuchsia">hella&nbsp;dark&nbsp;dim&nbsp;fuchsia</span>    <span class=" border text-rounded text-margin tight padding magenta" id="magenta">magenta</span>
+    <span class=" border text-rounded text-margin tight padding bright magenta" id="bright_magenta">bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding light magenta" id="light_magenta">light&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding dark magenta" id="dark_magenta">dark&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding dim magenta" id="dim_magenta">dim&nbsp;magenta</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright magenta" id="bright_magenta">very&nbsp;bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding very light magenta" id="light_magenta">very&nbsp;light&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding very dark magenta" id="dark_magenta">very&nbsp;dark&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding very dim magenta" id="dim_magenta">very&nbsp;dim&nbsp;magenta</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright magenta" id="bright_magenta">hella&nbsp;bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding hella light magenta" id="light_magenta">hella&nbsp;light&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding hella dark magenta" id="dark_magenta">hella&nbsp;dark&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding hella dim magenta" id="dim_magenta">hella&nbsp;dim&nbsp;magenta</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright magenta">light&nbsp;bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright magenta">dark&nbsp;bright&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding light dim magenta">light&nbsp;dim&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding dark dim magenta">dark&nbsp;dim&nbsp;magenta</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright magenta">very&nbsp;light&nbsp;bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright magenta">very&nbsp;dark&nbsp;bright&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding very light dim magenta">very&nbsp;light&nbsp;dim&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim magenta">very&nbsp;dark&nbsp;dim&nbsp;magenta</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright magenta">hella&nbsp;light&nbsp;bright&nbsp;magenta</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright magenta">hella&nbsp;dark&nbsp;bright&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim magenta">hella&nbsp;light&nbsp;dim&nbsp;magenta</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim magenta">hella&nbsp;dark&nbsp;dim&nbsp;magenta</span>    <span class=" border text-rounded text-margin tight padding pink" id="pink">pink</span>
+    <span class=" border text-rounded text-margin tight padding bright pink" id="bright_pink">bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding light pink" id="light_pink">light&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding dark pink" id="dark_pink">dark&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding dim pink" id="dim_pink">dim&nbsp;pink</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright pink" id="bright_pink">very&nbsp;bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding very light pink" id="light_pink">very&nbsp;light&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding very dark pink" id="dark_pink">very&nbsp;dark&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding very dim pink" id="dim_pink">very&nbsp;dim&nbsp;pink</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright pink" id="bright_pink">hella&nbsp;bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding hella light pink" id="light_pink">hella&nbsp;light&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding hella dark pink" id="dark_pink">hella&nbsp;dark&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding hella dim pink" id="dim_pink">hella&nbsp;dim&nbsp;pink</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright pink">light&nbsp;bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright pink">dark&nbsp;bright&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding light dim pink">light&nbsp;dim&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding dark dim pink">dark&nbsp;dim&nbsp;pink</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright pink">very&nbsp;light&nbsp;bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright pink">very&nbsp;dark&nbsp;bright&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding very light dim pink">very&nbsp;light&nbsp;dim&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim pink">very&nbsp;dark&nbsp;dim&nbsp;pink</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright pink">hella&nbsp;light&nbsp;bright&nbsp;pink</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright pink">hella&nbsp;dark&nbsp;bright&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim pink">hella&nbsp;light&nbsp;dim&nbsp;pink</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim pink">hella&nbsp;dark&nbsp;dim&nbsp;pink</span>    <span class=" border text-rounded text-margin tight padding white" id="white">white</span>
+    <span class=" border text-rounded text-margin tight padding bright white" id="bright_white">bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding light white" id="light_white">light&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding dark white" id="dark_white">dark&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding dim white" id="dim_white">dim&nbsp;white</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright white" id="bright_white">very&nbsp;bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding very light white" id="light_white">very&nbsp;light&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding very dark white" id="dark_white">very&nbsp;dark&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding very dim white" id="dim_white">very&nbsp;dim&nbsp;white</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright white" id="bright_white">hella&nbsp;bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding hella light white" id="light_white">hella&nbsp;light&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding hella dark white" id="dark_white">hella&nbsp;dark&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding hella dim white" id="dim_white">hella&nbsp;dim&nbsp;white</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright white">light&nbsp;bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright white">dark&nbsp;bright&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding light dim white">light&nbsp;dim&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding dark dim white">dark&nbsp;dim&nbsp;white</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright white">very&nbsp;light&nbsp;bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright white">very&nbsp;dark&nbsp;bright&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding very light dim white">very&nbsp;light&nbsp;dim&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim white">very&nbsp;dark&nbsp;dim&nbsp;white</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright white">hella&nbsp;light&nbsp;bright&nbsp;white</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright white">hella&nbsp;dark&nbsp;bright&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim white">hella&nbsp;light&nbsp;dim&nbsp;white</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim white">hella&nbsp;dark&nbsp;dim&nbsp;white</span>    <span class=" border text-rounded text-margin tight padding gray" id="gray">gray</span>
+    <span class=" border text-rounded text-margin tight padding bright gray" id="bright_gray">bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding light gray" id="light_gray">light&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding dark gray" id="dark_gray">dark&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding dim gray" id="dim_gray">dim&nbsp;gray</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright gray" id="bright_gray">very&nbsp;bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding very light gray" id="light_gray">very&nbsp;light&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding very dark gray" id="dark_gray">very&nbsp;dark&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding very dim gray" id="dim_gray">very&nbsp;dim&nbsp;gray</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright gray" id="bright_gray">hella&nbsp;bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding hella light gray" id="light_gray">hella&nbsp;light&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding hella dark gray" id="dark_gray">hella&nbsp;dark&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding hella dim gray" id="dim_gray">hella&nbsp;dim&nbsp;gray</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright gray">light&nbsp;bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright gray">dark&nbsp;bright&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding light dim gray">light&nbsp;dim&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding dark dim gray">dark&nbsp;dim&nbsp;gray</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright gray">very&nbsp;light&nbsp;bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright gray">very&nbsp;dark&nbsp;bright&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding very light dim gray">very&nbsp;light&nbsp;dim&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim gray">very&nbsp;dark&nbsp;dim&nbsp;gray</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright gray">hella&nbsp;light&nbsp;bright&nbsp;gray</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright gray">hella&nbsp;dark&nbsp;bright&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim gray">hella&nbsp;light&nbsp;dim&nbsp;gray</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim gray">hella&nbsp;dark&nbsp;dim&nbsp;gray</span>    <span class=" border text-rounded text-margin tight padding brown" id="brown">brown</span>
+    <span class=" border text-rounded text-margin tight padding bright brown" id="bright_brown">bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding light brown" id="light_brown">light&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding dark brown" id="dark_brown">dark&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding dim brown" id="dim_brown">dim&nbsp;brown</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright brown" id="bright_brown">very&nbsp;bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding very light brown" id="light_brown">very&nbsp;light&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding very dark brown" id="dark_brown">very&nbsp;dark&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding very dim brown" id="dim_brown">very&nbsp;dim&nbsp;brown</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright brown" id="bright_brown">hella&nbsp;bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding hella light brown" id="light_brown">hella&nbsp;light&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding hella dark brown" id="dark_brown">hella&nbsp;dark&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding hella dim brown" id="dim_brown">hella&nbsp;dim&nbsp;brown</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright brown">light&nbsp;bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright brown">dark&nbsp;bright&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding light dim brown">light&nbsp;dim&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding dark dim brown">dark&nbsp;dim&nbsp;brown</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright brown">very&nbsp;light&nbsp;bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright brown">very&nbsp;dark&nbsp;bright&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding very light dim brown">very&nbsp;light&nbsp;dim&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim brown">very&nbsp;dark&nbsp;dim&nbsp;brown</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright brown">hella&nbsp;light&nbsp;bright&nbsp;brown</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright brown">hella&nbsp;dark&nbsp;bright&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim brown">hella&nbsp;light&nbsp;dim&nbsp;brown</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim brown">hella&nbsp;dark&nbsp;dim&nbsp;brown</span>    <span class=" border text-rounded text-margin tight padding black" id="black">black</span>
+    <span class=" border text-rounded text-margin tight padding bright black" id="bright_black">bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding light black" id="light_black">light&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding dark black" id="dark_black">dark&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding dim black" id="dim_black">dim&nbsp;black</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very bright black" id="bright_black">very&nbsp;bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding very light black" id="light_black">very&nbsp;light&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding very dark black" id="dark_black">very&nbsp;dark&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding very dim black" id="dim_black">very&nbsp;dim&nbsp;black</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella bright black" id="bright_black">hella&nbsp;bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding hella light black" id="light_black">hella&nbsp;light&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding hella dark black" id="dark_black">hella&nbsp;dark&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding hella dim black" id="dim_black">hella&nbsp;dim&nbsp;black</span>
+
+
+    <span class=" border text-rounded text-margin tight padding light bright black">light&nbsp;bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding dark bright black">dark&nbsp;bright&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding light dim black">light&nbsp;dim&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding dark dim black">dark&nbsp;dim&nbsp;black</span>
+
+
+    <span class=" border text-rounded text-margin tight padding very light bright black">very&nbsp;light&nbsp;bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding very dark bright black">very&nbsp;dark&nbsp;bright&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding very light dim black">very&nbsp;light&nbsp;dim&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding very dark dim black">very&nbsp;dark&nbsp;dim&nbsp;black</span>
+
+
+    <span class=" border text-rounded text-margin tight padding hella light bright black">hella&nbsp;light&nbsp;bright&nbsp;black</span> 
+    <span class=" border text-rounded text-margin tight padding hella dark bright black">hella&nbsp;dark&nbsp;bright&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding hella light dim black">hella&nbsp;light&nbsp;dim&nbsp;black</span>
+    <span class=" border text-rounded text-margin tight padding hella dark dim black">hella&nbsp;dark&nbsp;dim&nbsp;black</span>   
+</section>      
+    <footer class="hella dark dim base padding">
+        <p class="no-margin-bottom hella light black padding rounded"><a href="">California Stylesheets</a> <span class="float-right clearfix">&copy; 2022 Rex Riepe</span></p>
     </footer>
 
     <style id="css" type="text/css">
@@ -715,105 +1559,90 @@ button, .button {
       /* https://github.com/casscss/cass */
       
       :root {
-          --base-h: 214;
-          --base-s: 55%;
-          --base-l: 65%;
-          --base-tone: var(--white);
-        
-          --line-height: 1.618;
-          --text-measure: 50;
-          --font-size-base: 16px;
-          --text-indent: 1ch;
-        
-          --padding-base: 1em;
-          --type-width: calc(var(--text-measure) * .575rem);
-          --page-width: calc(var(--type-width) * 1.62);
-        
-          --white: hsl(var(--w-h), var(--w-s), var(--w-l));
-          --w-h: var(--base-h);
-          --w-s: calc(var(--base-s) * .8);
-          --w-l: 99.5%;
-        
-          --black: hsl(var(--b-h), var(--b-s), var(--b-l));
-          --b-h: var(--base-h);
-          --b-s: calc(var(--base-s) * .2);
-          --b-l: calc(var(--base-l) * .2);
-        
-          --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-          --focus-color: hsl(calc(var(--base-h) + 180), var(--base-s), var(--base-l));
-        
-          --a: 1;
-          --v: 1;
-        
-          --width: 100%;
-          --padding: calc(var(--padding-base) * .6);
-          --font-size: calc(var(--font-size-base) - 2px);
-      }
+      	--base-h: 214;
+      	--base-s: 55%;
+      	--base-l: 65%;
+      	--base-tone: var(--white);
+      	--alt-tone: var(--black);
+      	--base: hsl(var(--base-h), var(--base-s), var(--base-l));
+      	--text-measure: 50;
+      	--font-size-base: 16px;
+      	--text-indent: 1ch;
+      	--padding-base: 1em;
+      	--card: calc(var(--type)*.62);
+      	--type: calc(var(--text-measure)*.575rem);
+      	--page: calc(var(--type)*1.62);
+      	--w-h: var(--base-h);
+      	--w-s: calc(var(--base-s) * .8);
+      	--w-l: 99.5%;
+      	--white: hsl(var(--w-h), var(--w-s), var(--w-l));
+      	--w: var(--white);
+      	--b-h: var(--base-h);
+      	--b-s: calc(var(--base-s) * .2);
+      	--b-l: calc(var(--base-l) * .2);
+      	--black: hsl(var(--b-h), var(--b-s), var(--b-l));
+      	--b: var(--black);
+      	--v: 1;
+      	--width: 100%;
+      	--padding: calc(var(--padding-base) * .6);
+      	--p: var(--padding);
+      	--font-size: calc(var(--font-size-base) - 2px);
       
-      body, html, :root {
-          color: var(--black);
-          background-color: var(--white);
-          font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
-          line-height: var(--line-height);
-          margin: 0;
-      }
-      
-      body {
-          font-size: var(--font-size);
-          max-width: 100%;
+      	color: var(--b);
+      	background-color: var(--w);
+      	font-family: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+      	margin: 0;
+      	font-size: var(--font-size);
       }
       
       * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
+      	margin: 0;
+      	padding: 0;
+      	box-sizing: border-box;
+      	line-height: 1.7;
       }
       
       body * {
-          padding-left: calc(50% - var(--width) * .5);
-          padding-right: calc(50% - var(--width) * .5);
+      	padding-left: calc(50% - var(--width) * .5);
+      	padding-right: calc(50% - var(--width) * .5);
       }
       
       h1, h2, h3, h4, h5, h6 {
-          --width: var(--type-width);
-          line-height: 1.2;
-          margin-top: .6em;
-          margin-bottom: .6em;
-          font-size: 
+      	--width: var(--type);
+      	line-height: 1.2;
+      	margin-top: .6em;
+      	margin-bottom: .6em;
+      	font-size: 
       }
       
-      p  { text-indent: var(--text-indent);}
-      
-      p, ul, ol {
-          --width: var(--type-width);
-          margin-bottom: 1em;
-      }
-      
+      p { text-indent: var(--text-indent);}
+      p, ul, ol { --width: var(--type); margin-bottom: 1em;}
       ul, ol { margin-left: 1.6em;}
-      
-      a {
-          color: inherit;
-      }
-      
-      pre { overflow-x: hidden;}
+      a { color: inherit;}
       
       button, .button {
-          font-size: inherit;
-          padding: var(--padding);
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
+      	font-size: inherit;
+      	padding: .6em 1em;
+      	border: none;
+      	border-radius: 6px;
+      	cursor: pointer;
       }
       
-      .padding-top, .padding { padding-top: var(--padding);}
-      .padding-bottom, .padding { padding-bottom: var(--padding);}
-      .padding-left, .padding { padding-left: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-      .padding-right, .padding { padding-right: max(var(--padding), calc(50% - (var(--width) * .5) + var(--padding)));}
-      .tight { --padding: calc(.6 * var(--padding-base));}
+      .padding-top, .padding { padding-top: var(--p);}
+      .padding-bottom, .padding { padding-bottom: var(--p);}
+      .padding-left, .padding { padding-left: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+      .padding-right, .padding { padding-right: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
+      .tight { --p: calc(.6 * var(--padding-base));}
       
-      .margin { margin: var(--padding);}
+      .margin { margin: var(--p);}
+      .margin-left { margin-left: var(--p);}
+      .margin-right { margin-right: var(--p);}
+      .margin-top { margin-top: var(--p);}
+      .margin-bottom { margin-bottom: var(--p);}
       .margin-auto { margin-left: auto; margin-right: auto;}
-      .margin-bottom { margin-bottom: var(--padding);}
+      
+      .text-center { text-align: center;}
+      .text-right { text-align: right;}
       
       .tiny { font-size: 85%;}
       .small { font-size: 92%;}
@@ -824,25 +1653,22 @@ button, .button {
       .cursor, .pointer { cursor: pointer;}
       
       .rounded { border-radius: .6em;}
-      .border { 
-      	border: 1px solid hsla(
-      		var(--hue, var(--h)),
-      		clamp(0%, calc(.8 * var(--sat, var(--s))), 50%),
-      		clamp(0%, calc(.8 * var(--lit, var(--l))), 67%),
-      		var(--a));
-      }
+      .border { border: 1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.8 * var(--sat, var(--s))), 50%), clamp(0%, calc(.8 * var(--lit, var(--l))), 67%));}
+      .dashed { border-style: dashed;}
+      .dotted { border-style: dotted;}
+      .thick { border-width: 2px;}
       
-      .shadow { box-shadow: 0 1px .4em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
+      .shadow { box-shadow: 0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
       
       .no-underline { text-decoration: none;}
       .no-text-indent { --text-indent: 0;}
       .no-margin-bottom { margin-bottom: 0;}
       
       .vertical-center { 
-          display: flex;
-          flex: 0 1 auto;
-          flex-direction: column;
-          justify-content: center;
+      	display: flex;
+      	flex: 0 1 auto;
+      	flex-direction: column;
+      	justify-content: center;
       }
       
       .block { display: block;}
@@ -853,7 +1679,6 @@ button, .button {
       
       .fixed, .fixed.mobile, .fixed.mobile.tablet { position: fixed;}
       .fixed.tablet, .fixed.desktop { position: initial;}
-      
       .relative { position: relative;}
       .absolute { position: absolute;}
       
@@ -862,17 +1687,18 @@ button, .button {
       .bottom { bottom: 0;}
       .left { left: 0;}
       
-      .type { --width: var(--type-width);}
-      .page { --width: var(--page-width);}
-      .full.width { width: 100% !important; --width: var(--page-width);}
+      .card { --width: var(--card);}
+      .type { --width: var(--type);}
+      .page { --width: var(--page);}
+      .full.width { width: 100%; --width: var(--page);}
       
       .columns {
-          --c: 2;
-          --multi: repeat(var(--c), minmax(0, 1fr));
-          --single: repeat(1, minmax(0, 1fr));
-          display: grid;
-          gap: var(--padding);
-          grid-template-columns: var(--multi);
+      	--c: 2;
+      	--multi: repeat(var(--c), minmax(0, 1fr));
+      	--single: repeat(1, minmax(0, 1fr));
+      	display: grid;
+      	gap: var(--p);
+      	grid-template-columns: var(--multi);
       }
       
       .three { --c: 3;}
@@ -885,14 +1711,14 @@ button, .button {
       
       @media screen and (min-width: 30rem) {
       	:root {
-              --width: var(--type-width);
-              --padding: calc(var(--padding-base) * .8);
-              --font-size: calc(var(--font-size-base) - 1px);
-          }
+      		--width: var(--type);
+      		--padding: calc(var(--padding-base) * .8);
+      		--font-size: calc(var(--font-size-base) - 1px);
+      	}
       
-          .columns.mobile { grid-template-columns: var(--single);}
-          .columns.tablet { grid-template-columns: var(--multi);}
-          .hide.mobile { display: initial;}
+      	.columns.mobile { grid-template-columns: var(--single);}
+      	.columns.tablet { grid-template-columns: var(--multi);}
+      	.hide.mobile { display: initial;}
       	.hide.tablet { display: none;}
       	.fixed.mobile { position: initial;}
       	.fixed.tablet { position: fixed;}
@@ -900,104 +1726,108 @@ button, .button {
       
       @media screen and (min-width: 51rem) {
       	:root {
-              --width: var(--page-width);
-              --padding: var(--padding-base);
-              --font-size: var(--font-size-base);
-          }
+      		--width: var(--page);
+      		--padding: var(--padding-base);
+      		--font-size: var(--font-size-base);
+      	}
       
-          .columns.mobile.tablet { grid-template-columns: var(--single);}
-          .columns.desktop { grid-template-columns: var(--multi);}
-          .hide.mobile.tablet { display: initial;}
+      	.columns.mobile.tablet { grid-template-columns: var(--single);}
+      	.columns.desktop { grid-template-columns: var(--multi);}
+      	.hide.mobile.tablet { display: initial;}
       	.hide.desktop { display: none;}
       	.fixed.mobile.tablet { position: initial;}
       	.fixed.desktop { position: fixed;}
       }
       
-      .base, 
+      .base,
       .accent,
-      .complement, 
+      .complement,
       .red,
+      .orangered,
       .orange,
+      .gold,
       .yellow,
+      .lime,
       .green,
+      .jade,
       .teal,
+      .aqua,
       .cyan,
+      .sky,
       .blue,
+      .indigo,
       .purple,
+      .fuchsia,
+      .magenta,
       .pink,
       .gray,
-      .brown {
-          background-color: hsla(
-              var(--hue, var(--h)),
-              var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
-              var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 )),
-              var(--a, 1)
-          );
+      .brown,
+      .white,
+      .black {
+      	color: var(--t);
+      	background-color: hsl(
+      		var(--hue, var(--h)),
+      		var(--sat, calc( (var(--s) * 9 + var(--base-s)) / 10 )),
+      		var(--lit, calc( (var(--l) * 9 + var(--base-l)) / 10 ))
+      	);
       }
       
       .white, .black {
-          background-color: hsla(
-              var(--hue, var(--h)),
-              var(--sat, var(--s)),
-              var(--lit, var(--l)),
-              var(--a, 1)
-          );
+      	background-color: hsl(var(--hue, var(--h)),var(--sat, var(--s)),var(--lit, var(--l)));
       }
       
-      .base, .gray, .accent, .complement { color: var(--base-tone, var(--black));}
-      .red, .green, .teal, .blue, .purple, .brown { color: var(--white);}
-      .yellow, .orange, .cyan, .pink { color: var(--black);}
+      .base, .gray, .accent { color: var(--base-tone);}
+      .complement { color: var(--alt-tone);}
       
       .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-      .light { color: var(--black); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v)));}
-      .dark { color: var(--white); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1.25 + (var(--v) * .5)));}
+      .light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v) * var(--vv)));}
+      .dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1 + (var(--v) * var(--vv))));}
       .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
       .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
       .dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1 + (var(--v) * .75)));}
       
-      .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);}
+      .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
       .complement { --h: calc(var(--base-h) + 180);}
       .accent { --h: calc(var(--base-h) + 15);}
-      .white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l);}
-      .black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l);}
-      .gray, .grey { --h: var(--base-h); --s: calc(var(--base-s) * .1) !important; --l: var(--base-l);}
-      .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);}
-      .red { --h: 0; --s: 71%; --l: 50%;}
-      .orange { --h: 40; --s: 95%; --l: 55%;}
-      .yellow { --h: 54; --s: 97%; --l: 50%;}
-      .green { --h: 110; --s: 57%; --l: 35%;}
-      .teal { --h: 170; --s: 35%; --l: 45%;}
-      .cyan { --h: 180; --s: 85%; --l: 50%;}
-      .blue { --h: 222; --s: 75%; --l: 60%;}
-      .purple { --h: 275; --s: 63%; --l: 48%;}
-      .pink { --h: 325;--s: 86%;--l: 80%;}
+      .white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l); --vv:.05;}
+      .black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.1;}
+      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
+      .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:1;}
+      .red { --h:0;--s:71%;--l:50%;--t:var(--w);--vv:.6;}
+      .orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.5;}
+      .orange { --h:40;--s:96%;--l:55%;--t:var(--b);--vv:.4;}
+      .gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.4;}
+      .yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.6;}
+      .lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.6;}
+      .green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.5;}
+      .jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.5;}
+      .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
+      .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
+      .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
+      .sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+      .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
+      .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
+      .purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
+      .fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
+      .magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
+      .pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
       
-      .light.white { --lit: calc(var(--w-l) + (.3% + .3% * var(--v)));}
-      .light.black { --lit: calc(var(--b-l) + (8% + 4% * var(--v)));}
-      .dark.white { --lit: calc(var(--w-l) - (1% + 1% * var(--v)));}
-      .dark.black { --lit: calc(var(--b-l) - (10% + 5% * var(--v)));}
+      .basic, .very *, .hella * { --v: calc(1 * var(--vv));}
+      .very { --v: calc(2 * var(--vv));}
+      .hella { --v: calc(3 * var(--vv));}
       
-      .basic, .very *, .hella * { --v: 1;}
-      .very { --v: 2;}
-      .hella { --v: 3;}
-      
-      .text-dark { color: var(--black);}
-      .text-light { color: var(--white);}
-      .text-center { text-align: center;}
-      .text-right { text-align: right;}
-      
+      .text-dark { color: var(--b);}
+      .text-light { color: var(--w);}
       .text-color {
-          color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 90%), clamp(0%, var(--lit, var(--l)), 44%));
-          background-color: transparent;
+      	color: hsl(var(--hue, var(--h)), var(--s), clamp(0%, var(--lit, var(--l)), 44%));
+      	background-color: transparent;
       }
-      
       .text-color.text-light {
-          color: hsl(var(--hue, var(--h)), clamp(0%, var(--sat, var(--s)), 100%), clamp(50%, var(--lit, var(--l)), 100%));
-          background-color: transparent;
+      	color: hsl(var(--hue, var(--h)), var(--s), clamp(50%, var(--lit, var(--l)), 100%));
       }
       
-      .black { color: var(--white);}
-      .white { color: var(--black);}
+      .black { color: var(--w);}
+      .white { color: var(--b);}
     </style>
     <style>
       #seagull_color { fill: var(--white);}
