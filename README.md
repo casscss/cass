@@ -17,7 +17,3 @@ A CSS file for putting together beautiful websites fast without wasting time on 
 Just grab a file from https://casscss.github.io/cass/ or the source repo, here.
 
 Edit the variables at the top of the CSS file to better reflect your site.
-
-## Docs
-
-Learn CASS or brush up at https://casscss.github.io/cass/docs/
