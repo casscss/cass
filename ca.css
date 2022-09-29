@@ -83,6 +83,7 @@ button, .button {
 .margin-top { margin-top: var(--p);}
 .margin-bottom { margin-bottom: var(--p);}
 .margin-auto { margin-left: auto; margin-right: auto;}
+.trim { margin-top: 0; margin-bottom: 0;}
 
 .text-center { text-align: center;}
 .text-right { text-align: right;}
@@ -105,6 +106,7 @@ button, .button {
 
 .no-underline { text-decoration: none;}
 .no-text-indent { --text-indent: 0;}
+.no-margin-top { margin-top: 0;}
 .no-margin-bottom { margin-bottom: 0;}
 
 .vertical-center { 
@@ -247,13 +249,13 @@ button, .button {
 .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
 .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
 .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
-.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.6;}
 .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
 .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
 .purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
 .fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
-.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
-.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
+.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.6;}
+.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.5;}
 
 .basic, .very *, .hella * { --v: calc(1 * var(--vv));}
 .very { --v: calc(2 * var(--vv));}

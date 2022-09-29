@@ -19,11 +19,12 @@
 
 <body>
   <nav class="base fixed top right left full width padding-left padding-right shadow" style="z-index: 1000;">
-      <div class="relative full width">
+      <div class="relative full width two columns">
               <a class="no-underline" href="" class="">
-                  <h1 class="inline full width" style="line-height: 1.6em; margin-left: 1.9em;">
+                  <h1 class="inline full width hide mobile" style="line-height: 1.6em; margin-left: 1.9em;">
                       California&nbsp;Stylesheets 
                   </h1>
+                  <h1 class="inline full width hide tablet" style="line-height: 1.6em; margin-left: 1.9em;">CASS</h1>
                   <svg class="absolute bottom left" style="max-height:2.2em; width: 3.9em;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="288px" height="140px" viewBox="0 0 288 140">
                       <g id="Seagull">
                           <path id="seagull_color" fill="#FFFFFF" d="M117.958,148.841c-3.37-0.306-10.57-2.911-12.409-8.119c-6.449-18.272-29.259-61.277-14.4-72.919   c11.249-11.169,21.753-9.804,21.906-16.698c-4.769-14.789-16.811-9.147-23.898-21.14C77.208,9.743,69.166,6.591,62.809,6.591   H39.067c-18.558,0-33.601,15.044-33.601,33.603v266.929c0,18.557,15.043,33.602,33.601,33.602h209.864   c18.559,0,33.603-15.045,33.603-33.602v-156.75L117.958,148.841z"/>
@@ -36,6 +37,8 @@
                   </svg>
                   
               </a>     
+  
+              <a class="text-right vertical-center" href="https://github.com/casscss/cass">See it on Github</a>
       </div>
   </nav>
   
@@ -170,6 +173,7 @@ button, .button {
 .margin-top { margin-top: var(--p);}
 .margin-bottom { margin-bottom: var(--p);}
 .margin-auto { margin-left: auto; margin-right: auto;}
+.trim { margin-top: 0; margin-bottom: 0;}
 
 .text-center { text-align: center;}
 .text-right { text-align: right;}
@@ -192,6 +196,7 @@ button, .button {
 
 .no-underline { text-decoration: none;}
 .no-text-indent { --text-indent: 0;}
+.no-margin-top { margin-top: 0;}
 .no-margin-bottom { margin-bottom: 0;}
 
 .vertical-center { 
@@ -334,13 +339,13 @@ button, .button {
 .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
 .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
 .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
-.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+.sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.6;}
 .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
 .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
 .purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
 .fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
-.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
-.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
+.magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.6;}
+.pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.5;}
 
 .basic, .very *, .hella * { --v: calc(1 * var(--vv));}
 .very { --v: calc(2 * var(--vv));}
@@ -1640,6 +1645,7 @@ button, .button {
       .margin-top { margin-top: var(--p);}
       .margin-bottom { margin-bottom: var(--p);}
       .margin-auto { margin-left: auto; margin-right: auto;}
+      .trim { margin-top: 0; margin-bottom: 0;}
       
       .text-center { text-align: center;}
       .text-right { text-align: right;}
@@ -1662,6 +1668,7 @@ button, .button {
       
       .no-underline { text-decoration: none;}
       .no-text-indent { --text-indent: 0;}
+      .no-margin-top { margin-top: 0;}
       .no-margin-bottom { margin-bottom: 0;}
       
       .vertical-center { 
@@ -1804,13 +1811,13 @@ button, .button {
       .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
       .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
       .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
-      .sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.4;}
+      .sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.6;}
       .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
       .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
       .purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.7;}
       .fuchsia { --h:295;--s:51%;--l:60%;--t:var(--w);--vv:.7;}
-      .magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.4;}
-      .pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.4;}
+      .magenta { --h:315;--s:73%;--l:75%;--t:var(--b);--vv:.6;}
+      .pink { --h:335;--s:86%;--l:80%;--t:var(--b);--vv:.5;}
       
       .basic, .very *, .hella * { --v: calc(1 * var(--vv));}
       .very { --v: calc(2 * var(--vv));}
