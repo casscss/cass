@@ -173,6 +173,7 @@ button, .button {
 .margin-top { margin-top: var(--p);}
 .margin-bottom { margin-bottom: var(--p);}
 .margin-auto { margin-left: auto; margin-right: auto;}
+.gutter { --p: calc(var(--padding) * 2);}
 .trim { margin-top: 0; margin-bottom: 0;}
 
 .text-center { text-align: center;}
@@ -259,7 +260,7 @@ button, .button {
 	.fixed.tablet { position: fixed;}
 }
 
-@media screen and (min-width: 51rem) {
+@media screen and (min-width: 50rem) {
 	:root {
 		--width: var(--page);
 		--padding: var(--padding-base);
@@ -314,12 +315,19 @@ button, .button {
 .base, .gray, .accent { color: var(--base-tone);}
 .complement { color: var(--alt-tone);}
 
-.unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-.light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v) * var(--vv)));}
-.dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1 + (var(--v) * var(--vv))));}
+/* .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+.light { color: var(--b); --lit: calc(100% - (100% - calc(var(--l)) / (.7 + var(--v) * var(--vv)));}
+.dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (.7 + (var(--v) * var(--vv))));}
 .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
-.bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-.dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1 + (var(--v) * .75)));}
+.bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1.2 + (var(--v) * var(--vv))));}
+.dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));} */
+
+.light *, .dark *, .reset { --lit: var(--l);}
+.light { --lit: calc(100% - (100% - (var(--l)) / (.7 + var(--v) * var(--vv))));}
+.dark { }
+.bright *, .dim *, .reset { }
+.bright { }
+.dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));}
 
 .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
 .complement { --h: calc(var(--base-h) + 180);}
@@ -328,17 +336,17 @@ button, .button {
 .black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.1;}
 .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
 .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:1;}
-.red { --h:0;--s:71%;--l:50%;--t:var(--w);--vv:.6;}
-.orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.5;}
+.red { --h:3;--s:71%;--l:50%;--t:var(--w);--vv:.7;}
+.orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.6;}
 .orange { --h:40;--s:96%;--l:55%;--t:var(--b);--vv:.4;}
-.gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.4;}
-.yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.6;}
-.lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.6;}
-.green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.5;}
+.gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.5;}
+.yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.7;}
+.lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.7;}
+.green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.6;}
 .jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.5;}
-.teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
+.teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.7;}
 .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
-.cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
+.cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.4;}
 .sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.6;}
 .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
 .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
@@ -377,7 +385,7 @@ button, .button {
     <div class="two columns golden desktop padding margin-bottom">
 
       <div class="hella light yellow border padding rounded shadow margin-bottom">
-        <h1>The <span class="text-color brown">easiest</span> CSS&nbsp;system.</h1>
+        <h1 class="no-margin-top">The <span class="text-color brown">easiest</span> CSS&nbsp;system.</h1>
         
         <p class="big no-text-indent">CASS does what the big frameworks do... <strong>without all the framework</strong>.</p>
         <p>This page uses a <strong>California Stylesheet</strong>, the no-workflow, no-code, custom-property-powered modern CSS&nbsp;file that works like a framework.</p>
@@ -539,7 +547,6 @@ button, .button {
       <span class="tight padding rounded border block base">base</span>
       <span class="tight padding rounded border block complement">complement</span>
       <span class="tight padding rounded border block accent">accent</span>
-      <span class="tight padding rounded border block brown">brown</span>
 
         <span class="tight padding rounded border block red">red</span>
 
@@ -599,11 +606,15 @@ button, .button {
 
 
         <span class="tight padding rounded border block gray">gray</span>
+        <span class="tight padding rounded border block brown">brown</span>
+
 
 
         <span class="tight padding rounded border block black">black</span>
 
   </div>
+
+  <br>
 
   <h4>light, bright, dim and dark</h4>
   <p>Use the classes light, bright, dim and dark to modify colors.</p>
@@ -1645,6 +1656,7 @@ button, .button {
       .margin-top { margin-top: var(--p);}
       .margin-bottom { margin-bottom: var(--p);}
       .margin-auto { margin-left: auto; margin-right: auto;}
+      .gutter { --p: calc(var(--padding) * 2);}
       .trim { margin-top: 0; margin-bottom: 0;}
       
       .text-center { text-align: center;}
@@ -1731,7 +1743,7 @@ button, .button {
       	.fixed.tablet { position: fixed;}
       }
       
-      @media screen and (min-width: 51rem) {
+      @media screen and (min-width: 50rem) {
       	:root {
       		--width: var(--page);
       		--padding: var(--padding-base);
@@ -1786,12 +1798,19 @@ button, .button {
       .base, .gray, .accent { color: var(--base-tone);}
       .complement { color: var(--alt-tone);}
       
-      .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-      .light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (1 + var(--v) * var(--vv)));}
-      .dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (1 + (var(--v) * var(--vv))));}
+      /* .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+      .light { color: var(--b); --lit: calc(100% - (100% - calc(var(--l)) / (.7 + var(--v) * var(--vv)));}
+      .dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (.7 + (var(--v) * var(--vv))));}
       .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
-      .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1 + var(--v)));}
-      .dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1 + (var(--v) * .75)));}
+      .bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1.2 + (var(--v) * var(--vv))));}
+      .dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));} */
+      
+      .light *, .dark *, .reset { --lit: var(--l);}
+      .light { --lit: calc(100% - (100% - (var(--l)) / (.7 + var(--v) * var(--vv))));}
+      .dark { }
+      .bright *, .dim *, .reset { }
+      .bright { }
+      .dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));}
       
       .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
       .complement { --h: calc(var(--base-h) + 180);}
@@ -1800,17 +1819,17 @@ button, .button {
       .black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.1;}
       .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
       .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:1;}
-      .red { --h:0;--s:71%;--l:50%;--t:var(--w);--vv:.6;}
-      .orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.5;}
+      .red { --h:3;--s:71%;--l:50%;--t:var(--w);--vv:.7;}
+      .orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.6;}
       .orange { --h:40;--s:96%;--l:55%;--t:var(--b);--vv:.4;}
-      .gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.4;}
-      .yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.6;}
-      .lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.6;}
-      .green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.5;}
+      .gold { --h:48;--s:95%;--l:53%;--t:var(--b);--vv:.5;}
+      .yellow { --h:54;--s:97%;--l:50%;--t:var(--b);--vv:.7;}
+      .lime { --h:75;--s:66%;--l:55%;--t:var(--b);--vv:.7;}
+      .green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.6;}
       .jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.5;}
-      .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.6;}
+      .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.7;}
       .aqua { --h:175;--s:64%;--l:57%;--t:var(--b);--vv:.6;}
-      .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.5;}
+      .cyan { --h:180;--s:85%;--l:50%;--t:var(--b);--vv:.4;}
       .sky { --h:200;--s:80%;--l:70%;--t:var(--b);--vv:.6;}
       .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.6;}
       .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.5;}
