@@ -225,19 +225,12 @@ button, .button {
 .base, .gray, .accent { color: var(--base-tone);}
 .complement { color: var(--alt-tone);}
 
-/* .unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
-.light { color: var(--b); --lit: calc(100% - (100% - calc(var(--l)) / (.7 + var(--v) * var(--vv)));}
+.unlit, .light *, .dark *, .reset { --lit: calc( ((var(--l) * 9) + var(--base-l)) / 10 );}
+.light { color: var(--b); --lit: calc(100% - (100% - calc( ((var(--l) * 9) + var(--base-l)) / 10 )) / (.7 + var(--v) * var(--vv)));}
 .dark { color: var(--w); --lit: calc(( (((var(--l) * 4) + var(--base-l)) / 5 ))/ (.7 + (var(--v) * var(--vv))));}
 .normal, .bright *, .dim *, .reset { --sat: calc( ((var(--s) * 9) + var(--base-s)) / 10 );}
-.bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (1.2 + (var(--v) * var(--vv))));}
-.dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));} */
-
-.light *, .dark *, .reset { --lit: var(--l);}
-.light { --lit: calc(100% - (100% - (var(--l)) / (.7 + var(--v) * var(--vv))));}
-.dark { }
-.bright *, .dim *, .reset { }
-.bright { }
-.dim { --sat: calc( ((var(--s) * 4) + var(--base-s)) / 5 ) / (1.2 + (var(--v) * var(--vv)));}
+.bright { --sat: calc(100% - (100% - ( (var(--s) * 9 + var(--base-s)) / 10 )) / (.7 + (var(--v) * var(--vv))));}
+.dim { --sat: calc(( ((var(--s) * 4) + var(--base-s)) / 5 ) / (.7 + (var(--v) * var(--vv))));}
 
 .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.6;}
 .complement { --h: calc(var(--base-h) + 180);}
