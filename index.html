@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
   <nav class="base fixed top right left full width padding-left padding-right shadow" style="z-index: 1000;">
       <div class="relative full width two columns">
               <a class="no-underline" href="" class="">
@@ -57,32 +58,32 @@
                   <div class="">
                       <div class="block relative">
                           <span class="fade block absolute top right float-right"><span class="default red">&nbsp;&nbsp;&nbsp;</span> <span class="default green">&nbsp;&nbsp;&nbsp;</span> <span class="default blue">&nbsp;&nbsp;&nbsp;</span></span>
-                          <span class="block full width">h<span class="hide mobile">ue</span> (<strong><span id="baseHueLabel" for="baseHue">214</span></strong>)</span>
+                          <span class="block full width">h<span class="hide mobile">ue</span> (<strong><span id="baseHueLabel" for="baseHue">204</span></strong>)</span>
                       </div>
                       
-                      <input type="range" id="baseHue" min="1" max="360" value="214" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseHueLabel').innerHTML = document.getElementById('baseHue').value; updateColor();">
+                      <input type="range" id="baseHue" min="1" max="360" value="204" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseHueLabel').innerHTML = document.getElementById('baseHue').value; updateColor();">
                   </div>
               
                   <div class="">
                       <div class="block relative">
                           <span class="fade block absolute top right float-right"><span class="hella dim green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="hella bright green">&nbsp;&nbsp;&nbsp;</span></span>
-                          <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">55</span>%</strong>)</span>
+                          <span class="block full width">s<span class="hide mobile">at</span><span class="hide mobile tablet">uration</span> (<strong><span id="baseSaturationLabel" for="baseSaturation">76</span>%</strong>)</span>
                       </div>
                       
-                      <input type="range" id="baseSaturation" min="0" max="100" value="55" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
+                      <input type="range" id="baseSaturation" min="0" max="100" value="76" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseSaturationLabel').innerHTML = document.getElementById('baseSaturation').value; updateColor();">
                   </div>
               
                   <div class="">
                       <div class="block relative">
                           <span class="fade block absolute top right float-right"><span class="very dark green">&nbsp;&nbsp;&nbsp;</span> <span class="green">&nbsp;&nbsp;&nbsp;</span> <span class="very light green">&nbsp;&nbsp;&nbsp;</span></span>
-                          <span class="block full width">l<span class="hide mobile">i<span class="hide mobile tablet">gh</span>t<span class="hide mobile tablet">ness</span></span> (<strong><span id="baseLightnessLabel" for="baseLightness">65</span>%</strong>)</span>
+                          <span class="block full width">l<span class="hide mobile">i<span class="hide mobile tablet">gh</span>t<span class="hide mobile tablet">ness</span></span> (<strong><span id="baseLightnessLabel" for="baseLightness">43</span>%</strong>)</span>
                       </div>
                       
-                      <input type="range" id="baseLightness" min="0" max="100" value="65" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseLightnessLabel').innerHTML = document.getElementById('baseLightness').value; updateColor();">
+                      <input type="range" id="baseLightness" min="0" max="100" value="43" step="1" class="force full width cursor inset dull very dark white shallow shadow no-border" oninput="document.getElementById('baseLightnessLabel').innerHTML = document.getElementById('baseLightness').value; updateColor();">
                   </div>
               </div>
               <div class="vertical-center padding">
-                  <input class="no-padding no-border pointer force full width cursor" id="baseColor" style="height: 3em;" type="color" value="#6c9ee0" oninput="updateColorRGB();">
+                  <input class="no-padding no-border pointer force full width cursor" id="baseColor" style="height: 3em;" type="color" value="#1a7ec1" oninput="updateColorRGB();">
                   <p class="tiny text-center no-text-indent"><em>Click to input hex</em></p>
               </div>
               
@@ -92,184 +93,188 @@
 /* https://github.com/casscss/cass */
 
 :root {
-  --base-h: 214; 
-  --base-s: 55%;
-  --base-l: 65%;
-  --base-tone: var(--white);
-  --alt-tone: var(--black);
-  --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-  --text-measure: 50;
-  --font-size-base: 16px;
-  --text-indent: 1ch;
-  --padding-base: 1em;
-  --card: calc(var(--type)*.6);
-  --type: calc(var(--text-measure)*.55rem);
-  --page: calc(var(--type)*1.6);
-  --w-h: var(--base-h);
-  --w-s: calc(var(--base-s) * .8);
-  --w-l: 99.5%;
-  --white: hsl(var(--w-h), var(--w-s), var(--w-l));
-  --w: var(--white);
-  --b-h: var(--base-h);
-  --b-s: calc(var(--base-s) * .2);
-  --b-l: calc(var(--base-l) * .2);
-  --black: hsl(var(--b-h), var(--b-s), var(--b-l));
-  --b: var(--black);
-  --v: 1;
-  --vv: .4;
-  --width: 100%;
-  --padding: calc(var(--padding-base) * .6);
-  --p: var(--padding);
-  --font-size: calc(var(--font-size-base) - 2px);
+  --base-h:204; 
+  --base-s:76%;
+  --base-l:43%;
+  --base-tone:var(--white);
+  --alt-tone:var(--white);
+  --base:hsl(var(--base-h), var(--base-s), var(--base-l));
+  --text-measure:50;
+  --font-size-base:16px;
+  --text-indent:1ch;
+  --padding-base:1em;
+  --card:calc(var(--type)*.6);
+  --type:calc(var(--text-measure)*.55rem);
+  --page:calc(var(--type)*1.6);
+  --w-h:var(--base-h);
+  --w-s:calc(var(--base-s) * .8);
+  --w-l:99.5%;
+  --white:hsl(var(--w-h), var(--w-s), var(--w-l));
+  --w:var(--white);
+  --b-h:var(--base-h);
+  --b-s:calc(var(--base-s) * .2);
+  --b-l:calc(var(--base-l) * .2);
+  --black:hsl(var(--b-h), var(--b-s), var(--b-l));
+  --b:var(--black);
+  --v:1;
+  --width:100%;
+  --padding:calc(var(--padding-base) * .6);
+  --p:var(--padding);
+  --margin:var(--p);
+  --m:var(--margin);
+  --font-size:calc(var(--font-size-base) - 2px);
 
-  color: var(--b);
-  background-color: var(--w);
-  font-family: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
-  margin: 0;
-  font-size: var(--font-size);
+  color:var(--b);
+  background-color:var(--w);
+  font-family:"Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  font-size:var(--font-size);
+  line-height:1.6;
+  overflow-x:hidden;
 }
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  line-height: 1.7;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 body * {
-  padding-left: calc(50% - var(--width) * .5);
-  padding-right: calc(50% - var(--width) * .5);
+  padding-left:calc(50% - var(--width) * .5);
+  padding-right:calc(50% - var(--width) * .5);
 }
-body.padding { padding: var(--p);}
+body.padding {padding:var(--p)}
 h1, h2, h3, h4, h5, h6 {
-  --width: var(--type);
-  line-height: 1.2;
-  margin-top: .6em;
-  margin-bottom: .6em;
+  --width:var(--type);
+  line-height:1.1;
+  margin-top:.6em;
+  margin-bottom:.6em;
 }
-p { text-indent: var(--text-indent);}
-p, ul, ol { --width: var(--type); margin-bottom: 1em;}
-ul, ol { margin-left: 1.6em;}
-a { color: inherit;}
+p {text-indent:var(--text-indent)}
+p, ul, ol {--width:var(--type); margin-bottom:var(--m)}
+ul, ol {margin-left:1.6em}
+a {color:inherit}
+pre, code, input, textarea {line-height:var(--line-height); border:none}
+img {max-width:100%}
 button, .button {
-  display: inline-block;
-  font-size: inherit;
-  padding: .6em 1em;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  display:inline-block;
+  font-size:inherit;
+  padding:.6em 1em;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  line-height:1.7;
 }
 
-.padding-top, .padding { padding-top: var(--p);}
-.padding-bottom, .padding { padding-bottom: var(--p);}
-.padding-left, .padding { padding-left: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
-.padding-right, .padding { padding-right: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
-.tight { --p: calc(.6 * var(--padding-base));}
-.margin { margin: var(--p);}
-.margin-left { margin-left: var(--p);}
-.margin-right { margin-right: var(--p);}
-.margin-top { margin-top: var(--p);}
-.margin-bottom { margin-bottom: var(--p);}
-.margin-auto { margin-left: auto; margin-right: auto;}
-.gutter { --p: calc(var(--padding) * 2);}
-.trim > *:last-child { margin-bottom: 0;}
+.padding-top, .padding {padding-top:var(--p)}
+.padding-bottom, .padding {padding-bottom:var(--p)}
+.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+.margin {margin:var(--m)}
+.margin-top {margin-top:var(--m)}
+.margin-bottom {margin-bottom:var(--m)}
+.margin-auto {margin-left:auto; margin-right:auto}
+.tight {--p:calc(var(--padding) * .6)}
+.tight * {--p:var(--padding)}
+.gutter {--m:calc(var(--padding) * 2)}
+.gutter *, .tight * {--m:var(--padding)}
+.trim > *:last-child {margin-bottom:0}
 
-.text-center { text-align: center;}
-.text-right { text-align: right;}
-.tiny { font-size: 85%;}
-.small { font-size: 92%;}
-.big { font-size: 130%;}
-.huge { font-size: 160%;}
+.text-center {text-align:center}
+.text-right {text-align:right}
+.text-crunch {line-height:1.4}
+.monospace {font-family:monospace}
+.bold {font-weight:bold}
+.italic {font-style:italic}
+.tiny {font-size:90%}
+.small {font-size:95%}
+.big {font-size:130%}
+.huge {font-size:160%}
 
-.pointer { cursor: pointer;}
-.rounded { border-radius: .6em;}
-.border { border: 1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.8 * var(--sat, var(--s))), 50%), clamp(0%, calc(.8 * var(--lit, var(--l))), 67%));}
-.dashed { border-style: dashed;}
-.thick { border-width: 2px;}
-.shadow { box-shadow: 0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
+.pointer {cursor:pointer}
+.rounded {border-radius:.6em}
+.border {border:1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.7 * var(--sat, var(--s))), 50%), clamp(0%, calc(.7 * var(--lit, var(--l))), 60%))}
+.dashed {border-style:dashed}
+.thick {border-width:2px}
+.shadow {box-shadow:0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2)}
 
-.no-underline { text-decoration: none;}
-.no-text-indent { --text-indent: 0;}
-.no-margin-top { margin-top: 0;}
-.no-margin-bottom { margin-bottom: 0;}
+.block {display:block}
+.hide, .hide.mobile, .hide.mobile.tablet {display:none}
+.hide.tablet, .hide.desktop {display:initial}
+.fixed, .fixed.mobile, .fixed.mobile.tablet {position:fixed}
+.fixed.tablet, .fixed.desktop {position:initial}
+.relative {position:relative}
+.absolute {position:absolute}
+.top {top:0} .right {right:0} .bottom {bottom:0} .left {left:0}
+.vertical-center {display:flex; flex:0 1 auto; flex-direction:column; justify-content:center}
 
-.block { display: block;}
-.inline { display: inline;}
-.inline-block { display: inline-block;}
-.hide, .hide.mobile, .hide.mobile.tablet { display: none;}
-.hide.tablet, .hide.desktop { display: initial;}
-.fixed, .fixed.mobile, .fixed.mobile.tablet { position: fixed;}
-.fixed.tablet, .fixed.desktop { position: initial;}
-.relative { position: relative;}
-.absolute { position: absolute;}
-.top { top: 0;} .right { right: 0;} .bottom { bottom: 0;} .left { left: 0;}
-.vertical-center { display: flex; flex: 0 1 auto; flex-direction: column; justify-content: center;}
-
-.card { --width: var(--card);}
-.type { --width: var(--type);}
-.page { --width: var(--page);}
-.full.width { width: 100%; --width: var(--page);}
+.card {--width:var(--card)}
+.type {--width:var(--type)}
+.page {--width:var(--page)}
+.full.width {width:100%; --width:var(--page)}
 
 .columns {
-  --c: 12;
-  --multi: repeat(var(--c), minmax(0, 1fr));
-  --single: repeat(1, minmax(0, 1fr));
-  display: grid;
-  gap: var(--p);
-  grid-template-columns: var(--multi);
+  --c:12;
+  --multi:repeat(var(--c), minmax(0, 1fr));
+  --single:repeat(1, minmax(0, 1fr));
+  display:grid;
+  gap:var(--m);
+  grid-template-columns:var(--multi);
 }
+.columns.tablet, .columns.desktop {grid-template-columns:var(--single)}
+.columns .wide {grid-column:auto / span var(--c)}
+.tablet .wide, .desktop .wide {width:100%; grid-column:unset}
+.golden {--multi:1.618fr 1fr}
+.golden.reverse {--multi:1fr 1.618fr}
 
-.two { --c: 2;}
-.three { --c: 3;}
-.four { --c: 4;}
-.five { --c: 5;}
-.six { --c: 6;}
-.seven { --c: 7;}
-.eight { --c: 8;}
-.nine { --c: 9;}
-.ten { --c: 10;}
-.eleven { --c: 11;}
-.twelve { --c: 12;}
+.two {--c:2}
+.three {--c:3}
+.four {--c:4}
+.five {--c:5}
+.six {--c:6}
+.seven {--c:7}
+.eight {--c:8}
+.nine {--c:9}
+.ten {--c:10}
+.eleven {--c:11}
+.twelve {--c:12}
 
-.columns.tablet, .columns.desktop { grid-template-columns: var(--single);}
-
-.golden { --multi: 1.618fr 1fr;}
-.golden.reverse { --multi: 1fr 1.618fr;}
-
-.columns .wide { grid-column: auto / span var(--c);}
-.tablet .wide, .desktop .wide { width: 100%; grid-column: unset;}
-
-@media screen and (min-width: 28rem) {
+@media screen and (min-width:28rem) {
   :root {
-    --width: var(--type);
-    --padding: calc(var(--padding-base) * .8);
-    --font-size: calc(var(--font-size-base) - 1px);
+    --width:var(--type);
+    --padding:calc(var(--padding-base) * .8);
+    --font-size:calc(var(--font-size-base) - 1px);
   }
 
-  .columns.mobile { grid-template-columns: var(--single);}
-  .columns.tablet { grid-template-columns: var(--multi);}
-  .hide.mobile { display: initial;}
-  .hide.tablet { display: none;}
-  .fixed.mobile { position: initial;}
-  .fixed.tablet { position: fixed;}
-  .mobile .wide  { grid-column: unset;}
-  .tablet .wide  { grid-column: auto / span var(--c);}
+  .columns.mobile {grid-template-columns:var(--single)}
+  .columns.tablet {grid-template-columns:var(--multi)}
+  .hide.mobile {display:initial}
+  .hide.tablet {display:none}
+  .fixed.mobile {position:initial}
+  .fixed.tablet {position:fixed}
+  .mobile .wide  {grid-column:unset}
+  .tablet .wide  {grid-column:auto / span var(--c, 1)}
 }
 
-@media screen and (min-width: 45rem) {
+@media screen and (min-width:45rem) {
   :root {
-    --width: var(--page);
-    --padding: var(--padding-base);
-    --font-size: var(--font-size-base);
+    --width:var(--page);
+    --padding:var(--padding-base);
+    --font-size:var(--font-size-base);
   }
 
-  .columns.mobile.tablet { grid-template-columns: var(--single);}
-  .columns.desktop { grid-template-columns: var(--multi);}
-  .hide.mobile.tablet { display: initial;}
-  .hide.desktop { display: none;}
-  .fixed.mobile.tablet { position: initial;}
-  .fixed.desktop { position: fixed;}
-  .mobile.tablet .wide  { grid-column: unset;}
-  .desktop .wide  { grid-column: auto / span var(--c);}
+  .columns.mobile.tablet {grid-template-columns:var(--single)}
+  .columns.desktop {grid-template-columns:var(--multi)}
+  .hide.mobile.tablet {display:initial}
+  .hide.desktop {display:none}
+  .fixed.mobile.tablet {position:initial}
+  .fixed.desktop {position:fixed}
+  .mobile.tablet .wide  {grid-column:unset}
+  .desktop .wide  {grid-column:auto / span var(--c, 1)}
 }
+
+.no-gap {gap:0}
+.no-underline {text-decoration:none}
+.no-text-indent {--text-indent:0}
+.no-margin-top {margin-top:0}
+.no-margin-bottom {margin-bottom:0}
 
 .base,
 .accent,
@@ -277,79 +282,73 @@ button, .button {
 .red,
 .orangered,
 .orange,
-.gold,
 .yellow,
-.lime,
 .green,
-.jade,
 .teal,
-.aqua,
 .cyan,
-.sky,
 .blue,
 .indigo,
 .purple,
-.magenta,
 .pink,
-.gray,
 .brown,
-.white,
-.black {
-  color: var(--t);
-  background-color: hsl(var(--h), var(--sat, var(--s)), var(--lit, var(--l)));
+.gray {
+  color:var(--t);
+  background-color:hsl(
+    var(--h), 
+    calc(((var(--sat, var(--s)) * 5) + var(--base-s))/6), 
+    calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6)
+  );
 }
 
-.base, .gray, .accent { color: var(--base-tone);}
-.complement { color: var(--alt-tone);}
+.white, .black {
+  background-color:hsl(var(--h), var(--sat, var(--s)), var(--lit, var(--l)));
+}
 
-.bright *, .dim * { --sat: var(--s);}
-.light *, .dark * { --lit: var(--l);}
-.bright { --sat: calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))));}
-.dim { --sat: calc(var(--s) / (1 + var(--vv) * var(--v)));}
-.light { --lit: calc(100% - ((100% - var(--l)) / (1 + var(--vv) * var(--v)))); color: var(--b);}
-.dark { --lit: calc(var(--l) / (1 + var(--vv) * var(--v))); color: var(--w);}
+.base, .gray, .accent {color:var(--base-tone)}
+.complement {color:var(--alt-tone)}
 
-.base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.5;}
-.complement { --h: calc(var(--base-h) + 180);}
-.accent { --h: calc(var(--base-h) + 15);}
-.white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l); --vv:.05; color: var(--b);}
-.black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.2; color: var(--w);}
-.gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
-.brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:.5;}
-.red { --h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4;}
-.orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4;}
-.orange { --h:40;--s:96%;--l:55%;--vv:.3;}
-.gold { --h:48;--s:95%;--l:55%;--vv:.4;}
-.yellow { --h:54;--s:95%;--l:60%;--vv:.5;}
-.lime { --h:75;--s:66%;--l:50%;--vv:.4;}
-.green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4;}
-.jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.4;}
-.teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5;}
-.aqua { --h:175;--s:64%;--l:57%;--vv:.5;}
-.cyan { --h:180;--s:85%;--l:50%;--vv:.3;}
-.sky { --h:200;--s:80%;--l:70%;--vv:.4;}
-.blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4;}
-.indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.4;}
-.purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5;}
-.magenta { --h:300;--s:75%;--l:75%;--vv:.4;}
-.pink { --h:335;--s:85%;--l:80%;--vv:.3;}
+.bright *, .dim * {--sat:var(--s)}
+.light *, .dark * {--lit:var(--l)}
+.bright {--sat:calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))))}
+.dim {--sat:calc(var(--s) / (1 + var(--vv) * var(--v)))}
+.light {--lit:calc(100% - ((100% - var(--l)) / (1.3 + var(--vv) * var(--v)))); color:var(--b)}
+.dark {--lit:calc(var(--l) / (1 + var(--vv) * var(--v))); color:var(--w)}
 
-.very *, .hella * { --v: 1;}
-.very { --v: 2;}
-.hella { --v: 3;}
+.base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.5}
+.complement {--h:calc(var(--base-h) + 180)}
+.accent {--h:calc(var(--base-h) + 25)}
+.white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.05; color:var(--b)}
+.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.2; color:var(--w)}
+.gray {--h:var(--base-h); --s:0%; --l:var(--base-l); --vv:.5}
+.brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
+.red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
+.orangered {--h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4}
+.orange {--h:40;--s:96%;--l:55%;--vv:.3}
+.yellow {--h:54;--s:95%;--l:60%;--vv:.5}
+.green {--h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4}
+.teal {--h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5}
+.cyan {--h:180;--s:85%;--l:50%;--vv:.3}
+.blue {--h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4}
+.indigo {--h:245;--s:68%;--l:50%;--t:var(--w);--vv:.4}
+.purple {--h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5}
+.pink {--h:335;--s:85%;--l:80%;--vv:.3}
 
-.text-dark { color: var(--b);}
-.text-light { color: var(--w);}
+.very *, .hella * {--v:1}
+.very {--v:2}
+.hella {--v:3}
+
+.text-dark {color:var(--b)}
+.text-light {color:var(--w)}
 
 .text-color {
-  --t-h: var(--hue, var(--h));
-  --t-s: var(--sat, var(--s));
-  --t-l: clamp(0%, var(--lit, var(--l)), 44%);
-  color: hsl(var(--t-h), var(--t-s), var(--t-l));
-  background-color: transparent;
+  --t-h:var(--hue, var(--h));
+  --t-s:var(--sat, var(--s));
+  --t-l:clamp(0%, var(--lit, var(--l)), 44%);
+  color:hsl(var(--t-h), var(--t-s), var(--t-l));
+  background-color:transparent;
 }
 .text-color.text-light {
-  --t-l: clamp(50%, var(--lit, var(--l)), 100%);
+  --t-l:clamp(50%, var(--lit, var(--l)), 100%);
 }
 </textarea>
           <div class="text-right">
@@ -372,7 +371,7 @@ button, .button {
       </div>
 
       <div class="vertical-center margin-bottom">
-        <ul class="">
+        <ul class="card">
           <li>Typography-first</li>
           <li>Hundreds of colors</li>
           <li>No build step</li>
@@ -385,16 +384,16 @@ button, .button {
 
     <section class=" padding hella dark dim base complement no-text-indent">
         <div class="three columns desktop margin-bottom">
-          <div class="inner card width">
-            <h4>No workflow</h4>
+          <div class="card vertical-center">
+            <h3>No workflow</h3>
             <p class="no-margin-bottom">No gzipping. No tree-shaking. No&nbsp;stress. Just use the CSS.</p>
           </div>
-          <div class="inner card width">
-            <h4>Great for docs</h4>
+          <div class="card vertical-center">
+            <h3>Great for docs</h3>
             <p class="no-margin-bottom">Give your documentation a great set of type standards and colors in one small file.</p>
           </div>
-          <div class="inner card width">
-            <h4>Write less CSS</h4>
+          <div class="card vertical-center">
+            <h3>Write less CSS</h3>
             <p class="no-margin-bottom">Write 90% fewer lines of CSS with smart defaults that anyone can learn and use.</p>
           </div>
         </div>
@@ -533,34 +532,27 @@ button, .button {
 
   <p>By default, color classes change the background color. Add the <strong>text-color</strong> class to change the text color</p>
 
-  <p>The color palette</p>
-  <p>These are the 25 colors in the color palette:</p>
+  <p>These are the 18 colors in the color palette:</p>
 
   <div class="type three columns tablet no-text-indent margin-bottom">
-    <span class="tight padding rounded border block base two wide">base</span>
-    <span class="tight padding rounded border block complement">complement</span>
-    <span class="tight padding rounded border block accent">accent</span>
-    <span class="tight padding rounded border block red">red</span>
-    <span class="tight padding rounded border block orangered">orangered</span>
-    <span class="tight padding rounded border block orange">orange</span>
-    <span class="tight padding rounded border block gold">gold</span>
-    <span class="tight padding rounded border block yellow">yellow</span>
-    <span class="tight padding rounded border block lime">lime</span>
-    <span class="tight padding rounded border block green">green</span>
-    <span class="tight padding rounded border block jade">jade</span>
-    <span class="tight padding rounded border block teal">teal</span>
-    <span class="tight padding rounded border block aqua">aqua</span>
-    <span class="tight padding rounded border block cyan">cyan</span>
-    <span class="tight padding rounded border block sky">sky</span>
-    <span class="tight padding rounded border block blue">blue</span>
-    <span class="tight padding rounded border block indigo">indigo</span>
-    <span class="tight padding rounded border block purple">purple</span>
-    <span class="tight padding rounded border block magenta">magenta</span>
-    <span class="tight padding rounded border block pink">pink</span>
-    <span class="tight padding rounded border block white">white</span>
-    <span class="tight padding rounded border block gray">gray</span>
-    <span class="tight padding rounded border block brown">brown</span>
-    <span class="tight padding rounded border block black">black</span>
+    <div class="card"><span class="tight padding rounded border block base">base</span></div>
+    <div class="card"><span class="tight padding rounded border block complement">complement</span></div>
+    <div class="card"><span class="tight padding rounded border block accent">accent</span></div>
+    <div class="card"><span class="tight padding rounded border block red">red</span></div>
+    <div class="card"><span class="tight padding rounded border block orangered">orangered</span></div>
+    <div class="card"><span class="tight padding rounded border block orange">orange</span></div>
+    <div class="card"><span class="tight padding rounded border block yellow">yellow</span></div>
+    <div class="card"><span class="tight padding rounded border block green">green</span></div>
+    <div class="card"><span class="tight padding rounded border block teal">teal</span></div>
+    <div class="card"><span class="tight padding rounded border block cyan">cyan</span></div>
+    <div class="card"><span class="tight padding rounded border block blue">blue</span></div>
+    <div class="card"><span class="tight padding rounded border block indigo">indigo</span></div>
+    <div class="card"><span class="tight padding rounded border block purple">purple</span></div>
+    <div class="card"><span class="tight padding rounded border block pink">pink</span></div>
+    <div class="card"><span class="tight padding rounded border block white">white</span></div>
+    <div class="card"><span class="tight padding rounded border block gray">gray</span></div>
+    <div class="card"><span class="tight padding rounded border block brown">brown</span></div>
+    <div class="card"><span class="tight padding rounded border block black">black</span></div>
 
   </div>
 
@@ -686,7 +678,7 @@ button, .button {
 
   <div class="type">
     <p class="no-text-indent text-center small">INPUT</p>
-<pre class="black type small padding rounded margin-bottom">&lt;div class="<span class="text-color light yellow text-light">columns tablet</span>"&gt;
+<pre class="black type small padding rounded margin-bottom">&lt;div class="<span class="text-color light yellow text-light">two columns tablet</span>"&gt;
   &lt;div class="light blue"&gt;California&lt;/div&gt;
   &lt;div class="light blue"&gt;Stylesheets&lt;/div&gt;
 &lt;/div&gt;
@@ -718,6 +710,646 @@ button, .button {
   <h4>shadow</h4>
   <p>Add a shadow.</p>
 </section>
+<section class="text-center tiny white padding three desktop columns no-gap" style="line-height:3em;">
+        <span class="tight padding base" id="base">base</span>
+    <span class="tight padding bright base" id="bright_base">bright&nbsp;base</span> 
+    <span class="tight padding light base" id="light_base">light&nbsp;base</span>
+    <span class="tight padding dark base" id="dark_base">dark&nbsp;base</span>
+    <span class="tight padding dim base" id="dim_base">dim&nbsp;base</span>
+
+
+    <span class="tight padding very bright base" id="bright_base">very&nbsp;bright&nbsp;base</span> 
+    <span class="tight padding very light base" id="light_base">very&nbsp;light&nbsp;base</span>
+    <span class="tight padding very dark base" id="dark_base">very&nbsp;dark&nbsp;base</span>
+    <span class="tight padding very dim base" id="dim_base">very&nbsp;dim&nbsp;base</span>
+
+
+    <span class="tight padding hella bright base" id="bright_base">hella&nbsp;bright&nbsp;base</span> 
+    <span class="tight padding hella light base" id="light_base">hella&nbsp;light&nbsp;base</span>
+    <span class="tight padding hella dark base" id="dark_base">hella&nbsp;dark&nbsp;base</span>
+    <span class="tight padding hella dim base" id="dim_base">hella&nbsp;dim&nbsp;base</span>
+
+
+    <span class="tight padding light bright base">light&nbsp;bright&nbsp;base</span> 
+    <span class="tight padding dark bright base">dark&nbsp;bright&nbsp;base</span>
+    <span class="tight padding light dim base">light&nbsp;dim&nbsp;base</span>
+    <span class="tight padding dark dim base">dark&nbsp;dim&nbsp;base</span>
+
+
+    <span class="tight padding very light bright base">very&nbsp;light&nbsp;bright&nbsp;base</span> 
+    <span class="tight padding very dark bright base">very&nbsp;dark&nbsp;bright&nbsp;base</span>
+    <span class="tight padding very light dim base">very&nbsp;light&nbsp;dim&nbsp;base</span>
+    <span class="tight padding very dark dim base">very&nbsp;dark&nbsp;dim&nbsp;base</span>
+
+
+    <span class="tight padding hella light bright base">hella&nbsp;light&nbsp;bright&nbsp;base</span> 
+    <span class="tight padding hella dark bright base">hella&nbsp;dark&nbsp;bright&nbsp;base</span>
+    <span class="tight padding hella light dim base">hella&nbsp;light&nbsp;dim&nbsp;base</span>
+    <span class="tight padding hella dark dim base">hella&nbsp;dark&nbsp;dim&nbsp;base</span>    <span class="tight padding complement" id="complement">complement</span>
+    <span class="tight padding bright complement" id="bright_complement">bright&nbsp;complement</span> 
+    <span class="tight padding light complement" id="light_complement">light&nbsp;complement</span>
+    <span class="tight padding dark complement" id="dark_complement">dark&nbsp;complement</span>
+    <span class="tight padding dim complement" id="dim_complement">dim&nbsp;complement</span>
+
+
+    <span class="tight padding very bright complement" id="bright_complement">very&nbsp;bright&nbsp;complement</span> 
+    <span class="tight padding very light complement" id="light_complement">very&nbsp;light&nbsp;complement</span>
+    <span class="tight padding very dark complement" id="dark_complement">very&nbsp;dark&nbsp;complement</span>
+    <span class="tight padding very dim complement" id="dim_complement">very&nbsp;dim&nbsp;complement</span>
+
+
+    <span class="tight padding hella bright complement" id="bright_complement">hella&nbsp;bright&nbsp;complement</span> 
+    <span class="tight padding hella light complement" id="light_complement">hella&nbsp;light&nbsp;complement</span>
+    <span class="tight padding hella dark complement" id="dark_complement">hella&nbsp;dark&nbsp;complement</span>
+    <span class="tight padding hella dim complement" id="dim_complement">hella&nbsp;dim&nbsp;complement</span>
+
+
+    <span class="tight padding light bright complement">light&nbsp;bright&nbsp;complement</span> 
+    <span class="tight padding dark bright complement">dark&nbsp;bright&nbsp;complement</span>
+    <span class="tight padding light dim complement">light&nbsp;dim&nbsp;complement</span>
+    <span class="tight padding dark dim complement">dark&nbsp;dim&nbsp;complement</span>
+
+
+    <span class="tight padding very light bright complement">very&nbsp;light&nbsp;bright&nbsp;complement</span> 
+    <span class="tight padding very dark bright complement">very&nbsp;dark&nbsp;bright&nbsp;complement</span>
+    <span class="tight padding very light dim complement">very&nbsp;light&nbsp;dim&nbsp;complement</span>
+    <span class="tight padding very dark dim complement">very&nbsp;dark&nbsp;dim&nbsp;complement</span>
+
+
+    <span class="tight padding hella light bright complement">hella&nbsp;light&nbsp;bright&nbsp;complement</span> 
+    <span class="tight padding hella dark bright complement">hella&nbsp;dark&nbsp;bright&nbsp;complement</span>
+    <span class="tight padding hella light dim complement">hella&nbsp;light&nbsp;dim&nbsp;complement</span>
+    <span class="tight padding hella dark dim complement">hella&nbsp;dark&nbsp;dim&nbsp;complement</span>    <span class="tight padding accent" id="accent">accent</span>
+    <span class="tight padding bright accent" id="bright_accent">bright&nbsp;accent</span> 
+    <span class="tight padding light accent" id="light_accent">light&nbsp;accent</span>
+    <span class="tight padding dark accent" id="dark_accent">dark&nbsp;accent</span>
+    <span class="tight padding dim accent" id="dim_accent">dim&nbsp;accent</span>
+
+
+    <span class="tight padding very bright accent" id="bright_accent">very&nbsp;bright&nbsp;accent</span> 
+    <span class="tight padding very light accent" id="light_accent">very&nbsp;light&nbsp;accent</span>
+    <span class="tight padding very dark accent" id="dark_accent">very&nbsp;dark&nbsp;accent</span>
+    <span class="tight padding very dim accent" id="dim_accent">very&nbsp;dim&nbsp;accent</span>
+
+
+    <span class="tight padding hella bright accent" id="bright_accent">hella&nbsp;bright&nbsp;accent</span> 
+    <span class="tight padding hella light accent" id="light_accent">hella&nbsp;light&nbsp;accent</span>
+    <span class="tight padding hella dark accent" id="dark_accent">hella&nbsp;dark&nbsp;accent</span>
+    <span class="tight padding hella dim accent" id="dim_accent">hella&nbsp;dim&nbsp;accent</span>
+
+
+    <span class="tight padding light bright accent">light&nbsp;bright&nbsp;accent</span> 
+    <span class="tight padding dark bright accent">dark&nbsp;bright&nbsp;accent</span>
+    <span class="tight padding light dim accent">light&nbsp;dim&nbsp;accent</span>
+    <span class="tight padding dark dim accent">dark&nbsp;dim&nbsp;accent</span>
+
+
+    <span class="tight padding very light bright accent">very&nbsp;light&nbsp;bright&nbsp;accent</span> 
+    <span class="tight padding very dark bright accent">very&nbsp;dark&nbsp;bright&nbsp;accent</span>
+    <span class="tight padding very light dim accent">very&nbsp;light&nbsp;dim&nbsp;accent</span>
+    <span class="tight padding very dark dim accent">very&nbsp;dark&nbsp;dim&nbsp;accent</span>
+
+
+    <span class="tight padding hella light bright accent">hella&nbsp;light&nbsp;bright&nbsp;accent</span> 
+    <span class="tight padding hella dark bright accent">hella&nbsp;dark&nbsp;bright&nbsp;accent</span>
+    <span class="tight padding hella light dim accent">hella&nbsp;light&nbsp;dim&nbsp;accent</span>
+    <span class="tight padding hella dark dim accent">hella&nbsp;dark&nbsp;dim&nbsp;accent</span>    <span class="tight padding red" id="red">red</span>
+    <span class="tight padding bright red" id="bright_red">bright&nbsp;red</span> 
+    <span class="tight padding light red" id="light_red">light&nbsp;red</span>
+    <span class="tight padding dark red" id="dark_red">dark&nbsp;red</span>
+    <span class="tight padding dim red" id="dim_red">dim&nbsp;red</span>
+
+
+    <span class="tight padding very bright red" id="bright_red">very&nbsp;bright&nbsp;red</span> 
+    <span class="tight padding very light red" id="light_red">very&nbsp;light&nbsp;red</span>
+    <span class="tight padding very dark red" id="dark_red">very&nbsp;dark&nbsp;red</span>
+    <span class="tight padding very dim red" id="dim_red">very&nbsp;dim&nbsp;red</span>
+
+
+    <span class="tight padding hella bright red" id="bright_red">hella&nbsp;bright&nbsp;red</span> 
+    <span class="tight padding hella light red" id="light_red">hella&nbsp;light&nbsp;red</span>
+    <span class="tight padding hella dark red" id="dark_red">hella&nbsp;dark&nbsp;red</span>
+    <span class="tight padding hella dim red" id="dim_red">hella&nbsp;dim&nbsp;red</span>
+
+
+    <span class="tight padding light bright red">light&nbsp;bright&nbsp;red</span> 
+    <span class="tight padding dark bright red">dark&nbsp;bright&nbsp;red</span>
+    <span class="tight padding light dim red">light&nbsp;dim&nbsp;red</span>
+    <span class="tight padding dark dim red">dark&nbsp;dim&nbsp;red</span>
+
+
+    <span class="tight padding very light bright red">very&nbsp;light&nbsp;bright&nbsp;red</span> 
+    <span class="tight padding very dark bright red">very&nbsp;dark&nbsp;bright&nbsp;red</span>
+    <span class="tight padding very light dim red">very&nbsp;light&nbsp;dim&nbsp;red</span>
+    <span class="tight padding very dark dim red">very&nbsp;dark&nbsp;dim&nbsp;red</span>
+
+
+    <span class="tight padding hella light bright red">hella&nbsp;light&nbsp;bright&nbsp;red</span> 
+    <span class="tight padding hella dark bright red">hella&nbsp;dark&nbsp;bright&nbsp;red</span>
+    <span class="tight padding hella light dim red">hella&nbsp;light&nbsp;dim&nbsp;red</span>
+    <span class="tight padding hella dark dim red">hella&nbsp;dark&nbsp;dim&nbsp;red</span>    <span class="tight padding orangered" id="orangered">orangered</span>
+    <span class="tight padding bright orangered" id="bright_orangered">bright&nbsp;orangered</span> 
+    <span class="tight padding light orangered" id="light_orangered">light&nbsp;orangered</span>
+    <span class="tight padding dark orangered" id="dark_orangered">dark&nbsp;orangered</span>
+    <span class="tight padding dim orangered" id="dim_orangered">dim&nbsp;orangered</span>
+
+
+    <span class="tight padding very bright orangered" id="bright_orangered">very&nbsp;bright&nbsp;orangered</span> 
+    <span class="tight padding very light orangered" id="light_orangered">very&nbsp;light&nbsp;orangered</span>
+    <span class="tight padding very dark orangered" id="dark_orangered">very&nbsp;dark&nbsp;orangered</span>
+    <span class="tight padding very dim orangered" id="dim_orangered">very&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class="tight padding hella bright orangered" id="bright_orangered">hella&nbsp;bright&nbsp;orangered</span> 
+    <span class="tight padding hella light orangered" id="light_orangered">hella&nbsp;light&nbsp;orangered</span>
+    <span class="tight padding hella dark orangered" id="dark_orangered">hella&nbsp;dark&nbsp;orangered</span>
+    <span class="tight padding hella dim orangered" id="dim_orangered">hella&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class="tight padding light bright orangered">light&nbsp;bright&nbsp;orangered</span> 
+    <span class="tight padding dark bright orangered">dark&nbsp;bright&nbsp;orangered</span>
+    <span class="tight padding light dim orangered">light&nbsp;dim&nbsp;orangered</span>
+    <span class="tight padding dark dim orangered">dark&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class="tight padding very light bright orangered">very&nbsp;light&nbsp;bright&nbsp;orangered</span> 
+    <span class="tight padding very dark bright orangered">very&nbsp;dark&nbsp;bright&nbsp;orangered</span>
+    <span class="tight padding very light dim orangered">very&nbsp;light&nbsp;dim&nbsp;orangered</span>
+    <span class="tight padding very dark dim orangered">very&nbsp;dark&nbsp;dim&nbsp;orangered</span>
+
+
+    <span class="tight padding hella light bright orangered">hella&nbsp;light&nbsp;bright&nbsp;orangered</span> 
+    <span class="tight padding hella dark bright orangered">hella&nbsp;dark&nbsp;bright&nbsp;orangered</span>
+    <span class="tight padding hella light dim orangered">hella&nbsp;light&nbsp;dim&nbsp;orangered</span>
+    <span class="tight padding hella dark dim orangered">hella&nbsp;dark&nbsp;dim&nbsp;orangered</span>    <span class="tight padding orange" id="orange">orange</span>
+    <span class="tight padding bright orange" id="bright_orange">bright&nbsp;orange</span> 
+    <span class="tight padding light orange" id="light_orange">light&nbsp;orange</span>
+    <span class="tight padding dark orange" id="dark_orange">dark&nbsp;orange</span>
+    <span class="tight padding dim orange" id="dim_orange">dim&nbsp;orange</span>
+
+
+    <span class="tight padding very bright orange" id="bright_orange">very&nbsp;bright&nbsp;orange</span> 
+    <span class="tight padding very light orange" id="light_orange">very&nbsp;light&nbsp;orange</span>
+    <span class="tight padding very dark orange" id="dark_orange">very&nbsp;dark&nbsp;orange</span>
+    <span class="tight padding very dim orange" id="dim_orange">very&nbsp;dim&nbsp;orange</span>
+
+
+    <span class="tight padding hella bright orange" id="bright_orange">hella&nbsp;bright&nbsp;orange</span> 
+    <span class="tight padding hella light orange" id="light_orange">hella&nbsp;light&nbsp;orange</span>
+    <span class="tight padding hella dark orange" id="dark_orange">hella&nbsp;dark&nbsp;orange</span>
+    <span class="tight padding hella dim orange" id="dim_orange">hella&nbsp;dim&nbsp;orange</span>
+
+
+    <span class="tight padding light bright orange">light&nbsp;bright&nbsp;orange</span> 
+    <span class="tight padding dark bright orange">dark&nbsp;bright&nbsp;orange</span>
+    <span class="tight padding light dim orange">light&nbsp;dim&nbsp;orange</span>
+    <span class="tight padding dark dim orange">dark&nbsp;dim&nbsp;orange</span>
+
+
+    <span class="tight padding very light bright orange">very&nbsp;light&nbsp;bright&nbsp;orange</span> 
+    <span class="tight padding very dark bright orange">very&nbsp;dark&nbsp;bright&nbsp;orange</span>
+    <span class="tight padding very light dim orange">very&nbsp;light&nbsp;dim&nbsp;orange</span>
+    <span class="tight padding very dark dim orange">very&nbsp;dark&nbsp;dim&nbsp;orange</span>
+
+
+    <span class="tight padding hella light bright orange">hella&nbsp;light&nbsp;bright&nbsp;orange</span> 
+    <span class="tight padding hella dark bright orange">hella&nbsp;dark&nbsp;bright&nbsp;orange</span>
+    <span class="tight padding hella light dim orange">hella&nbsp;light&nbsp;dim&nbsp;orange</span>
+    <span class="tight padding hella dark dim orange">hella&nbsp;dark&nbsp;dim&nbsp;orange</span>    <span class="tight padding yellow" id="yellow">yellow</span>
+    <span class="tight padding bright yellow" id="bright_yellow">bright&nbsp;yellow</span> 
+    <span class="tight padding light yellow" id="light_yellow">light&nbsp;yellow</span>
+    <span class="tight padding dark yellow" id="dark_yellow">dark&nbsp;yellow</span>
+    <span class="tight padding dim yellow" id="dim_yellow">dim&nbsp;yellow</span>
+
+
+    <span class="tight padding very bright yellow" id="bright_yellow">very&nbsp;bright&nbsp;yellow</span> 
+    <span class="tight padding very light yellow" id="light_yellow">very&nbsp;light&nbsp;yellow</span>
+    <span class="tight padding very dark yellow" id="dark_yellow">very&nbsp;dark&nbsp;yellow</span>
+    <span class="tight padding very dim yellow" id="dim_yellow">very&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class="tight padding hella bright yellow" id="bright_yellow">hella&nbsp;bright&nbsp;yellow</span> 
+    <span class="tight padding hella light yellow" id="light_yellow">hella&nbsp;light&nbsp;yellow</span>
+    <span class="tight padding hella dark yellow" id="dark_yellow">hella&nbsp;dark&nbsp;yellow</span>
+    <span class="tight padding hella dim yellow" id="dim_yellow">hella&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class="tight padding light bright yellow">light&nbsp;bright&nbsp;yellow</span> 
+    <span class="tight padding dark bright yellow">dark&nbsp;bright&nbsp;yellow</span>
+    <span class="tight padding light dim yellow">light&nbsp;dim&nbsp;yellow</span>
+    <span class="tight padding dark dim yellow">dark&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class="tight padding very light bright yellow">very&nbsp;light&nbsp;bright&nbsp;yellow</span> 
+    <span class="tight padding very dark bright yellow">very&nbsp;dark&nbsp;bright&nbsp;yellow</span>
+    <span class="tight padding very light dim yellow">very&nbsp;light&nbsp;dim&nbsp;yellow</span>
+    <span class="tight padding very dark dim yellow">very&nbsp;dark&nbsp;dim&nbsp;yellow</span>
+
+
+    <span class="tight padding hella light bright yellow">hella&nbsp;light&nbsp;bright&nbsp;yellow</span> 
+    <span class="tight padding hella dark bright yellow">hella&nbsp;dark&nbsp;bright&nbsp;yellow</span>
+    <span class="tight padding hella light dim yellow">hella&nbsp;light&nbsp;dim&nbsp;yellow</span>
+    <span class="tight padding hella dark dim yellow">hella&nbsp;dark&nbsp;dim&nbsp;yellow</span>    <span class="tight padding green" id="green">green</span>
+    <span class="tight padding bright green" id="bright_green">bright&nbsp;green</span> 
+    <span class="tight padding light green" id="light_green">light&nbsp;green</span>
+    <span class="tight padding dark green" id="dark_green">dark&nbsp;green</span>
+    <span class="tight padding dim green" id="dim_green">dim&nbsp;green</span>
+
+
+    <span class="tight padding very bright green" id="bright_green">very&nbsp;bright&nbsp;green</span> 
+    <span class="tight padding very light green" id="light_green">very&nbsp;light&nbsp;green</span>
+    <span class="tight padding very dark green" id="dark_green">very&nbsp;dark&nbsp;green</span>
+    <span class="tight padding very dim green" id="dim_green">very&nbsp;dim&nbsp;green</span>
+
+
+    <span class="tight padding hella bright green" id="bright_green">hella&nbsp;bright&nbsp;green</span> 
+    <span class="tight padding hella light green" id="light_green">hella&nbsp;light&nbsp;green</span>
+    <span class="tight padding hella dark green" id="dark_green">hella&nbsp;dark&nbsp;green</span>
+    <span class="tight padding hella dim green" id="dim_green">hella&nbsp;dim&nbsp;green</span>
+
+
+    <span class="tight padding light bright green">light&nbsp;bright&nbsp;green</span> 
+    <span class="tight padding dark bright green">dark&nbsp;bright&nbsp;green</span>
+    <span class="tight padding light dim green">light&nbsp;dim&nbsp;green</span>
+    <span class="tight padding dark dim green">dark&nbsp;dim&nbsp;green</span>
+
+
+    <span class="tight padding very light bright green">very&nbsp;light&nbsp;bright&nbsp;green</span> 
+    <span class="tight padding very dark bright green">very&nbsp;dark&nbsp;bright&nbsp;green</span>
+    <span class="tight padding very light dim green">very&nbsp;light&nbsp;dim&nbsp;green</span>
+    <span class="tight padding very dark dim green">very&nbsp;dark&nbsp;dim&nbsp;green</span>
+
+
+    <span class="tight padding hella light bright green">hella&nbsp;light&nbsp;bright&nbsp;green</span> 
+    <span class="tight padding hella dark bright green">hella&nbsp;dark&nbsp;bright&nbsp;green</span>
+    <span class="tight padding hella light dim green">hella&nbsp;light&nbsp;dim&nbsp;green</span>
+    <span class="tight padding hella dark dim green">hella&nbsp;dark&nbsp;dim&nbsp;green</span>    <span class="tight padding teal" id="teal">teal</span>
+    <span class="tight padding bright teal" id="bright_teal">bright&nbsp;teal</span> 
+    <span class="tight padding light teal" id="light_teal">light&nbsp;teal</span>
+    <span class="tight padding dark teal" id="dark_teal">dark&nbsp;teal</span>
+    <span class="tight padding dim teal" id="dim_teal">dim&nbsp;teal</span>
+
+
+    <span class="tight padding very bright teal" id="bright_teal">very&nbsp;bright&nbsp;teal</span> 
+    <span class="tight padding very light teal" id="light_teal">very&nbsp;light&nbsp;teal</span>
+    <span class="tight padding very dark teal" id="dark_teal">very&nbsp;dark&nbsp;teal</span>
+    <span class="tight padding very dim teal" id="dim_teal">very&nbsp;dim&nbsp;teal</span>
+
+
+    <span class="tight padding hella bright teal" id="bright_teal">hella&nbsp;bright&nbsp;teal</span> 
+    <span class="tight padding hella light teal" id="light_teal">hella&nbsp;light&nbsp;teal</span>
+    <span class="tight padding hella dark teal" id="dark_teal">hella&nbsp;dark&nbsp;teal</span>
+    <span class="tight padding hella dim teal" id="dim_teal">hella&nbsp;dim&nbsp;teal</span>
+
+
+    <span class="tight padding light bright teal">light&nbsp;bright&nbsp;teal</span> 
+    <span class="tight padding dark bright teal">dark&nbsp;bright&nbsp;teal</span>
+    <span class="tight padding light dim teal">light&nbsp;dim&nbsp;teal</span>
+    <span class="tight padding dark dim teal">dark&nbsp;dim&nbsp;teal</span>
+
+
+    <span class="tight padding very light bright teal">very&nbsp;light&nbsp;bright&nbsp;teal</span> 
+    <span class="tight padding very dark bright teal">very&nbsp;dark&nbsp;bright&nbsp;teal</span>
+    <span class="tight padding very light dim teal">very&nbsp;light&nbsp;dim&nbsp;teal</span>
+    <span class="tight padding very dark dim teal">very&nbsp;dark&nbsp;dim&nbsp;teal</span>
+
+
+    <span class="tight padding hella light bright teal">hella&nbsp;light&nbsp;bright&nbsp;teal</span> 
+    <span class="tight padding hella dark bright teal">hella&nbsp;dark&nbsp;bright&nbsp;teal</span>
+    <span class="tight padding hella light dim teal">hella&nbsp;light&nbsp;dim&nbsp;teal</span>
+    <span class="tight padding hella dark dim teal">hella&nbsp;dark&nbsp;dim&nbsp;teal</span>    <span class="tight padding cyan" id="cyan">cyan</span>
+    <span class="tight padding bright cyan" id="bright_cyan">bright&nbsp;cyan</span> 
+    <span class="tight padding light cyan" id="light_cyan">light&nbsp;cyan</span>
+    <span class="tight padding dark cyan" id="dark_cyan">dark&nbsp;cyan</span>
+    <span class="tight padding dim cyan" id="dim_cyan">dim&nbsp;cyan</span>
+
+
+    <span class="tight padding very bright cyan" id="bright_cyan">very&nbsp;bright&nbsp;cyan</span> 
+    <span class="tight padding very light cyan" id="light_cyan">very&nbsp;light&nbsp;cyan</span>
+    <span class="tight padding very dark cyan" id="dark_cyan">very&nbsp;dark&nbsp;cyan</span>
+    <span class="tight padding very dim cyan" id="dim_cyan">very&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class="tight padding hella bright cyan" id="bright_cyan">hella&nbsp;bright&nbsp;cyan</span> 
+    <span class="tight padding hella light cyan" id="light_cyan">hella&nbsp;light&nbsp;cyan</span>
+    <span class="tight padding hella dark cyan" id="dark_cyan">hella&nbsp;dark&nbsp;cyan</span>
+    <span class="tight padding hella dim cyan" id="dim_cyan">hella&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class="tight padding light bright cyan">light&nbsp;bright&nbsp;cyan</span> 
+    <span class="tight padding dark bright cyan">dark&nbsp;bright&nbsp;cyan</span>
+    <span class="tight padding light dim cyan">light&nbsp;dim&nbsp;cyan</span>
+    <span class="tight padding dark dim cyan">dark&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class="tight padding very light bright cyan">very&nbsp;light&nbsp;bright&nbsp;cyan</span> 
+    <span class="tight padding very dark bright cyan">very&nbsp;dark&nbsp;bright&nbsp;cyan</span>
+    <span class="tight padding very light dim cyan">very&nbsp;light&nbsp;dim&nbsp;cyan</span>
+    <span class="tight padding very dark dim cyan">very&nbsp;dark&nbsp;dim&nbsp;cyan</span>
+
+
+    <span class="tight padding hella light bright cyan">hella&nbsp;light&nbsp;bright&nbsp;cyan</span> 
+    <span class="tight padding hella dark bright cyan">hella&nbsp;dark&nbsp;bright&nbsp;cyan</span>
+    <span class="tight padding hella light dim cyan">hella&nbsp;light&nbsp;dim&nbsp;cyan</span>
+    <span class="tight padding hella dark dim cyan">hella&nbsp;dark&nbsp;dim&nbsp;cyan</span>    <span class="tight padding blue" id="blue">blue</span>
+    <span class="tight padding bright blue" id="bright_blue">bright&nbsp;blue</span> 
+    <span class="tight padding light blue" id="light_blue">light&nbsp;blue</span>
+    <span class="tight padding dark blue" id="dark_blue">dark&nbsp;blue</span>
+    <span class="tight padding dim blue" id="dim_blue">dim&nbsp;blue</span>
+
+
+    <span class="tight padding very bright blue" id="bright_blue">very&nbsp;bright&nbsp;blue</span> 
+    <span class="tight padding very light blue" id="light_blue">very&nbsp;light&nbsp;blue</span>
+    <span class="tight padding very dark blue" id="dark_blue">very&nbsp;dark&nbsp;blue</span>
+    <span class="tight padding very dim blue" id="dim_blue">very&nbsp;dim&nbsp;blue</span>
+
+
+    <span class="tight padding hella bright blue" id="bright_blue">hella&nbsp;bright&nbsp;blue</span> 
+    <span class="tight padding hella light blue" id="light_blue">hella&nbsp;light&nbsp;blue</span>
+    <span class="tight padding hella dark blue" id="dark_blue">hella&nbsp;dark&nbsp;blue</span>
+    <span class="tight padding hella dim blue" id="dim_blue">hella&nbsp;dim&nbsp;blue</span>
+
+
+    <span class="tight padding light bright blue">light&nbsp;bright&nbsp;blue</span> 
+    <span class="tight padding dark bright blue">dark&nbsp;bright&nbsp;blue</span>
+    <span class="tight padding light dim blue">light&nbsp;dim&nbsp;blue</span>
+    <span class="tight padding dark dim blue">dark&nbsp;dim&nbsp;blue</span>
+
+
+    <span class="tight padding very light bright blue">very&nbsp;light&nbsp;bright&nbsp;blue</span> 
+    <span class="tight padding very dark bright blue">very&nbsp;dark&nbsp;bright&nbsp;blue</span>
+    <span class="tight padding very light dim blue">very&nbsp;light&nbsp;dim&nbsp;blue</span>
+    <span class="tight padding very dark dim blue">very&nbsp;dark&nbsp;dim&nbsp;blue</span>
+
+
+    <span class="tight padding hella light bright blue">hella&nbsp;light&nbsp;bright&nbsp;blue</span> 
+    <span class="tight padding hella dark bright blue">hella&nbsp;dark&nbsp;bright&nbsp;blue</span>
+    <span class="tight padding hella light dim blue">hella&nbsp;light&nbsp;dim&nbsp;blue</span>
+    <span class="tight padding hella dark dim blue">hella&nbsp;dark&nbsp;dim&nbsp;blue</span>    <span class="tight padding indigo" id="indigo">indigo</span>
+    <span class="tight padding bright indigo" id="bright_indigo">bright&nbsp;indigo</span> 
+    <span class="tight padding light indigo" id="light_indigo">light&nbsp;indigo</span>
+    <span class="tight padding dark indigo" id="dark_indigo">dark&nbsp;indigo</span>
+    <span class="tight padding dim indigo" id="dim_indigo">dim&nbsp;indigo</span>
+
+
+    <span class="tight padding very bright indigo" id="bright_indigo">very&nbsp;bright&nbsp;indigo</span> 
+    <span class="tight padding very light indigo" id="light_indigo">very&nbsp;light&nbsp;indigo</span>
+    <span class="tight padding very dark indigo" id="dark_indigo">very&nbsp;dark&nbsp;indigo</span>
+    <span class="tight padding very dim indigo" id="dim_indigo">very&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class="tight padding hella bright indigo" id="bright_indigo">hella&nbsp;bright&nbsp;indigo</span> 
+    <span class="tight padding hella light indigo" id="light_indigo">hella&nbsp;light&nbsp;indigo</span>
+    <span class="tight padding hella dark indigo" id="dark_indigo">hella&nbsp;dark&nbsp;indigo</span>
+    <span class="tight padding hella dim indigo" id="dim_indigo">hella&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class="tight padding light bright indigo">light&nbsp;bright&nbsp;indigo</span> 
+    <span class="tight padding dark bright indigo">dark&nbsp;bright&nbsp;indigo</span>
+    <span class="tight padding light dim indigo">light&nbsp;dim&nbsp;indigo</span>
+    <span class="tight padding dark dim indigo">dark&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class="tight padding very light bright indigo">very&nbsp;light&nbsp;bright&nbsp;indigo</span> 
+    <span class="tight padding very dark bright indigo">very&nbsp;dark&nbsp;bright&nbsp;indigo</span>
+    <span class="tight padding very light dim indigo">very&nbsp;light&nbsp;dim&nbsp;indigo</span>
+    <span class="tight padding very dark dim indigo">very&nbsp;dark&nbsp;dim&nbsp;indigo</span>
+
+
+    <span class="tight padding hella light bright indigo">hella&nbsp;light&nbsp;bright&nbsp;indigo</span> 
+    <span class="tight padding hella dark bright indigo">hella&nbsp;dark&nbsp;bright&nbsp;indigo</span>
+    <span class="tight padding hella light dim indigo">hella&nbsp;light&nbsp;dim&nbsp;indigo</span>
+    <span class="tight padding hella dark dim indigo">hella&nbsp;dark&nbsp;dim&nbsp;indigo</span>    <span class="tight padding purple" id="purple">purple</span>
+    <span class="tight padding bright purple" id="bright_purple">bright&nbsp;purple</span> 
+    <span class="tight padding light purple" id="light_purple">light&nbsp;purple</span>
+    <span class="tight padding dark purple" id="dark_purple">dark&nbsp;purple</span>
+    <span class="tight padding dim purple" id="dim_purple">dim&nbsp;purple</span>
+
+
+    <span class="tight padding very bright purple" id="bright_purple">very&nbsp;bright&nbsp;purple</span> 
+    <span class="tight padding very light purple" id="light_purple">very&nbsp;light&nbsp;purple</span>
+    <span class="tight padding very dark purple" id="dark_purple">very&nbsp;dark&nbsp;purple</span>
+    <span class="tight padding very dim purple" id="dim_purple">very&nbsp;dim&nbsp;purple</span>
+
+
+    <span class="tight padding hella bright purple" id="bright_purple">hella&nbsp;bright&nbsp;purple</span> 
+    <span class="tight padding hella light purple" id="light_purple">hella&nbsp;light&nbsp;purple</span>
+    <span class="tight padding hella dark purple" id="dark_purple">hella&nbsp;dark&nbsp;purple</span>
+    <span class="tight padding hella dim purple" id="dim_purple">hella&nbsp;dim&nbsp;purple</span>
+
+
+    <span class="tight padding light bright purple">light&nbsp;bright&nbsp;purple</span> 
+    <span class="tight padding dark bright purple">dark&nbsp;bright&nbsp;purple</span>
+    <span class="tight padding light dim purple">light&nbsp;dim&nbsp;purple</span>
+    <span class="tight padding dark dim purple">dark&nbsp;dim&nbsp;purple</span>
+
+
+    <span class="tight padding very light bright purple">very&nbsp;light&nbsp;bright&nbsp;purple</span> 
+    <span class="tight padding very dark bright purple">very&nbsp;dark&nbsp;bright&nbsp;purple</span>
+    <span class="tight padding very light dim purple">very&nbsp;light&nbsp;dim&nbsp;purple</span>
+    <span class="tight padding very dark dim purple">very&nbsp;dark&nbsp;dim&nbsp;purple</span>
+
+
+    <span class="tight padding hella light bright purple">hella&nbsp;light&nbsp;bright&nbsp;purple</span> 
+    <span class="tight padding hella dark bright purple">hella&nbsp;dark&nbsp;bright&nbsp;purple</span>
+    <span class="tight padding hella light dim purple">hella&nbsp;light&nbsp;dim&nbsp;purple</span>
+    <span class="tight padding hella dark dim purple">hella&nbsp;dark&nbsp;dim&nbsp;purple</span>    <span class="tight padding pink" id="pink">pink</span>
+    <span class="tight padding bright pink" id="bright_pink">bright&nbsp;pink</span> 
+    <span class="tight padding light pink" id="light_pink">light&nbsp;pink</span>
+    <span class="tight padding dark pink" id="dark_pink">dark&nbsp;pink</span>
+    <span class="tight padding dim pink" id="dim_pink">dim&nbsp;pink</span>
+
+
+    <span class="tight padding very bright pink" id="bright_pink">very&nbsp;bright&nbsp;pink</span> 
+    <span class="tight padding very light pink" id="light_pink">very&nbsp;light&nbsp;pink</span>
+    <span class="tight padding very dark pink" id="dark_pink">very&nbsp;dark&nbsp;pink</span>
+    <span class="tight padding very dim pink" id="dim_pink">very&nbsp;dim&nbsp;pink</span>
+
+
+    <span class="tight padding hella bright pink" id="bright_pink">hella&nbsp;bright&nbsp;pink</span> 
+    <span class="tight padding hella light pink" id="light_pink">hella&nbsp;light&nbsp;pink</span>
+    <span class="tight padding hella dark pink" id="dark_pink">hella&nbsp;dark&nbsp;pink</span>
+    <span class="tight padding hella dim pink" id="dim_pink">hella&nbsp;dim&nbsp;pink</span>
+
+
+    <span class="tight padding light bright pink">light&nbsp;bright&nbsp;pink</span> 
+    <span class="tight padding dark bright pink">dark&nbsp;bright&nbsp;pink</span>
+    <span class="tight padding light dim pink">light&nbsp;dim&nbsp;pink</span>
+    <span class="tight padding dark dim pink">dark&nbsp;dim&nbsp;pink</span>
+
+
+    <span class="tight padding very light bright pink">very&nbsp;light&nbsp;bright&nbsp;pink</span> 
+    <span class="tight padding very dark bright pink">very&nbsp;dark&nbsp;bright&nbsp;pink</span>
+    <span class="tight padding very light dim pink">very&nbsp;light&nbsp;dim&nbsp;pink</span>
+    <span class="tight padding very dark dim pink">very&nbsp;dark&nbsp;dim&nbsp;pink</span>
+
+
+    <span class="tight padding hella light bright pink">hella&nbsp;light&nbsp;bright&nbsp;pink</span> 
+    <span class="tight padding hella dark bright pink">hella&nbsp;dark&nbsp;bright&nbsp;pink</span>
+    <span class="tight padding hella light dim pink">hella&nbsp;light&nbsp;dim&nbsp;pink</span>
+    <span class="tight padding hella dark dim pink">hella&nbsp;dark&nbsp;dim&nbsp;pink</span>    <span class="tight padding white" id="white">white</span>
+    <span class="tight padding bright white" id="bright_white">bright&nbsp;white</span> 
+    <span class="tight padding light white" id="light_white">light&nbsp;white</span>
+    <span class="tight padding dark white" id="dark_white">dark&nbsp;white</span>
+    <span class="tight padding dim white" id="dim_white">dim&nbsp;white</span>
+
+
+    <span class="tight padding very bright white" id="bright_white">very&nbsp;bright&nbsp;white</span> 
+    <span class="tight padding very light white" id="light_white">very&nbsp;light&nbsp;white</span>
+    <span class="tight padding very dark white" id="dark_white">very&nbsp;dark&nbsp;white</span>
+    <span class="tight padding very dim white" id="dim_white">very&nbsp;dim&nbsp;white</span>
+
+
+    <span class="tight padding hella bright white" id="bright_white">hella&nbsp;bright&nbsp;white</span> 
+    <span class="tight padding hella light white" id="light_white">hella&nbsp;light&nbsp;white</span>
+    <span class="tight padding hella dark white" id="dark_white">hella&nbsp;dark&nbsp;white</span>
+    <span class="tight padding hella dim white" id="dim_white">hella&nbsp;dim&nbsp;white</span>
+
+
+    <span class="tight padding light bright white">light&nbsp;bright&nbsp;white</span> 
+    <span class="tight padding dark bright white">dark&nbsp;bright&nbsp;white</span>
+    <span class="tight padding light dim white">light&nbsp;dim&nbsp;white</span>
+    <span class="tight padding dark dim white">dark&nbsp;dim&nbsp;white</span>
+
+
+    <span class="tight padding very light bright white">very&nbsp;light&nbsp;bright&nbsp;white</span> 
+    <span class="tight padding very dark bright white">very&nbsp;dark&nbsp;bright&nbsp;white</span>
+    <span class="tight padding very light dim white">very&nbsp;light&nbsp;dim&nbsp;white</span>
+    <span class="tight padding very dark dim white">very&nbsp;dark&nbsp;dim&nbsp;white</span>
+
+
+    <span class="tight padding hella light bright white">hella&nbsp;light&nbsp;bright&nbsp;white</span> 
+    <span class="tight padding hella dark bright white">hella&nbsp;dark&nbsp;bright&nbsp;white</span>
+    <span class="tight padding hella light dim white">hella&nbsp;light&nbsp;dim&nbsp;white</span>
+    <span class="tight padding hella dark dim white">hella&nbsp;dark&nbsp;dim&nbsp;white</span>    <span class="tight padding gray" id="gray">gray</span>
+    <span class="tight padding bright gray" id="bright_gray">bright&nbsp;gray</span> 
+    <span class="tight padding light gray" id="light_gray">light&nbsp;gray</span>
+    <span class="tight padding dark gray" id="dark_gray">dark&nbsp;gray</span>
+    <span class="tight padding dim gray" id="dim_gray">dim&nbsp;gray</span>
+
+
+    <span class="tight padding very bright gray" id="bright_gray">very&nbsp;bright&nbsp;gray</span> 
+    <span class="tight padding very light gray" id="light_gray">very&nbsp;light&nbsp;gray</span>
+    <span class="tight padding very dark gray" id="dark_gray">very&nbsp;dark&nbsp;gray</span>
+    <span class="tight padding very dim gray" id="dim_gray">very&nbsp;dim&nbsp;gray</span>
+
+
+    <span class="tight padding hella bright gray" id="bright_gray">hella&nbsp;bright&nbsp;gray</span> 
+    <span class="tight padding hella light gray" id="light_gray">hella&nbsp;light&nbsp;gray</span>
+    <span class="tight padding hella dark gray" id="dark_gray">hella&nbsp;dark&nbsp;gray</span>
+    <span class="tight padding hella dim gray" id="dim_gray">hella&nbsp;dim&nbsp;gray</span>
+
+
+    <span class="tight padding light bright gray">light&nbsp;bright&nbsp;gray</span> 
+    <span class="tight padding dark bright gray">dark&nbsp;bright&nbsp;gray</span>
+    <span class="tight padding light dim gray">light&nbsp;dim&nbsp;gray</span>
+    <span class="tight padding dark dim gray">dark&nbsp;dim&nbsp;gray</span>
+
+
+    <span class="tight padding very light bright gray">very&nbsp;light&nbsp;bright&nbsp;gray</span> 
+    <span class="tight padding very dark bright gray">very&nbsp;dark&nbsp;bright&nbsp;gray</span>
+    <span class="tight padding very light dim gray">very&nbsp;light&nbsp;dim&nbsp;gray</span>
+    <span class="tight padding very dark dim gray">very&nbsp;dark&nbsp;dim&nbsp;gray</span>
+
+
+    <span class="tight padding hella light bright gray">hella&nbsp;light&nbsp;bright&nbsp;gray</span> 
+    <span class="tight padding hella dark bright gray">hella&nbsp;dark&nbsp;bright&nbsp;gray</span>
+    <span class="tight padding hella light dim gray">hella&nbsp;light&nbsp;dim&nbsp;gray</span>
+    <span class="tight padding hella dark dim gray">hella&nbsp;dark&nbsp;dim&nbsp;gray</span>    <span class="tight padding brown" id="brown">brown</span>
+    <span class="tight padding bright brown" id="bright_brown">bright&nbsp;brown</span> 
+    <span class="tight padding light brown" id="light_brown">light&nbsp;brown</span>
+    <span class="tight padding dark brown" id="dark_brown">dark&nbsp;brown</span>
+    <span class="tight padding dim brown" id="dim_brown">dim&nbsp;brown</span>
+
+
+    <span class="tight padding very bright brown" id="bright_brown">very&nbsp;bright&nbsp;brown</span> 
+    <span class="tight padding very light brown" id="light_brown">very&nbsp;light&nbsp;brown</span>
+    <span class="tight padding very dark brown" id="dark_brown">very&nbsp;dark&nbsp;brown</span>
+    <span class="tight padding very dim brown" id="dim_brown">very&nbsp;dim&nbsp;brown</span>
+
+
+    <span class="tight padding hella bright brown" id="bright_brown">hella&nbsp;bright&nbsp;brown</span> 
+    <span class="tight padding hella light brown" id="light_brown">hella&nbsp;light&nbsp;brown</span>
+    <span class="tight padding hella dark brown" id="dark_brown">hella&nbsp;dark&nbsp;brown</span>
+    <span class="tight padding hella dim brown" id="dim_brown">hella&nbsp;dim&nbsp;brown</span>
+
+
+    <span class="tight padding light bright brown">light&nbsp;bright&nbsp;brown</span> 
+    <span class="tight padding dark bright brown">dark&nbsp;bright&nbsp;brown</span>
+    <span class="tight padding light dim brown">light&nbsp;dim&nbsp;brown</span>
+    <span class="tight padding dark dim brown">dark&nbsp;dim&nbsp;brown</span>
+
+
+    <span class="tight padding very light bright brown">very&nbsp;light&nbsp;bright&nbsp;brown</span> 
+    <span class="tight padding very dark bright brown">very&nbsp;dark&nbsp;bright&nbsp;brown</span>
+    <span class="tight padding very light dim brown">very&nbsp;light&nbsp;dim&nbsp;brown</span>
+    <span class="tight padding very dark dim brown">very&nbsp;dark&nbsp;dim&nbsp;brown</span>
+
+
+    <span class="tight padding hella light bright brown">hella&nbsp;light&nbsp;bright&nbsp;brown</span> 
+    <span class="tight padding hella dark bright brown">hella&nbsp;dark&nbsp;bright&nbsp;brown</span>
+    <span class="tight padding hella light dim brown">hella&nbsp;light&nbsp;dim&nbsp;brown</span>
+    <span class="tight padding hella dark dim brown">hella&nbsp;dark&nbsp;dim&nbsp;brown</span>    <span class="tight padding black" id="black">black</span>
+    <span class="tight padding bright black" id="bright_black">bright&nbsp;black</span> 
+    <span class="tight padding light black" id="light_black">light&nbsp;black</span>
+    <span class="tight padding dark black" id="dark_black">dark&nbsp;black</span>
+    <span class="tight padding dim black" id="dim_black">dim&nbsp;black</span>
+
+
+    <span class="tight padding very bright black" id="bright_black">very&nbsp;bright&nbsp;black</span> 
+    <span class="tight padding very light black" id="light_black">very&nbsp;light&nbsp;black</span>
+    <span class="tight padding very dark black" id="dark_black">very&nbsp;dark&nbsp;black</span>
+    <span class="tight padding very dim black" id="dim_black">very&nbsp;dim&nbsp;black</span>
+
+
+    <span class="tight padding hella bright black" id="bright_black">hella&nbsp;bright&nbsp;black</span> 
+    <span class="tight padding hella light black" id="light_black">hella&nbsp;light&nbsp;black</span>
+    <span class="tight padding hella dark black" id="dark_black">hella&nbsp;dark&nbsp;black</span>
+    <span class="tight padding hella dim black" id="dim_black">hella&nbsp;dim&nbsp;black</span>
+
+
+    <span class="tight padding light bright black">light&nbsp;bright&nbsp;black</span> 
+    <span class="tight padding dark bright black">dark&nbsp;bright&nbsp;black</span>
+    <span class="tight padding light dim black">light&nbsp;dim&nbsp;black</span>
+    <span class="tight padding dark dim black">dark&nbsp;dim&nbsp;black</span>
+
+
+    <span class="tight padding very light bright black">very&nbsp;light&nbsp;bright&nbsp;black</span> 
+    <span class="tight padding very dark bright black">very&nbsp;dark&nbsp;bright&nbsp;black</span>
+    <span class="tight padding very light dim black">very&nbsp;light&nbsp;dim&nbsp;black</span>
+    <span class="tight padding very dark dim black">very&nbsp;dark&nbsp;dim&nbsp;black</span>
+
+
+    <span class="tight padding hella light bright black">hella&nbsp;light&nbsp;bright&nbsp;black</span> 
+    <span class="tight padding hella dark bright black">hella&nbsp;dark&nbsp;bright&nbsp;black</span>
+    <span class="tight padding hella light dim black">hella&nbsp;light&nbsp;dim&nbsp;black</span>
+    <span class="tight padding hella dark dim black">hella&nbsp;dark&nbsp;dim&nbsp;black</span>   
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     <footer class="hella dark dim base padding">
         <p class="no-margin-bottom hella light black padding rounded full width"><a href="">California Stylesheets</a> <span class="float-right clearfix">&copy; 2022 Rex Riepe</span></p>
@@ -728,184 +1360,188 @@ button, .button {
       /* https://github.com/casscss/cass */
       
       :root {
-        --base-h: 214; 
-        --base-s: 55%;
-        --base-l: 65%;
-        --base-tone: var(--white);
-        --alt-tone: var(--black);
-        --base: hsl(var(--base-h), var(--base-s), var(--base-l));
-        --text-measure: 50;
-        --font-size-base: 16px;
-        --text-indent: 1ch;
-        --padding-base: 1em;
-        --card: calc(var(--type)*.6);
-        --type: calc(var(--text-measure)*.55rem);
-        --page: calc(var(--type)*1.6);
-        --w-h: var(--base-h);
-        --w-s: calc(var(--base-s) * .8);
-        --w-l: 99.5%;
-        --white: hsl(var(--w-h), var(--w-s), var(--w-l));
-        --w: var(--white);
-        --b-h: var(--base-h);
-        --b-s: calc(var(--base-s) * .2);
-        --b-l: calc(var(--base-l) * .2);
-        --black: hsl(var(--b-h), var(--b-s), var(--b-l));
-        --b: var(--black);
-        --v: 1;
-        --vv: .4;
-        --width: 100%;
-        --padding: calc(var(--padding-base) * .6);
-        --p: var(--padding);
-        --font-size: calc(var(--font-size-base) - 2px);
+        --base-h:204; 
+        --base-s:76%;
+        --base-l:43%;
+        --base-tone:var(--white);
+        --alt-tone:var(--white);
+        --base:hsl(var(--base-h), var(--base-s), var(--base-l));
+        --text-measure:50;
+        --font-size-base:16px;
+        --text-indent:1ch;
+        --padding-base:1em;
+        --card:calc(var(--type)*.6);
+        --type:calc(var(--text-measure)*.55rem);
+        --page:calc(var(--type)*1.6);
+        --w-h:var(--base-h);
+        --w-s:calc(var(--base-s) * .8);
+        --w-l:99.5%;
+        --white:hsl(var(--w-h), var(--w-s), var(--w-l));
+        --w:var(--white);
+        --b-h:var(--base-h);
+        --b-s:calc(var(--base-s) * .2);
+        --b-l:calc(var(--base-l) * .2);
+        --black:hsl(var(--b-h), var(--b-s), var(--b-l));
+        --b:var(--black);
+        --v:1;
+        --width:100%;
+        --padding:calc(var(--padding-base) * .6);
+        --p:var(--padding);
+        --margin:var(--p);
+        --m:var(--margin);
+        --font-size:calc(var(--font-size-base) - 2px);
       
-        color: var(--b);
-        background-color: var(--w);
-        font-family: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
-        margin: 0;
-        font-size: var(--font-size);
+        color:var(--b);
+        background-color:var(--w);
+        font-family:"Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+        font-size:var(--font-size);
+        line-height:1.6;
+        overflow-x:hidden;
       }
       * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        line-height: 1.7;
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
       }
       body * {
-        padding-left: calc(50% - var(--width) * .5);
-        padding-right: calc(50% - var(--width) * .5);
+        padding-left:calc(50% - var(--width) * .5);
+        padding-right:calc(50% - var(--width) * .5);
       }
-      body.padding { padding: var(--p);}
+      body.padding {padding:var(--p)}
       h1, h2, h3, h4, h5, h6 {
-        --width: var(--type);
-        line-height: 1.2;
-        margin-top: .6em;
-        margin-bottom: .6em;
+        --width:var(--type);
+        line-height:1.1;
+        margin-top:.6em;
+        margin-bottom:.6em;
       }
-      p { text-indent: var(--text-indent);}
-      p, ul, ol { --width: var(--type); margin-bottom: 1em;}
-      ul, ol { margin-left: 1.6em;}
-      a { color: inherit;}
+      p {text-indent:var(--text-indent)}
+      p, ul, ol {--width:var(--type); margin-bottom:var(--m)}
+      ul, ol {margin-left:1.6em}
+      a {color:inherit}
+      pre, code, input, textarea {line-height:var(--line-height); border:none}
+      img {max-width:100%}
       button, .button {
-        display: inline-block;
-        font-size: inherit;
-        padding: .6em 1em;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
+        display:inline-block;
+        font-size:inherit;
+        padding:.6em 1em;
+        border:none;
+        border-radius:6px;
+        cursor:pointer;
+        line-height:1.7;
       }
       
-      .padding-top, .padding { padding-top: var(--p);}
-      .padding-bottom, .padding { padding-bottom: var(--p);}
-      .padding-left, .padding { padding-left: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
-      .padding-right, .padding { padding-right: max(var(--p), calc(50% - (var(--width) * .5) + var(--p)));}
-      .tight { --p: calc(.6 * var(--padding-base));}
-      .margin { margin: var(--p);}
-      .margin-left { margin-left: var(--p);}
-      .margin-right { margin-right: var(--p);}
-      .margin-top { margin-top: var(--p);}
-      .margin-bottom { margin-bottom: var(--p);}
-      .margin-auto { margin-left: auto; margin-right: auto;}
-      .gutter { --p: calc(var(--padding) * 2);}
-      .trim > *:last-child { margin-bottom: 0;}
+      .padding-top, .padding {padding-top:var(--p)}
+      .padding-bottom, .padding {padding-bottom:var(--p)}
+      .padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+      .padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+      .margin {margin:var(--m)}
+      .margin-top {margin-top:var(--m)}
+      .margin-bottom {margin-bottom:var(--m)}
+      .margin-auto {margin-left:auto; margin-right:auto}
+      .tight {--p:calc(var(--padding) * .6)}
+      .tight * {--p:var(--padding)}
+      .gutter {--m:calc(var(--padding) * 2)}
+      .gutter *, .tight * {--m:var(--padding)}
+      .trim > *:last-child {margin-bottom:0}
       
-      .text-center { text-align: center;}
-      .text-right { text-align: right;}
-      .tiny { font-size: 85%;}
-      .small { font-size: 92%;}
-      .big { font-size: 130%;}
-      .huge { font-size: 160%;}
+      .text-center {text-align:center}
+      .text-right {text-align:right}
+      .text-crunch {line-height:1.4}
+      .monospace {font-family:monospace}
+      .bold {font-weight:bold}
+      .italic {font-style:italic}
+      .tiny {font-size:90%}
+      .small {font-size:95%}
+      .big {font-size:130%}
+      .huge {font-size:160%}
       
-      .pointer { cursor: pointer;}
-      .rounded { border-radius: .6em;}
-      .border { border: 1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.8 * var(--sat, var(--s))), 50%), clamp(0%, calc(.8 * var(--lit, var(--l))), 67%));}
-      .dashed { border-style: dashed;}
-      .thick { border-width: 2px;}
-      .shadow { box-shadow: 0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2);}
+      .pointer {cursor:pointer}
+      .rounded {border-radius:.6em}
+      .border {border:1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.7 * var(--sat, var(--s))), 50%), clamp(0%, calc(.7 * var(--lit, var(--l))), 60%))}
+      .dashed {border-style:dashed}
+      .thick {border-width:2px}
+      .shadow {box-shadow:0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2)}
       
-      .no-underline { text-decoration: none;}
-      .no-text-indent { --text-indent: 0;}
-      .no-margin-top { margin-top: 0;}
-      .no-margin-bottom { margin-bottom: 0;}
+      .block {display:block}
+      .hide, .hide.mobile, .hide.mobile.tablet {display:none}
+      .hide.tablet, .hide.desktop {display:initial}
+      .fixed, .fixed.mobile, .fixed.mobile.tablet {position:fixed}
+      .fixed.tablet, .fixed.desktop {position:initial}
+      .relative {position:relative}
+      .absolute {position:absolute}
+      .top {top:0} .right {right:0} .bottom {bottom:0} .left {left:0}
+      .vertical-center {display:flex; flex:0 1 auto; flex-direction:column; justify-content:center}
       
-      .block { display: block;}
-      .inline { display: inline;}
-      .inline-block { display: inline-block;}
-      .hide, .hide.mobile, .hide.mobile.tablet { display: none;}
-      .hide.tablet, .hide.desktop { display: initial;}
-      .fixed, .fixed.mobile, .fixed.mobile.tablet { position: fixed;}
-      .fixed.tablet, .fixed.desktop { position: initial;}
-      .relative { position: relative;}
-      .absolute { position: absolute;}
-      .top { top: 0;} .right { right: 0;} .bottom { bottom: 0;} .left { left: 0;}
-      .vertical-center { display: flex; flex: 0 1 auto; flex-direction: column; justify-content: center;}
-      
-      .card { --width: var(--card);}
-      .type { --width: var(--type);}
-      .page { --width: var(--page);}
-      .full.width { width: 100%; --width: var(--page);}
+      .card {--width:var(--card)}
+      .type {--width:var(--type)}
+      .page {--width:var(--page)}
+      .full.width {width:100%; --width:var(--page)}
       
       .columns {
-        --c: 12;
-        --multi: repeat(var(--c), minmax(0, 1fr));
-        --single: repeat(1, minmax(0, 1fr));
-        display: grid;
-        gap: var(--p);
-        grid-template-columns: var(--multi);
+        --c:12;
+        --multi:repeat(var(--c), minmax(0, 1fr));
+        --single:repeat(1, minmax(0, 1fr));
+        display:grid;
+        gap:var(--m);
+        grid-template-columns:var(--multi);
       }
+      .columns.tablet, .columns.desktop {grid-template-columns:var(--single)}
+      .columns .wide {grid-column:auto / span var(--c)}
+      .tablet .wide, .desktop .wide {width:100%; grid-column:unset}
+      .golden {--multi:1.618fr 1fr}
+      .golden.reverse {--multi:1fr 1.618fr}
       
-      .two { --c: 2;}
-      .three { --c: 3;}
-      .four { --c: 4;}
-      .five { --c: 5;}
-      .six { --c: 6;}
-      .seven { --c: 7;}
-      .eight { --c: 8;}
-      .nine { --c: 9;}
-      .ten { --c: 10;}
-      .eleven { --c: 11;}
-      .twelve { --c: 12;}
+      .two {--c:2}
+      .three {--c:3}
+      .four {--c:4}
+      .five {--c:5}
+      .six {--c:6}
+      .seven {--c:7}
+      .eight {--c:8}
+      .nine {--c:9}
+      .ten {--c:10}
+      .eleven {--c:11}
+      .twelve {--c:12}
       
-      .columns.tablet, .columns.desktop { grid-template-columns: var(--single);}
-      
-      .golden { --multi: 1.618fr 1fr;}
-      .golden.reverse { --multi: 1fr 1.618fr;}
-      
-      .columns .wide { grid-column: auto / span var(--c);}
-      .tablet .wide, .desktop .wide { width: 100%; grid-column: unset;}
-      
-      @media screen and (min-width: 28rem) {
+      @media screen and (min-width:28rem) {
         :root {
-          --width: var(--type);
-          --padding: calc(var(--padding-base) * .8);
-          --font-size: calc(var(--font-size-base) - 1px);
+          --width:var(--type);
+          --padding:calc(var(--padding-base) * .8);
+          --font-size:calc(var(--font-size-base) - 1px);
         }
       
-        .columns.mobile { grid-template-columns: var(--single);}
-        .columns.tablet { grid-template-columns: var(--multi);}
-        .hide.mobile { display: initial;}
-        .hide.tablet { display: none;}
-        .fixed.mobile { position: initial;}
-        .fixed.tablet { position: fixed;}
-        .mobile .wide  { grid-column: unset;}
-        .tablet .wide  { grid-column: auto / span var(--c);}
+        .columns.mobile {grid-template-columns:var(--single)}
+        .columns.tablet {grid-template-columns:var(--multi)}
+        .hide.mobile {display:initial}
+        .hide.tablet {display:none}
+        .fixed.mobile {position:initial}
+        .fixed.tablet {position:fixed}
+        .mobile .wide  {grid-column:unset}
+        .tablet .wide  {grid-column:auto / span var(--c, 1)}
       }
       
-      @media screen and (min-width: 45rem) {
+      @media screen and (min-width:45rem) {
         :root {
-          --width: var(--page);
-          --padding: var(--padding-base);
-          --font-size: var(--font-size-base);
+          --width:var(--page);
+          --padding:var(--padding-base);
+          --font-size:var(--font-size-base);
         }
       
-        .columns.mobile.tablet { grid-template-columns: var(--single);}
-        .columns.desktop { grid-template-columns: var(--multi);}
-        .hide.mobile.tablet { display: initial;}
-        .hide.desktop { display: none;}
-        .fixed.mobile.tablet { position: initial;}
-        .fixed.desktop { position: fixed;}
-        .mobile.tablet .wide  { grid-column: unset;}
-        .desktop .wide  { grid-column: auto / span var(--c);}
+        .columns.mobile.tablet {grid-template-columns:var(--single)}
+        .columns.desktop {grid-template-columns:var(--multi)}
+        .hide.mobile.tablet {display:initial}
+        .hide.desktop {display:none}
+        .fixed.mobile.tablet {position:initial}
+        .fixed.desktop {position:fixed}
+        .mobile.tablet .wide  {grid-column:unset}
+        .desktop .wide  {grid-column:auto / span var(--c, 1)}
       }
+      
+      .no-gap {gap:0}
+      .no-underline {text-decoration:none}
+      .no-text-indent {--text-indent:0}
+      .no-margin-top {margin-top:0}
+      .no-margin-bottom {margin-bottom:0}
       
       .base,
       .accent,
@@ -913,84 +1549,80 @@ button, .button {
       .red,
       .orangered,
       .orange,
-      .gold,
       .yellow,
-      .lime,
       .green,
-      .jade,
       .teal,
-      .aqua,
       .cyan,
-      .sky,
       .blue,
       .indigo,
       .purple,
-      .magenta,
       .pink,
-      .gray,
       .brown,
-      .white,
-      .black {
-        color: var(--t);
-        background-color: hsl(var(--h), var(--sat, var(--s)), var(--lit, var(--l)));
+      .gray {
+        color:var(--t);
+        background-color:hsl(
+          var(--h), 
+          calc(((var(--sat, var(--s)) * 5) + var(--base-s))/6), 
+          calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6)
+        );
       }
       
-      .base, .gray, .accent { color: var(--base-tone);}
-      .complement { color: var(--alt-tone);}
+      .white, .black {
+        background-color:hsl(var(--h), var(--sat, var(--s)), var(--lit, var(--l)));
+      }
       
-      .bright *, .dim * { --sat: var(--s);}
-      .light *, .dark * { --lit: var(--l);}
-      .bright { --sat: calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))));}
-      .dim { --sat: calc(var(--s) / (1 + var(--vv) * var(--v)));}
-      .light { --lit: calc(100% - ((100% - var(--l)) / (1 + var(--vv) * var(--v)))); color: var(--b);}
-      .dark { --lit: calc(var(--l) / (1 + var(--vv) * var(--v))); color: var(--w);}
+      .base, .gray, .accent {color:var(--base-tone)}
+      .complement {color:var(--alt-tone)}
       
-      .base, .complement, .accent { --h: var(--base-h); --s: var(--base-s); --l: var(--base-l);--vv:.5;}
-      .complement { --h: calc(var(--base-h) + 180);}
-      .accent { --h: calc(var(--base-h) + 15);}
-      .white { --h: var(--w-h); --s: var(--w-s); --l: var(--w-l); --vv:.05; color: var(--b);}
-      .black { --h: var(--b-h); --s: var(--b-s); --l: var(--b-l); --vv:.2; color: var(--w);}
-      .gray { --h: var(--base-h); --s: calc(var(--base-s) * .1); --l: var(--base-l); --vv:.5;}
-      .brown { --h: 25; --s: clamp(30%, calc(var(--base-s) * .8), 50%); --l: clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t: var(--w); --vv:.5;}
-      .red { --h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4;}
-      .orangered { --h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4;}
-      .orange { --h:40;--s:96%;--l:55%;--vv:.3;}
-      .gold { --h:48;--s:95%;--l:55%;--vv:.4;}
-      .yellow { --h:54;--s:95%;--l:60%;--vv:.5;}
-      .lime { --h:75;--s:66%;--l:50%;--vv:.4;}
-      .green { --h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4;}
-      .jade { --h:150;--s:45%;--l:40%;--t:var(--w);--vv:.4;}
-      .teal { --h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5;}
-      .aqua { --h:175;--s:64%;--l:57%;--vv:.5;}
-      .cyan { --h:180;--s:85%;--l:50%;--vv:.3;}
-      .sky { --h:200;--s:80%;--l:70%;--vv:.4;}
-      .blue { --h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4;}
-      .indigo { --h:245;--s:68%;--l:58%;--t:var(--w);--vv:.4;}
-      .purple { --h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5;}
-      .magenta { --h:300;--s:75%;--l:75%;--vv:.4;}
-      .pink { --h:335;--s:85%;--l:80%;--vv:.3;}
+      .bright *, .dim * {--sat:var(--s)}
+      .light *, .dark * {--lit:var(--l)}
+      .bright {--sat:calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))))}
+      .dim {--sat:calc(var(--s) / (1 + var(--vv) * var(--v)))}
+      .light {--lit:calc(100% - ((100% - var(--l)) / (1.3 + var(--vv) * var(--v)))); color:var(--b)}
+      .dark {--lit:calc(var(--l) / (1 + var(--vv) * var(--v))); color:var(--w)}
       
-      .very *, .hella * { --v: 1;}
-      .very { --v: 2;}
-      .hella { --v: 3;}
+      .base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.5}
+      .complement {--h:calc(var(--base-h) + 180)}
+      .accent {--h:calc(var(--base-h) + 25)}
+      .white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.05; color:var(--b)}
+      .black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.2; color:var(--w)}
+      .gray {--h:var(--base-h); --s:0%; --l:var(--base-l); --vv:.5}
+      .brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
+      .red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
+      .orangered {--h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4}
+      .orange {--h:40;--s:96%;--l:55%;--vv:.3}
+      .yellow {--h:54;--s:95%;--l:60%;--vv:.5}
+      .green {--h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4}
+      .teal {--h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5}
+      .cyan {--h:180;--s:85%;--l:50%;--vv:.3}
+      .blue {--h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4}
+      .indigo {--h:245;--s:68%;--l:50%;--t:var(--w);--vv:.4}
+      .purple {--h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5}
+      .pink {--h:335;--s:85%;--l:80%;--vv:.3}
       
-      .text-dark { color: var(--b);}
-      .text-light { color: var(--w);}
+      .very *, .hella * {--v:1}
+      .very {--v:2}
+      .hella {--v:3}
+      
+      .text-dark {color:var(--b)}
+      .text-light {color:var(--w)}
       
       .text-color {
-        --t-h: var(--hue, var(--h));
-        --t-s: var(--sat, var(--s));
-        --t-l: clamp(0%, var(--lit, var(--l)), 44%);
-        color: hsl(var(--t-h), var(--t-s), var(--t-l));
-        background-color: transparent;
+        --t-h:var(--hue, var(--h));
+        --t-s:var(--sat, var(--s));
+        --t-l:clamp(0%, var(--lit, var(--l)), 44%);
+        color:hsl(var(--t-h), var(--t-s), var(--t-l));
+        background-color:transparent;
       }
       .text-color.text-light {
-        --t-l: clamp(50%, var(--lit, var(--l)), 100%);
+        --t-l:clamp(50%, var(--lit, var(--l)), 100%);
       }
     </style>
     <style>
       #seagull_color { fill: var(--white);}
       #seagull_beak, #seagull_eyes { fill: orangered;}
+
+      :root { --text-measure: 52;}
     </style>
     <style id="added_theme">
     </style>
