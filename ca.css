@@ -16,7 +16,7 @@
   --type:calc(var(--text-measure)*.55rem);
   --page:calc(var(--type)*1.6);
   --w-h:var(--base-h);
-  --w-s:calc(var(--base-s) * .8);
+  --w-s:calc(var(--base-s) * .2);
   --w-l:99.5%;
   --white:hsl(var(--w-h), var(--w-s), var(--w-l));
   --w:var(--white);
@@ -31,33 +31,42 @@
   --p:var(--padding);
   --margin:var(--p);
   --m:var(--margin);
-  --font-size:calc(var(--font-size-base) - 2px);
+  --j: 1;
+  --font-size:calc((var(--font-size-base) - 2px) * var(--j, 1));
 
   color:var(--b);
   background-color:var(--w);
   font-family:"Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
-  font-size:var(--font-size);
   line-height:1.6;
   overflow-x:hidden;
 }
-* {
+* { 
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-size:calc(var(--font-size) * var(--i, 1) * var(--j))
 }
+body { min-height:100vh;}
 body * {
   padding-left:calc(50% - var(--width) * .5);
   padding-right:calc(50% - var(--width) * .5);
 }
-body.padding {padding:var(--p)}
+h1 { --i: 2.4}
+h2 { --i: 2}
+h3 { --i: 1.4}
+h4 { --i: 1.2}
+h5 { --i: 1.1}
 h1, h2, h3, h4, h5, h6 {
-  --width:var(--type);
+  --width:var(--page);
+  --j: 1;
   line-height:1.1;
   margin-top:.6em;
   margin-bottom:.6em;
+  letter-spacing: -.02em;
 }
+span, em, strong, i, pre, code, address, blockquote, cite, a { padding-left: unset; padding-right: unset}
 p {text-indent:var(--text-indent)}
-p, ul, ol {--width:var(--type); margin-bottom:var(--m)}
+p, ul, ol {margin-bottom:var(--m)}
 ul, ol {margin-left:1.6em}
 a {color:inherit}
 pre, code, input, textarea {line-height:var(--line-height); border:none}
@@ -72,30 +81,16 @@ button, .button {
   line-height:1.7;
 }
 
-.padding-top, .padding {padding-top:var(--p)}
-.padding-bottom, .padding {padding-bottom:var(--p)}
-.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
-.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
-.margin {margin:var(--m)}
-.margin-top {margin-top:var(--m)}
-.margin-bottom {margin-bottom:var(--m)}
-.margin-auto {margin-left:auto; margin-right:auto}
-.tight {--p:calc(var(--padding) * .6)}
-.tight * {--p:var(--padding)}
-.gutter {--m:calc(var(--padding) * 2)}
-.gutter *, .tight * {--m:var(--padding)}
-.trim > *:last-child {margin-bottom:0}
-
 .text-center {text-align:center}
 .text-right {text-align:right}
 .text-crunch {line-height:1.4}
 .monospace {font-family:monospace}
 .bold {font-weight:bold}
 .italic {font-style:italic}
-.tiny {font-size:90%}
-.small {font-size:95%}
-.big {font-size:130%}
-.huge {font-size:160%}
+.tiny {--j: .75}
+.small {--j: .9}
+.big {--j: 1.2}
+.huge {--j: 1.4}
 
 .pointer {cursor:pointer}
 .rounded {border-radius:.6em}
@@ -118,6 +113,22 @@ button, .button {
 .type {--width:var(--type)}
 .page {--width:var(--page)}
 .full.width {width:100%; --width:var(--page)}
+.card.width, .type.width, .page.width {width:var(--width); padding: 0; max-width: 100%;}
+.card.width.padding, .type.width.padding, .page.width.padding {padding: var(--p);}
+
+.padding-top, .padding {padding-top:var(--p)}
+.padding-bottom, .padding {padding-bottom:var(--p)}
+.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+.margin {margin:var(--m)}
+.margin-top {margin-top:var(--m)}
+.margin-bottom {margin-bottom:var(--m)}
+.margin-auto {margin-left:auto; margin-right:auto}
+.tight {--p:calc(var(--padding) * .6)}
+.tight * {--p:var(--padding)}
+.gutter {--m:calc(var(--padding) * 2)}
+.gutter *, .tight * {--m:var(--padding)}
+.trim > *:last-child {margin-bottom:0}
 
 .columns {
   --c:12;
@@ -147,9 +158,9 @@ button, .button {
 
 @media screen and (min-width:28rem) {
   :root {
-    --width:var(--type);
+    --width:100%;
     --padding:calc(var(--padding-base) * .8);
-    --font-size:calc(var(--font-size-base) - 1px);
+    --font-size:calc((var(--font-size-base) - 1px) * var(--j, 1));
   }
 
   .columns.mobile {grid-template-columns:var(--single)}
@@ -166,7 +177,7 @@ button, .button {
   :root {
     --width:var(--page);
     --padding:var(--padding-base);
-    --font-size:var(--font-size-base);
+    --font-size:calc(var(--font-size-base) * var(--j, 1));
   }
 
   .columns.mobile.tablet {grid-template-columns:var(--single)}
@@ -227,8 +238,8 @@ button, .button {
 .complement {--h:calc(var(--base-h) + 180)}
 .accent {--h:calc(var(--base-h) + 25)}
 .white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.05; color:var(--b)}
-.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.2; color:var(--w)}
-.gray {--h:var(--base-h); --s:0%; --l:var(--base-l); --vv:.5}
+.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.05; color:var(--w)}
+.gray {--h:var(--base-h); --s:0%; --l:clamp(50%,var(--base-l),80%); --vv:.2}
 .brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
 .red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
 .orangered {--h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4}
@@ -238,13 +249,13 @@ button, .button {
 .teal {--h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5}
 .cyan {--h:180;--s:85%;--l:50%;--vv:.3}
 .blue {--h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4}
-.indigo {--h:245;--s:68%;--l:50%;--t:var(--w);--vv:.4}
+.indigo {--h:245;--s:68%;--l:50%;--t:var(--w);--vv:.2}
 .purple {--h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5}
 .pink {--h:335;--s:85%;--l:80%;--vv:.3}
 
 .very *, .hella * {--v:1}
 .very {--v:2}
-.hella {--v:3}
+.hella {--v:4}
 
 .text-dark {color:var(--b)}
 .text-light {color:var(--w)}
