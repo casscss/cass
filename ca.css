@@ -66,7 +66,6 @@ h1, h2, h3, h4, h5, h6 {
 span, em, strong, i, pre, code, address, blockquote, cite, a { padding-left: unset; padding-right: unset}
 p {text-indent:var(--text-indent)}
 p, ul, ol {margin-bottom:var(--m)}
-ul, ol {margin-left:1.6em}
 a {color:inherit}
 pre, code, input, textarea {line-height:var(--line-height); border:none}
 img {max-width:100%}
@@ -214,13 +213,13 @@ button, .button {
   background-color:hsla(
     var(--h), 
     calc(((var(--sat, var(--s)) * 5) + var(--base-s))/6), 
-    calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6),
+    calc(((var(--lit, var(--l)) * 4) + var(--base-l))/5),
     var(--a)
   );
 }
 
 .white, .black {
-  background-color:hsla(var(--h), var(--sat, var(--s)), var(--lit, var(--l), var(--a)));
+  background-color:hsla(var(--h), var(--sat, var(--s)), var(--lit, var(--l)), var(--a));
 }
 
 .base, .gray, .accent {color:var(--base-tone)}
