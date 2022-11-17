@@ -229,14 +229,14 @@ function updateColor() {
 `:`  --alt-tone:var(--white);
 `);
 
-    var css_template = `:root {
+    var css_template = `:root, html {
   --base-h:${h};
   --base-s:${s}%;
   --base-l:${l}%;
   --base-tone:var(--black);
 ` + complement_tone;
 
-    var css_template_alt = `:root {
+    var css_template_alt = `:root, html {
   --base-h:${h};
   --base-s:${s}%;
   --base-l:${l}%;
@@ -246,7 +246,7 @@ function updateColor() {
     var css_header = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
-:root {
+:root, html {
   --base-h:${h};
   --base-s:${s}%;
   --base-l:${l}%;
@@ -256,7 +256,7 @@ function updateColor() {
     var css_header_alt = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
-:root {
+:root, html {
   --base-h:${h};
   --base-s:${s}%;
   --base-l:${l}%;

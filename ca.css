@@ -1,13 +1,12 @@
 /* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
-:root {
+:root, html {
   --base-h:204; 
   --base-s:76%;
   --base-l:43%;
   --base-tone:var(--white);
   --alt-tone:var(--white);
-  --base:hsl(var(--base-h), var(--base-s), var(--base-l));
   --text-measure:50;
   --font-size-base:16px;
   --text-indent:1ch;
@@ -26,25 +25,25 @@
   --black:hsl(var(--b-h), var(--b-s), var(--b-l));
   --b:var(--black);
   --v:1;
+  --a:1;
   --width:100%;
   --padding:calc(var(--padding-base) * .6);
   --p:var(--padding);
   --margin:var(--p);
   --m:var(--margin);
-  --j: 1;
-  --font-size:calc((var(--font-size-base) - 2px) * var(--j, 1));
+  --font-size:calc(var(--font-size-base) - 2px);
 
   color:var(--b);
   background-color:var(--w);
   font-family:"Helvetica Neue", -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
-  line-height:1.6;
+  line-height:1.65;
   overflow-x:hidden;
 }
 * { 
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-size:calc(var(--font-size) * var(--i, 1) * var(--j))
+  font-size:calc(var(--font-size) * var(--i,1) * var(--j,1))
 }
 body { min-height:100vh;}
 body * {
@@ -60,8 +59,8 @@ h1, h2, h3, h4, h5, h6 {
   --width:var(--page);
   --j: 1;
   line-height:1.1;
-  margin-top:.6em;
-  margin-bottom:.6em;
+  margin-top:.35em;
+  margin-bottom:.65em;
   letter-spacing: -.02em;
 }
 span, em, strong, i, pre, code, address, blockquote, cite, a { padding-left: unset; padding-right: unset}
@@ -73,7 +72,6 @@ pre, code, input, textarea {line-height:var(--line-height); border:none}
 img {max-width:100%}
 button, .button {
   display:inline-block;
-  font-size:inherit;
   padding:.6em 1em;
   border:none;
   border-radius:6px;
@@ -113,7 +111,7 @@ button, .button {
 .type {--width:var(--type)}
 .page {--width:var(--page)}
 .full.width {width:100%; --width:var(--page)}
-.card.width, .type.width, .page.width {width:var(--width); padding: 0; max-width: 100%;}
+.card.width, .type.width, .page.width {max-width:var(--width); padding: 0;}
 .card.width.padding, .type.width.padding, .page.width.padding {padding: var(--p);}
 
 .padding-top, .padding {padding-top:var(--p)}
@@ -213,15 +211,16 @@ button, .button {
 .brown,
 .gray {
   color:var(--t);
-  background-color:hsl(
+  background-color:hsla(
     var(--h), 
     calc(((var(--sat, var(--s)) * 5) + var(--base-s))/6), 
-    calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6)
+    calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6),
+    var(--a)
   );
 }
 
 .white, .black {
-  background-color:hsl(var(--h), var(--sat, var(--s)), var(--lit, var(--l)));
+  background-color:hsla(var(--h), var(--sat, var(--s)), var(--lit, var(--l), var(--a)));
 }
 
 .base, .gray, .accent {color:var(--base-tone)}
@@ -231,10 +230,10 @@ button, .button {
 .light *, .dark * {--lit:var(--l)}
 .bright {--sat:calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))))}
 .dim {--sat:calc(var(--s) / (1 + var(--vv) * var(--v)))}
-.light {--lit:calc(100% - ((100% - var(--l)) / (1.3 + var(--vv) * var(--v)))); color:var(--b)}
+.light {--lit:calc(110% - ((100% - var(--l)) / (1 + var(--vv) * var(--v)))); color:var(--b)}
 .dark {--lit:calc(var(--l) / (1 + var(--vv) * var(--v))); color:var(--w)}
 
-.base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.5}
+.base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.3}
 .complement {--h:calc(var(--base-h) + 180)}
 .accent {--h:calc(var(--base-h) + 25)}
 .white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.05; color:var(--b)}
@@ -243,7 +242,7 @@ button, .button {
 .brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
 .red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
 .orangered {--h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4}
-.orange {--h:40;--s:96%;--l:55%;--vv:.3}
+.orange {--h:40;--s:96%;--l:60%;--vv:.3}
 .yellow {--h:54;--s:95%;--l:60%;--vv:.5}
 .green {--h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4}
 .teal {--h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5}
@@ -255,7 +254,7 @@ button, .button {
 
 .very *, .hella * {--v:1}
 .very {--v:2}
-.hella {--v:4}
+.hella {--v:5}
 
 .text-dark {color:var(--b)}
 .text-light {color:var(--w)}
