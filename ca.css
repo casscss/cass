@@ -77,6 +77,10 @@ button, .button {
   cursor:pointer;
   line-height:1.7;
 }
+.button:active, button:active {
+  transform: scale(.96);
+  box-shadow: unset;
+}
 
 .text-center {text-align:center}
 .text-right {text-align:right}
