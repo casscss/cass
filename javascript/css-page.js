@@ -1,8 +1,19 @@
 
 output = {};
 
+var backgrounds = [
+    "bigsur",
+    "coastal",
+    "desert",
+    "highway",
+    "redwoods",
+    "shasta",
+    "socalbeach"
+]
+
 document.addEventListener("DOMContentLoaded", function() {
-    // readyOneLiner();
+    var bg_image = backgrounds[Math.floor(Math.random()*backgrounds.length)];
+    document.getElementById("bg").style.backgroundImage = 'url("images/'+bg_image+'.webp")';
 });
 
 function luma(color) {
@@ -88,7 +99,7 @@ function copyColorStringNoHide(id) {
         if (r.length == 1)
             r = "0" + r;
         if (g.length == 1)
-            g = "0" + g;
+            g = "0" + g;``
         if (b.length == 1)
             b = "0" + b;
 
@@ -214,6 +225,8 @@ function saveTextAsFile(textToWrite, fileNameToSaveAs) {
 
     downloadLink.click();
 }
+
+
 
 function updateColor() {
     var h = document.getElementById("baseHue").value;
