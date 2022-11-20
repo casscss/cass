@@ -1,19 +1,35 @@
 
 output = {};
 
-var backgrounds = [
-    "bigsur",
-    "coastal",
-    "desert",
-    "highway",
-    "redwoods",
-    "shasta",
-    "socalbeach"
-]
+var bgs = {
+    bigsur: { name: "bigsur", h: "58", s: "23", l: "32"},
+    coastal: { name: "coastal", h: "205", s: "37", l: "51"},
+    desert: { name: "desert", h: "25", s: "56", l: "49"},
+    highway: { name: "highway", h: "36", s: "69", l: "52"},
+    redwoods: { name: "redwoods", h: "48", s: "72", l: "41"},
+    shasta: { name: "shasta", h: "180", s: "10", l: "25"},
+    socalbeach: { name: "socalbeach", h: "16", s: "100", l: "74"}
+}
+
+var randomProperty = function (obj) {
+    var keys = Object.keys(obj);
+    return obj[keys[ keys.length * Math.random() << 0]];
+};
 
 document.addEventListener("DOMContentLoaded", function() {
-    var bg_image = backgrounds[Math.floor(Math.random()*backgrounds.length)];
-    document.getElementById("bg").style.backgroundImage = 'url("images/'+bg_image+'.webp")';
+    var bg_image = randomProperty(bgs);
+    console.log(bg_image);
+    document.getElementById("bg").style.backgroundImage = 'url("images/'+bg_image.name+'.webp")';
+
+    document.getElementById("baseHue").value = bg_image.h;
+    document.getElementById("baseSaturation").value = bg_image.s;
+    document.getElementById("baseLightness").value = bg_image.l;
+
+    document.getElementById("baseHueLabel").innerHTML = Math.round(bg_image.h);
+    document.getElementById("baseSaturationLabel").innerHTML = Math.round(bg_image.s);
+    document.getElementById("baseLightnessLabel").innerHTML = Math.round(bg_image.l);
+
+    updateColor();   
 });
 
 function luma(color) {
