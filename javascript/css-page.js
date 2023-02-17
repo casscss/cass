@@ -253,9 +253,14 @@ function updateColor() {
 
     var rgb_color = hslToRgb((h/360), (s/100), (l/100));
     var alt_color = hslToRgb((h/360 + .5), (s/100), (l/100));
+    var acc_color = hslToRgb((h/360 + 30/360), (s/100), (l/100));
 
     var complement_tone = (luma(alt_color) > 165 ? `  --alt-tone:var(--black);
 `:`  --alt-tone:var(--white);
+`);
+
+    var accent_tone = (luma(acc_color) > 165 ? `  --acc-tone:var(--black);
+`:`  --acc-tone:var(--white);
 `);
 
     var css_template = `:root, html {
@@ -263,14 +268,14 @@ function updateColor() {
   --base-s:${s}%;
   --base-l:${l}%;
   --base-tone:var(--black);
-` + complement_tone;
+` + complement_tone + accent_tone;
 
     var css_template_alt = `:root, html {
   --base-h:${h};
   --base-s:${s}%;
   --base-l:${l}%;
   --base-tone:var(--white);
-` + complement_tone;
+` + complement_tone + accent_tone;
 
     var css_header = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
@@ -280,7 +285,7 @@ function updateColor() {
   --base-s:${s}%;
   --base-l:${l}%;
   --base-tone:var(--black);
-` + complement_tone;
+` + complement_tone + accent_tone;
 
     var css_header_alt = `/* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
@@ -290,13 +295,13 @@ function updateColor() {
   --base-s:${s}%;
   --base-l:${l}%;
   --base-tone:var(--white);
-` + complement_tone;
+` + complement_tone + accent_tone;
 
     const deleteLines = (string, n = 1)=>{
         return string.replace(new RegExp(`(?:.*?\n){${n-1}}(?:.*?\n)`), '');
     };
 
-    var rest_css = deleteLines(original_css, 9);
+    var rest_css = deleteLines(original_css, 10);
 
     if (luma(rgb_color) > 165) {
         document.getElementById('added_theme').innerHTML = css_template + '}';

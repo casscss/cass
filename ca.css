@@ -7,6 +7,7 @@
   --base-l:43%;
   --base-tone:var(--white);
   --alt-tone:var(--white);
+  --acc-tone:var(--white);
   --text-measure:50;
   --font-size-base:16px;
   --text-indent:1ch;
@@ -15,19 +16,19 @@
   --type:calc(var(--text-measure)*.55rem);
   --page:calc(var(--type)*1.6);
   --w-h:var(--base-h);
-  --w-s:calc(var(--base-s) * .2);
+  --w-s:calc(var(--base-s)*.2);
   --w-l:99.5%;
   --white:hsl(var(--w-h), var(--w-s), var(--w-l));
   --w:var(--white);
   --b-h:var(--base-h);
-  --b-s:calc(var(--base-s) * .2);
-  --b-l:calc(var(--base-l) * .2);
+  --b-s:calc(var(--base-s)*.2);
+  --b-l:calc(var(--base-l)*.2);
   --black:hsl(var(--b-h), var(--b-s), var(--b-l));
   --b:var(--black);
   --v:1;
   --a:1;
   --width:100%;
-  --padding:calc(var(--padding-base) * .6);
+  --padding:calc(var(--padding-base)*.6);
   --p:var(--padding);
   --margin:var(--p);
   --m:var(--margin);
@@ -59,15 +60,14 @@ h1, h2, h3, h4, h5, h6 {
   --width:var(--page);
   --j: 1;
   line-height:1.1;
-  margin-top:.35em;
-  margin-bottom:.65em;
+  margin-top:.5em;
+  margin-bottom:.5em;
   letter-spacing: -.02em;
 }
 span, em, strong, i, pre, code, address, blockquote, cite, a { padding-left: unset; padding-right: unset}
-p {text-indent:var(--text-indent)}
 p, ul, ol {margin-bottom:var(--m)}
 a {color:inherit}
-pre, code, input, textarea {line-height:var(--line-height); border:none}
+pre, code, input, textarea {line-height:inherit; border:none}
 img {max-width:100%}
 button, .button {
   display:inline-block;
@@ -85,15 +85,17 @@ button, .button {
 .text-center {text-align:center}
 .text-right {text-align:right}
 .text-crunch {line-height:1.4}
+.text-indent {text-indent: var(--text-indent)}
 .monospace {font-family:monospace}
 .bold {font-weight:bold}
 .italic {font-style:italic}
+.underline {text-decoration: underline;}
 .tiny {--j: .75}
 .small {--j: .9}
 .big {--j: 1.2}
 .huge {--j: 1.4}
 
-.pointer {cursor:pointer}
+.cursor,.pointer {cursor:pointer}
 .rounded {border-radius:.6em}
 .border {border:1px solid hsl(var(--hue, var(--h)), clamp(0%, calc(.7 * var(--sat, var(--s))), 50%), clamp(0%, calc(.7 * var(--lit, var(--l))), 60%))}
 .dashed {border-style:dashed}
@@ -113,21 +115,23 @@ button, .button {
 .card {--width:var(--card)}
 .type {--width:var(--type)}
 .page {--width:var(--page)}
+.width {max-width:var(--width); padding: 0;}
+.force.width {width:var(--width); padding: 0;}
+.width.padding {padding: var(--p);}
 .full.width {width:100%; --width:var(--page)}
-.card.width, .type.width, .page.width {max-width:var(--width); padding: 0;}
-.card.width.padding, .type.width.padding, .page.width.padding {padding: var(--p);}
 
 .padding-top, .padding {padding-top:var(--p)}
 .padding-bottom, .padding {padding-bottom:var(--p)}
-.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
-.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5) + var(--p)))}
+.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5)))}
+.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5)))}
 .margin {margin:var(--m)}
 .margin-top {margin-top:var(--m)}
 .margin-bottom {margin-bottom:var(--m)}
+.gutter-bottom {margin-bottom:calc(2*var(--m))}
 .margin-auto {margin-left:auto; margin-right:auto}
-.tight {--p:calc(var(--padding) * .6)}
+.tight {--p:calc(var(--padding)*.6)}
 .tight * {--p:var(--padding)}
-.gutter {--m:calc(var(--padding) * 2)}
+.gutter {--m:calc(var(--margin)*2)}
 .gutter *, .tight * {--m:var(--padding)}
 .trim > *:last-child {margin-bottom:0}
 
@@ -140,11 +144,12 @@ button, .button {
   grid-template-columns:var(--multi);
 }
 .columns.tablet, .columns.desktop {grid-template-columns:var(--single)}
-.columns .wide {grid-column:auto / span var(--c)}
-.tablet .wide, .desktop .wide {width:100%; grid-column:unset}
+.columns > .wide {grid-column:auto / span var(--c, 1)}
+.tablet > .wide, .desktop > .wide {width:100%; grid-column:unset}
 .golden {--multi:1.618fr 1fr}
 .golden.reverse {--multi:1fr 1.618fr}
 
+.one {--c:1}
 .two {--c:2}
 .three {--c:3}
 .four {--c:4}
@@ -170,8 +175,8 @@ button, .button {
   .hide.tablet {display:none}
   .fixed.mobile {position:initial}
   .fixed.tablet {position:fixed}
-  .mobile .wide  {grid-column:unset}
-  .tablet .wide  {grid-column:auto / span var(--c, 1)}
+  .mobile > .wide  {grid-column:unset}
+  .tablet > .wide  {grid-column:auto / span var(--c, 1)}
 }
 
 @media screen and (min-width:45rem) {
@@ -187,8 +192,8 @@ button, .button {
   .hide.desktop {display:none}
   .fixed.mobile.tablet {position:initial}
   .fixed.desktop {position:fixed}
-  .mobile.tablet .wide  {grid-column:unset}
-  .desktop .wide  {grid-column:auto / span var(--c, 1)}
+  .mobile.tablet > .wide  {grid-column:unset}
+  .desktop > .wide  {grid-column:auto / span var(--c, 1)}
 }
 
 .no-gap {gap:0}
@@ -196,6 +201,7 @@ button, .button {
 .no-text-indent {--text-indent:0}
 .no-margin-top {margin-top:0}
 .no-margin-bottom {margin-bottom:0}
+.no-overflow {overflow:hidden}
 
 .base,
 .accent,
@@ -216,8 +222,8 @@ button, .button {
   color:var(--t);
   background-color:hsla(
     var(--h), 
-    calc(((var(--sat, var(--s)) * 5) + var(--base-s))/6), 
-    calc(((var(--lit, var(--l)) * 4) + var(--base-l))/5),
+    calc(((var(--sat, var(--s)) * 4) + var(--base-s))/5), 
+    calc(((var(--lit, var(--l)) * 3) + var(--base-l))/4),
     var(--a)
   );
 }
@@ -228,6 +234,7 @@ button, .button {
 
 .base, .gray, .accent {color:var(--base-tone)}
 .complement {color:var(--alt-tone)}
+.accent {color:var(--acc-tone)}
 
 .bright *, .dim * {--sat:var(--s)}
 .light *, .dark * {--lit:var(--l)}
@@ -239,25 +246,25 @@ button, .button {
 .base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.3}
 .complement {--h:calc(var(--base-h) + 180)}
 .accent {--h:calc(var(--base-h) + 25)}
-.white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.05; color:var(--b)}
-.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.05; color:var(--w)}
+.white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.1; color:var(--b)}
+.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.1; color:var(--w)}
 .gray {--h:var(--base-h); --s:0%; --l:clamp(50%,var(--base-l),80%); --vv:.2}
 .brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
 .red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
-.orangered {--h:24;--s:86%;--l:50%;--t:var(--w);--vv:.4}
-.orange {--h:40;--s:96%;--l:60%;--vv:.3}
-.yellow {--h:54;--s:95%;--l:60%;--vv:.5}
-.green {--h:110;--s:57%;--l:35%;--t:var(--w);--vv:.4}
-.teal {--h:170;--s:35%;--l:45%;--t:var(--w);--vv:.5}
-.cyan {--h:180;--s:85%;--l:50%;--vv:.3}
-.blue {--h:222;--s:75%;--l:60%;--t:var(--w);--vv:.4}
-.indigo {--h:245;--s:68%;--l:50%;--t:var(--w);--vv:.2}
-.purple {--h:275;--s:63%;--l:48%;--t:var(--w);--vv:.5}
+.orangered {--h:24;--s:92%;--l:55%;--t:var(--w);--vv:.4}
+.orange {--h:40;--s:95%;--l:65%;--vv:.3}
+.yellow {--h:54;--s:95%;--l:60%;--vv:.6}
+.green {--h:110;--s:55%;--l:35%;--t:var(--w);--vv:.4}
+.teal {--h:168;--s:35%;--l:45%;--t:var(--w);--vv:.5}
+.cyan {--h:180;--s:85%;--l:55%;--vv:.3}
+.blue {--h:222;--s:70%;--l:60%;--t:var(--w);--vv:.4}
+.indigo {--h:245;--s:65%;--l:40%;--t:var(--w);--vv:.4}
+.purple {--h:275;--s:60%;--l:48%;--t:var(--w);--vv:.5}
 .pink {--h:335;--s:85%;--l:80%;--vv:.3}
 
-.very *, .hella * {--v:1}
+.very *, .hella *, .super * {--v:1}
 .very {--v:2}
-.hella {--v:5}
+.hella, .super {--v:5}
 
 .text-dark {color:var(--b)}
 .text-light {color:var(--w)}
