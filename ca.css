@@ -1,7 +1,7 @@
 /* A California Stylesheet (MIT License) */
 /* https://github.com/casscss/cass */
 
-:root, html {
+:root,html {
   --base-h:204; 
   --base-s:76%;
   --base-l:43%;
@@ -15,17 +15,6 @@
   --card:calc(var(--type)*.6);
   --type:calc(var(--text-measure)*.55rem);
   --page:calc(var(--type)*1.6);
-  --w-h:var(--base-h);
-  --w-s:calc(var(--base-s)*.2);
-  --w-l:99.5%;
-  --white:hsl(var(--w-h), var(--w-s), var(--w-l));
-  --w:var(--white);
-  --b-h:var(--base-h);
-  --b-s:calc(var(--base-s)*.2);
-  --b-l:calc(var(--base-l)*.2);
-  --black:hsl(var(--b-h), var(--b-s), var(--b-l));
-  --b:var(--black);
-  --v:1;
   --a:1;
   --width:100%;
   --padding:calc(var(--padding-base)*.6);
@@ -33,6 +22,18 @@
   --margin:var(--p);
   --m:var(--margin);
   --font-size:calc(var(--font-size-base) - 2px);
+  --v:1;
+
+  --w-h:var(--base-h);
+  --w-s:calc(var(--base-s)*.1);
+  --w-l:calc(99.5% + (var(--v) * .1%));
+  --b-h:var(--base-h);
+  --b-s:calc(var(--base-s)*.1);
+  --b-l:calc(var(--base-l)*.2);
+  --white:hsl(var(--w-h), var(--w-s), var(--w-l));
+  --w:var(--white);
+  --black:hsl(var(--b-h), var(--b-s), var(--b-l));
+  --b:var(--black);
 
   color:var(--b);
   background-color:var(--w);
@@ -56,20 +57,19 @@ h2 { --i: 2}
 h3 { --i: 1.4}
 h4 { --i: 1.2}
 h5 { --i: 1.1}
-h1, h2, h3, h4, h5, h6 {
-  --width:var(--page);
+h1,h2,h3,h4,h5,h6 {
   --j: 1;
   line-height:1.1;
   margin-top:.5em;
   margin-bottom:.5em;
   letter-spacing: -.02em;
 }
-span, em, strong, i, pre, code, address, blockquote, cite, a { padding-left: unset; padding-right: unset}
-p, ul, ol {margin-bottom:var(--m)}
+span,em,strong,i,pre,code,address,blockquote,cite,a { padding-left: unset; padding-right: unset}
+p,ul,ol {margin-bottom:var(--m)}
 a {color:inherit}
-pre, code, input, textarea {line-height:inherit; border:none}
+pre,code,input,textarea {line-height:inherit; border:none; max-width:100%}
 img {max-width:100%}
-button, .button {
+button,.button {
   display:inline-block;
   padding:.6em 1em;
   border:none;
@@ -83,17 +83,20 @@ button, .button {
 }
 
 .text-center {text-align:center}
+.text-left {text-align:left}
 .text-right {text-align:right}
 .text-crunch {line-height:1.4}
-.text-indent {text-indent: var(--text-indent)}
+.text-indent {text-indent:var(--text-indent)}
 .monospace {font-family:monospace}
 .bold {font-weight:bold}
 .italic {font-style:italic}
-.underline {text-decoration: underline;}
-.tiny {--j: .75}
-.small {--j: .9}
-.big {--j: 1.2}
-.huge {--j: 1.4}
+.underline {text-decoration:underline;}
+.caps {text-transform:uppercase;}
+.tiny {--j:.85}
+.small {--j:.9}
+.medium {--j:1}
+.big {--j:1.2}
+.huge {--j:1.4}
 
 .cursor,.pointer {cursor:pointer}
 .rounded {border-radius:.6em}
@@ -103,10 +106,11 @@ button, .button {
 .shadow {box-shadow:0 1px .3em hsla(var(--b-h), var(--b-s), var(--b-l), 0.2)}
 
 .block {display:block}
-.hide, .hide.mobile, .hide.mobile.tablet {display:none}
-.hide.tablet, .hide.desktop {display:initial}
-.fixed, .fixed.mobile, .fixed.mobile.tablet {position:fixed}
-.fixed.tablet, .fixed.desktop {position:initial}
+.inline {display:inline}
+.hide,.hide.mobile,.hide.mobile.tablet {display:none}
+.hide.tablet,.hide.desktop {display:initial}
+.fixed,.fixed.mobile,.fixed.mobile.tablet {position:fixed}
+.fixed.tablet,.fixed.desktop {position:initial}
 .relative {position:relative}
 .absolute {position:absolute}
 .top {top:0} .right {right:0} .bottom {bottom:0} .left {left:0}
@@ -119,14 +123,17 @@ button, .button {
 .force.width {width:var(--width); padding: 0;}
 .width.padding {padding: var(--p);}
 .full.width {width:100%; --width:var(--page)}
+.full.height {height: 100%}
 
-.padding-top, .padding {padding-top:var(--p)}
-.padding-bottom, .padding {padding-bottom:var(--p)}
-.padding-left, .padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5)))}
-.padding-right, .padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5)))}
+.padding-top,.padding {padding-top:var(--p)}
+.padding-bottom,.padding {padding-bottom:var(--p)}
+.padding-left,.padding {padding-left:max(var(--p), calc(50% - (var(--width) * .5)))}
+.padding-right,.padding {padding-right:max(var(--p), calc(50% - (var(--width) * .5)))}
 .margin {margin:var(--m)}
 .margin-top {margin-top:var(--m)}
+.margin-right {margin-right:var(--m)}
 .margin-bottom {margin-bottom:var(--m)}
+.margin-left {margin-left:var(--m)}
 .gutter-bottom {margin-bottom:calc(2*var(--m))}
 .margin-auto {margin-left:auto; margin-right:auto}
 .tight {--p:calc(var(--padding)*.6)}
@@ -143,9 +150,9 @@ button, .button {
   gap:var(--m);
   grid-template-columns:var(--multi);
 }
-.columns.tablet, .columns.desktop {grid-template-columns:var(--single)}
+.columns.tablet,.columns.desktop {grid-template-columns:var(--single)}
 .columns > .wide {grid-column:auto / span var(--c, 1)}
-.tablet > .wide, .desktop > .wide {width:100%; grid-column:unset}
+.tablet > .wide,.desktop > .wide {width:100%; grid-column:unset}
 .golden {--multi:1.618fr 1fr}
 .golden.reverse {--multi:1fr 1.618fr}
 
@@ -197,8 +204,10 @@ button, .button {
 }
 
 .no-gap {gap:0}
+.no-bold {font-weight:normal;}
 .no-underline {text-decoration:none}
 .no-text-indent {--text-indent:0}
+.no-margin {margin:0}
 .no-margin-top {margin-top:0}
 .no-margin-bottom {margin-bottom:0}
 .no-overflow {overflow:hidden}
@@ -209,13 +218,19 @@ button, .button {
 .red,
 .orangered,
 .orange,
+.gold,
 .yellow,
+.lime,
+.jade,
 .green,
 .teal,
+.aqua,
 .cyan,
+.sky,
 .blue,
 .indigo,
 .purple,
+.magenta,
 .pink,
 .brown,
 .gray {
@@ -223,59 +238,66 @@ button, .button {
   background-color:hsla(
     var(--h), 
     calc(((var(--sat, var(--s)) * 4) + var(--base-s))/5), 
-    calc(((var(--lit, var(--l)) * 3) + var(--base-l))/4),
+    calc(((var(--lit, var(--l)) * 5) + var(--base-l))/6),
     var(--a)
   );
 }
 
-.white, .black {
-  background-color:hsla(var(--h), var(--sat, var(--s)), var(--lit, var(--l)), var(--a));
-}
-
-.base, .gray, .accent {color:var(--base-tone)}
+.base,.gray {color:var(--base-tone)}
 .complement {color:var(--alt-tone)}
 .accent {color:var(--acc-tone)}
 
-.bright *, .dim * {--sat:var(--s)}
-.light *, .dark * {--lit:var(--l)}
-.bright {--sat:calc(100% - ((100% - var(--s)) / (1 + var(--vv) * var(--v))))}
-.dim {--sat:calc(var(--s) / (1 + var(--vv) * var(--v)))}
-.light {--lit:calc(110% - ((100% - var(--l)) / (1 + var(--vv) * var(--v)))); color:var(--b)}
-.dark {--lit:calc(var(--l) / (1 + var(--vv) * var(--v))); color:var(--w)}
+.bright, .dim, .light, .dark {
+  --scu:calc((100% - var(--s)) * .33 );
+  --sfu:calc(var(--s) * .33 );
+  --lcu:calc((100% - var(--l)) * .33 );
+  --lfu:calc(var(--l) * .33 );
+}
+.bright *,.dim * {--sat:var(--s)}
+.light *,.dark * {--lit:var(--l)}
+.light {
+  color:var(--b);
+  --lit:calc(var(--l) + 4% + (var(--lcu) * var(--v) * var(--vv)));
+}
+.dark {
+  color:var(--w);
+  --lit:calc(var(--l) - 8% - (var(--lfu) * var(--v) * var(--vv)));
+}
+.bright {--sat:calc(var(--s) + (var(--scu) * var(--v) * var(--vv)))}
+.dim {--sat:calc(var(--s) - (var(--sfu) * var(--v) * var(--vv)))}
 
-.base, .complement, .accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.3}
+.base,.complement,.accent {--h:var(--base-h); --s:var(--base-s); --l:var(--base-l);--vv:.3}
 .complement {--h:calc(var(--base-h) + 180)}
-.accent {--h:calc(var(--base-h) + 25)}
+.accent {--h:calc(var(--base-h) + 30)}
+.white,.black,.gray {background-color:hsla(var(--h), var(--sat, var(--s)), var(--lit, var(--l)), var(--a));}
 .white {--h:var(--w-h); --s:var(--w-s); --l:var(--w-l); --vv:.1; color:var(--b)}
-.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.1; color:var(--w)}
-.gray {--h:var(--base-h); --s:0%; --l:clamp(50%,var(--base-l),80%); --vv:.2}
-.brown {--h:25; --s:clamp(30%, calc(var(--base-s) * .8), 50%); --l:clamp(30%, calc((var(--base-l) + var(--b-l)) * .5), 80%);--t:var(--w); --vv:.5}
-.red {--h:3;--s:71%;--l:50%;--t:var(--w);--vv:.4}
-.orangered {--h:24;--s:92%;--l:55%;--t:var(--w);--vv:.4}
-.orange {--h:40;--s:95%;--l:65%;--vv:.3}
-.yellow {--h:54;--s:95%;--l:60%;--vv:.6}
-.green {--h:110;--s:55%;--l:35%;--t:var(--w);--vv:.4}
-.teal {--h:168;--s:35%;--l:45%;--t:var(--w);--vv:.5}
-.cyan {--h:180;--s:85%;--l:55%;--vv:.3}
-.blue {--h:222;--s:70%;--l:60%;--t:var(--w);--vv:.4}
-.indigo {--h:245;--s:65%;--l:40%;--t:var(--w);--vv:.4}
-.purple {--h:275;--s:60%;--l:48%;--t:var(--w);--vv:.5}
-.pink {--h:335;--s:85%;--l:80%;--vv:.3}
+.black {--h:var(--b-h); --s:var(--b-s); --l:var(--b-l); --vv:.2; color:var(--w)}
+.gray {--h:var(--base-h);--s:calc(var(--base-s) * .1);--l:clamp(30%,var(--base-l),70%);--vv:.1;--t:var(--w)}
+.brown     {--h: 25;--s:clamp(35%,calc(var(--base-s)*.8),54%);--l:40%;--vv:.3;--t:var(--w)}
+.red       {--h:  3;--s:71%;--l:50%;--vv:.3;--t:var(--w)}
+.orangered {--h: 24;--s:90%;--l:50%;--vv:.3;--t:var(--w)}
+.orange    {--h: 38;--s:95%;--l:60%;--vv:.2;--t:var(--b)}
+.gold      {--h: 48;--s:95%;--l:70%;--vv:.3;--t:var(--b)}
+.yellow    {--h: 54;--s:95%;--l:60%;--vv:.3;--t:var(--b)}
+.lime      {--h: 85;--s:60%;--l:60%;--vv:.3;--t:var(--b)}
+.green     {--h:120;--s:50%;--l:40%;--vv:.5;--t:var(--w)}
+.jade      {--h:144;--s:45%;--l:40%;--vv:.3;--t:var(--w)}
+.teal      {--h:168;--s:30%;--l:40%;--vv:.5;--t:var(--w)}
+.aqua      {--h:174;--s:60%;--l:50%;--vv:.5;--t:var(--b)}
+.cyan      {--h:180;--s:85%;--l:55%;--vv:.6;--t:var(--b)}
+.sky       {--h:200;--s:80%;--l:75%;--vv:.5;--t:var(--b)}
+.blue      {--h:222;--s:70%;--l:60%;--vv:.4;--t:var(--w)}
+.indigo    {--h:245;--s:65%;--l:45%;--vv:.4;--t:var(--w)}
+.purple    {--h:275;--s:60%;--l:48%;--vv:.5;--t:var(--w)}
+.magenta   {--h:300;--s:65%;--l:75%;--vv:.4;--t:var(--b)}
+.pink      {--h:335;--s:80%;--l:80%;--vv:.3;--t:var(--b)}
 
-.very *, .hella *, .super * {--v:1}
+.very *,.hella *,.super * {--v:1}
 .very {--v:2}
-.hella, .super {--v:5}
+.hella,.super {--v:3}
 
 .text-dark {color:var(--b)}
 .text-light {color:var(--w)}
-
-.text-color {
-  --t-h:var(--hue, var(--h));
-  --t-s:var(--sat, var(--s));
-  --t-l:clamp(0%, var(--lit, var(--l)), 44%);
-  color:hsl(var(--t-h), var(--t-s), var(--t-l));
-  background-color:transparent;
-}
-.text-color.text-light {
-  --t-l:clamp(50%, var(--lit, var(--l)), 100%);
-}
+.text-color {color:hsl(var(--hue, var(--h)), var(--sat, var(--s)), var(--t-l));background-color:transparent;}
+.text-color.text-light {--t-l:clamp(50%, var(--lit, var(--l)), 100%);}
+.text-color, .text-color.text-dark {--t-l:clamp(0%, var(--lit, var(--l)), 44%);}
