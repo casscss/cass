@@ -8,7 +8,7 @@ var bgs = {
     highway: { name: "highway", h: "36", s: "69", l: "52"},
     redwoods: { name: "redwoods", h: "48", s: "72", l: "41"},
     shasta: { name: "shasta", h: "180", s: "10", l: "25"},
-    socalbeach: { name: "socalbeach", h: "16", s: "100", l: "74"}
+    socalbeach: { name: "socalbeach", h: "16", s: "60", l: "70"}
 }
 
 var randomProperty = function (obj) {
